@@ -2,7 +2,7 @@ package controller;
 
 import dao.ClienteDAO;
 import dao.IDAO;
-import model.Cliente;
+import model.cliente.Cliente;
 import model.Entidade;
 
 import java.util.List;
