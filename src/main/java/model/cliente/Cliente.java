@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Cliente extends Entidade {
+
     private String genero;
     private String nome;
     private LocalDate dataNascimento;
@@ -17,6 +18,7 @@ public class Cliente extends Entidade {
     private Endereco endereco;
     private List<String> enderecoEntrega;
     private List<String> enderecoCobranca;
+    private List<CartaoDeCredito> cartoesDeCredito;
     private int ranking;
 
     public String getGenero() {
