@@ -5,66 +5,16 @@
   <meta charset="UTF-8"/>
   <title>Clientes</title>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
+  <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>'/>
   <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-  <link href="css/styles.css" rel="stylesheet" />
-  <style>
-    .card {
-      padding: 30px 40px;
-    }
-  </style>
+  <link href="assets/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
   <!-- Navigation-->
-  <header class="p-3 mb-3 bg-light ">
-        <div class="container" >
-            <div class="d-flex align-items-center justify-content-center">
-            <a class="navbar-brand" href="#!">fanLoot</a>
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 link-secondary">Overview</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">Inventory</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark">Customers</a></li>
-                <li><a href="#" class="nav-link px-2 link-dark dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Categorias
-                    </a>
-                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                        <li><a class="dropdown-item" href="#">Anime</a></li>
-                        <li><a class="dropdown-item" href="#">Marvel</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-              <input type="search" class="form-control" placeholder="Pesquisa..." aria-label="Search">
-            </form>
-            <div class="dropdown text-end">
-              <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://i.pinimg.com/474x/bb/8a/71/bb8a71ef13231a77a85267fa9e066922.jpg" alt="mdo" class="rounded-circle" width="32" height="32">
-              </a>
-              <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                <li><a class="dropdown-item" href="#">Perfil</a></li>
-                <li><a class="dropdown-item" href="#">Compras</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Sair</a></li>
-              </ul>
-            </div>
-
-            <button type="button" class="btn btn-outline-dark" style="margin-left: 10px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                  </svg>
-                Carrinho
-              </button>
-
-            <div class="panel-body" style="margin-left: 10px;">
-                <button class="btn btn-outline-dark btn-circle"><i class="bi bi-cart-fill"></i></button>
-            </div>
-
-            </div>
-        </div>
-  </header>
-
-  <div class="container">
+  <c:import url="/includes/header.jsp" charEncoding="UTF-8"/>
+  <div class="container mt-3">
     <main>
       <div class="row g-5">
         <div class="col-md-5 col-lg-2 order-md-first">
@@ -107,84 +57,130 @@
         <div class="col-md-7 col-lg-10">
           <div class="chartjs-size-monitor">
             <div class="card mb-4">
-              <h4 class="mb-3">Clientes</h4>
+                <h4 class="mb-3">Clientes</h4>
                 <table id="datatablesSimple">
-                          <thead>
-                              <tr>
-                                  <th>ID</th>
-                                  <th>Nome</th>
-                                  <th>CPF</th>
-                                  <th>Gênero</th>
-                                  <th>Rank</th>
-                                  <th>Nascimento</th>
-                              </tr>
-                          </thead>
-                          <tfoot>
-                              <tr>
-                                  <th>Name</th>
-                                  <th>Position</th>
-                                  <th>Office</th>
-                                  <th>Age</th>
-                                  <th>Start date</th>
-                                  <th>Salary</th>
-                              </tr>
-                          </tfoot>
-                          <tbody>
-                              <tr>
-                                  <td>1</td>
-                                  <td>Tiger Nixon</td>
-                                  <td>000.000.000-00</td>
-                                  <td>M</td>
-                                  <td>61</td>
-                                  <td>2011/04/25</td>
-                                  <td> aaa</td>
-                              </tr>
-                              <tr>
-                                  <td>2</td>
-                                  <td>Garrett Winters</td>
-                                  <td>000.000.000-00</td>
-                                  <td>M</td>
-                                  <td>63</td>
-                                  <td>2011/07/25</td>
-                                  <td>$170,750</td>
-                              </tr>
-                              <tr>
-                                  <td>3</td>
-                                  <td>Bruno Nash</td>
-                                  <td>000.000.000-00</td>
-                                  <td>M</td>
-                                  <td>38</td>
-                                  <td>2011/05/03</td>
-                                  <td>$163,500</td>
-                              </tr>
-                              <tr>
-                                  <td>4</td>
-                                  <td>Sakura Yamamoto</td>
-                                  <td>000.000.000-00</td>
-                                  <td>N/A</td>
-                                  <td>37</td>
-                                  <td>2009/08/19</td>
-                                  <td>$139,575</td>
-                              </tr>
-                              <tr>
-                                  <td>5</td>
-                                  <td>Thor Walton</td>
-                                  <td>000.000.000-00</td>
-                                  <td>M</td>
-                                  <td>61</td>
-                                  <td>2013/08/11</td>
-                                  <td>$98,540</td>
-                              </tr>
-                              <tr>
-                                  <td>6</td>
-                                  <td>Donna Snider</td>
-                                  <td>000.000.000-00</td>
-                                  <td>F</td>
-                                  <td>27</td>
-                                  <td>2011/01/25</td>
-                                  <td>$112,000</td>
-                              </tr>
-                          </tbody>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Gênero</th>
+                            <th>Rank</th>
+                            <th>Nascimento</th>
+                            <th>Editar</th>
+                            <th>Inativar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>Tiger Nixon</td>
+                          <td>000.000.000-00</td>
+                          <td>M</td>
+                          <td>61</td>
+                          <td>2011/04/25</td>
+                          <td>
+                             <span class="material-icons">
+                                mode_edit
+                             </span>
+                          </td>
+                          <td>
+                            <span class="material-icons">
+                              delete
+                            </span>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>2</td>
+                          <td>Garrett Winters</td>
+                          <td>000.000.000-00</td>
+                          <td>M</td>
+                          <td>63</td>
+                          <td>2011/07/25</td>
+                          <td>
+                             <span class="material-icons">
+                                mode_edit
+                             </span>
+                          </td>
+                          <td>
+                            <span class="material-icons">
+                              delete
+                            </span>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>3</td>
+                          <td>Bruno Nash</td>
+                          <td>000.000.000-00</td>
+                          <td>M</td>
+                          <td>38</td>
+                          <td>2011/05/03</td>
+                          <td>
+                             <span class="material-icons">
+                                mode_edit
+                             </span>
+                          </td>
+                          <td>
+                            <span class="material-icons">
+                              delete
+                            </span>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>4</td>
+                          <td>Sakura Yamamoto</td>
+                          <td>000.000.000-00</td>
+                          <td>N/A</td>
+                          <td>37</td>
+                          <td>2009/08/19</td>
+                          <td>
+                             <span class="material-icons">
+                                mode_edit
+                             </span>
+                          </td>
+                          <td>
+                            <span class="material-icons">
+                              delete
+                            </span>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>5</td>
+                          <td>Thor Walton</td>
+                          <td>000.000.000-00</td>
+                          <td>M</td>
+                          <td>61</td>
+                          <td>2013/08/11</td>
+                          <td>
+                             <span class="material-icons">
+                                mode_edit
+                             </span>
+                          </td>
+                          <td>
+                            <span class="material-icons">
+                              delete
+                            </span>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>6</td>
+                          <td>Donna Snider</td>
+                          <td>000.000.000-00</td>
+                          <td>F</td>
+                          <td>27</td>
+                          <td>2011/01/25</td>
+                          <td>
+                             <span class="material-icons">
+                                mode_edit
+                             </span>
+                          </td>
+                          <td>
+                            <span class="material-icons">
+                              delete
+                            </span>
+                          </td>
+                      </tr>
+                  </tbody>
                 </table>
             </div>
           </div>
@@ -192,7 +188,7 @@
       </div>
     </main>
   </div>
-
+  <c:import url="/includes/footer.jsp" charEncoding="UTF-8"/>
 </body>
 <script src="js/formatacao-tabela.js"></script>
 <script src="js/datatables-simple-demo.js"></script>

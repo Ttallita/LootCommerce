@@ -1,9 +1,0 @@
-cliente (
-    logradouro
-
-)
-enderecoENtrega(
-
-)
-
-enderecoENtrega
