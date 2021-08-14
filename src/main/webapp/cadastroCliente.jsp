@@ -19,6 +19,7 @@
     <div class="container px-4 px-lg-5">
       <a class="navbar-brand" href="#!">fanLoot</a>
     </div>
+
   </nav>
 
   <div class="container-fluid px-1 py-5">
@@ -28,7 +29,7 @@
         <h5 class="mb-4">Cadastro</h5>
         <form class="needs-validation" novalidate="">
           <div class="row g-6">
-            <div class="col-sm-6">
+            <div class="col-sm-6 form-outline">
               <label for="nome" class="form-label">Nome</label>
               <input type="text" class="form-control" id="nome" placeholder="" value="" required="">
               <div class="invalid-feedback">
@@ -203,11 +204,13 @@
           </button>
         </form>
       </div>
+
     </div>
   </div>
   </div>
 </body>
 
-  <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.min.js"/>'></script>
+<script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.min.js"/>'></script>
+
 
 </html>
