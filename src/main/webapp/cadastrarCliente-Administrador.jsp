@@ -93,24 +93,6 @@
                 </div>
               </div>
 
-              <div class="col-md-4">
-                <label for="pais" class="form-label">Data de nascimento</label>
-                <select class="form-select" id="pais" required="">
-                  <option value="">Selecione</option>
-                </select>
-                <div class="invalid-feedback">
-                  Selecione sua data de nascimento.
-                </div>
-              </div>
-
-              <div class="col-4">
-                <label for="cpf" class="form-label">CPF</label>
-                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" value="" required="">
-                <div class="invalid-feedback">
-                  Insira seu número de CPF.
-                </div>
-              </div>
-
               <div class="col-12">
                 <label for="email" class="form-label">Email</label>
                 <input type="email" class="form-control" id="email" placeholder="" value="" required="">

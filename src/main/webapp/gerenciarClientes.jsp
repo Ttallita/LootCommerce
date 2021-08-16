@@ -13,9 +13,10 @@
 
 <body>
   <!-- Navigation-->
-  <c:import url="/includes/header.jsp" charEncoding="UTF-8"/>
-  <div class="container mt-3">
+  <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8"/>
+
     <main>
+    <div class="container mt-3">
       <div class="row g-5">
         <div class="col-md-5 col-lg-2 order-md-first">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -186,11 +187,12 @@
           </div>
         </div>
       </div>
+      </div>
     </main>
-  </div>
+
   <c:import url="/includes/footer.jsp" charEncoding="UTF-8"/>
 </body>
-<script src="js/formatacao-tabela.js"></script>
-<script src="js/datatables-simple-demo.js"></script>
+<script src="assets/js/formatacao-tabela.js"></script>
+<script src="assets/js/datatables-simple-demo.js"></script>
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.min.js"/>'></script>
 </html>

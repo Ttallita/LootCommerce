@@ -14,12 +14,8 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container px-4 px-lg-5">
-      <a class="navbar-brand" href="#!">fanLoot</a>
-    </div>
-
-  </nav>
+  <!-- Navigation-->
+  <c:import url="/includes/header.jsp" charEncoding="UTF-8"/>
 
   <div class="container-fluid px-1 py-5">
   <div class="row d-flex justify-content-center">

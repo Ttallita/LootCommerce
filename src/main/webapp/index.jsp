@@ -50,10 +50,10 @@
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name-->
+                                <!-- Product name -->
                                 <h5 class="fw-bolder">Fancy Product</h5>
                                 <!-- Product price-->
-                                $40.00 - $80.00
+                                R$40.00 - R$80.00
                             </div>
                         </div>
                         <!-- Product actions-->
@@ -71,24 +71,19 @@
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name-->
+                                <!-- Product name -->
                                 <h5 class="fw-bolder">Special Item</h5>
                                 <!-- Product reviews-->
                                 <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$20.00</span>
-                                $18.00
+                                <span class="text-muted text-decoration-line-through">R$20.00</span>
+                                R$18.00
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
                         </div>
                     </div>
                 </div>
@@ -101,16 +96,16 @@
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name-->
+                                <!-- Product name -->
                                 <h5 class="fw-bolder">Sale Item</h5>
                                 <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$50.00</span>
-                                $25.00
+                                <span class="text-muted text-decoration-line-through">R$50.00</span>
+                                R$25.00
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
                         </div>
                     </div>
                 </div>
@@ -121,23 +116,18 @@
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name-->
+                                <!-- Product name -->
                                 <h5 class="fw-bolder">Popular Item</h5>
                                 <!-- Product reviews-->
                                 <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
-                                $40.00
+                                R$40.00
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
                         </div>
                     </div>
                 </div>
@@ -150,16 +140,16 @@
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name-->
+                                <!-- Product name -->
                                 <h5 class="fw-bolder">Sale Item</h5>
                                 <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$50.00</span>
-                                $25.00
+                                <span class="text-muted text-decoration-line-through">R$50.00</span>
+                                R$25.00
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
                         </div>
                     </div>
                 </div>
@@ -170,10 +160,10 @@
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name-->
+                                <!-- Product name -->
                                 <h5 class="fw-bolder">Fancy Product</h5>
                                 <!-- Product price-->
-                                $120.00 - $280.00
+                                R$120.00 - R$280.00
                             </div>
                         </div>
                         <!-- Product actions-->
@@ -191,24 +181,19 @@
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name-->
+                                <!-- Product name -->
                                 <h5 class="fw-bolder">Special Item</h5>
                                 <!-- Product reviews-->
                                 <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">$20.00</span>
-                                $18.00
+                                <span class="text-muted text-decoration-line-through">R$20.00</span>
+                                R$18.00
                             </div>
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
                         </div>
                     </div>
                 </div>
@@ -219,23 +204,18 @@
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <!-- Product name-->
+                                <!-- Product name -->
                                 <h5 class="fw-bolder">Popular Item</h5>
                                 <!-- Product reviews-->
                                 <div class="d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
-                                    <div class="bi-star-fill"></div>
                                 </div>
                                 <!-- Product price-->
-                                $40.00
+                                R$40.00
                             </div>
                         </div>
                         <!-- Product actions-->
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                        <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
                         </div>
                     </div>
                 </div>
