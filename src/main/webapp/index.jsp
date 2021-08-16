@@ -227,7 +227,5 @@
     <!-- End Footer -->
     <!-- Bootstrap core JS-->
     <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
-    <!-- Core theme JS-->
-    <script src="assets/js/scripts.js"></script>
     </body>
 </html>

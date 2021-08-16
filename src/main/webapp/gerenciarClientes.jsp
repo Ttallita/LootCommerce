@@ -5,15 +5,15 @@
   <meta charset="UTF-8"/>
   <title>Clientes</title>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
-  <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>'/>
-  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>'/>
   <link href="assets/css/style.css" rel="stylesheet" />
+
 </head>
 
 <body>
   <!-- Navigation-->
-  <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8"/>
+  <c:import url="/includes/header.jsp" charEncoding="UTF-8"/>
   <main>
     <div class="container mt-3">
         <div class="row g-5">
@@ -54,11 +54,19 @@
                     </li>
                 </ul>
             </div>
+
             <div class="col-md-7 col-lg-10">
                 <div class="chartjs-size-monitor">
                     <div class="card mb-4">
                         <h4 class="mb-3">Clientes</h4>
-                        <table id="datatablesSimple">
+                        <a class="btn btn-primary" href="cadastrarCliente-Administrador.jsp" role="button">
+                            <span class="material-icons">
+                                group_add
+                            </span>
+                            Cadastrar cliente
+                        </a>
+
+                        <table>
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -67,8 +75,7 @@
                                     <th>Gênero</th>
                                     <th>Rank</th>
                                     <th>Nascimento</th>
-                                    <th>Editar</th>
-                                    <th>Inativar</th>
+                                    <th>Opções</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,14 +87,18 @@
                                   <td>61</td>
                                   <td>2011/04/25</td>
                                   <td>
-                                     <span class="material-icons">
-                                        mode_edit
-                                     </span>
-                                  </td>
-                                  <td>
-                                    <span class="material-icons">
-                                      delete
-                                    </span>
+                                    <div>
+                                        <button class="btn btn-outline-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="material-icons">
+                                                list
+                                            </span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">Consultar Transações</a></li>
+                                        <li><a class="dropdown-item" href="#">Editar</a></li>
+                                        <li><a class="dropdown-item" href="#">Inativar</a></li>
+                                        </ul>
+                                    </div>
                                   </td>
                                 </tr>
                                 <tr>
@@ -97,16 +108,20 @@
                                     <td>M</td>
                                     <td>63</td>
                                     <td>2011/07/25</td>
-                                    <td>
-                                        <span class="material-icons">
-                                            mode_edit
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="material-icons">
-                                            delete
-                                        </span>
-                                    </td>
+                                  <td>
+                                    <div>
+                                        <button class="btn btn-outline-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="material-icons">
+                                                list
+                                            </span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">Consultar Transações</a></li>
+                                        <li><a class="dropdown-item" href="#">Editar</a></li>
+                                        <li><a class="dropdown-item" href="#">Inativar</a></li>
+                                        </ul>
+                                    </div>
+                                  </td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
@@ -115,16 +130,20 @@
                                     <td>M</td>
                                     <td>38</td>
                                     <td>2011/05/03</td>
-                                    <td>
-                                        <span class="material-icons">
-                                            mode_edit
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="material-icons">
-                                            delete
-                                        </span>
-                                    </td>
+                                  <td>
+                                    <div>
+                                        <button class="btn btn-outline-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="material-icons">
+                                                list
+                                            </span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">Consultar Transações</a></li>
+                                        <li><a class="dropdown-item" href="#">Editar</a></li>
+                                        <li><a class="dropdown-item" href="#">Inativar</a></li>
+                                        </ul>
+                                    </div>
+                                  </td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
@@ -133,17 +152,20 @@
                                     <td>N/A</td>
                                     <td>37</td>
                                     <td>2009/08/19</td>
-                                    <td>
-                                        <span class="material-icons">
-                                            mode_edit
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="material-icons">
-                                            delete
-                                        </span>
-                                    </td>
-                                </tr>
+                                  <td>
+                                    <div>
+                                        <button class="btn btn-outline-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="material-icons">
+                                                list
+                                            </span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">Consultar Transações</a></li>
+                                        <li><a class="dropdown-item" href="#">Editar</a></li>
+                                        <li><a class="dropdown-item" href="#">Inativar</a></li>
+                                        </ul>
+                                    </div>
+                                  </td>
                                 <tr>
                                     <td>5</td>
                                     <td>Thor Walton</td>
@@ -151,16 +173,20 @@
                                     <td>M</td>
                                     <td>61</td>
                                     <td>2013/08/11</td>
-                                    <td>
-                                        <span class="material-icons">
-                                            mode_edit
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="material-icons">
-                                            delete
-                                        </span>
-                                    </td>
+                                  <td>
+                                    <div>
+                                        <button class="btn btn-outline-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="material-icons">
+                                                list
+                                            </span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">Consultar Transações</a></li>
+                                        <li><a class="dropdown-item" href="#">Editar</a></li>
+                                        <li><a class="dropdown-item" href="#">Inativar</a></li>
+                                        </ul>
+                                    </div>
+                                  </td>
                                 </tr>
                                 <tr>
                                     <td>6</td>
@@ -169,16 +195,20 @@
                                     <td>F</td>
                                     <td>27</td>
                                     <td>2011/01/25</td>
-                                    <td>
-                                        <span class="material-icons">
-                                            mode_edit
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <span class="material-icons">
-                                            delete
-                                        </span>
-                                    </td>
+                                  <td>
+                                    <div>
+                                        <button class="btn btn-outline-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <span class="material-icons">
+                                                list
+                                            </span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#">Consultar Transações</a></li>
+                                        <li><a class="dropdown-item" href="#">Editar</a></li>
+                                        <li><a class="dropdown-item" href="#">Inativar</a></li>
+                                        </ul>
+                                    </div>
+                                  </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -190,7 +220,7 @@
   </main>
   <c:import url="/includes/footer.jsp" charEncoding="UTF-8"/>
 </body>
-<script src="assets/js/formatacao-tabela.js"></script>
-<script src="assets/js/datatables-simple-demo.js"></script>
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.min.js"/>'></script>
+<script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
+
 </html>
