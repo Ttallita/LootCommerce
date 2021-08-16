@@ -6,19 +6,13 @@
   <title>Clientes</title>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-
-  <style>
-    .card {
-      padding: 30px 40px;
-    }
-  </style>
 </head>
 
 <body>
   <!-- Navigation-->
   <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8"/>
 
-  <div class="container">
+  <div class="container mt-3">
     <main>
       <div class="row g-5">
         <div class="col-md-5 col-lg-2 order-md-first">
@@ -59,7 +53,7 @@
           </ul>
         </div>
         <div class="col-md-7 col-lg-10">
-          <div class="card mb-4">
+          <div class="card mb-4 p-3">
           <h4 class="mb-3">Perfil</h4>
           <form class="needs-validation" novalidate="">
             <div class="row g-6">
@@ -242,13 +236,8 @@
       </div>
     </main>
   </div>
-
-<script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-<script src="form-validation.js"></script>
-
+  <c:import url="/includes/footer.jsp" charEncoding="UTF-8"/>
 </body>
-
-<script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.min.js"/>'></script>
-
-
+<script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
+<script src="form-validation.js"></script>
 </html>
