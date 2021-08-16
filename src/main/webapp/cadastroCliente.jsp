@@ -5,89 +5,75 @@
   <meta charset="UTF-8"/>
   <title>Clientes</title>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
-
-  <style>
-    .card {
-      padding: 30px 40px;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href='assets/css/style.css'/>
 </head>
-
 <body>
-  <!-- Navigation-->
-  <c:import url="/includes/header.jsp" charEncoding="UTF-8"/>
-
-  <div class="container-fluid px-1 py-5">
-  <div class="row d-flex justify-content-center">
-    <div class="col-xl-7 col-lg-8 col-md-9 col-11">
-      <div class="card">
-        <h5 class="mb-4">Cadastro</h5>
-        <form class="needs-validation" novalidate="">
-          <div class="row g-6">
-            <div class="col-sm-6 form-outline">
-              <label for="nome" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="nome" placeholder="" value="" required="">
-              <div class="invalid-feedback">
-                Insira seu primeiro nome.
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <label for="sobrenome" class="form-label">Sobrenome</label>
-              <input type="text" class="form-control" id="sobrenome" placeholder="" value="" required="">
-              <div class="invalid-feedback">
-                Insira seu sobrenome.
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <label for="pais" class="form-label">Gênero</label>
-              <select class="form-select" id="pais" required="">
-                <option value="">Selecione</option>
-                <option>Masculino</option>
-                <option>Feminimo</option>
-                <option>Outro</option>
-                <option>Prefiro não informar</option>
-              </select>
-              <div class="invalid-feedback">
-                Selecione um país.
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <label for="pais" class="form-label">Data de nascimento</label>
-              <select class="form-select" id="pais" required="">
-                <option value="">Selecione</option>
-              </select>
-              <div class="invalid-feedback">
-                Selecione sua data de nascimento.
-              </div>
-            </div>
-
-            <div class="col-4">
-              <label for="cpf" class="form-label">CPF</label>
-              <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" value="" required="">
-              <div class="invalid-feedback">
-                Insira seu número de CPF.
-              </div>
-            </div>
-
+    <!-- Navigation-->
+    <c:import url="/includes/header.jsp" charEncoding="UTF-8"/>
+    <div class="container">
+        <div class="row justify-content-center">
             <div class="col-12">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" placeholder="" value="" required="">
-              <div class="invalid-feedback">
-                Insira um email válido.
-              </div>
-            </div>
-
-            <div class="col-6">
-              <label for="senha" class="form-label">Senha</label>
-              <input type="senha" class="form-control" id="senha" placeholder="" value="" required="">
-              <div class="invalid-feedback">
-                A senha deve possuir pelo menos 8 caracteres, ter letras maiúsculas e minúsculas e conter caracteres especiais.
-              </div>
-            </div>
-
+                <div class="card p-3 mt-3">
+                    <h5 class="mb-4">Cadastro</h5>
+                    <form class="needs-validation" novalidate="">
+                    <div class="row g-6">
+                        <div class="col-sm-6 form-outline">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" placeholder="" value="" required="">
+                            <div class="invalid-feedback">
+                                Insira seu primeiro nome.
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="sobrenome" class="form-label">Sobrenome</label>
+                            <input type="text" class="form-control" id="sobrenome" placeholder="" value="" required="">
+                            <div class="invalid-feedback">
+                                Insira seu sobrenome.
+                             </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="pais" class="form-label">Gênero</label>
+                            <select class="form-select" id="pais" required="">
+                                <option value="">Selecione</option>
+                                <option>Masculino</option>
+                                <option>Feminimo</option>
+                                <option>Outro</option>
+                                <option>Prefiro não informar</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selecione um país.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="pais" class="form-label">Data de nascimento</label>
+                            <select class="form-select" id="pais" required="">
+                                <option value="">Selecione</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Selecione sua data de nascimento.
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <label for="cpf" class="form-label">CPF</label>
+                            <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" value="" required="">
+                            <div class="invalid-feedback">
+                                Insira seu número de CPF.
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="" value="" required="">
+                            <div class="invalid-feedback">
+                                Insira um email válido.
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="senha" class="form-control" id="senha" placeholder="" value="" required="">
+                            <div class="invalid-feedback">
+                                A senha deve possuir pelo menos 8 caracteres, ter letras maiúsculas e minúsculas e conter caracteres especiais.
+                            </div>
+                        </div>
             <div class="col-6">
               <label for="senha-confirmacao" class="form-label">Insira sua senha novamente</label>
               <input type="senha-confirmacao" class="form-control" id="senha-confirmacao" placeholder="" value="" required="">
@@ -199,13 +185,10 @@
           </button>
         </form>
       </div>
-
     </div>
   </div>
   </div>
+  <c:import url="/includes/footer.jsp" charEncoding="UTF-8"/>
 </body>
-
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.min.js"/>'></script>
-
-
 </html>
