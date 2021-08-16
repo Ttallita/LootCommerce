@@ -16,8 +16,8 @@ public class Cliente extends Entidade {
     private String email;
     private String senha;
     private Endereco endereco;
-    private List<String> enderecoEntrega;
-    private List<String> enderecoCobranca;
+    private List<Endereco> enderecoEntrega;
+    private List<Endereco> enderecoCobranca;
     private List<CartaoDeCredito> cartoesDeCredito;
     private int ranking;
 
@@ -85,19 +85,19 @@ public class Cliente extends Entidade {
         this.endereco = endereco;
     }
 
-    public List<String> getEnderecoEntrega() {
+    public List<Endereco> getEnderecoEntrega() {
         return enderecoEntrega;
     }
 
-    public void setEnderecoEntrega(List<String> enderecoEntrega) {
+    public void setEnderecoEntrega(List<Endereco> enderecoEntrega) {
         this.enderecoEntrega = enderecoEntrega;
     }
 
-    public List<String> getEnderecoCobranca() {
+    public List<Endereco> getEnderecoCobranca() {
         return enderecoCobranca;
     }
 
-    public void setEnderecoCobranca(List<String> enderecoCobranca) {
+    public void setEnderecoCobranca(List<Endereco> enderecoCobranca) {
         this.enderecoCobranca = enderecoCobranca;
     }
 
