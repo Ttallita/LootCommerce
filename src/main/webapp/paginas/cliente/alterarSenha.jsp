@@ -68,24 +68,24 @@
               </div>
 
               <div class="col-6">
-                <label for="senha" class="form-label">Senha atual</label>
-                <input type="senha" class="form-control" id="senha" placeholder="" value="" required="">
+                <label for="password" class="form-label">Senha atual</label>
+                <input type="password" class="form-control" id="senha" placeholder="" value="" required="">
                 <div class="invalid-feedback">
                   A senha deve possuir pelo menos 8 caracteres, ter letras maiúsculas e minúsculas e conter caracteres especiais.
                 </div>
               </div>
 
               <div class="col-6">
-                <label for="senha" class="form-label">Nova senha</label>
-                <input type="senha" class="form-control" id="senha" placeholder="" value="" required="">
+                <label for="password" class="form-label">Nova senha</label>
+                <input type="password" class="form-control" id="senha" placeholder="" value="" required="">
                 <div class="invalid-feedback">
                   A senha deve possuir pelo menos 8 caracteres, ter letras maiúsculas e minúsculas e conter caracteres especiais.
                 </div>
               </div>
 
               <div class="col-6">
-                <label for="senha" class="form-label">Confirme a nova senha</label>
-                <input type="senha" class="form-control" id="senha" placeholder="" value="" required="">
+                <label for="password" class="form-label">Confirme a nova senha</label>
+                <input type="password" class="form-control" id="senha" placeholder="" value="" required="">
                 <div class="invalid-feedback">
                   A senha deve possuir pelo menos 8 caracteres, ter letras maiúsculas e minúsculas e conter caracteres especiais.
                 </div>

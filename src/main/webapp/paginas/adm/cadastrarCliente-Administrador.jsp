@@ -86,11 +86,9 @@
                 </div>
               </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
               <label for="pais" class="form-label">Data de nascimento</label>
-              <select class="form-select" id="pais" required="">
-                <option value="">Selecione</option>
-              </select>
+              <input type="date" class="form-control" id="date" value="" required="">
               <div class="invalid-feedback">
                 Selecione sua data de nascimento.
               </div>
@@ -218,12 +216,6 @@
                 <label for="observacao" class="form-label">Observação<span class="text-muted">(Opcional)</span></label>
                 <input type="text" class="form-control" id="observacao" placeholder="">
               </div>
-
-            </div>
-            <hr class="my-4">
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="termos-e-condicoes">
-              <label class="form-check-label" for="termos-e-condicoes">Aceito os Termos e condições e autorizo o uso de meus dados de acordo com a Declaração de privacidade.</label>
             </div>
             <hr class="my-4">
             <button class="btn btn-outline-dark mt-auto w-100 btn-lg" type="submit">

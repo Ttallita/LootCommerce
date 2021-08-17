@@ -60,14 +60,14 @@
                     <div class="card mb-4">
                         <h4 class="mb-3">Histórico de Transações</h4>
 
-                        <table id="datatablesSimple">
+                        <table id="datatablesSimple" class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Quantidade</th>
+                                    <th>Quant.</th>
                                     <th>Preço total</th>
-                                    <th>Valor frete</th>
-                                    <th>Data e hora da compra</th>
+                                    <th>Frete</th>
+                                    <th>Data e hora</th>
                                     <th>Itens</th>
                                     <th>Data de envio</th>
                                     <th>Data de entrega</th>

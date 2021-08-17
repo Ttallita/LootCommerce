@@ -5,7 +5,6 @@
   <meta charset="UTF-8"/>
   <title>Clientes</title>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>'/>
   <link href="assets/css/style.css" rel="stylesheet" />
 
@@ -66,7 +65,7 @@
                             Cadastrar cliente
                         </a>
 
-                        <table>
+                        <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -96,6 +95,7 @@
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                         <li><a class="dropdown-item" href="#">Consultar Transações</a></li>
                                         <li><a class="dropdown-item" href="#">Editar</a></li>
+                                        <li><hr class="dropdown-divider link-light"></li>
                                         <li><a class="dropdown-item" href="#">Inativar</a></li>
                                         </ul>
                                     </div>
@@ -118,19 +118,20 @@
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                         <li><a class="dropdown-item" href="#">Consultar Transações</a></li>
                                         <li><a class="dropdown-item" href="#">Editar</a></li>
+                                        <li><hr class="dropdown-divider link-light"></li>
                                         <li><a class="dropdown-item" href="#">Inativar</a></li>
                                         </ul>
                                     </div>
                                   </td>
                                 </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>Bruno Nash</td>
-                                    <td>000.000.000-00</td>
-                                    <td>M</td>
-                                    <td>38</td>
-                                    <td>2011/05/03</td>
-                                  <td>
+                                <tr class="table-secondary">
+                                    <td class="table-secondary">3</td>
+                                    <td class="table-secondary">Bruno Nash</td>
+                                    <td class="table-secondary">000.000.000-00</td>
+                                    <td class="table-secondary">M</td>
+                                    <td class="table-secondary">38</td>
+                                    <td class="table-secondary">2011/05/03</td>
+                                  <td class="table-secondary">
                                     <div>
                                         <button class="btn btn-outline-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="material-icons">
@@ -140,10 +141,10 @@
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                         <li><a class="dropdown-item" href="#">Consultar Transações</a></li>
                                         <li><a class="dropdown-item" href="#">Editar</a></li>
-                                        <li><a class="dropdown-item" href="#">Inativar</a></li>
+                                        <li><hr class="dropdown-divider link-light"></li>
+                                        <li><a class="dropdown-item" href="#">Ativar</a></li>
                                         </ul>
                                     </div>
-                                  </td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
@@ -162,6 +163,7 @@
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                         <li><a class="dropdown-item" href="#">Consultar Transações</a></li>
                                         <li><a class="dropdown-item" href="#">Editar</a></li>
+                                        <li><hr class="dropdown-divider link-light"></li>
                                         <li><a class="dropdown-item" href="#">Inativar</a></li>
                                         </ul>
                                     </div>
@@ -183,6 +185,7 @@
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                         <li><a class="dropdown-item" href="#">Consultar Transações</a></li>
                                         <li><a class="dropdown-item" href="#">Editar</a></li>
+                                        <li><hr class="dropdown-divider link-light"></li>
                                         <li><a class="dropdown-item" href="#">Inativar</a></li>
                                         </ul>
                                     </div>
@@ -205,6 +208,7 @@
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                         <li><a class="dropdown-item" href="#">Consultar Transações</a></li>
                                         <li><a class="dropdown-item" href="#">Editar</a></li>
+                                        <li><hr class="dropdown-divider link-light"></li>
                                         <li><a class="dropdown-item" href="#">Inativar</a></li>
                                         </ul>
                                     </div>
