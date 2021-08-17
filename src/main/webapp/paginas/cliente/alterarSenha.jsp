@@ -6,7 +6,7 @@
   <title>Clientes</title>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href='assets/css/style.css'/>
+  <link rel="stylesheet" type="text/css" href='../../assets/css/style.css'/>
 </head>
 
 <body>
@@ -87,6 +87,4 @@
 </body>
 <script src="form-validation.js"></script>
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
-
-
 </html>

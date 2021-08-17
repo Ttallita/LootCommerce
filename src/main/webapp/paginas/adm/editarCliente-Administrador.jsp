@@ -11,6 +11,7 @@
 <body>
   <!-- Navigation-->
   <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8"/>
+
   <div class="container mt-3">
     <main>
       <div class="row g-5">
@@ -51,7 +52,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-md-7 col-lg-10 p-3">
+        <div class="col-md-7 col-lg-10">
           <div class="card mb-4 p-3">
           <h4 class="mb-3">Perfil</h4>
           <form class="needs-validation" novalidate="">
@@ -86,23 +87,23 @@
                 </div>
               </div>
 
-            <div class="col-md-4">
-              <label for="pais" class="form-label">Data de nascimento</label>
-              <select class="form-select" id="pais" required="">
-                <option value="">Selecione</option>
-              </select>
-              <div class="invalid-feedback">
-                Selecione sua data de nascimento.
+              <div class="col-md-4">
+                <label for="pais" class="form-label">Data de nascimento</label>
+                <select class="form-select" id="pais" required="">
+                  <option value="">Selecione</option>
+                </select>
+                <div class="invalid-feedback">
+                  Selecione sua data de nascimento.
+                </div>
               </div>
-            </div>
 
-            <div class="col-4">
-              <label for="cpf" class="form-label">CPF</label>
-              <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" value="" required="">
-              <div class="invalid-feedback">
-                Insira seu número de CPF.
+              <div class="col-4">
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" value="" required="">
+                <div class="invalid-feedback">
+                  Insira seu número de CPF.
+                </div>
               </div>
-            </div>
 
               <div class="col-12">
                 <label for="email" class="form-label">Email</label>
@@ -227,7 +228,7 @@
             </div>
             <hr class="my-4">
             <button class="btn btn-outline-dark mt-auto w-100 btn-lg" type="submit">
-              Cadastrar
+              Editar
             </button>
           </form>
           </div>
@@ -237,6 +238,6 @@
   </div>
   <c:import url="/includes/footer.jsp" charEncoding="UTF-8"/>
 </body>
-<script src="form-validation.js"></script>
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
+<script src="form-validation.js"></script>
 </html>
