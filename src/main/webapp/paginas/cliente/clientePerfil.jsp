@@ -10,7 +10,6 @@
 <body>
   <!-- Navigation-->
   <c:import url="/includes/header.jsp" charEncoding="UTF-8"/>
-
   <div class="container mt-3">
     <main>
       <div class="row g-5">
