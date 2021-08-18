@@ -13,7 +13,7 @@
 
 <body>
   <!-- Navigation-->
-  <c:import url="/includes/header.jsp" charEncoding="UTF-8"/>
+  <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8"/>
   <main>
     <div class="container mt-3">
         <div class="row g-5">
@@ -59,6 +59,7 @@
                 <div class="chartjs-size-monitor">
                     <div class="card mb-4">
                         <h4 class="mb-3">Histórico de Transações</h4>
+                        <h5 class="mb-3">Tiger Nixon</h5>
 
                         <table id="datatablesSimple" class="table table-hover">
                             <thead>

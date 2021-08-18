@@ -79,7 +79,7 @@
                               <td>VISA</td>
                               <td>233</td>
                               <td>
-                                <span class="material-icons text-primary">
+                                <span class="material-icons">
                                     mode_edit
                                 </span>
                               </td>
@@ -100,7 +100,7 @@
                                 </span>
                               </td>
                               <td>
-                                <span class="material-icons">
+                                <span class="material-icons text-danger">
                                     delete
                                 </span>
                               </td>
@@ -116,7 +116,7 @@
                                 </span>
                               </td>
                               <td>
-                                <span class="material-icons">
+                                <span class="material-icons text-danger">
                                     delete
                                 </span>
                               </td>

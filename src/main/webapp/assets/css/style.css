@@ -33,7 +33,6 @@ footer {
     height: 2.5rem;
 }
 
-.inline-icon {
-   vertical-align: bottom;
-   font-size: 18px !important;
+.card {
+    padding: 30px 40px;
 }
