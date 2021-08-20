@@ -22,10 +22,6 @@ body {
     line-height: 1.42857;
 }
 
-.card {
-    padding: 30px 40px;
-}
-
 footer {
     position: fixed;
     bottom: 0;
@@ -33,6 +29,63 @@ footer {
     height: 2.5rem;
 }
 
-.card {
-    padding: 30px 40px;
+/*Formulário por etapas*/
+.tab {
+    display: none;
+}
+input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+}
+
+input.invalid {
+    background-color: #ffdddd;
+}
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;  
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+/*Telas de login e cadastro*/
+.d-none{
+    display:none!important
+}
+.bg-gradient-primary{
+    background-color:#0D6EFD;
+    background-image:linear-gradient(180deg,#4e73df 10%,#224abe 100%);
+    background-size:cover
+}
+.small,small{
+    font-size:80%;
+    font-weight:400
+}
+.o-hidden{
+    overflow:hidden!important
+}
+.d-lg-block{
+    display:block!important
+}
+.bg-login-image{
+    background:url(/Ecommerce/assets/img/login_miku.png);
+    background-position:center;
+    background-size:cover
+}
+.bg-cadastro-image{
+    background:url(/Ecommerce/assets/img/cadastro_kong.png);
+    background-position:center;
+    background-size:cover
 }

@@ -191,4 +191,5 @@
   <c:import url="/includes/footer.jsp" charEncoding="UTF-8"/>
 </body>
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.min.js"/>'></script>
+
 </html>

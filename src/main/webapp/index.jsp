@@ -21,13 +21,13 @@
             </div>
             <div class="carousel-inner text-center">
                 <div class="carousel-item active text-center">
-                    <img src="assets\images\promocao_exemplo.jpg" class="img-fluid" alt="Responsive image">
+                    <img src="assets\img\promocao_exemplo.jpg" class="img-fluid" alt="Responsive image">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets\images\promocao_exemplo.jpg" class="img-fluid" alt="Responsive image">
+                    <img src="assets\img\promocao_exemplo.jpg" class="img-fluid" alt="Responsive image">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets\images\promocao_exemplo.jpg" class="img-fluid" alt="Responsive image">
+                    <img src="assets\img\promocao_exemplo.jpg" class="img-fluid" alt="Responsive image">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -40,6 +40,7 @@
             </button>
         </div>
     </header>
+
     <!-- Section-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
@@ -47,7 +48,7 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets\images\Fushiguro_Megumi_Nendoroid.jpg" alt="..." />
+                        <img class="card-img-top" src="assets\img\nendoroids\Fushiguro_Megumi_Nendoroid.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -59,14 +60,14 @@
                         </div>
                         <!-- Product actions-->
                         <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
+                            <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
                         </div>
                     </div>
                 </div>
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets\images\rei_pelucia.jpg" alt="..." />
+                        <img class="card-img-top" src="assets\img\rei_pelucia.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -89,7 +90,7 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets\images\levi_Nendoroid.jpg" alt="..." />
+                        <img class="card-img-top" src="assets\img\nendoroids\levi_Nendoroid.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -109,7 +110,7 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets\images\Lotte_Yanson_Nendoroid.jpg" alt="..." />
+                        <img class="card-img-top" src="assets\img\nendoroids\Lotte_Yanson_Nendoroid.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -131,7 +132,7 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets\images\shikamaru_Nendoroid.jpg" alt="..." />
+                        <img class="card-img-top" src="assets\img\nendoroids\shikamaru_Nendoroid.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -151,7 +152,7 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets\images\Tsuyu_Asui_Nendoroid.jpg" alt="..." />
+                        <img class="card-img-top" src="assets\img\nendoroids\Tsuyu_Asui_Nendoroid.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -170,7 +171,7 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets\images\yumeko_Nendoroid.jpg" alt="..." />
+                        <img class="card-img-top" src="assets\img\nendoroids\yumeko_Nendoroid.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -193,7 +194,7 @@
                 <div class="col mb-5">
                     <div class="card h-100">
                         <!-- Product image-->
-                        <img class="card-img-top" src="assets\images\todoroki_tiger_Nendoroid.jpg" alt="..." />
+                        <img class="card-img-top" src="assets\img\nendoroids\todoroki_tiger_Nendoroid.jpg" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
@@ -215,6 +216,7 @@
             </div>
         </div>
     </section>
+
     <!-- Start Footer -->
     <c:import url="/includes/footer.jsp" charEncoding="UTF-8"/>
     <!-- End Footer -->
