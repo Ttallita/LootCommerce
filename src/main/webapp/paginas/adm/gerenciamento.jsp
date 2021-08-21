@@ -14,14 +14,13 @@
   <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8"/>
 
 	<div class="wrapper container mt-3">
-		<div class="main">
 			<main class="content">
 				<div class="container-fluid p-0">
 					<h1 class="h3 mb-3">Administrador</h1>
 					<div class="row">
 						<div class="col-md-3 col-xl-2">
-								<div class="list-group btn-group-vertical">
-									<button class="active btn btn-primary" id="v-pills-principal-tab" data-bs-toggle="pill" data-bs-target="#v-pills-principal" type="button" aria-controls="v-pills-principal" aria-selected="true">
+							<div class="list-group btn-group-vertical">
+								<button class="active btn btn-primary" id="v-pills-principal-tab" data-bs-toggle="pill" data-bs-target="#v-pills-principal" type="button" aria-controls="v-pills-principal" aria-selected="true">
                     <span class="material-icons">home</span>Principal</button>
                   
                   <button class="btn btn-primary" id="v-pills-clientes-tab" data-bs-toggle="pill" data-bs-target="#v-pills-clientes" type="button" aria-controls="v-pills-clientes" aria-selected="false">
@@ -252,7 +251,6 @@
 					</div>
 				</div>
 			</main>
-		</div>
 	</div>
 </body>
 
