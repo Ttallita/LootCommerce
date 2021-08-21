@@ -44,172 +44,274 @@
     <!-- Section-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 mt-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div class="row row-cols-xl-5">
                 <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="assets\img\nendoroids\Fushiguro_Megumi_Nendoroid.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name -->
+                    <div class="col mb-5">
+                        <div class="card shadow ">
+                            <img class="card-img-top" src="assets\img\nendoroids\Fushiguro_Megumi_Nendoroid.jpg" alt="...">
+                            <div class="card-body">
                                 <h5 class="fw-bolder">Fancy Product</h5>
-                                <!-- Product price-->
-                                R$40.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                            <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="assets\img\rei_pelucia.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name -->
-                                <h5 class="fw-bolder">Special Item</h5>
-                                <!-- Product reviews-->
-                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                <div class="row">
+                                      <div class="col col-md-auto">
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                      </div>
                                 </div>
-                                <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">R$20.00</span>
-                                R$18.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
-                            </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="assets\img\nendoroids\levi_Nendoroid.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name -->
-                                <h5 class="fw-bolder">Sale Item</h5>
-                                <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">R$50.00</span>
-                                R$25.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="assets\img\nendoroids\Lotte_Yanson_Nendoroid.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name -->
-                                <h5 class="fw-bolder">Popular Item</h5>
-                                <!-- Product reviews-->
-                                <div class="d-flex justify-content-center small text-warning mb-2">
+                                <div class="row">
+                                    <div class="col-8">R$40.00</div>
+                                    <div class="col-4">
+                                        <button type="button" class="btn btn-outline-primary btn-circle">
+                                            <span class="material-icons md-18">add_shopping_cart</span>
+                                        </button>
+                                    </div>
                                 </div>
-                                <!-- Product price-->
-                                R$40.00
                             </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
                         </div>
                     </div>
                 </div>
                 <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="assets\img\nendoroids\shikamaru_Nendoroid.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name -->
-                                <h5 class="fw-bolder">Sale Item</h5>
-                                <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">R$50.00</span>
-                                R$25.00
-                            </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="assets\img\nendoroids\Tsuyu_Asui_Nendoroid.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name -->
+                    <div class="col mb-5">
+                        <div class="card shadow ">
+                            <img class="card-img-top" src="assets\img\pelucias\rei_pelucia.jpg" alt="...">
+                            <div class="card-body">
                                 <h5 class="fw-bolder">Fancy Product</h5>
-                                <!-- Product price-->
-                                R$280.00
+                                <div class="row">
+                                      <div class="col col-md-auto">
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                      </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8">R$40.00</div>
+                                    <div class="col-4">
+                                        <button type="button" class="btn btn-outline-primary btn-circle">
+                                            <span class="material-icons md-18">add_shopping_cart</span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
                         </div>
                     </div>
                 </div>
                 <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="assets\img\nendoroids\yumeko_Nendoroid.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name -->
-                                <h5 class="fw-bolder">Special Item</h5>
-                                <!-- Product reviews-->
-                                <div class="d-flex justify-content-center small text-warning mb-2">
+                    <div class="col mb-5">
+                        <div class="card shadow ">
+                            <img class="card-img-top" src="assets\img\nendoroids\levi_Nendoroid.jpg" alt="...">
+                            <div class="card-body">
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <div class="row">
+                                      <div class="col col-md-auto">
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                      </div>
                                 </div>
-                                <!-- Product price-->
-                                <span class="text-muted text-decoration-line-through">R$20.00</span>
-                                R$18.00
+                                <div class="row">
+                                    <div class="col-8">R$40.00</div>
+                                    <div class="col-4">
+                                        <button type="button" class="btn btn-outline-primary btn-circle">
+                                            <span class="material-icons md-18">add_shopping_cart</span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
                         </div>
                     </div>
                 </div>
                 <div class="col mb-5">
-                    <div class="card h-100">
-                        <!-- Product image-->
-                        <img class="card-img-top" src="assets\img\nendoroids\todoroki_tiger_Nendoroid.jpg" alt="..." />
-                        <!-- Product details-->
-                        <div class="card-body p-4">
-                            <div class="text-center">
-                                <!-- Product name -->
-                                <h5 class="fw-bolder">Popular Item</h5>
-                                <!-- Product reviews-->
-                                <div class="d-flex justify-content-center small text-warning mb-2">
+                    <div class="col mb-5">
+                        <div class="card shadow ">
+                            <img class="card-img-top" src="assets\img\nendoroids\Lotte_Yanson_Nendoroid.jpg" alt="...">
+                            <div class="card-body">
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <div class="row">
+                                      <div class="col col-md-auto">
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                      </div>
                                 </div>
-                                <!-- Product price-->
-                                R$40.00
+                                <div class="row">
+                                    <div class="col-8">R$40.00</div>
+                                    <div class="col-4">
+                                        <button type="button" class="btn btn-outline-primary btn-circle">
+                                            <span class="material-icons md-18">add_shopping_cart</span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <!-- Product actions-->
-                        <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Adicionar ao carrinho</a></div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="col mb-5">
+                        <div class="card shadow ">
+                            <img class="card-img-top" src="assets\img\nendoroids\shikamaru_Nendoroid.jpg" alt="...">
+                            <div class="card-body">
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <div class="row">
+                                      <div class="col col-md-auto">
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                      </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8">R$40.00</div>
+                                    <div class="col-4">
+                                        <button type="button" class="btn btn-outline-primary btn-circle">
+                                            <span class="material-icons md-18">add_shopping_cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="col mb-5">
+                        <div class="card shadow ">
+                            <img class="card-img-top" src="assets\img\nendoroids\Tsuyu_Asui_Nendoroid.jpg" alt="...">
+                            <div class="card-body">
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <div class="row">
+                                      <div class="col col-md-auto">
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                      </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8">R$40.00</div>
+                                    <div class="col-4">
+                                        <button type="button" class="btn btn-outline-primary btn-circle">
+                                            <span class="material-icons md-18">add_shopping_cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="col mb-5">
+                        <div class="card shadow ">
+                            <img class="card-img-top" src="assets\img\nendoroids\yumeko_Nendoroid.jpg" alt="...">
+                            <div class="card-body">
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <div class="row">
+                                      <div class="col col-md-auto">
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                      </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8">R$40.00</div>
+                                    <div class="col-4">
+                                        <button type="button" class="btn btn-outline-primary btn-circle">
+                                            <span class="material-icons md-18">add_shopping_cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="col mb-5">
+                        <div class="card shadow ">
+                            <img class="card-img-top" src="assets\img\nendoroids\todoroki_tiger_Nendoroid.jpg" alt="...">
+                            <div class="card-body">
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <div class="row">
+                                      <div class="col col-md-auto">
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                      </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8">R$40.00</div>
+                                    <div class="col-4">
+                                        <button type="button" class="btn btn-outline-primary btn-circle">
+                                            <span class="material-icons md-18">add_shopping_cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="col mb-5">
+                        <div class="card shadow ">
+                            <img class="card-img-top" src="assets\img\toga_himiko.jpg" alt="...">
+                            <div class="card-body">
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <div class="row">
+                                      <div class="col col-md-auto">
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                      </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8">R$40.00</div>
+                                    <div class="col-4">
+                                        <button type="button" class="btn btn-outline-primary btn-circle">
+                                            <span class="material-icons md-18">add_shopping_cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="col mb-5">
+                        <div class="card shadow ">
+                            <img class="card-img-top" src="assets\img\pelucias\miku_pelucia.jpg" alt="...">
+                            <div class="card-body">
+                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <div class="row">
+                                      <div class="col col-md-auto">
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                        <span class="material-icons md-18">star_rate</span>
+                                      </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-8">R$40.00</div>
+                                    <div class="col-4">
+                                        <button type="button" class="btn btn-outline-primary btn-circle">
+                                            <span class="material-icons md-18">add_shopping_cart</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -222,5 +324,6 @@
     <!-- End Footer -->
     <!-- Bootstrap core JS-->
     <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
+     
     </body>
 </html>
