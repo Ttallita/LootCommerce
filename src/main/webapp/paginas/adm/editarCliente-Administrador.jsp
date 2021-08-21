@@ -5,14 +5,12 @@
   <meta charset="UTF-8"/>
   <title>Clientes</title>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>'/>
+  <link rel="stylesheet" type="text/css" href='../../assets/css/style.css'/>
 </head>
-
 <body>
   <!-- Navigation-->
   <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8"/>
-
   <div class="container mt-3">
     <main>
       <div class="row g-5">
@@ -89,7 +87,7 @@
                     </span>
                 </label>
                 <select class="form-select" id="genero" required="" disabled>
-                    <option>Masculino</option>
+                  <option>Masculino</option>
                   <option value="">Selecione</option>
                   <option>Feminimo</option>
                   <option>Outro</option>
@@ -133,6 +131,32 @@
                 <input type="text" class="form-control" id="email" placeholder="" value="nome@email.com" required="" disabled>
                 <div class="invalid-feedback">
                   Insira um email válido.
+                </div>
+              </div>
+
+            <div class="col-3">
+              <div class="form-floating">
+                <select class="form-select" id="tipoTelefone" required="">
+                    <option value="">Selecione</option>
+                    <option>Residêncial</option>
+                    <option>Celular</option>>
+                  </select>
+                  <label for="phone" class="form-label">Tipo de Telefone</label>
+                <div class="invalid-feedback">Insira um tipo de telefone.</div>
+              </div>
+            </div>
+               <div class="col-3">
+                <div class="form-floating">
+                  <input type="ddd" class="form-control" id="ddd" placeholder="" value="" required="">
+                  <label for="ddd" class="form-label">DDD</label>
+                  <div class="invalid-feedback">Insira um DDD válido.</div>
+                </div>
+              </div>
+               <div class="col-3">
+                <div class="form-floating">
+                  <input type="phone" class="form-control" id="phone" placeholder="" value="" required="">
+                  <label for="phone" class="form-label">Telefone</label>
+                  <div class="invalid-feedback">Insira um Telefone válido.</div>
                 </div>
               </div>
 

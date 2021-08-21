@@ -21,7 +21,7 @@
                     <ul class="nav flex-column">
                     <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="clientePerfil.jsp">
-                       <span class="material-icons inline-icon">
+                       <span class="material-icons md-18">
                         account_circle
                        </span>
                         Perfil

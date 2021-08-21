@@ -13,6 +13,8 @@ function showTab(n) {
   }
   if (n == (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Cadastrar";
+
+
   } else {
     document.getElementById("nextBtn").innerHTML = "Próximo";
   }
@@ -32,7 +34,8 @@ function nextPrev(n) {
   // if you have reached the end of the form...
   if (currentTab >= x.length) {
     // ... the form gets submitted:
-    document.getElementById("regForm").submit();
+    document.getElementById("form-cadastro").submit();
+    window.location.href = "login.jsp"
     return false;
   }
   // Otherwise, display the correct tab:

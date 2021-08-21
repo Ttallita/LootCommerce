@@ -47,7 +47,7 @@
                                         <a class="small" href="#">Esqueceu sua senha?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="#">Criar conta!</a>
+                                        <a class="small" href="cadastro.jsp">Criar conta!</a>
                                     </div>
                                 </div>
                             </div>

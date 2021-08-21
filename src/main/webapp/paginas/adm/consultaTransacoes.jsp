@@ -5,12 +5,9 @@
   <meta charset="UTF-8"/>
   <title>Clientes</title>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>'/>
-  <link href="assets/css/style.css" rel="stylesheet" />
-
+  <link href="../../assets/css/style.css" rel="stylesheet" />
 </head>
-
 <body>
   <!-- Navigation-->
   <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8"/>
@@ -57,7 +54,7 @@
 
             <div class="col-md-7 col-lg-10">
                 <div class="chartjs-size-monitor">
-                    <div class="card mb-4">
+                    <div class="card mb-4 p-3">
                         <h4 class="mb-3">Histórico de Transações</h4>
                         <h5 class="mb-3">Tiger Nixon</h5>
 
@@ -129,5 +126,4 @@
 </body>
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.min.js"/>'></script>
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
-
 </html>

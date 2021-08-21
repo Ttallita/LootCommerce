@@ -5,7 +5,7 @@
   <meta charset="UTF-8"/>
   <title>Clientes</title>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href='../../assets/css/style.css'/>
 </head>
 
 <body>
@@ -73,12 +73,12 @@
                 </div>
               </div>
 
-              <div class="col-md-4">
+              <div class="col-md-3">
                 <div class="form-floating">
                   <select class="form-select" id="genero" required="">
                     <option value="">Selecione</option>
                     <option>Masculino</option>
-                    <option>Feminimo</option>
+                    <option>Feminino</option>
                     <option>Outro</option>
                     <option>Prefiro não informar</option>
                   </select>
@@ -95,7 +95,7 @@
               </div>
             </div>
 
-            <div class="col-4">
+            <div class="col-3">
               <div class="form-floating">
                 <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" value="" required="">
                 <label for="cpf" class="form-label">CPF</label>
@@ -103,7 +103,32 @@
               </div>
             </div>
 
-              <div class="col-12">
+            <div class="col-3">
+              <div class="form-floating">
+                <select class="form-select" id="tipoTelefone" required="">
+                    <option value="">Selecione</option>
+                    <option>Residêncial</option>
+                    <option>Celular</option>>
+                  </select>
+                  <label for="phone" class="form-label">Tipo de Telefone</label>
+                <div class="invalid-feedback">Insira um tipo de telefone.</div>
+              </div>
+            </div>
+               <div class="col-3">
+                <div class="form-floating">
+                  <input type="ddd" class="form-control" id="ddd" placeholder="" value="" required="">
+                  <label for="ddd" class="form-label">DDD</label>
+                  <div class="invalid-feedback">Insira um DDD válido.</div>
+                </div>
+              </div>
+               <div class="col-3">
+                <div class="form-floating">
+                  <input type="phone" class="form-control" id="phone" placeholder="" value="" required="">
+                  <label for="phone" class="form-label">Telefone</label>
+                  <div class="invalid-feedback">Insira um Telefone válido.</div>
+                </div>
+              </div>
+              <div class="col-6">
                 <div class="form-floating">
                   <input type="email" class="form-control" id="email" placeholder="" value="" required="">
                   <label for="email" class="form-label">Email</label>
@@ -232,6 +257,14 @@
   </div>
   <c:import url="/includes/footer.jsp" charEncoding="UTF-8"/>
 </body>
-<script src="form-validation.js"></script>
+<script src='<c:url value="/webjars/jquery/3.6.0/jquery.min.js"/>'></script>
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
+<script src='<c:url value="/webjars/jquery-mask-plugin/1.14.16/dist/jquery.mask.min.js"/>'></script>
+<script>
+    $(document).ready(function(){
+        $('#cpf').mask('000.000.000-00', {reverse: true});
+        $('#cep').mask('00000-000');
+        $('#phone').mask('(00) 00 00000-0000');
+    });
+</script>
 </html>
