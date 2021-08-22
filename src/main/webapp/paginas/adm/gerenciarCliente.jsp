@@ -6,13 +6,12 @@
   <title>Gerenciamento</title>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>'/>
-  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="../../assets/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
-  <!-- Navigation-->
-  <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8"/>
-
+    <!-- Navigation-->
+    <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8"/>
 	<div class="wrapper container mt-3">
 		<main class="content">
 			<div class="container-fluid p-0">
@@ -22,7 +21,8 @@
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
                             <button class="nav-link active" id="nav-dados-pessoais-tab" data-bs-toggle="tab" data-bs-target="#nav-dados-pessoais" type="button" role="tab" aria-controls="nav-dados-pessoais" aria-selected="true">Dados pessoais</button>
                             <button class="nav-link" id="nav-transacoes-tab" data-bs-toggle="tab" data-bs-target="#nav-transacoes" type="button" role="tab" aria-controls="nav-transacoes" aria-selected="false">Transações</button>
-                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
+                            <button class="nav-link" id="nav-endereco-tab" data-bs-toggle="tab" data-bs-target="#nav-endereco" type="button" role="tab" aria-controls="nav-endereco" aria-selected="false">Endereços</button>
+                            <button class="nav-link" id="nav-cartoes-tab" data-bs-toggle="tab" data-bs-target="#nav-cartoes" type="button" role="tab" aria-controls="nav-cartoes" aria-selected="false">Cartões</button>
                         </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
@@ -343,7 +343,162 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+                        <div class="tab-pane fade" id="nav-endereco" role="tabpanel" aria-labelledby="nav-endereco-tab">
+                            <h3 class="mb-2">Endereços cadastrados</h3>
+                            <div class="d-grid gap-2">
+                                <div class="d-grid gap-2">
+                                    <a href="cadastrarEndereco.jsp" class="btn btn-primary" role="button">Novo Endereço</a>
+                                </div>
+                            </div>
+                            <table class="table mt-2">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Logradouro</th>
+                                  <th scope="col">Número</th>
+                                  <th scope="col">Bairro</th>
+                                  <th scope="col">CEP</th>
+                                  <th scope="col">Cidade</th>
+                                  <th scope="col">Estado</th>
+                                  <th scope="col">Pais</th>
+                                  <th scope="col">Tipo</th>
+                                  <th scope="col">Alterar</th>
+                                  <th scope="col">Excluir</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Rua 25 de março</td>
+                                  <td>123</td>
+                                  <td>Castro Alves</td>
+                                  <td>04513-205</td>
+                                  <td>São Paulo</td>
+                                  <td>São Paulo</td>
+                                  <td>Brasil</td>
+                                  <td>Cobrança</td>
+                                  <td>
+                                    <span class="material-icons">
+                                        mode_edit
+                                    </span>
+                                  </td>
+                                  <td>
+                                    <span class="material-icons text-danger">
+                                        delete
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Rua 25 de março</td>
+                                  <td>123</td>
+                                  <td>Castro Alves</td>
+                                  <td>04513-205</td>
+                                  <td>São Paulo</td>
+                                  <td>São Paulo</td>
+                                  <td>Brasil</td>
+                                  <td>Entrega</td>
+                                  <td>
+                                    <span class="material-icons">
+                                        mode_edit
+                                    </span>
+                                  </td>
+                                  <td>
+                                    <span class="material-icons text-danger">
+                                        delete
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Rua 25 de março</td>
+                                  <td>123</td>
+                                  <td>Castro Alves</td>
+                                  <td>04513-205</td>
+                                  <td>São Paulo</td>
+                                  <td>São Paulo</td>
+                                  <td>Brasil</td>
+                                  <td>Cobrança</td>
+                                  <td>
+                                    <span class="material-icons">
+                                        mode_edit
+                                    </span>
+                                  </td>
+                                  <td>
+                                    <span class="material-icons text-danger">
+                                        delete
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade" id="nav-cartoes" role="tabpanel" aria-labelledby="nav-cartoes-tab">
+                            <h3 class="mb-2">Cartões</h3>
+                            <a href="cadastroCartao.jsp">
+                                <div class="d-grid gap-2">
+                                    <a href="cadastroCartao.jsp" class="btn btn-primary" role="button">Novo Cartão</a>
+                                </div>
+                            </a>
+                            <table class="table mt-2">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Nome Impresso</th>
+                                  <th scope="col">Número</th>
+                                  <th scope="col">Bandeira</th>
+                                  <th scope="col">Código</th>
+                                  <th scope="col">Alterar</th>
+                                  <th scope="col">Excluir</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>ANDRE GOMES</td>
+                                  <td>123131231412412</td>
+                                  <td>VISA</td>
+                                  <td>233</td>
+                                  <td>
+                                    <span class="material-icons">
+                                        mode_edit
+                                    </span>
+                                  </td>
+                                  <td>
+                                    <span class="material-icons text-danger">
+                                        delete
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>TALLITA SOUZA</td>
+                                  <td>123131231412412</td>
+                                  <td>VISA</td>
+                                  <td>233</td>
+                                  <td>
+                                    <span class="material-icons">
+                                        mode_edit
+                                    </span>
+                                  </td>
+                                  <td>
+                                    <span class="material-icons text-danger">
+                                        delete
+                                    </span>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>RUAN CAMPOS</td>
+                                  <td>123131231412412</td>
+                                  <td>VISA</td>
+                                  <td>233</td>
+                                  <td>
+                                    <span class="material-icons">
+                                        mode_edit
+                                    </span>
+                                  </td>
+                                  <td>
+                                    <span class="material-icons text-danger">
+                                        delete
+                                    </span>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
                     </div>
 				</div>
 			</div>
