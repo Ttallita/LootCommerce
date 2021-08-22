@@ -6,7 +6,7 @@
   <title>Gerenciamento</title>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>'/>
-  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="../../assets/css/style.css" rel="stylesheet" />
 </head>
 
 <body>
