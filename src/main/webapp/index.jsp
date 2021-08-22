@@ -6,9 +6,9 @@
     <title>fanLoot - Homepage</title>
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>'/>
-    <link rel="stylesheet" type="text/css" href='assets/css/style.css'/>
+    <link rel="stylesheet" type="text/css" href='/Ecommerce/assets/css/style.css' />
 </head>
-<body>
+<body class="bg-default">
     <!-- Navigation-->
     <c:import url="/includes/header.jsp" charEncoding="UTF-8"/>
     <!-- Header-->
