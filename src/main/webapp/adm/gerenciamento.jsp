@@ -67,8 +67,8 @@
 									<div class="card-body">
 										<h5 class="card-title">Clientes</h5>
                                         <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cadastrar">
-                                            <span class="material-icons">group_add</span>Cadastrar cliente</a>
+                                        <button type="button" id="novoCliente" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#cadastrar">
+                                            <span class="material-icons inline-icon">group_add</span>Cadastrar cliente</a>
                                         </button>
                                         
                                         <!-- Modal -->
@@ -92,7 +92,7 @@
                                                             </div>
                                                             <div class="col-6">
                                                                 <div class="form-floating">
-                                                                    <input type="senha" class="form-control" id="senha" placeholder="" value="" required="">
+                                                                    <input type="password" class="form-control" id="senha" placeholder="" value="" required="">
                                                                     <label for="senha" class="form-label">Senha</label>
                                                                     <div class="invalid-feedback">A senha deve possuir pelo menos 8 caracteres, ter letras
                                                                     maiúsculas e minúsculas e conter caracteres especiais.</div>
@@ -101,7 +101,7 @@
                                   
                                                             <div class="col-6">
                                                                 <div class="form-floating">
-                                                                    <input type="senha-confirmacao" class="form-control" id="senha-confirmacao" placeholder="" value="" required="">
+                                                                    <input type="password" class="form-control" id="senha-confirmacao" placeholder="" value="" required="">
                                                                     <label for="senha-confirmacao" class="form-label">Insira novamente</label>
                                                                     <div class="invalid-feedback">As senhas não são as mesmas.</div>
                                                                 </div>
@@ -178,7 +178,7 @@
                                                         </div>
                                                         
                                                         <hr>
-                                                        <h5 class="mb-3 fw-normal">Endereço de Cobrança</h5>
+                                                        <h5 class="mb-3 fw-normal">Endereço de Residêncial</h5>
                                                         <!--Endereço-->
                                                         <div class="row g-3 mb-3">
                                                           <div class="col-md-6">
@@ -272,13 +272,32 @@
                                                     </form>
                                                 </div>
                                                 <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                                <button type="button" class="btn btn-primary">Cadastrar</button>
+                                                <button type="button" class="btn btn-secondary">Cancelar</button>
+                                                <button type="button" id="btnCadastrar" data-bs-dismiss="modal" class="btn btn-primary">Cadastrar</button>
                                                 </div>
                                             </div>
                                             </div>
                                         </div>
-                                          
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="inativar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="inativarLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-sm">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="cadastrarLabel">Inativar</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Tem certeza que deseja inativar esse cliente?
+                                                </div>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary">Cancelar</button>
+                                                <button type="button" id="btnInativar" data-bs-dismiss="modal" class="btn btn-danger">Inativar</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+
                                         <div class="table-responsive">
                                             <table class="table table-hover table-bordered table-sm" cellspacing="0" width="100%">
                                                 <thead>
@@ -308,9 +327,9 @@
                                                                 </span>
                                                             </button>
                                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                            <li><a class="dropdown-item" href="/Ecommerce/adm/gerenciarCliente.jsp">Gerenciar</a></li>
+                                                            <li><a class="dropdown-item" id="gerenciarLink" href="/Ecommerce/adm/gerenciarCliente.jsp">Gerenciar</a></li>
                                                             <li><hr class="dropdown-divider link-light"></li>
-                                                            <li><a class="dropdown-item" href="#">Inativar</a></li>
+                                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" id="inativarLink" data-bs-target="#inativar">Inativar</a></li>
                                                             </ul>
                                                         </div>
                                                     </td>

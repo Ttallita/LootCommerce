@@ -8,18 +8,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
-public class GerenciarTest {
+public class GerenciarAbasTest {
     public static void main(String[] args) throws InterruptedException{
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
-        driver.get("http://localhost:8080/Ecommerce/paginas/adm/gerenciamento.jsp");
+        driver.get("http://localhost:8080/Ecommerce/adm/gerenciamento.jsp");
+        driver.manage().window().maximize();
 
-        Thread.sleep(1000);
         WebElement tabClientes = driver.findElement(By.id("v-pills-clientes-tab"));
+        Thread.sleep(1000);
 
         tabClientes.click();
+        Thread.sleep(2000);
 
         WebElement tableClientes = driver.findElement(By.className("table"));
 
@@ -29,9 +31,10 @@ public class GerenciarTest {
             List<WebElement> cells = row.findElements(By.tagName("td"));
             for (WebElement cell : cells) {
                 if(cell.getText().equals("list")) {
-                    cell.click();
-                    Thread.sleep(1000);
-                    cell.click();
+                    WebElement btn = cell.findElement(By.id("dropdownMenuButton1"));
+                    btn.click();
+                    Thread.sleep(2000);
+                    btn.click();
                 }
 
             }

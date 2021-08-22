@@ -94,3 +94,7 @@ input.invalid {
     background-position:center;
     background-size:cover
 }
+
+.inline-icon {
+   vertical-align: bottom;
+}

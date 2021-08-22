@@ -42,7 +42,7 @@
                             <div class="col-sm-6">
                                       <div class="input-group form-floating">
                                         <input type="text" class="form-control" id="nome" value="Tiger" required="" disabled="">
-                                        <button onclick="editar('nome')" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                                        <button onclick="editar('nome')" id="editarNome" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
                                         <label class="form-label">Nome</label>
                                         <div class="invalid-feedback">Campo obrigatório.</div>
                                       </div>
@@ -51,7 +51,7 @@
                             <div class="col-sm-6">
                                       <div class="input-group form-floating">
                                         <input type="text" class="form-control" id="sobrenome" value="Nixon" required="" disabled="">
-                                        <button onclick="editar('sobrenome')" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                                        <button onclick="editar('sobrenome')" id="editarSobrenome" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
                                         <label class="form-label">Sobrenome</label>
                                         <div class="invalid-feedback">Campo obrigatório.</div>
                                       </div>
@@ -66,7 +66,7 @@
                                           <option>Outro</option>
                                           <option>Prefiro não informar</option>
                                         </select>
-                                        <button onclick="editar('genero')" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                                        <button onclick="editar('genero')" id="editarGenero" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
                                         <label class="form-label">Gênero</label>
                                         <div class="invalid-feedback">Campo obrigatório.</div>
                                       </div>
@@ -75,7 +75,7 @@
                             <div class="col-md-4">
                                       <div class="input-group form-floating">
                                         <input type="date" class="form-control" id="dataNasc" value="04-01-1900" required="" disabled="">
-                                        <button onclick="editar('dataNasc')" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                                        <button onclick="editar('dataNasc')" id="editarDataNasc" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
                                         <label class="form-label">Data de nascimento</label>
                                         <div class="invalid-feedback">Campo obrigatório.</div>
                                       </div>
@@ -84,7 +84,7 @@
                             <div class="col-4">
                               <div class="input-group form-floating">
                                 <input type="text" class="form-control" id="cpf" value="123.456.789-10" required="" disabled="">
-                                <button onclick="editar('cpf')" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                                <button onclick="editar('cpf')" class="btn btn-primary" id="editarCpf" type="button"><span class="material-icons">mode_edit</span></button>
                                 <label class="form-label">CPF</label>
                                 <div class="invalid-feedback">Campo obrigatório.</div>
                               </div>
@@ -93,7 +93,7 @@
                             <div class="col-12">
                               <div class="input-group form-floating">
                                 <input type="email" class="form-control" id="email" value="nome@email.com" required="" disabled="">
-                                <button onclick="editar('email')" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                                <button onclick="editar('email')" class="btn btn-primary" id="editarEmail" type="button"><span class="material-icons">mode_edit</span></button>
                                 <label class="form-label">Email</label>
                                 <div class="invalid-feedback">Campo obrigatório.</div>
                               </div>
@@ -102,11 +102,11 @@
                             <div class="col-3">
                               <div class="input-group form-floating">
                                 <select class="form-select" id="tipoTelefone" required="" disabled="">
-                                  <option>Celular</option>
                                   <option value="">Selecione</option>
-                                  <option>Residêncial</option>
+                                  <option>Celular</option>
+                                  <option selected>Residêncial</option>
                                 </select>
-                                <button onclick="editar('tipoTelefone')" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                                <button onclick="editar('tipoTelefone')" id="editarTpTelefone" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
                                 <label class="form-label">Tipo de Telefone</label>
                                 <div class="invalid-feedback">Campo obrigatório.</div>
                               </div>
@@ -115,7 +115,7 @@
                             <div class="col-3">
                               <div class="input-group form-floating">
                                 <input type="phone" class="form-control" id="telefone" value="90000-0000" required="" disabled="">
-                                <button onclick="editar('telefone')" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                                <button onclick="editar('telefone')" id="editarPhone" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
                                 <label class="form-label">Telefone</label>
                                 <div class="invalid-feedback">Campo obrigatório.</div>
                               </div>
@@ -123,8 +123,8 @@
     
                             <div class="col-6">
                               <div class="input-group form-floating">
-                                <input type="phone" class="form-control" id="senha" value="123456" required="" disabled="">
-                                <button onclick="editar('senha')" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                                <input type="password" class="form-control" id="senha" value="123456" required="" disabled="">
+                                <button onclick="editar('senha')" class="btn btn-primary" id="editarSenha" type="button"><span class="material-icons">mode_edit</span></button>
                                 <label class="form-label">Senha</label>
                                 <div class="invalid-feedback">Campo obrigatório.</div>
                               </div>
