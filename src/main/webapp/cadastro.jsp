@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-6">
                           <div class="form-floating">
-                            <input type="senha" class="form-control" id="senha" placeholder="" value="" required="">
+                            <input type="password" class="form-control" id="senha" placeholder="" value="" required="">
                             <label for="senha" class="form-label">Senha</label>
                             <div class="invalid-feedback">A senha deve possuir pelo menos 8 caracteres, ter letras
                               maiúsculas e minúsculas e conter caracteres especiais.</div>
@@ -47,7 +47,7 @@
 
                         <div class="col-6">
                           <div class="form-floating">
-                            <input type="senha-confirmacao" class="form-control" id="senha-confirmacao" placeholder="" value="" required="">
+                            <input type="password" class="form-control" id="senha-confirmacao" placeholder="" value="" required="">
                             <label for="senha-confirmacao" class="form-label">Insira novamente</label>
                             <div class="invalid-feedback">As senhas não são as mesmas.</div>
                           </div>

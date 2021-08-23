@@ -13,6 +13,8 @@ public class LoginTest {
         WebDriver driver = new ChromeDriver();
 
         driver.get("http://localhost:8080/Ecommerce");
+        driver.manage().window().maximize();
+
         Thread.sleep(2000);
         driver.navigate().to("http://localhost:8080/Ecommerce/login.jsp");
 

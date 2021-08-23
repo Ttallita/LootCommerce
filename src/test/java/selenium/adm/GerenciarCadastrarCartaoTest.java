@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class GerenciarClienteDadosPessoais {
+public class GerenciarCadastrarCartaoTest {
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -36,35 +36,33 @@ public class GerenciarClienteDadosPessoais {
         gerenciarLink.click();
         Thread.sleep(2000);
 
-        WebElement campoNome = driver.findElement(By.id("nome"));
-        WebElement campoEmail = driver.findElement(By.id("email"));
-        WebElement campoTipoTelefone = driver.findElement(By.id("tipoTelefone"));
-
-        WebElement btnEditarNome = driver.findElement(By.id("editarNome"));
-        WebElement btnEditarEmail = driver.findElement(By.id("editarEmail"));
-        WebElement btnEditarTipoTelefone = driver.findElement(By.id("editarTpTelefone"));
-
-        Select selectTipoTelefone =  new Select(campoTipoTelefone);
-
-        String novoNome = "Vinicius";
-        String novoEmail = "vinicius@fatec.sp.gov.com.br";
-
-        btnEditarNome.click();
+        WebElement tabEnderecos = driver.findElement(By.id("nav-cartoes-tab"));
+        tabEnderecos.click();
         Thread.sleep(2000);
-        campoNome.clear();
+
+        WebElement btnNovoEndereco = driver.findElement(By.id("novoCartao"));
+        btnNovoEndereco.click();
+        Thread.sleep(2000);
+
+        WebElement campoNumeroCartao = driver.findElement(By.id("numCartao"));
+        WebElement campoNomeCartao = driver.findElement(By.id("nomeCartao"));
+        WebElement campoBandeira = driver.findElement(By.id("bandeira"));
+        WebElement campoCodigo = driver.findElement(By.id("codigoCartao"));
+
+        Select selectBandeira = new Select(campoBandeira);
+
+        String numeroCartao = "1231 1312 1321 1412";
+        String nomeCartao = "RODRIGO C SOUZA";
+        String codigo = "123";
+
+        campoNumeroCartao.sendKeys(numeroCartao);
         Thread.sleep(1000);
-        campoNome.sendKeys(novoNome);
-        Thread.sleep(2000);
-        btnEditarEmail.click();
-        Thread.sleep(2000);
-        campoEmail.clear();
+        campoNomeCartao.sendKeys(nomeCartao);
         Thread.sleep(1000);
-        campoEmail.sendKeys(novoEmail);
-        Thread.sleep(2000);
-        btnEditarTipoTelefone.click();
-        Thread.sleep(2000);
-        selectTipoTelefone.selectByIndex(1);
-
+        selectBandeira.selectByIndex(1);
+        Thread.sleep(1000);
+        campoCodigo.sendKeys(codigo);
+        Thread.sleep(1000);
 
     }
 }
