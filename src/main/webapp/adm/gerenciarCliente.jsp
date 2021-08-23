@@ -14,12 +14,30 @@
   <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8"/>
   <div class="container">
     <main>
-        <div class="row g-5">
-          <div class="col-md-5 col-lg-4 order-md-last">
+        <div class="row g-5 mt-0">
+          <div class="col-md-5 col-lg-3 order-md-last">
+            <div class="row vstack">
 
+              <div class="col-md-12 mb-4">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                      <div class="card-body">
+                          <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                  <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                      Rank</div>
+                                  <div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
+                              </div>
+                              <div class="col-auto">
+                                  <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
             
           </div>
-          <div class="col-md-7 col-lg-8">
+          <div class="col-md-7 col-lg-9">
             <div class="container-fluid p-0">
               <h1 class="h3 mb-3">Gerenciar Cliente</h1>
               <div class="row">
