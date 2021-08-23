@@ -15,6 +15,8 @@ public class CadastroTest {
         WebDriver driver = new ChromeDriver();
 
         driver.get("http://localhost:8080/Ecommerce");
+        driver.manage().window().maximize();
+
         Thread.sleep(2000);
         driver.navigate().to("http://localhost:8080/Ecommerce/cadastro.jsp");
 
@@ -63,19 +65,16 @@ public class CadastroTest {
         nextButton.click();
 
         WebElement campoTipoTelefone = driver.findElement(By.id("tipoTelefone"));
-        WebElement campoDDD = driver.findElement(By.id("ddd"));
         WebElement campoTelefone = driver.findElement(By.id("phone"));
 
         Select selectTelefone = new Select(campoTipoTelefone);
 
-        String ddd = "55";
         String telefone = "11 94002-8922";
 
-        campoDDD.sendKeys(ddd);
-        Thread.sleep(2000);
         selectTelefone.selectByIndex(1);
         Thread.sleep(2000);
         campoTelefone.sendKeys(telefone);
+        Thread.sleep(2000);
 
         nextButton.click();
 
@@ -100,7 +99,7 @@ public class CadastroTest {
         String numero = "312";
         String bairro = "Moema";
         String cep = "12334-230";
-        String observacao = "Sem obsevações";
+        String observacao = "Sem observações";
 
         selectTipoResidencia.selectByIndex(1);
         Thread.sleep(2000);

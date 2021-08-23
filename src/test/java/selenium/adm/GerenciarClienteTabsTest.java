@@ -11,7 +11,7 @@ public class GerenciarClienteTabsTest {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
-        driver.get("http://localhost:8080/Ecommerce/paginas/adm/gerenciarCliente.jsp");
+        driver.get("http://localhost:8080/Ecommerce/adm/gerenciarCliente.jsp");
 
         WebElement tabTransacoes = driver.findElement(By.id("nav-transacoes-tab"));
         WebElement tabEndereco = driver.findElement(By.id("nav-endereco-tab"));
