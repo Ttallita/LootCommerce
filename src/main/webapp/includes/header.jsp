@@ -24,14 +24,9 @@
                     <img src="https://i.pinimg.com/474x/bb/8a/71/bb8a71ef13231a77a85267fa9e066922.jpg" alt="mdo" class="rounded-circle" width="32" height="32">
                 </a>
                 <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item link-light" href='/Ecommerce/paginas/cliente/clientePerfil.jsp'>Perfil</a></li>
-                    <li><a class="dropdown-item link-light" href='/Ecommerce/paginas/cliente/consultaEnderecos.jsp'>Endereços</a></li>
-                    <li><a class="dropdown-item link-light" href='/Ecommerce/paginas/cliente/consultaCartao.jsp'>Cartões</a></li>
-
-                    <!--
-                        mostra apenas quando usuario for Administrador
-                        <li><a class="dropdown-item link-light" href="#">Gerenciamento</a></li>
-                    -->
+                    <li><a class="dropdown-item link-light" href='/Ecommerce/cliente/clientePerfil.jsp'>Perfil</a></li>
+                    <li><a class="dropdown-item link-light" href='/Ecommerce/cliente/consultaEnderecos.jsp'>Endereços</a></li>
+                    <li><a class="dropdown-item link-light" href='/Ecommerce/cliente/consultaCartao.jsp'>Cartões</a></li>
                     <li><hr class="dropdown-divider link-light"></li>
                     <li><a class="dropdown-item link-light" href="#">Sair</a></li>
                 </ul>

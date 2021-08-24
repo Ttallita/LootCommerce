@@ -39,13 +39,16 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-primary text-uppercase mb-1">
-                        Cupons</div>
+                      <div class="text-primary text-uppercase mb-1"> Cupons</div>
                       <div class="h5 mb-0">ANIVERSÁRIO</div>
                       <p class="text-break">Cupom de R$90,00, aplicável a carrinhos de valor maior que R$200,00</p>
                       <hr>
                       <div class="h5 mb-0">PRESENTEIE</div>
                       <p class="text-break">Cupom de R$50,00, aplicável a carrinhos de valor maior que R$170,00</p>
+                      <hr>
+                      <button type="button" id="adicionarCupom" class="btn btn-primary mb-3 float-end">
+                        <span class="material-icons">local_offer</span>Adicionar cupom
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -119,7 +122,7 @@
 
                         <div class="col-md-4">
                           <div class="input-group form-floating">
-                            <input type="date" class="form-control" id="dataNasc" value="04-01-1900" required=""
+                            <input type="date" class="form-control" id="dataNasc" value="1900-04-01" required=""
                               disabled="">
                             <button onclick="editar('dataNasc')" id="editarDataNasc" class="btn btn-primary"
                               type="button"><span class="material-icons">mode_edit</span></button>
@@ -200,7 +203,7 @@
                   <h4 class="mb-3">Histórico de Transações</h4>
                   <h5 class="mb-3">Tiger Nixon</h5>
 
-                  <table class="table table-hover table-bordered table-sm table-responsive">
+                  <table class="table table-hover table-sm table-responsive">
                     <thead>
                       <tr>
                         <th>ID</th>
@@ -408,7 +411,7 @@
                     data-bs-target="#cadastrarEndereco">
                     <span class="material-icons inline-icon">add_circle_outline</span>Novo Endereço
                   </button>
-                  <table class="table table-hover table-bordered table-sm table-responsive" id="table-enderecos">
+                  <table class="table table-hover table-sm table-responsive" id="table-enderecos">
                     <thead>
                       <tr>
                         <th scope="col">Logradouro</th>
@@ -574,7 +577,7 @@
                     data-bs-target="#cadastrarCartao">
                     <span class="material-icons inline-icon">add_circle_outline</span>Novo Cartão
                   </button>
-                  <table class="table table-hover table-bordered table-sm table-responsive" id="table-cartoes">
+                  <table class="table table-hover table-sm table-responsive" id="table-cartoes">
                     <thead>
                       <tr>
                         <th scope="col">Nome Impresso</th>

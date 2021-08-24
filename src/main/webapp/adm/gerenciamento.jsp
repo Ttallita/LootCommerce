@@ -55,7 +55,7 @@
                             <!--principal-->
                             <div class="tab-pane fade active show" id="v-pills-principal" role="tabpanel"
                                 aria-labelledby="v-pills-principal-tab">
-                                <div class="card">
+                                <div class="card shadow">
                                     <div class="card-body">
                                         <h5 class="card-title">Principal</h5>
                                     </div>
@@ -65,12 +65,12 @@
                             <!--vendas-->
                             <div class="tab-pane fade" id="v-pills-vendas" role="tabpanel"
                                 aria-labelledby="v-pills-vendas-tab">
-                                <div class="card">
+                                <div class="card shadow">
                                     <div class="card-body">
                                         <h5 class="card-title">Vendas</h5>
                                     </div>
                                 </div>
-                                <div class="card">
+                                <div class="card shadow">
                                     <div class="card-body">
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                             <!--clientes-->
                             <div class="tab-pane fade" id="v-pills-clientes" role="tabpanel"
                                 aria-labelledby="v-pills-clientes-tab">
-                                <div class="card">
+                                <div class="card shadow">
                                     <div class="card-body">
                                         <div>
                                             <h5 class="card-title">Clientes</h5>
@@ -584,7 +584,7 @@
                             <!--trocas-->
                             <div class="tab-pane fade" id="v-pills-trocas" role="tabpanel"
                                 aria-labelledby="v-pills-trocas-tab">
-                                <div class="card">
+                                <div class="card shadow">
                                     <div class="card-body">
                                         <h5 class="card-title">Trocas</h5>
                                     </div>
@@ -594,7 +594,7 @@
                             <!--estoque-->
                             <div class="tab-pane fade" id="v-pills-estoque" role="tabpanel"
                                 aria-labelledby="v-pills-estoque-tab">
-                                <div class="card">
+                                <div class="card shadow">
                                     <div class="card-body">
                                         <h5 class="card-title">Estoque</h5>
                                     </div>

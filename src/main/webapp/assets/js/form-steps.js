@@ -11,6 +11,7 @@ function showTab(n) {
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
+
   if (n == (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Cadastrar";
   } else {

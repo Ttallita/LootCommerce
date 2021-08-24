@@ -27,7 +27,7 @@ document.getElementById('senhaConfirmacao').addEventListener('keyup', confirmarS
 
 document.getElementById('senha').addEventListener('keyup', validarSenha)
     function validarSenha(){
-        var caracteres= "^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])";
+        var caracteres= "^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*\(\)])";
         
         if(!this.value.match(caracteres) || (this.value.length<8)){
             this.classList.add("is-invalid");

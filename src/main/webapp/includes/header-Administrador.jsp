@@ -3,7 +3,6 @@
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a class="navbar-brand link-light" href="#!">fanLoot</a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 link-light">Clientes</a></li>
                 <!-- <li>
                         <a href="#" class="nav-link px-2 link-light dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                             Categorias
@@ -22,10 +21,10 @@
                     <img src="https://i.pinimg.com/474x/bb/8a/71/bb8a71ef13231a77a85267fa9e066922.jpg" alt="mdo" class="rounded-circle" width="32" height="32">
                 </a>
                 <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item link-light" href="editarCliente-Administrador.jsp">Perfil</a></li>
+                    <li><a class="dropdown-item link-light" href="#">Perfil</a></li>
 
                     <!-- mostra apenas quando usuario for Administrador -->
-                    <li><a class="dropdown-item link-light" href="#">Gerenciamento</a></li>
+                    <li><a class="dropdown-item link-light" href="/Ecommerce/adm/gerenciamento.jsp">Gerenciamento</a></li>
                     <li><hr class="dropdown-divider link-light"></li>
                     <li><a class="dropdown-item link-light" href="#">Sair</a></li>
                 </ul>
