@@ -21,11 +21,11 @@ public class CadastroTest {
         driver.navigate().to("http://localhost:8080/Ecommerce/cadastro.jsp");
 
         String email = "andre.soares9@fatec.sp.gov.com.br";
-        String senha = "admin123";
+        String senha = "Admads123!";
 
         WebElement campoEmail = driver.findElement(By.id("email"));
         WebElement campoSenha = driver.findElement(By.id("senha"));
-        WebElement campoConfirmacao = driver.findElement(By.id("senha-confirmacao"));
+        WebElement campoConfirmacao = driver.findElement(By.id("senhaConfirmacao"));
 
         campoEmail.sendKeys(email);
         Thread.sleep(2000);

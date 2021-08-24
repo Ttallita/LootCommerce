@@ -7,9 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class CadastrarClienteTest{
-
-    public static void main(String[] args)  throws InterruptedException{
+public class CadastrarClienteExcecaoTest {
+    public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
@@ -54,16 +53,16 @@ public class CadastrarClienteTest{
         Select selectEstado = new Select(campoEstado);
         Select selectPais = new Select(campoPais);
 
-        String email =  "andre.soares9@fatec.sp.gov.br";
+        String email =  "andre.soares";
         String senha = "Admads123!";
         String nome = "André";
         String sobrenome = "Gomes";
-        String cpf = "123.413.132-12";
+        String cpf = "123.413.133-12";
         String dataNasc = "21/09/1999";
         String phone = "11 92324-2324";
         String tpLogradouro = "Bairro";
         String logradouro = "Rua 25 de março";
-        String numero = "123";
+        String numero = "";
         String bairro = "Moema";
         String cep = "12344-231";
         String obs = "Sem observações";
