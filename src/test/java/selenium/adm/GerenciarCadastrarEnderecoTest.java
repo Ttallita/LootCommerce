@@ -9,6 +9,10 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
+/*
+ * @author André Gomes
+ */
+
 public class GerenciarCadastrarEnderecoTest {
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
@@ -90,6 +94,8 @@ public class GerenciarCadastrarEnderecoTest {
         campoObs.sendKeys(obs);
         Thread.sleep(1000);
         selectTipoEndereco.selectByIndex(1);
+
+        driver.close();
 
     }
 }

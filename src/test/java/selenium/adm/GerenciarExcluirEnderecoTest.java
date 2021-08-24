@@ -8,6 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
+/*
+ * @author André Gomes
+ */
+
 public class GerenciarExcluirEnderecoTest {
     public static void main(String[] args) throws InterruptedException{
 
@@ -46,6 +50,9 @@ public class GerenciarExcluirEnderecoTest {
 
         WebElement excluir = columnsEnderecos.get(9).findElement(By.id("deletarEndereco"));
         excluir.click();
+        Thread.sleep(2000);
+
+        driver.close();
 
     }
 }

@@ -8,6 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
+/*
+ * @author André Gomes
+ */
+
 public class GerenciarExcluirCartaoTest {
     public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
@@ -45,5 +49,7 @@ public class GerenciarExcluirCartaoTest {
 
         WebElement excluir = columnsEnderecos.get(5).findElement(By.id("deletarCartao"));
         excluir.click();
+
+        driver.close();
     }
 }

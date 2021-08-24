@@ -8,6 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
+/*
+ * @author André Gomes
+ */
+
 public class InativarClienteTest {
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
@@ -37,6 +41,8 @@ public class InativarClienteTest {
 
         WebElement inativarBtn = driver.findElement(By.id("btnInativar"));
         inativarBtn.click();
+
+        driver.close();
 
     }
 }

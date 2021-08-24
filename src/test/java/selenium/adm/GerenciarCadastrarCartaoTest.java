@@ -9,6 +9,10 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
+/*
+ * @author André Gomes
+ */
+
 public class GerenciarCadastrarCartaoTest {
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
@@ -63,6 +67,8 @@ public class GerenciarCadastrarCartaoTest {
         Thread.sleep(1000);
         campoCodigo.sendKeys(codigo);
         Thread.sleep(1000);
+
+        driver.close();
 
     }
 }

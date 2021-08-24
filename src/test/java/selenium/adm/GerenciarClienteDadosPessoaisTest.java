@@ -9,6 +9,10 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
+/*
+ * @author André Gomes
+ */
+
 public class GerenciarClienteDadosPessoaisTest {
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
@@ -65,6 +69,7 @@ public class GerenciarClienteDadosPessoaisTest {
         Thread.sleep(2000);
         selectTipoTelefone.selectByIndex(1);
 
+        driver.close();
 
     }
 }

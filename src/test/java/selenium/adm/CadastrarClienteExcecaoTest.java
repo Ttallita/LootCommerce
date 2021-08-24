@@ -7,6 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+/*
+ * @author André Gomes
+ */
+
 public class CadastrarClienteExcecaoTest {
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
@@ -110,6 +114,9 @@ public class CadastrarClienteExcecaoTest {
         Thread.sleep(2000);
 
         btnCadastrar.click();
+        Thread.sleep(1500);
+
+        driver.close();
 
     }
 }

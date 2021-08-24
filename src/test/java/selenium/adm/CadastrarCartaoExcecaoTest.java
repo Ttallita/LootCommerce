@@ -8,6 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
+/*
+ * @author André Gomes
+ */
+
 public class CadastrarCartaoExcecaoTest {
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
@@ -45,6 +49,9 @@ public class CadastrarCartaoExcecaoTest {
 
         WebElement btnCadastrarCartao = driver.findElement(By.id("btnCadastrarCartao"));
         btnCadastrarCartao.click();
+        Thread.sleep(1500);
+
+        driver.close();
 
      }
 }

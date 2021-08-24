@@ -9,6 +9,10 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
+/*
+ * @author André Gomes
+ */
+
 public class CadastrarEnderecoExcecaoTest {
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
@@ -44,7 +48,11 @@ public class CadastrarEnderecoExcecaoTest {
         btnNovoEndereco.click();
         Thread.sleep(2000);
 
-       WebElement btnCadastrarEndereco = driver.findElement(By.id("btnCadastrarEndereco"));
-       btnCadastrarEndereco.click();
+        WebElement btnCadastrarEndereco = driver.findElement(By.id("btnCadastrarEndereco"));
+        btnCadastrarEndereco.click();
+        Thread.sleep(2000);
+
+        driver.close();
+
     }
 }

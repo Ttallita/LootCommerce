@@ -8,6 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
+/*
+ * @author André Gomes
+ */
+
 public class GerenciarClienteTransacoesTest {
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
@@ -37,5 +41,8 @@ public class GerenciarClienteTransacoesTest {
 
         WebElement tabTransacoes = driver.findElement(By.id("nav-transacoes-tab"));
         tabTransacoes.click();
+
+        driver.close();
+
     }
 }

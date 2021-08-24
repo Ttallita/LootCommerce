@@ -1,7 +1,9 @@
 <header class="p-3 bg-dark ">
     <div class="container" >
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a class="navbar-brand link-light" href="#!">fanLoot</a>
+            <a href="/Ecommerce/">
+                <img src="/Ecommerce/assets/img/logo_header.png" alt="" max-height="100" width="130">
+            </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <!-- <li>
                         <a href="#" class="nav-link px-2 link-light dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">

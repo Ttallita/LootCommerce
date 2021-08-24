@@ -6,6 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+/*
+ * @author André Gomes
+ */
+
 public class GerenciarClienteTabsTest {
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
@@ -27,5 +31,6 @@ public class GerenciarClienteTabsTest {
         tabCartoes.click();
         Thread.sleep(1000);
 
+        driver.close();
     }
 }

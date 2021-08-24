@@ -8,6 +8,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
+/*
+ * @author André Gomes
+ */
+
 public class GerenciarAbasTest {
     public static void main(String[] args) throws InterruptedException{
 
@@ -50,6 +54,8 @@ public class GerenciarAbasTest {
 
         WebElement tabEstoque = driver.findElement(By.id("v-pills-estoque-tab"));
         tabEstoque.click();
+
+        driver.close();
 
     }
 }

@@ -8,6 +8,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+/*
+ * @author André Gomes
+ */
+
 public class CadastroTest {
 
     public static void main(String[] args) throws InterruptedException{
@@ -120,7 +124,9 @@ public class CadastroTest {
         selectPais.selectByIndex(1);
         Thread.sleep(2000);
         campoObservacao.sendKeys(observacao);
+        Thread.sleep(2000);
 
+        driver.close();
 
     }
 }

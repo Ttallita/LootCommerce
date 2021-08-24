@@ -6,6 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+/*
+ * @author André Gomes
+ */
+
 public class LoginTest {
 
     public static void main(String[] args) throws InterruptedException{
@@ -33,6 +37,8 @@ public class LoginTest {
         Thread.sleep(2000);
 
         botarLogar.click();
+
+        driver.close();
 
     }
 }

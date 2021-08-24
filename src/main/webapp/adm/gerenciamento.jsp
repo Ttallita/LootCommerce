@@ -349,11 +349,11 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="text-center">
-                                                                <button type="button" class="btn btn-secondary"
-                                                                    data-bs-dismiss="modal">Cancelar</button>
-                                                                <button type="submit" id="btnCadastrar"
-                                                                    class="btn btn-primary">Cadastrar</button>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                                    Cancelar
+                                                                </button>
+                                                                <button type="submit" id="btnCadastrar" class="btn btn-primary">Cadastrar</button>
                                                             </div>
                                                         </form>
                                                     </div>
