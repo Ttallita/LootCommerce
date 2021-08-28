@@ -3,6 +3,7 @@ package controller.viewHelper.impl.model;
 import controller.viewHelper.IViewHelper;
 import model.EntidadeDominio;
 import model.Result;
+import model.Usuario;
 import model.cliente.Cliente;
 import model.cliente.Endereco;
 import model.cliente.Telefone;
@@ -43,15 +44,16 @@ public class ClienteViewHelper implements IViewHelper {
             IViewHelper enderecoVH = new EnderecoViewHelper();
             Endereco endereco = (Endereco) enderecoVH.getEntidade(request);
 
+            IViewHelper usuarioVH = new UsuarioViewHelper();
+            Usuario usuario = (Usuario) usuarioVH.getEntidade(request);
+
             Cliente cliente = new Cliente();
-            cliente.setEmail(email);
-            cliente.setSenha(senha);
-            cliente.setNome(nome + " " + sobrenome);
             cliente.setGenero(genero);
             cliente.setDataNascimento(dataNasc);
             cliente.setCpf(cpf);
             cliente.setTelefone(telefone);
             cliente.setEndereco(endereco);
+            cliente.setUsuario(usuario);
 
             return cliente;
 
@@ -67,7 +69,7 @@ public class ClienteViewHelper implements IViewHelper {
         if(operacao.equals("salvar")) {
             Cliente cliente = (Cliente) result.getEntidades().get(0);
 
-            request.getRequestDispatcher("/Eccommerce/login.jsp").forward(request, response);
+            request.getRequestDispatcher("/Ecommerce/login.jsp").forward(request, response);
         }
     }
 }

@@ -33,8 +33,10 @@ public class Controller extends HttpServlet{
         commands.put("salvar", new SalvarCommand());
         commands.put("atualizar", new AtualizarCommand());
         commands.put("listar", new ListarCommand());
-        commands.put("remove", new ExcluirCommand());
+        commands.put("remover", new ExcluirCommand());
 
+
+        viewHelpers = new HashMap<>();
         viewHelpers.put("/Ecommerce/cadastro", new ClienteViewHelper());
     }
 
@@ -49,6 +51,8 @@ public class Controller extends HttpServlet{
     }
 
     private void processaRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+
         String operacao = req.getParameter("operacao");
 
         System.out.println("============================");
@@ -64,12 +68,10 @@ public class Controller extends HttpServlet{
         EntidadeDominio entidade = viewHelper.getEntidade(req);
         System.out.println("Entidade : " + entidade);
 
-
         Result result = command.execute(entidade, operacao);
 
 
         viewHelper.setView(result, req, resp);
-
     }
 
 }

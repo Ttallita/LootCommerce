@@ -1,22 +1,47 @@
 CREATE TABLE usuarios (
     usr_id serial NOT NULL,
-    usr_prim_nome varchar(40),
-	usr_ult_nome varchar(40),
-	cli_email varchar(255) NOT NULL,
-    cli_senha varchar(255) NOT NULL,
+    usr_prim_nome varchar(15) NOT NULL,
+	usr_ult_nome varchar(45) NOT NULL,
+    usr_email varchar(255) NOT NULL,
+    usr_senha varchar(255) NOT NULL,
+    usr_tipo varchar(255) NOT NULL
 
     PRIMARY KEY (usr_id)
 );
 
+CREATE TABLE clientes (
+    cli_usr_id serial NOT NULL,
+    cli_cpf varchar(14) NOT NULL,
+    cli_dt_nasc date NOT NULL,
+    cli_genero varchar(10) NOT NULL,
+    cli_telefone_num varchar(10) NOT NULL,
+    cli_telefone_ddd varchar(2) NOT NULL,
+    cli_telefone_tp varchar(11) NOT NULL,
+
+    PRIMARY KEY (cli_usr_id)
+);
+
 CREATE TABLE cupons (
     cpm_id serial NOT NULL,
-    cpm_cli_id int,
     cpm_tp varchar(11) NOT NULl,
     cpm_descricao varchar(255),
     cpm_valor numeric(8, 2) NOT NULl,
 
     PRIMARY KEY (cpm_id)
 );
+
+
+CREATE TABLE cartoes(
+	crt_id serial NOT NULL,
+    crt_cli_usr_id int NOT NULL,
+	crt_numero varchar(19) NOT NULL,
+	crt_dt_validade date NOT NULL,
+	crt_cod_seg varchar(3) NOT NULL,
+
+    PRIMARY KEY (crt_id),
+    CONSTRAINT fk_crt_cli FOREIGN KEY (crt_cli_usr_id) REFERENCES clientes (cli_usr_id)
+);
+
 
 CREATE TABLE enderecos (
     end_id serial NOT NULL,
@@ -35,31 +60,6 @@ CREATE TABLE enderecos (
     PRIMARY KEY (end_id)
 );
 
-CREATE TABLE cartoes(
-	crt_id serial NOT NULL,
-	crt_numero varchar(19) NOT NULL,
-	crt_dt_validade date NOT NULL,
-	crt_cod_seg varchar(3) NOT NULL,
-
-    PRIMARY KEY (crt_id)
-);
-
-CREATE TABLE clientes (
-    cli_id serial NOT NULL,
-    cli_cpm_id int,
-    cli_crt_id int,
-    cli_cpf varchar(14) NOT NULL,
-    cli_dt_nasc date NOT NULL,
-    cli_genero varchar(5) NOT NULL,
-    cli_telefone_num varchar(10) NOT NULL,
-    cli_telefone_ddd varchar(2) NOT NULL,
-    cli_telefone_tp varchar(11) NOT NULL,
-
-
-    PRIMARY KEY (cli_id),
-    CONSTRAINT fk_cli_cpm FOREIGN KEY (cli_cpm_id) REFERENCES cupons (cpm_id),
-    CONSTRAINT fk_cli_crt FOREIGN KEY (cli_crt_id) REFERENCES cartoes (crt_id)
-);
 
 CREATE TABLE enderecos_cliente(
     ecl_id serial NOT NULL,
@@ -68,7 +68,17 @@ CREATE TABLE enderecos_cliente(
 
     PRIMARY KEY (ecl_id),
     FOREIGN KEY (ecl_end_id) REFERENCES enderecos (end_id),
-    FOREIGN KEY (ecl_cli_id) REFERENCES clientes (cli_id)
+    FOREIGN KEY (ecl_cli_id) REFERENCES clientes (cli_usr_id)
+);
+
+CREATE TABLE cupons_cliente(
+    ccl_id serial NOT NULL,
+    ccl_cpm_id int NOT NULL,
+    ccl_cli_id int NOT NULL,
+
+    PRIMARY KEY (ccl_id),
+    FOREIGN KEY (ccl_cpm_id) REFERENCES cupons (cpm_id),
+    FOREIGN KEY (ccl_cli_id) REFERENCES clientes (cli_usr_id)
 );
 
 CREATE TABLE produtos(
@@ -85,7 +95,7 @@ CREATE TABLE produtos(
 
 
 CREATE TABLE carrinhos(
-    car_id
+    car_id,
 	/*car_preco_total
 	car_quant_por item
 	car_cupom*/
@@ -117,27 +127,3 @@ CREATE TABLE vendas (
 	status de envio
 */
 );
-
-____________________________
-
-CREATE TABLE tb_dependente
-(
-  id_dep serial NOT NULL,
-  cli_id integer NOT NULL,
-  par_id integer NOT NULL,
-  dt_cadastro date NOT NULL,
-  nome character varying(30) NOT NULL,
-  CONSTRAINT tb_dependente_pkey PRIMARY KEY (id_dep),
-  CONSTRAINT cli_id_fk FOREIGN KEY (cli_id)
-      REFERENCES tb_cliente (id_cli) MATCH SIMPLE
-      ON UPDATE NO ACTION ON DELETE NO ACTION,
-  CONSTRAINT par_id_fk FOREIGN KEY (par_id)
-      REFERENCES tb_parentesco (id_par) MATCH SIMPLE
-      ON UPDATE NO ACTION ON DELETE NO ACTION
-)
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE tb_dependente OWNER TO postgres;
-
-CREATE SEQUENCE SEQ_PES nocycle nocache;
