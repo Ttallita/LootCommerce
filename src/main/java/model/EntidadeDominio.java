@@ -1,6 +1,6 @@
 package model;
 
-public abstract class Entidade {
+public abstract class EntidadeDominio implements IEntidade{
     private Long id;
 
     public Long getId() {

@@ -1,6 +1,8 @@
-package model;
+package model.produto;
 
-public class Produto extends Entidade{
+import model.EntidadeDominio;
+
+public class Produto extends EntidadeDominio {
     private String nome;
     private String descricao;
     private String material;

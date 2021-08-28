@@ -1,9 +1,9 @@
-
-
 CREATE TABLE usuarios (
     usr_id serial NOT NULL,
     usr_prim_nome varchar(40),
 	usr_ult_nome varchar(40),
+	cli_email varchar(255) NOT NULL,
+    cli_senha varchar(255) NOT NULL,
 
     PRIMARY KEY (usr_id)
 );
@@ -54,8 +54,7 @@ CREATE TABLE clientes (
     cli_telefone_num varchar(10) NOT NULL,
     cli_telefone_ddd varchar(2) NOT NULL,
     cli_telefone_tp varchar(11) NOT NULL,
-    cli_email varchar(255) NOT NULL,
-    cli_senha varchar(255) NOT NULL,
+
 
     PRIMARY KEY (cli_id),
     CONSTRAINT fk_cli_cpm FOREIGN KEY (cli_cpm_id) REFERENCES cupons (cpm_id),

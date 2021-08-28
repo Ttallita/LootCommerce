@@ -1,8 +1,11 @@
 package model.cliente;
 
+import model.EntidadeDominio;
+
 import java.util.Objects;
 
-public class Endereco {
+public class Endereco extends EntidadeDominio {
+
     private String tipoResidencia;
     private String tipoLogradouro;
     private String logradouro;

@@ -1,16 +1,16 @@
 package model.cliente;
 
-import model.Entidade;
+import model.EntidadeDominio;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
-public class Cliente extends Entidade {
+public class Cliente extends EntidadeDominio {
 
     private String genero;
     private String nome;
-    private LocalDate dataNascimento;
+    private String dataNascimento;
     private String cpf;
     private Telefone telefone;
     private String email;
@@ -35,14 +35,6 @@ public class Cliente extends Entidade {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
     }
 
     public String getCpf() {
@@ -107,6 +99,22 @@ public class Cliente extends Entidade {
 
     public void setRanking(int ranking) {
         this.ranking = ranking;
+    }
+
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public List<CartaoDeCredito> getCartoesDeCredito() {
+        return cartoesDeCredito;
+    }
+
+    public void setCartoesDeCredito(List<CartaoDeCredito> cartoesDeCredito) {
+        this.cartoesDeCredito = cartoesDeCredito;
     }
 
     @Override

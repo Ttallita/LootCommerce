@@ -1,24 +1,23 @@
 package dao;
 
+import model.IEntidade;
 import model.cliente.Cliente;
-import model.Entidade;
+import model.EntidadeDominio;
 import utils.Conexao;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.util.List;
 
 public class ClienteDAO implements IDAO{
     private Connection conn;
 
     @Override
-    public boolean salvar(Entidade entidade) {
+    public boolean salvar(EntidadeDominio entidade) {
         Cliente cliente = (Cliente) entidade;
         Conexao conexao = new Conexao();
 
         try {
             conn = conexao.getConexao();
-
 
 
 
@@ -37,17 +36,17 @@ public class ClienteDAO implements IDAO{
     }
 
     @Override
-    public boolean atualizar(Entidade entidade) {
+    public boolean atualizar(EntidadeDominio entidade) {
         return false;
     }
 
     @Override
-    public boolean deletar(Entidade entidade) {
+    public boolean deletar(EntidadeDominio entidade) {
         return false;
     }
 
     @Override
-    public List<Entidade> listar() {
+    public List<IEntidade> listar() {
         return null;
     }
 }
