@@ -7,8 +7,7 @@
     <meta charset="UTF-8" />
     <title>Gerenciamento</title>
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>' />
-    <link rel="stylesheet" type="text/css"
-        href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
+    <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
     <link rel="stylesheet" type="text/css" href='/Ecommerce/assets/css/style.css' />
 </head>
 
@@ -55,7 +54,7 @@
                             <!--principal-->
                             <div class="tab-pane fade active show" id="v-pills-principal" role="tabpanel"
                                 aria-labelledby="v-pills-principal-tab">
-                                <div class="card shadow">
+                                <div class="shadow">
                                     <div class="card-body">
                                         <h5 class="card-title">Principal</h5>
                                     </div>
@@ -65,12 +64,12 @@
                             <!--vendas-->
                             <div class="tab-pane fade" id="v-pills-vendas" role="tabpanel"
                                 aria-labelledby="v-pills-vendas-tab">
-                                <div class="card shadow">
+                                <div class="shadow">
                                     <div class="card-body">
                                         <h5 class="card-title">Vendas</h5>
                                     </div>
                                 </div>
-                                <div class="card shadow">
+                                <div class="shadow">
                                     <div class="card-body">
                                     </div>
                                 </div>
@@ -79,17 +78,251 @@
                             <!--clientes-->
                             <div class="tab-pane fade" id="v-pills-clientes" role="tabpanel"
                                 aria-labelledby="v-pills-clientes-tab">
-                                <div class="card shadow">
+                                <div class="shadow">
                                     <div class="card-body">
                                         <div>
-                                            <h5 class="card-title">Clientes</h5>
+                                            <h3 class="card-title fw-bold">Clientes</h3>
                                             <!-- Button trigger modal -->
-                                            <button type="button" id="novoCliente" class="btn btn-primary mb-3"
+                                            <button type="button" id="novoCliente" class="btn btn-primary mb-3 float-end"
                                                 data-bs-toggle="modal" data-bs-target="#cadastrar">
                                                 <span class="material-icons inline-icon">group_add</span>Cadastrar
                                                 cliente</a>
                                             </button>
                                         </div>
+                                        <div class="input-group mb-3">
+                                            <input id="pesquisarCliente"type="text" placeholder="Pesquise por palavras-chave..." aria-label="Username" aria-describedby="basic-addon1" class="form-control border-end-0">
+                                            <span class="btn input-group-text border border-start-0">
+                                                <span class="material-icons">search</span>
+                                            </span>
+                                        </div>
+
+                                        <div class="card">
+                                            <h2>
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">Filtros</button>
+                                            </h2>
+                                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample" style="">
+                                                <ul class="list-group list-group-horizontal">
+                                                    <div class="col-2" style="padding: .5rem 1rem">Gênero:</div>
+                                                    <li class="list-group-item border-0"><a href="#">M</a></li>
+                                                    <li class="list-group-item border-0"><a href="#">F</a></li>
+                                                    <li class="list-group-item border-0"><a href="#">Outro</a></li>
+                                                    <li class="list-group-item border-0"><a href="#">N/A</a></li>
+                                                </ul>
+                                                <ul class="list-group list-group-horizontal">
+                                                    <div class="col-2" style="padding: .5rem 1rem">Rank:</div>
+                                                    <li class="list-group-item border-0">
+                                                        <form>
+                                                            <input id="minRank" class="col-2" placeholder="min">-
+                                                            <input id="maxRank" class="col-2" placeholder="max">
+                                                        </form>
+                                                    </li>
+                                                </ul>
+                                                <ul class="list-group list-group-horizontal">
+                                                    <div class="col-2" style="padding: .5rem 1rem">Nascimento:</div>
+                                                    <li class="list-group-item border-0">
+                                                        <form>
+                                                            <input id="minNasc" class="col-2" placeholder="min">-
+                                                            <input id="maxNasc" class="col-2" placeholder="max">
+                                                        </form>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="table-responsive">
+                                            <table class="table table-hover table-sm" cellspacing="0"
+                                                width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Nome</th>
+                                                        <th>CPF</th>
+                                                        <th>Gênero</th>
+                                                        <th>Rank</th>
+                                                        <th>Nascimento</th>
+                                                        <th>Opções</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Tiger Nixon</td>
+                                                        <td>000.000.000-00</td>
+                                                        <td>M</td>
+                                                        <td>61</td>
+                                                        <td>2011/04/25</td>
+                                                        <td>
+                                                            <div>
+                                                                <button class="btn btn-outline-dark" type="button"
+                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                                    aria-expanded="false">
+                                                                    <span class="material-icons">
+                                                                        list
+                                                                    </span>
+                                                                </button>
+                                                                <ul class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton1">
+                                                                    <li><a class="dropdown-item" id="gerenciarLink"
+                                                                            href="/Ecommerce/adm/gerenciarCliente.jsp">Gerenciar</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="dropdown-divider link-light">
+                                                                    </li>
+                                                                    <li><a class="dropdown-item" href="#"
+                                                                            data-bs-toggle="modal" id="inativarLink"
+                                                                            data-bs-target="#inativar">Inativar</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>Garrett Winters</td>
+                                                        <td>000.000.000-00</td>
+                                                        <td>M</td>
+                                                        <td>63</td>
+                                                        <td>2011/07/25</td>
+                                                        <td>
+                                                            <div>
+                                                                <button class="btn btn-outline-dark" type="button"
+                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                                    aria-expanded="false">
+                                                                    <span class="material-icons">
+                                                                        list
+                                                                    </span>
+                                                                </button>
+                                                                <ul class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton1">
+                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="dropdown-divider link-light">
+                                                                    </li>
+                                                                    <li><a class="dropdown-item" href="#">Inativar</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="table-secondary">
+                                                        <td class="table-secondary">3</td>
+                                                        <td class="table-secondary">Bruno Nash</td>
+                                                        <td class="table-secondary">000.000.000-00</td>
+                                                        <td class="table-secondary">M</td>
+                                                        <td class="table-secondary">38</td>
+                                                        <td class="table-secondary">2011/05/03</td>
+                                                        <td class="table-secondary">
+                                                            <div>
+                                                                <button class="btn btn-outline-dark" type="button"
+                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                                    aria-expanded="false">
+                                                                    <span class="material-icons">
+                                                                        list
+                                                                    </span>
+                                                                </button>
+                                                                <ul class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton1">
+                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="dropdown-divider link-light">
+                                                                    </li>
+                                                                    <li><a class="dropdown-item" href="#">Ativar</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>Sakura Yamamoto</td>
+                                                        <td>000.000.000-00</td>
+                                                        <td>N/A</td>
+                                                        <td>37</td>
+                                                        <td>2009/08/19</td>
+                                                        <td>
+                                                            <div>
+                                                                <button class="btn btn-outline-dark" type="button"
+                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                                    aria-expanded="false">
+                                                                    <span class="material-icons">
+                                                                        list
+                                                                    </span>
+                                                                </button>
+                                                                <ul class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton1">
+                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="dropdown-divider link-light">
+                                                                    </li>
+                                                                    <li><a class="dropdown-item" href="#">Inativar</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    <tr>
+                                                        <td>5</td>
+                                                        <td>Thor Walton</td>
+                                                        <td>000.000.000-00</td>
+                                                        <td>M</td>
+                                                        <td>61</td>
+                                                        <td>2013/08/11</td>
+                                                        <td>
+                                                            <div>
+                                                                <button class="btn btn-outline-dark" type="button"
+                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                                    aria-expanded="false">
+                                                                    <span class="material-icons">
+                                                                        list
+                                                                    </span>
+                                                                </button>
+                                                                <ul class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton1">
+                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="dropdown-divider link-light">
+                                                                    </li>
+                                                                    <li><a class="dropdown-item" href="#">Inativar</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6</td>
+                                                        <td>Donna Snider</td>
+                                                        <td>000.000.000-00</td>
+                                                        <td>F</td>
+                                                        <td>27</td>
+                                                        <td>2011/01/25</td>
+                                                        <td>
+                                                            <div>
+                                                                <button class="btn btn-outline-dark" type="button"
+                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                                    aria-expanded="false">
+                                                                    <span class="material-icons">
+                                                                        list
+                                                                    </span>
+                                                                </button>
+                                                                <ul class="dropdown-menu"
+                                                                    aria-labelledby="dropdownMenuButton1">
+                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <hr class="dropdown-divider link-light">
+                                                                    </li>
+                                                                    <li><a class="dropdown-item" href="#">Inativar</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
                                         <!-- Modal -->
                                         <div class="modal fade" id="cadastrar" data-bs-backdrop="static"
                                             data-bs-keyboard="false" tabindex="-1" aria-labelledby="cadastrarLabel"
@@ -385,198 +618,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="table-responsive">
-                                            <table class="table table-hover table-bordered table-sm" cellspacing="0"
-                                                width="100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th>ID</th>
-                                                        <th>Nome</th>
-                                                        <th>CPF</th>
-                                                        <th>Gênero</th>
-                                                        <th>Rank</th>
-                                                        <th>Nascimento</th>
-                                                        <th>Opções</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Tiger Nixon</td>
-                                                        <td>000.000.000-00</td>
-                                                        <td>M</td>
-                                                        <td>61</td>
-                                                        <td>2011/04/25</td>
-                                                        <td>
-                                                            <div>
-                                                                <button class="btn btn-outline-dark" type="button"
-                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <span class="material-icons">
-                                                                        list
-                                                                    </span>
-                                                                </button>
-                                                                <ul class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton1">
-                                                                    <li><a class="dropdown-item" id="gerenciarLink"
-                                                                            href="/Ecommerce/adm/gerenciarCliente.jsp">Gerenciar</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider link-light">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#"
-                                                                            data-bs-toggle="modal" id="inativarLink"
-                                                                            data-bs-target="#inativar">Inativar</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Garrett Winters</td>
-                                                        <td>000.000.000-00</td>
-                                                        <td>M</td>
-                                                        <td>63</td>
-                                                        <td>2011/07/25</td>
-                                                        <td>
-                                                            <div>
-                                                                <button class="btn btn-outline-dark" type="button"
-                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <span class="material-icons">
-                                                                        list
-                                                                    </span>
-                                                                </button>
-                                                                <ul class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton1">
-                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider link-light">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#">Inativar</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="table-secondary">
-                                                        <td class="table-secondary">3</td>
-                                                        <td class="table-secondary">Bruno Nash</td>
-                                                        <td class="table-secondary">000.000.000-00</td>
-                                                        <td class="table-secondary">M</td>
-                                                        <td class="table-secondary">38</td>
-                                                        <td class="table-secondary">2011/05/03</td>
-                                                        <td class="table-secondary">
-                                                            <div>
-                                                                <button class="btn btn-outline-dark" type="button"
-                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <span class="material-icons">
-                                                                        list
-                                                                    </span>
-                                                                </button>
-                                                                <ul class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton1">
-                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider link-light">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#">Ativar</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>Sakura Yamamoto</td>
-                                                        <td>000.000.000-00</td>
-                                                        <td>N/A</td>
-                                                        <td>37</td>
-                                                        <td>2009/08/19</td>
-                                                        <td>
-                                                            <div>
-                                                                <button class="btn btn-outline-dark" type="button"
-                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <span class="material-icons">
-                                                                        list
-                                                                    </span>
-                                                                </button>
-                                                                <ul class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton1">
-                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider link-light">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#">Inativar</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    <tr>
-                                                        <td>5</td>
-                                                        <td>Thor Walton</td>
-                                                        <td>000.000.000-00</td>
-                                                        <td>M</td>
-                                                        <td>61</td>
-                                                        <td>2013/08/11</td>
-                                                        <td>
-                                                            <div>
-                                                                <button class="btn btn-outline-dark" type="button"
-                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <span class="material-icons">
-                                                                        list
-                                                                    </span>
-                                                                </button>
-                                                                <ul class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton1">
-                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider link-light">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#">Inativar</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>6</td>
-                                                        <td>Donna Snider</td>
-                                                        <td>000.000.000-00</td>
-                                                        <td>F</td>
-                                                        <td>27</td>
-                                                        <td>2011/01/25</td>
-                                                        <td>
-                                                            <div>
-                                                                <button class="btn btn-outline-dark" type="button"
-                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <span class="material-icons">
-                                                                        list
-                                                                    </span>
-                                                                </button>
-                                                                <ul class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton1">
-                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider link-light">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#">Inativar</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -584,7 +625,7 @@
                             <!--trocas-->
                             <div class="tab-pane fade" id="v-pills-trocas" role="tabpanel"
                                 aria-labelledby="v-pills-trocas-tab">
-                                <div class="card shadow">
+                                <div class="shadow">
                                     <div class="card-body">
                                         <h5 class="card-title">Trocas</h5>
                                     </div>
@@ -594,7 +635,7 @@
                             <!--estoque-->
                             <div class="tab-pane fade" id="v-pills-estoque" role="tabpanel"
                                 aria-labelledby="v-pills-estoque-tab">
-                                <div class="card shadow">
+                                <div class="shadow">
                                     <div class="card-body">
                                         <h5 class="card-title">Estoque</h5>
                                     </div>

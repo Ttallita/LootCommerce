@@ -15,7 +15,7 @@
   <div class="container-fluid position-absolute top-50 start-50 translate-middle">
     <!-- Outer Row -->
     <div class="row justify-content-center">
-      <div class="col-xl-10 col-lg-12 col-md-9">
+      <div class="col-xl-12">
         <div class="card o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
@@ -24,13 +24,16 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <main>
-                    <form class="needs-validation text-center" id="form-cadastro" novalidate="">
-                      <img class="mb-4" src="/Ecommerce/assets/img/logo_fanloot.png" alt="" max-height="100"
+                    <form class="needs-validation" id="form-cadastro" novalidate="">
+                      <img class="mb-4 text-center" src="/Ecommerce/assets/img/logo_fanloot.png" alt="" max-height="100"
                         width="100">
-                      <h1 class="h3 mb-3 fw-normal">Cadastrar</h1>
+                      <h1 class="h3 mb-3 fw-normal text-center">Cadastrar</h1>
 
                       <!--Conta-->
                       <div class="tab row g-3 mb-3">
+                        <h5 class="col-12 form-outline mb-4">
+                          Conta
+                        </h5>
                         <div class="col-12">
                           <div class="form-floating">
                             <input type="email" class="form-control" id="email" placeholder="" value="" required="">
@@ -59,6 +62,9 @@
 
                       <!-- Dados pessoais -->
                       <div class="tab row g-3 mb-3">
+                        <h5 class="col-12 form-outline mb-4">
+                          Dados pessoais
+                        </h5>
                         <div class="col-sm-5 form-outline">
                           <div class="form-floating">
                             <input type="text" class="form-control" id="nome" placeholder="" value="" required="">
@@ -74,7 +80,7 @@
                           </div>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                           <div class="form-floating">
                             <select class="form-select" id="genero" required="">
                               <option value="">Selecione</option>
@@ -88,7 +94,7 @@
                           </div>
                         </div>
 
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                           <div class="form-floating">
                             <input type="date" class="form-control" id="date" value="" required="">
                             <label for="pais" class="form-label">Data de nascimento</label>
@@ -96,7 +102,7 @@
                           </div>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-3">
                           <div class="form-floating">
                             <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" value=""
                               required="">
@@ -108,7 +114,10 @@
 
                       <!-- Telefone -->
                       <div class="tab row g-6 mb-3">
-                        <div class="col-3 form-outline">
+                        <h5 class="col-12 form-outline mb-4">
+                          Telefone
+                        </h5>
+                        <div class="col-6 form-outline">
                           <div class="form-floating">
                             <select class="form-select" id="tipoTelefone" required="">
                               <option value="">Selecione</option>
@@ -123,7 +132,7 @@
                         <div class="col-5">
                           <div class="form-floating">
                             <input type="phone" class="form-control" id="phone" placeholder="" value="" required="">
-                            <label for="phone" class="form-label">Telefone</label>
+                            <label for="phone" class="form-label">Número</label>
                             <div class="invalid-feedback">Insira um Telefone válido.</div>
                           </div>
                         </div>
@@ -131,6 +140,9 @@
 
                       <!--Endereço-->
                       <div class="tab row g-3 mb-3">
+                        <h5 class="col-12 form-outline mb-4">
+                          Endereço
+                        </h5>
                         <div class="col-md-6">
                           <div class="form-floating">
                             <select class="form-select" id="tp-residencia" required="">
@@ -219,7 +231,7 @@
                         </div>
                       </div>
                       <!-- Circles which indicates the steps of the form: -->
-                      <div>
+                      <div class="text-center">
                         <span class="step"></span>
                         <span class="step"></span>
                         <span class="step"></span>
@@ -227,10 +239,16 @@
                       </div>
                       <div style="overflow:auto;">
                         <div style="float:right;">
-                          <button class="btn btn-primary btn-lg" type="button" id="prevBtn"
-                            onclick="nextPrev(-1)">Anterior</button>
-                          <button class="btn btn-primary btn-lg" type="button" id="nextBtn"
-                            onclick="nextPrev(1)">Próximo</button>
+                          <button class="btn btn-primary" type="button" id="prevBtn" onclick="nextPrev(-1)">
+                            <span class="material-icons">
+                              navigate_before
+                            </span>
+                          </button>
+                          <button class="btn btn-primary" type="button" id="nextBtn"onclick="nextPrev(1)">
+                            <span class="material-icons">
+                              navigate_next
+                            </span>
+                          </button>
                         </div>
                       </div>
                     </form>

@@ -15,7 +15,7 @@ function showTab(n) {
   if (n == (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Cadastrar";
   } else {
-    document.getElementById("nextBtn").innerHTML = "Próximo";
+    document.getElementById("nextBtn").innerHTML = "<span class\=\"material-icons\">navigate_next</span>";
   }
   //... and run a function that will display the correct step indicator:
   fixStepIndicator(n)

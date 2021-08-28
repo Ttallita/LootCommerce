@@ -50,7 +50,7 @@
                             <!--conta-->
                             <div class="tab-pane fade active show" id="v-pills-conta" role="tabpanel"
                                 aria-labelledby="v-pills-conta-tab">
-                                <div class="card shadow">
+                                <div class="shadow">
                                     <div class="card-body">
                                         <h4 class="mb-3">Conta</h4>
                                         <form class="needs-validation text-center" novalidate="">
@@ -161,7 +161,7 @@
                             <!--alterar senha-->
                             <div class="tab-pane fade" id="v-pills-alterar-senha" role="tabpanel"
                                 aria-labelledby="v-pills-alterar-senha-tab">
-                                <div class="card shadow">
+                                <div class="shadow">
                                     <div class="card-body">
                                         <h4 class="mb-3">Alterar senha</h4>
 
@@ -223,7 +223,7 @@
                             <!--endereços-->
                             <div class="tab-pane fade" id="v-pills-enderecos" role="tabpanel"
                                 aria-labelledby="v-pills-enderecos-tab">
-                                <div class="card shadow">
+                                <div class="shadow">
                                     <div class="card-body">
                                         <h3 class="mb-2">Endereços cadastrados</h3>
                                         <button type="button" id="novoEndereco" class="btn btn-primary mb-3 float-end"
@@ -508,7 +508,7 @@
                             <!--cartões-->
                             <div class="tab-pane fade" id="v-pills-cartoes" role="tabpanel"
                                 aria-labelledby="v-pills-cartoes-tab">
-                                <div class="card shadow">
+                                <div class="shadow">
                                     <div class="card-body">
                                         <h3 class="mb-2">Meus cartões</h3>
                                         <button type="button" id="novoCartao" class="btn btn-primary mb-3 float-end"

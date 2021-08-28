@@ -34,8 +34,6 @@ footer {
     height: 2.5rem;
 }
 
-.border-left-primary{border-left:.25rem solid #4e73df!important}
-
 /*Google material icons*/
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
@@ -100,3 +98,16 @@ input.invalid {
 .inline-icon {
    vertical-align: bottom;
 }
+
+.navbar-tool-text {
+    display:none;
+    -ms-flex-positive:0;
+    flex-grow:0;
+    -ms-flex-negative:0;
+    flex-shrink:0;
+    padding-left:.875rem;
+    transition:color 0.25s ease-in-out;
+    font-size:.875rem;
+    text-decoration:none !important;
+    white-space:nowrap
+   }

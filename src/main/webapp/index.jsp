@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>'/>
     <link rel="stylesheet" type="text/css" href='/Ecommerce/assets/css/style.css' />
+
 </head>
 <body class="bg-default">
     <!-- Navigation-->
@@ -18,16 +19,20 @@
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
             </div>
             <div class="carousel-inner text-center">
-                <div class="carousel-item active text-center">
-                    <img src="assets\img\promocao_exemplo.jpg" class="img-fluid" alt="Responsive image">
+                <div class="carousel-item active">
+                    <img src="assets\img\banners\banner_fanloot.jpg" class="img-fluid" alt="Responsive image" width="80%">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets\img\promocao_exemplo.jpg" class="img-fluid" alt="Responsive image">
+                    <img src="assets\img\banners\banner_fate.jpg" class="img-fluid" alt="Responsive image" width="80%">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets\img\promocao_exemplo.jpg" class="img-fluid" alt="Responsive image">
+                    <img src="assets\img\banners\banner_halloween.jpg" class="img-fluid" alt="Responsive image" width="80%">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets\img\banners\banner_temos_que_pegar.jpg" class="img-fluid" alt="Responsive image" width="80%">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -47,7 +52,7 @@
             <div class="row row-cols-xl-5">
                 <div class="col mb-5">
                     <div class="col mb-5">
-                        <div class="card shadow ">
+                        <div class="shadow ">
                             <img class="card-img-top" src="assets\img\nendoroids\Fushiguro_Megumi_Nendoroid.jpg" alt="...">
                             <div class="card-body">
                                 <h5 class="fw-bolder">Fancy Product</h5>
@@ -74,7 +79,7 @@
                 </div>
                 <div class="col mb-5">
                     <div class="col mb-5">
-                        <div class="card shadow ">
+                        <div class="shadow ">
                             <img class="card-img-top" src="assets\img\pelucias\rei_pelucia.jpg" alt="...">
                             <div class="card-body">
                                 <h5 class="fw-bolder">Fancy Product</h5>
@@ -101,7 +106,7 @@
                 </div>
                 <div class="col mb-5">
                     <div class="col mb-5">
-                        <div class="card shadow ">
+                        <div class="shadow ">
                             <img class="card-img-top" src="assets\img\nendoroids\levi_Nendoroid.jpg" alt="...">
                             <div class="card-body">
                                 <h5 class="fw-bolder">Fancy Product</h5>
@@ -128,7 +133,7 @@
                 </div>
                 <div class="col mb-5">
                     <div class="col mb-5">
-                        <div class="card shadow ">
+                        <div class="shadow">
                             <img class="card-img-top" src="assets\img\nendoroids\Lotte_Yanson_Nendoroid.jpg" alt="...">
                             <div class="card-body">
                                 <h5 class="fw-bolder">Fancy Product</h5>
@@ -155,7 +160,7 @@
                 </div>
                 <div class="col mb-5">
                     <div class="col mb-5">
-                        <div class="card shadow ">
+                        <div class="shadow">
                             <img class="card-img-top" src="assets\img\nendoroids\shikamaru_Nendoroid.jpg" alt="...">
                             <div class="card-body">
                                 <h5 class="fw-bolder">Fancy Product</h5>
@@ -182,7 +187,7 @@
                 </div>
                 <div class="col mb-5">
                     <div class="col mb-5">
-                        <div class="card shadow ">
+                        <div class="shadow">
                             <img class="card-img-top" src="assets\img\nendoroids\Tsuyu_Asui_Nendoroid.jpg" alt="...">
                             <div class="card-body">
                                 <h5 class="fw-bolder">Fancy Product</h5>
@@ -209,7 +214,7 @@
                 </div>
                 <div class="col mb-5">
                     <div class="col mb-5">
-                        <div class="card shadow ">
+                        <div class="shadow">
                             <img class="card-img-top" src="assets\img\nendoroids\yumeko_Nendoroid.jpg" alt="...">
                             <div class="card-body">
                                 <h5 class="fw-bolder">Fancy Product</h5>
@@ -236,7 +241,7 @@
                 </div>
                 <div class="col mb-5">
                     <div class="col mb-5">
-                        <div class="card shadow ">
+                        <div class="shadow ">
                             <img class="card-img-top" src="assets\img\nendoroids\todoroki_tiger_Nendoroid.jpg" alt="...">
                             <div class="card-body">
                                 <h5 class="fw-bolder">Fancy Product</h5>
@@ -263,7 +268,7 @@
                 </div>
                 <div class="col mb-5">
                     <div class="col mb-5">
-                        <div class="card shadow ">
+                        <div class="shadow ">
                             <img class="card-img-top" src="assets\img\toga_himiko.jpg" alt="...">
                             <div class="card-body">
                                 <h5 class="fw-bolder">Fancy Product</h5>
@@ -290,7 +295,7 @@
                 </div>
                 <div class="col mb-5">
                     <div class="col mb-5">
-                        <div class="card shadow ">
+                        <div class="shadow ">
                             <img class="card-img-top" src="assets\img\pelucias\miku_pelucia.jpg" alt="...">
                             <div class="card-body">
                                 <h5 class="fw-bolder">Fancy Product</h5>
