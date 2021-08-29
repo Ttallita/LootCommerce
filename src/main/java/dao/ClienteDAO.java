@@ -82,6 +82,7 @@ public class ClienteDAO implements IDAO{
 
     @Override
     public List<IEntidade> listar() {
+
         return null;
     }
 }

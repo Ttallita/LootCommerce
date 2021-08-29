@@ -34,7 +34,11 @@ public class EnderecoViewHelper implements IViewHelper {
             endereco.setTipoResidencia(tpResidencia);
             endereco.setTipoLogradouro(tpLogradouro);
             endereco.setLogradouro(logradouro);
-            endereco.setNumero(Integer.parseInt(numero));
+
+            if(!numero.isEmpty()) {
+                endereco.setNumero(Integer.parseInt(numero));
+            }
+
             endereco.setBairro(bairro);
             endereco.setCep(cep);
             endereco.setCidade(cidade);

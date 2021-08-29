@@ -33,8 +33,17 @@ public class ClienteViewHelper implements IViewHelper {
             String cpf = request.getParameter("cpf");
 
             String tipoTelefone = request.getParameter("tipoTelefone");
-            String ddd = request.getParameter("phone").split(" ")[0];
-            String phone = request.getParameter("phone").split(" ")[1];
+
+            String phoneCompleto;
+            String ddd = "";
+            String phone = "";
+
+            phoneCompleto = request.getParameter("phone");
+
+            if(!phoneCompleto.isEmpty()) {
+                ddd = request.getParameter("phone").split(" ")[0];
+                phone = request.getParameter("phone").split(" ")[1];
+            }
 
             Telefone telefone = new Telefone();
             telefone.setTipo(tipoTelefone);
@@ -66,10 +75,19 @@ public class ClienteViewHelper implements IViewHelper {
     public void setView(Result result, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String operacao = request.getParameter("operacao");
 
-        if(operacao.equals("salvar")) {
-            Cliente cliente = (Cliente) result.getEntidades().get(0);
+        Cliente cliente = (Cliente) result.getEntidades().get(0);
 
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+        if(operacao.equals("salvar")) {
+            if(result.getMsg() == null) {
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+            } else {
+
+                String[] messagensDeErro = result.getMsg().split("\n");
+
+                request.setAttribute("mensagem", messagensDeErro);
+                request.setAttribute("cliente", cliente);
+                request.getRequestDispatcher("cadastro.jsp").forward(request, response);
+            }
         }
     }
 }

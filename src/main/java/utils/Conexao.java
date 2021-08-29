@@ -12,7 +12,6 @@ public class Conexao {
 
     public Connection getConexao() throws SQLException, ClassNotFoundException{
 
-
         driver = "org.postgresql.Driver";
         url = "jdbc:postgresql://localhost/fanLoot";
         user = "postgres";
