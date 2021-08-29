@@ -79,7 +79,7 @@ public class ClienteViewHelper implements IViewHelper {
 
         if(operacao.equals("salvar")) {
             if(result.getMsg() == null) {
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                response.sendRedirect("login.jsp");
             } else {
 
                 String[] messagensDeErro = result.getMsg().split("\n");

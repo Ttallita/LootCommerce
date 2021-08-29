@@ -1,9 +1,6 @@
 package dao;
 
 import model.EntidadeDominio;
-import model.IEntidade;
-import model.Usuario;
-import model.cliente.Cliente;
 import model.cliente.Endereco;
 import utils.Conexao;
 
@@ -71,7 +68,7 @@ public class EnderecoDAO implements IDAO{
     }
 
     @Override
-    public List<IEntidade> listar() {
+    public List<EntidadeDominio> listar(EntidadeDominio entidade, String operacao) {
         return null;
     }
 }

@@ -28,7 +28,12 @@
                     <!-- mostra apenas quando usuario for Administrador -->
                     <li><a class="dropdown-item link-light" href="/Ecommerce/adm/gerenciamento.jsp">Gerenciamento</a></li>
                     <li><hr class="dropdown-divider link-light"></li>
-                    <li><a class="dropdown-item link-light" href="#">Sair</a></li>
+
+                    <li>
+                        <form action="/Ecommerce/logout">
+                            <input type="submit" class="dropdown-item link-light" value="Sair"/>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>

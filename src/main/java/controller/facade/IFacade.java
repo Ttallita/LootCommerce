@@ -10,6 +10,6 @@ public interface IFacade {
     public abstract Result salvar(EntidadeDominio entidade);
     public abstract Result atualizar(EntidadeDominio entidade);
     public abstract Result deletar(EntidadeDominio entidade);
-    public abstract Result listar(EntidadeDominio entidade);
+    public abstract Result listar(EntidadeDominio entidade, String operacao);
 
 }

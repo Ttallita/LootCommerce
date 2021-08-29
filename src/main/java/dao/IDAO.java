@@ -10,6 +10,6 @@ public interface IDAO {
     public Long salvar(EntidadeDominio entidade);
     public abstract boolean atualizar(EntidadeDominio entidade);
     public abstract boolean deletar(EntidadeDominio entidade);
-    public abstract List<IEntidade> listar();
+    public abstract List<EntidadeDominio> listar(EntidadeDominio entidade, String operacao);
 
 }
