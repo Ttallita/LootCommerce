@@ -24,23 +24,22 @@ public class CartaoDeCreditoDAO implements IDAO {
         try {
             conn = conexao.getConexao();
 
-            String sql = "INSERT INTO cartoes (crt_id serial, crt_cli_usr_id, crt_numero, crt_bandeira, crt_dt_validade, crt_nome_impresso, crt_cod_seg)"
-                    + " VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO cartoes ( crt_cli_usr_id, crt_numero, crt_bandeira, crt_dt_validade, crt_nome_impresso, crt_cod_seg)"
+                    + " VALUES (?, ?, ?, ?, ?, ?)";
 
-            Long idCartao = new CartaoDeCreditoDAO().salvar(cartao);
+
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            pstm.setLong(1, idCartao);
-            pstm.setLong(2, 1);
-            pstm.setString(3, cartao.getNumCartao());
-            pstm.setString(4, cartao.getBandeira());
-            pstm.setDate(5, Date.valueOf(cartao.getDataValidade()));
-            pstm.setString(6, cartao.getNomeImpressoCartao());
-            pstm.setString(7, String.valueOf(cartao.getCodigo()));
+            pstm.setLong(1, 1);
+            pstm.setString(2, cartao.getNumCartao());
+            pstm.setString(3, cartao.getBandeira());
+            pstm.setDate(4, Date.valueOf(cartao.getDataValidade()));
+            pstm.setString(5, cartao.getNomeImpressoCartao());
+            pstm.setString(6, String.valueOf(cartao.getCodigo()));
 
             pstm.execute();
 
-            return idCartao;
+            return 1l;
         } catch (Exception e) {
             System.err.println(e.getMessage());
             return null;

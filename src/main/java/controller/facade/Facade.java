@@ -2,10 +2,12 @@ package controller.facade;
 
 import controller.strategy.IStrategy;
 import controller.strategy.impl.cliente.*;
+import dao.CartaoDeCreditoDAO;
 import dao.ClienteDAO;
 import dao.IDAO;
 import model.Result;
 import model.EntidadeDominio;
+import model.cliente.CartaoDeCredito;
 import model.cliente.Cliente;
 
 import java.util.ArrayList;
@@ -23,6 +25,7 @@ public class Facade implements IFacade {
     public Facade() {
         daosMap = new HashMap<>();
         daosMap.put(Cliente.class.getName(), new ClienteDAO());
+        daosMap.put(CartaoDeCredito.class.getName(), new CartaoDeCreditoDAO());
 
         regrasDeNegocioMap = new HashMap<>();
 
