@@ -21,7 +21,7 @@ public class ClienteDAO implements IDAO{
         try {
             conn = conexao.getConexao();
 
-            String sql = "INSERT INTO clientes (cli_urs_id, cli_cpf, cli_dt_nasc, cli_genero, cli_telefone_num, cli_telefone_ddd, cli_telefone_tp)" +
+            String sql = "INSERT INTO clientes (cli_usr_id, cli_cpf, cli_dt_nasc, cli_genero, cli_telefone_num, cli_telefone_ddd, cli_telefone_tp)" +
                     " VALUES (?, ?, ?, ?, ?, ?, ?)";
 
             Usuario usuario = cliente.getUsuario();
