@@ -45,7 +45,7 @@ CREATE TABLE cartoes(
 
 CREATE TABLE enderecos (
     end_id serial NOT NULL,
-    end_tp varchar(8) NOT NULL,
+    end_tp varchar(20) NOT NULL,
     end_nome varchar(255) NOT NULL,
     end_tp_logradouro varchar(255) NOT NULL,
     end_logradouro varchar(255) NOT NULL,

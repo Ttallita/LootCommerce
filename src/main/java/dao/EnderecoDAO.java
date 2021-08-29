@@ -16,18 +16,14 @@ public class EnderecoDAO implements IDAO{
 
     @Override
     public Long salvar(EntidadeDominio entidade) {
-        Cliente cliente = (Cliente) entidade;
+        Endereco endereco = (Endereco) entidade;
+
         Conexao conexao = new Conexao();
-
-        Endereco endereco = cliente.getEndereco();
-
         try {
             conn = conexao.getConexao();
 
-            String sql = "INSERT INTO enderecos (end_tipo, end_nome, end_tp_logradouro, end_logradouro, end_num, end_bairro, end_cep, end_cidade, end_estado, end_pais, end_observacao)" +
+            String sql = "INSERT INTO enderecos (end_tp, end_nome, end_tp_logradouro, end_logradouro, end_num, end_bairro, end_cep, end_cidade, end_estado, end_pais, end_observacao)" +
                     " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-            Usuario usuario = cliente.getUsuario();
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstm.setString(1, endereco.getTipoEndereco().toString());
