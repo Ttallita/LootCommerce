@@ -2,6 +2,7 @@ package controller;
 
 import controller.command.*;
 import controller.viewHelper.IViewHelper;
+import controller.viewHelper.impl.model.CartaoDeCreditoViewHelper;
 import controller.viewHelper.impl.model.ClienteViewHelper;
 import model.EntidadeDominio;
 import model.Result;
@@ -20,7 +21,7 @@ import java.util.Map;
         "/logout",
         "/cadastro",
         "/clientes",
-        "/adm"
+        "/admin/*"
 })
 public class Controller extends HttpServlet{
     private static final long serialVersionUID = 1L;
@@ -37,6 +38,7 @@ public class Controller extends HttpServlet{
 
         viewHelpers = new HashMap<>();
         viewHelpers.put("/Ecommerce/cadastro", new ClienteViewHelper());
+        viewHelpers.put("/Ecommerce/admin/cadastrarCartao", new CartaoDeCreditoViewHelper());
     }
 
     @Override
@@ -53,6 +55,8 @@ public class Controller extends HttpServlet{
         req.setCharacterEncoding("UTF-8");
 
         String operacao = req.getParameter("operacao");
+
+        System.out.println("teste");
 
         ICommand command = commands.get(operacao);
 

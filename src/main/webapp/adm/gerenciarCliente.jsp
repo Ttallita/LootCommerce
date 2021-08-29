@@ -436,50 +436,56 @@
                         <h5 class="modal-title" id="cadastrarCartaoLabel">Cadastrar</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
-                      <div class="modal-body">
-                        <form class="needs-validation" novalidate="">
-                          <div class="row g-3 mb-3">
-                            <div class="col-md-6">
-                              <div class="form-floating">
-                                <input type="text" class="form-control" id="numCartao" placeholder="" value="" required="">
-                                <label for="numCartao" class="form-label">Número do cartão</label>
-                                <div class="invalid-feedback">Insira um número para o cartão.</div>
+                      <form class="needs-validation" action="/Ecommerce/admin/cadastrarCartao" method="POST" novalidate="">
+                        <input type="hidden" name="operacao" value="salvar">
+                        <div class="modal-body">
+                            <div class="row g-3 mb-3">
+                              <div class="col-md-6">
+                                <div class="form-floating">
+                                  <input type="text" class="form-control" id="numCartao" name="numCartao" placeholder="" value="" required="">
+                                  <label for="numCartao" class="form-label">Número do cartão</label>
+                                  <div class="invalid-feedback">Insira um número para o cartão.</div>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <div class="form-floating">
+                                  <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" placeholder="" value="" required="">
+                                  <label for="nomeCartao" required="">Nome do cartão</label>
+                                  <div class="invalid-feedback">Insira um nome para o cartão.</div>
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-floating">
+                                  <select class="form-select" id="bandeira" name="bandeira" required="">
+                                    <option value="">Selecione</option>
+                                    <option>Visa</option>
+                                    <option>Mastercard</option>
+                                  </select>
+                                  <label>Bandeira</label>
+                                  <div class="invalid-feedback">Selecione a bandeira do cartão.</div>
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <div class="form-floating">
+                                  <input type="text" class="form-control" id="codigoCartao" name="codigoCartao" placeholder="" value="" required="">
+                                  <label for="nomeCartao" class="form-label">Código</label>
+                                  <div class="invalid-feedback">Insira o código.</div>
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-floating">
+                                  <input type="date" class="form-control" id="dtValidade" name="dtValidade" placeholder="" value="" required="">
+                                  <label for="nomeCartao" class="form-label">Data de Validade</label>
+                                  <div class="invalid-feedback">Insira data de validade.</div>
+                                </div>
                               </div>
                             </div>
-                            <div class="col-md-6">
-                              <div class="form-floating">
-                                <input type="text" class="form-control" id="nomeCartao" placeholder="" value="" required="">
-                                <label for="nomeCartao" required="">Nome do cartão</label>
-                                <div class="invalid-feedback">Insira um nome para o cartão.</div>
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-floating">
-                                <select class="form-select" id="bandeira" required="">
-                                  <option value="">Selecione</option>
-                                  <option>Visa</option>
-                                  <option>Mastercard</option>
-                                </select>
-                                <label>Bandeira</label>
-                                <div class="invalid-feedback">Selecione a bandeira do cartão.</div>
-                              </div>
-                            </div>
-                            <div class="col-md-2">
-                              <div class="form-floating">
-                                <input type="text" class="form-control" id="codigoCartao" placeholder="" value="" required="">
-                                <label for="nomeCartao" class="form-label">Código</label>
-                                <div class="invalid-feedback">Insira o código.</div>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" id="btnCancelarCartao" data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</button>
-                        <input type="submit" id="btnCadastrarCartao" value="Cadastrar" class="btn btn-success">
-                      </div>
-
-
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" id="btnCancelarCartao" data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</button>
+                          <input type="submit" id="btnCadastrarCartao" value="Cadastrar" class="btn btn-success">
+                        </div>
+                      </form>
                     </div>
                   </div>
                 </div>
