@@ -1,25 +1,24 @@
 package model.cliente;
 
-import model.Entidade;
+import model.EntidadeDominio;
+import model.Usuario;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
-public class Cliente extends Entidade {
+public class Cliente extends EntidadeDominio {
 
     private String genero;
-    private String nome;
-    private LocalDate dataNascimento;
+    private String dataNascimento;
     private String cpf;
     private Telefone telefone;
-    private String email;
-    private String senha;
     private Endereco endereco;
     private List<Endereco> enderecoEntrega;
     private List<Endereco> enderecoCobranca;
     private List<CartaoDeCredito> cartoesDeCredito;
     private int ranking;
+    private Usuario usuario;
 
     public String getGenero() {
         return genero;
@@ -29,19 +28,11 @@ public class Cliente extends Entidade {
         this.genero = genero;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public LocalDate getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(LocalDate dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
@@ -59,22 +50,6 @@ public class Cliente extends Entidade {
 
     public void setTelefone(Telefone telefone) {
         this.telefone = telefone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 
     public Endereco getEndereco() {
@@ -101,6 +76,14 @@ public class Cliente extends Entidade {
         this.enderecoCobranca = enderecoCobranca;
     }
 
+    public List<CartaoDeCredito> getCartoesDeCredito() {
+        return cartoesDeCredito;
+    }
+
+    public void setCartoesDeCredito(List<CartaoDeCredito> cartoesDeCredito) {
+        this.cartoesDeCredito = cartoesDeCredito;
+    }
+
     public int getRanking() {
         return ranking;
     }
@@ -109,43 +92,11 @@ public class Cliente extends Entidade {
         this.ranking = ranking;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Cliente cliente = (Cliente) o;
-        return ranking == cliente.ranking
-                && Objects.equals(genero, cliente.genero)
-                && Objects.equals(nome, cliente.nome)
-                && Objects.equals(dataNascimento, cliente.dataNascimento)
-                && Objects.equals(cpf, cliente.cpf)
-                && Objects.equals(telefone, cliente.telefone)
-                && Objects.equals(email, cliente.email)
-                && Objects.equals(senha, cliente.senha)
-                && Objects.equals(endereco, cliente.endereco)
-                && Objects.equals(enderecoEntrega, cliente.enderecoEntrega)
-                && Objects.equals(enderecoCobranca, cliente.enderecoCobranca);
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(genero, nome, dataNascimento, cpf, telefone, email, senha, endereco, enderecoEntrega, enderecoCobranca, ranking);
-    }
-
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "genero='" + genero + '\'' +
-                ", nome='" + nome + '\'' +
-                ", dataNascimento=" + dataNascimento +
-                ", cpf='" + cpf + '\'' +
-                ", telefone=" + telefone +
-                ", email='" + email + '\'' +
-                ", senha='" + senha + '\'' +
-                ", endereco=" + endereco +
-                ", enderecoEntrega=" + enderecoEntrega +
-                ", enderecoCobranca=" + enderecoCobranca +
-                ", ranking=" + ranking +
-                '}';
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

@@ -32,7 +32,6 @@ function nextPrev(n) {
   if (currentTab >= x.length) {
     // ... the form gets submitted:
     document.getElementById("form-cadastro").submit();
-    window.location.href = "login.jsp"
     return false;
   }
   // Otherwise, display the correct tab:

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-/*
+/**
  * @author André Gomes
  */
 
@@ -32,13 +32,10 @@ public class CadastroTest {
         WebElement campoConfirmacao = driver.findElement(By.id("senhaConfirmacao"));
 
         campoEmail.sendKeys(email);
-        Thread.sleep(2000);
 
         campoSenha.sendKeys(senha);
-        Thread.sleep(2000);
 
         campoConfirmacao.sendKeys(senha);
-        Thread.sleep(2000);
 
         WebElement nextButton = driver.findElement(By.id("nextBtn"));
         nextButton.click();
@@ -57,15 +54,10 @@ public class CadastroTest {
         String cpf = "123.132.132-12";
 
         campoNome.sendKeys(nome);
-        Thread.sleep(2000);
         campoSobrenome.sendKeys(sobrenome);
-        Thread.sleep(2000);
         selectGenero.selectByIndex(1);
-        Thread.sleep(2000);
         campoDataNascimento.sendKeys(dataNascimento);
-        Thread.sleep(2000);
         campoCpf.sendKeys(cpf);
-        Thread.sleep(2000);
         nextButton.click();
 
         WebElement campoTipoTelefone = driver.findElement(By.id("tipoTelefone"));
@@ -76,9 +68,7 @@ public class CadastroTest {
         String telefone = "11 94002-8922";
 
         selectTelefone.selectByIndex(1);
-        Thread.sleep(2000);
         campoTelefone.sendKeys(telefone);
-        Thread.sleep(2000);
 
         nextButton.click();
 
@@ -106,27 +96,19 @@ public class CadastroTest {
         String observacao = "Sem observações";
 
         selectTipoResidencia.selectByIndex(1);
-        Thread.sleep(2000);
         campoTipoLogradouro.sendKeys(tipoLogradouro);
-        Thread.sleep(2000);
         campoLogradouro.sendKeys(logradouro);
-        Thread.sleep(2000);
         campoNumero.sendKeys(numero);
-        Thread.sleep(2000);
         campoBairro.sendKeys(bairro);
-        Thread.sleep(2000);
         campoCep.sendKeys(cep);
-        Thread.sleep(2000);
         selectCidade.selectByIndex(1);
-        Thread.sleep(2000);
         selectEstado.selectByIndex(1);
-        Thread.sleep(2000);
         selectPais.selectByIndex(1);
-        Thread.sleep(2000);
         campoObservacao.sendKeys(observacao);
-        Thread.sleep(2000);
 
-        driver.close();
+
+        WebElement formCadastro = driver.findElement(By.id("form-cadastro"));
+        formCadastro.submit();
 
     }
 }
