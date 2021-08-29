@@ -18,7 +18,7 @@ public class Conexao {
         user = "postgres";
 
         //Mudar senha para conexão com banco
-        password = "hitagi710";
+        password = "post24SQL05";
 
         Class.forName(driver);
         Connection conn = DriverManager.getConnection(url, user, password);

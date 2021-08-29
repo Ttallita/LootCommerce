@@ -4,7 +4,7 @@ CREATE TABLE usuarios (
 	usr_ult_nome varchar(45) NOT NULL,
     usr_email varchar(255) NOT NULL,
     usr_senha varchar(255) NOT NULL,
-    usr_tipo varchar(255) NOT NULL
+    usr_tipo varchar(255) NOT NULL,
 
     PRIMARY KEY (usr_id)
 );
