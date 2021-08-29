@@ -35,7 +35,6 @@ public class Controller extends HttpServlet{
         commands.put("listar", new ListarCommand());
         commands.put("remover", new ExcluirCommand());
 
-
         viewHelpers = new HashMap<>();
         viewHelpers.put("/Ecommerce/cadastro", new ClienteViewHelper());
     }
@@ -55,21 +54,13 @@ public class Controller extends HttpServlet{
 
         String operacao = req.getParameter("operacao");
 
-        System.out.println("============================");
-        System.out.println("Nova requisição " + req.getMethod()  + " para " + req.getRequestURI().substring(req.getContextPath().length())
-            + " com a operação \"" + operacao + "\"");
-
         ICommand command = commands.get(operacao);
-        System.out.println("Command: " + command.getClass().getSimpleName());
 
         IViewHelper viewHelper = viewHelpers.get(req.getRequestURI());
-        System.out.println("View Helper: " + viewHelpers.getClass().getSimpleName());
 
         EntidadeDominio entidade = viewHelper.getEntidade(req);
-        System.out.println("Entidade : " + entidade);
 
         Result result = command.execute(entidade, operacao);
-
 
         viewHelper.setView(result, req, resp);
     }

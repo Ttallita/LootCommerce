@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <html>
-
 <head>
   <meta charset="UTF-8" />
   <title>Cadastro</title>
@@ -10,15 +8,12 @@
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
   <link rel="stylesheet" type="text/css" href='assets/css/style.css' />
 </head>
-
 <body class="bg-gradient-primary">
   <div class="container-fluid position-absolute top-50 start-50 translate-middle">
-    <!-- Outer Row -->
     <div class="row justify-content-center">
       <div class="col-xl-12">
         <div class="card o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
             <div class="row">
               <div class="col-lg-6 d-none d-lg-block bg-cadastro-image"></div>
               <div class="col-lg-6">
@@ -255,7 +250,6 @@
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
 <script src='<c:url value="/webjars/jquery-mask-plugin/1.14.16/dist/jquery.mask.min.js"/>'></script>
 <script src='<c:url value="/assets/js/form-steps.js"/>'></script>
-<script src='<c:url value="/assets/js/form-validation.js"/>'></script>
 
 <script>
   $(document).ready(function () {

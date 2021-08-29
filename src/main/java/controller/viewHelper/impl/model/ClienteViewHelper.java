@@ -69,7 +69,7 @@ public class ClienteViewHelper implements IViewHelper {
         if(operacao.equals("salvar")) {
             Cliente cliente = (Cliente) result.getEntidades().get(0);
 
-            request.getRequestDispatcher("/Ecommerce/login.jsp").forward(request, response);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
 }

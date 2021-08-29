@@ -2,8 +2,6 @@ package model.cliente;
 
 import model.EntidadeDominio;
 
-import java.util.Objects;
-
 public class Endereco extends EntidadeDominio {
 
     private String tipoResidencia;
@@ -16,6 +14,8 @@ public class Endereco extends EntidadeDominio {
     private String estado;
     private String pais;
     private String observacoes;
+    private EnderecoType tipoEndereco;
+    private String apelido;
 
     public String getTipoResidencia() {
         return tipoResidencia;
@@ -97,41 +97,19 @@ public class Endereco extends EntidadeDominio {
         this.observacoes = observacoes;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Endereco endereco = (Endereco) o;
-        return numero == endereco.numero
-                && Objects.equals(tipoResidencia, endereco.tipoResidencia)
-                && Objects.equals(tipoLogradouro, endereco.tipoLogradouro)
-                && Objects.equals(logradouro, endereco.logradouro)
-                && Objects.equals(bairro, endereco.bairro)
-                && Objects.equals(cep, endereco.cep)
-                && Objects.equals(cidade, endereco.cidade)
-                && Objects.equals(estado, endereco.estado)
-                && Objects.equals(pais, endereco.pais)
-                && Objects.equals(observacoes, endereco.observacoes);
+    public EnderecoType getTipoEndereco() {
+        return tipoEndereco;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(tipoResidencia, tipoLogradouro, logradouro, numero, bairro, cep, cidade, estado, pais, observacoes);
+    public void setTipoEndereco(EnderecoType tipoEndereco) {
+        this.tipoEndereco = tipoEndereco;
     }
 
-    @Override
-    public String toString() {
-        return "Endereco{" +
-                "tipoResidencia='" + tipoResidencia + '\'' +
-                ", tipoLogradouro='" + tipoLogradouro + '\'' +
-                ", logradouro='" + logradouro + '\'' +
-                ", numero=" + numero +
-                ", bairro='" + bairro + '\'' +
-                ", cep='" + cep + '\'' +
-                ", cidade='" + cidade + '\'' +
-                ", estado='" + estado + '\'' +
-                ", pais='" + pais + '\'' +
-                ", observacoes='" + observacoes + '\'' +
-                '}';
+    public String getApelido() {
+        return apelido;
+    }
+
+    public void setApelido(String apelido) {
+        this.apelido = apelido;
     }
 }
