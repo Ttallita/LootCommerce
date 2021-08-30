@@ -38,6 +38,7 @@ public class ClienteViewHelper implements IViewHelper {
             String ddd = "";
             String phone = "";
 
+
             phoneCompleto = request.getParameter("phone");
 
             if(!phoneCompleto.isEmpty()) {

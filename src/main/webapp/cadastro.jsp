@@ -45,8 +45,7 @@
                   <div class="col-lg-6">
                     <div class="p-5">
                       <main>
-                        <form class="needs-validation" id="form-cadastro" action="/Ecommerce/cadastro" method="POST"
-                          novalidate="">
+                        <form class="needs-validation" id="form-cadastro" action="/Ecommerce/cadastro" method="POST" novalidate="">
                           <input type="hidden" name="operacao" value="salvar">
                           <img class="mb-4 text-center" src="/Ecommerce/assets/img/logo_fanloot.png" alt=""
                             max-height="100" width="100">
@@ -123,7 +122,7 @@
 
                             <div class="col-3">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" value=""
+                                <input type="text" class="form-control" id="cpf" value=""
                                   name="cpf">
                                 <label for="cpf" class="form-label">CPF</label>
                                 <div class="invalid-feedback">Insira seu número de CPF.</div>
@@ -164,7 +163,7 @@
                             </h5>
                             <div class="col-md-6">
                               <div class="form-floating">
-                                <select class="form-select" id="tp-residencia" name="tp-residencia">
+                                <select class="form-select" id="tpResidencia" name="tpResidencia">
                                   <option value="">Selecione</option>
                                   <option>Casa</option>
                                   <option>Apartamento</option>
@@ -176,9 +175,9 @@
                             </div>
                             <div class="col-md-6">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="tp-logradouro" placeholder="" value=""
-                                  name="tp-logradouro">
-                                <label for="tp-logradouro" class="form-label">Tipo de logradouro</label>
+                                <input type="text" class="form-control" id="tpLogradouro" placeholder="" value=""
+                                  name="tpLogradouro">
+                                <label for="tpLogradouro" class="form-label">Tipo de logradouro</label>
                               </div>
                             </div>
                             <div class="col-md-5">

@@ -9,7 +9,7 @@ import java.util.InputMismatchException;
 public class VerificaCpfStrategy implements IStrategy {
     @Override
     public String processa(EntidadeDominio entidade) {
-        Cliente cliente = (Cliente) entidade;
+        /*Cliente cliente = (Cliente) entidade;
 
         String cpf = cliente.getCpf();
 
@@ -63,9 +63,11 @@ public class VerificaCpfStrategy implements IStrategy {
             } else {
                 return "Digite um cpf válido";
             }
+            return null;
 
         } catch (InputMismatchException erro) {
             return "Digite um cpf válido";
-        }
+        }*/
+        return null;
     }
 }

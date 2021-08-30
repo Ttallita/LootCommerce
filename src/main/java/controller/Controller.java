@@ -4,6 +4,7 @@ import controller.command.*;
 import controller.viewHelper.IViewHelper;
 import controller.viewHelper.impl.model.CartaoDeCreditoViewHelper;
 import controller.viewHelper.impl.model.ClienteViewHelper;
+import controller.viewHelper.impl.model.EnderecoViewHelper;
 import model.EntidadeDominio;
 import model.Result;
 
@@ -38,7 +39,9 @@ public class Controller extends HttpServlet{
 
         viewHelpers = new HashMap<>();
         viewHelpers.put("/Ecommerce/cadastro", new ClienteViewHelper());
+        viewHelpers.put("/Ecommerce/admin/cadastrarCliente", new ClienteViewHelper());
         viewHelpers.put("/Ecommerce/admin/cadastrarCartao", new CartaoDeCreditoViewHelper());
+        viewHelpers.put("/Ecommerce/admin/cadastrarEndereco", new EnderecoViewHelper());
     }
 
     @Override
@@ -56,11 +59,11 @@ public class Controller extends HttpServlet{
 
         String operacao = req.getParameter("operacao");
 
-        System.out.println("teste");
-
         ICommand command = commands.get(operacao);
 
+        System.out.println("a");
         IViewHelper viewHelper = viewHelpers.get(req.getRequestURI());
+        System.out.println("a");
 
         EntidadeDominio entidade = viewHelper.getEntidade(req);
 

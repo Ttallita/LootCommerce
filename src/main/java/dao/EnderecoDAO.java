@@ -2,8 +2,6 @@ package dao;
 
 import model.EntidadeDominio;
 import model.IEntidade;
-import model.Usuario;
-import model.cliente.Cliente;
 import model.cliente.Endereco;
 import utils.Conexao;
 
@@ -47,8 +45,6 @@ public class EnderecoDAO implements IDAO{
             while (rs.next()) {
                 enderecoId = rs.getLong(1);
             }
-
-
 
             return enderecoId;
         }catch (Exception e) {

@@ -140,7 +140,7 @@
                                                     <div class="input-group form-floating">
                                                         <input type="phone" class="form-control" id="telefone"
                                                             value="90000-0000" required="" disabled="">
-                                                        <button onclick="editar('telefone')" id="editarPhone"
+                                                        <button onclick="editar('telefone')" id="editarTelefone"
                                                             class="btn btn-primary" type="button"><span
                                                                 class="material-icons">mode_edit</span></button>
                                                         <label class="form-label">Telefone</label>
@@ -330,7 +330,7 @@
 
                                                                 <div class="col-md-6">
                                                                     <div class="form-floating">
-                                                                        <select class="form-select" id="tp-residencia"
+                                                                        <select class="form-select" id="tpResidencia"
                                                                             required="">
                                                                             <option value="">Selecione</option>
                                                                             <option>Casa</option>
@@ -346,9 +346,9 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-floating">
                                                                         <input type="text" class="form-control"
-                                                                            id="tp-logradouro" placeholder="" value=""
+                                                                            id="tpLogradouro" placeholder="" value=""
                                                                             required="">
-                                                                        <label for="tp-logradouro"
+                                                                        <label for="tpLogradouro"
                                                                             class="form-label">Tipo
                                                                             de logradouro</label>
                                                                         <div class="invalid-feedback">Insira um tipo de
