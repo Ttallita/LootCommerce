@@ -3,6 +3,7 @@ package dao;
 import model.IEntidade;
 import model.Usuario;
 import model.UsuarioType;
+import model.cliente.CartaoDeCredito;
 import model.cliente.Cliente;
 import model.EntidadeDominio;
 import model.cliente.Endereco;
@@ -128,15 +129,23 @@ public class ClienteDAO implements IDAO{
                     Endereco endereco = new Endereco();
                     endereco.setCliente(clienteLogado);
 
-                    List<EntidadeDominio> enderecos = new EnderecoDAO().listar(endereco, "listarPorCliente");
+                    CartaoDeCredito cartao = new CartaoDeCredito();
+                    cartao.setCliente(clienteLogado);
 
+                    List<EntidadeDominio> enderecos = new EnderecoDAO().listar(endereco, "listarPorCliente");
                     List<Endereco> enderecosConvertidos = enderecos.stream()
                             .map(enderecoMap -> (Endereco) enderecoMap)
+                            .collect(Collectors.toList());
+
+                    List<EntidadeDominio> cartoes = new CartaoDeCreditoDAO().listar(cartao, "listarPorCliente");
+                    List<CartaoDeCredito> cartoesConvertidos = cartoes.stream()
+                            .map(cartaoMap -> (CartaoDeCredito) cartaoMap)
                             .collect(Collectors.toList());
 
                     clienteLogado.setTelefone(telefone);
                     clienteLogado.setUsuario(cliente.getUsuario());
                     clienteLogado.setEnderecos(enderecosConvertidos);
+                    clienteLogado.setCartoesDeCredito(cartoesConvertidos);
 
                     entidadeDominios.add(clienteLogado);
                 }

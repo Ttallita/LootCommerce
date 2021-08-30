@@ -2,15 +2,13 @@ package controller.facade;
 
 import controller.strategy.IStrategy;
 import controller.strategy.impl.cliente.*;
-import dao.CartaoDeCreditoDAO;
-import dao.ClienteDAO;
-import dao.IDAO;
-import dao.UsuarioDAO;
+import dao.*;
 import model.Result;
 import model.EntidadeDominio;
 import model.Usuario;
 import model.cliente.CartaoDeCredito;
 import model.cliente.Cliente;
+import model.cliente.Endereco;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,6 +26,7 @@ public class Facade implements IFacade {
         daosMap = new HashMap<>();
         daosMap.put(Cliente.class.getName(), new ClienteDAO());
         daosMap.put(CartaoDeCredito.class.getName(), new CartaoDeCreditoDAO());
+        daosMap.put(Endereco.class.getName(), new EnderecoDAO());
         daosMap.put(Usuario.class.getName(), new UsuarioDAO());
 
         regrasDeNegocioMap = new HashMap<>();
@@ -130,7 +129,6 @@ public class Facade implements IFacade {
         String msgValidacao = validarRegrasDeNegocio(entidade, operacao);
 
         if(msgValidacao == null) {
-
             IDAO dao = daosMap.get(nomeClasse);
 
             List<EntidadeDominio> listaEntidades = dao.listar(entidade, operacao);

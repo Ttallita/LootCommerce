@@ -232,42 +232,42 @@
                             </div>
                             <div class="col-md-6">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="tpLogradouro" name="tpLogradouro" placeholder="" value="" required="">
+                                <input type="text" class="form-control" id="tpLogradouro" name="tpLogradouro" required>
                                 <label for="tpLogradouro" class="form-label">Tipo de logradouro</label>
                                 <div class="invalid-feedback">Insira um tipo de logradouro.</div>
                               </div>
                             </div>
                             <div class="col-md-5">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="" value="" required="">
+                                <input type="text" class="form-control" id="logradouro" name="logradouro" required>
                                 <label for="logradouro" class="form-label">Logradouro</label>
                                 <div class="invalid-feedback">Insira o logradouro.</div>
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="numero" name="numero" placeholder="" value="" required="">
+                                <input type="text" class="form-control" id="numero" name="numero" required>
                                 <label for="numero" class="form-label">Número</label>
                                 <div class="invalid-feedback">Insira o número.</div>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="bairro" name="bairro" placeholder="" value="" required="">
+                                <input type="text" class="form-control" id="bairro" name="bairro" required>
                                 <label for="bairro" class="form-label">Bairro</label>
                                 <div class="invalid-feedback">Insira um bairro.</div>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" required="">
+                                <input type="text" class="form-control" id="cep" name="cep" required>
                                 <label for="cep" class="form-label">CEP</label>
                                 <div class="invalid-feedback">Insira um cep válido.</div>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <select class="form-select" id="cidade" name="cidade" required="">
+                                <select class="form-select" id="cidade" name="cidade" required>
                                   <option value="">Selecione</option>
                                   <option>São Paulo</option>
                                 </select>
@@ -277,7 +277,7 @@
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <select class="form-select" id="estado" name="estado" required="">
+                                <select class="form-select" id="estado" name="estado" required>
                                   <option value="">Selecione</option>
                                   <option>São Paulo</option>
                                 </select>
@@ -288,7 +288,7 @@
                             <div class="col-md-4">
                               <div class="form-floating">
                                 <label for="pais" class="form-label"></label>
-                                <select class="form-select" id="pais" name="pais" required="">
+                                <select class="form-select" id="pais" name="pais" required>
                                   <option value="">Selecione</option>
                                   <option>Brasil</option>
                                 </select>
@@ -298,13 +298,13 @@
                             </div>
                             <div class="col-md-8">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="observacao" name="observacao" placeholder="">
+                                <input type="text" class="form-control" id="observacao" name="observacao">
                                 <label for="observacao" class="form-label">Observação<span class="text-muted">(Opcional)</span></label>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <select class="form-select" id="tpEndereco" name="tpEndereco" required="">
+                                <select class="form-select" id="tpEndereco" name="tpEndereco" required>
                                   <option value="">Selecione</option>
                                   <option>Cobrança</option>
                                   <option>Entrega</option>
@@ -443,21 +443,21 @@
                             <div class="row g-3 mb-3">
                               <div class="col-md-6">
                                 <div class="form-floating">
-                                  <input type="text" class="form-control" id="numCartao" name="numCartao" placeholder="" value="" required="">
+                                  <input type="text" class="form-control" id="numCartao" name="numCartao" required>
                                   <label for="numCartao" class="form-label">Número do cartão</label>
                                   <div class="invalid-feedback">Insira um número para o cartão.</div>
                                 </div>
                               </div>
                               <div class="col-md-6">
                                 <div class="form-floating">
-                                  <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" placeholder="" value="" required="">
-                                  <label for="nomeCartao" required="">Nome do cartão</label>
+                                  <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" required>
+                                  <label for="nomeCartao" required>Nome do cartão</label>
                                   <div class="invalid-feedback">Insira um nome para o cartão.</div>
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-floating">
-                                  <select class="form-select" id="bandeira" name="bandeira" required="">
+                                  <select class="form-select" id="bandeira" name="bandeira" required>
                                     <option value="">Selecione</option>
                                     <option>Visa</option>
                                     <option>Mastercard</option>
@@ -468,14 +468,14 @@
                               </div>
                               <div class="col-md-2">
                                 <div class="form-floating">
-                                  <input type="text" class="form-control" id="codigoCartao" name="codigoCartao" placeholder="" value="" required="">
+                                  <input type="text" class="form-control" id="codigoCartao" name="codigoCartao" required>
                                   <label for="nomeCartao" class="form-label">Código</label>
                                   <div class="invalid-feedback">Insira o código.</div>
                                 </div>
                               </div>
                               <div class="col-md-3">
                                 <div class="form-floating">
-                                  <input type="date" class="form-control" id="dtValidade" name="dtValidade" placeholder="" value="" required="">
+                                  <input type="date" class="form-control" id="dtValidade" name="dtValidade" required>
                                   <label for="nomeCartao" class="form-label">Data de Validade</label>
                                   <div class="invalid-feedback">Insira data de validade.</div>
                                 </div>
@@ -540,30 +540,6 @@
                           <span class="material-icons text-danger">
                             <span data-bs-toggle="modal" data-bs-target="#excluirCartao" id="deletarCartao">delete</span>
                           </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>TALLITA SOUZA</td>
-                        <td>123131231412412</td>
-                        <td>VISA</td>
-                        <td>233</td>
-                        <td>
-                          <span class="material-icons">mode_edit</span>
-                        </td>
-                        <td>
-                          <span class="material-icons text-danger">delete</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>RUAN CAMPOS</td>
-                        <td>123131231412412</td>
-                        <td>VISA</td>
-                        <td>233</td>
-                        <td>
-                          <span class="material-icons">mode_edit</span>
-                        </td>
-                        <td>
-                          <span class="material-icons text-danger">delete</span>
                         </td>
                       </tr>
                     </tbody>

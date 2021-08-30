@@ -3,7 +3,6 @@ package model.cliente;
 import model.EntidadeDominio;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Objects;
 
 public class CartaoDeCredito extends EntidadeDominio {
@@ -12,6 +11,7 @@ public class CartaoDeCredito extends EntidadeDominio {
     private String bandeira;
     private LocalDate dataValidade;
     private int codigo;
+    private Cliente cliente;
 
     public String getNumCartao() {
         return numCartao;
@@ -53,6 +53,15 @@ public class CartaoDeCredito extends EntidadeDominio {
         this.codigo = codigo;
     }
 
+    
+    public Cliente getCliente() {
+        return this.cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -78,4 +87,5 @@ public class CartaoDeCredito extends EntidadeDominio {
                 ", codigo=" + codigo +
                 '}';
     }
+
 }
