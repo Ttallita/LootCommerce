@@ -5,6 +5,7 @@ import controller.viewHelper.IViewHelper;
 import controller.viewHelper.impl.LoginViewHelper;
 import controller.viewHelper.impl.model.CartaoDeCreditoViewHelper;
 import controller.viewHelper.impl.model.ClienteViewHelper;
+import controller.viewHelper.impl.model.EnderecoViewHelper;
 import model.EntidadeDominio;
 import model.Result;
 
@@ -44,8 +45,12 @@ public class Controller extends HttpServlet{
         viewHelpers.put("/Ecommerce/login", new LoginViewHelper());
 
         viewHelpers.put("/Ecommerce/clientes/perfil", new ClienteViewHelper());
+        viewHelpers.put("/Ecommerce/clientes/cadastrarCartao", new CartaoDeCreditoViewHelper());
+        viewHelpers.put("/Ecommerce/clientes/cadastrarEndereco", new EnderecoViewHelper());
 
-        viewHelpers.put("/Ecommerce/admin/cartoes", new CartaoDeCreditoViewHelper());
+        viewHelpers.put("/Ecommerce/admin/cadastrarCliente", new ClienteViewHelper());
+        viewHelpers.put("/Ecommerce/admin/cadastrarCartao", new CartaoDeCreditoViewHelper());
+        viewHelpers.put("/Ecommerce/admin/cadastrarEndereco", new EnderecoViewHelper());
     }
 
     @Override
