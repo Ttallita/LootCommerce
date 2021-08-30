@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class ClienteViewHelper implements IViewHelper {
 
@@ -23,11 +24,6 @@ public class ClienteViewHelper implements IViewHelper {
         String id = request.getParameter("txtNome");
 
         if(operacao.equals("salvar")) {
-            String email = request.getParameter("email");
-            String senha = request.getParameter("senha");
-            String senhaConfirmacao = request.getParameter("senhaConfirmacao");
-            String nome = request.getParameter("nome");
-            String sobrenome = request.getParameter("sobrenome");
             String genero = request.getParameter("genero");
             String dataNasc = request.getParameter("date");
             String cpf = request.getParameter("cpf");
@@ -37,7 +33,6 @@ public class ClienteViewHelper implements IViewHelper {
             String phoneCompleto;
             String ddd = "";
             String phone = "";
-
 
             phoneCompleto = request.getParameter("phone");
 
@@ -67,6 +62,14 @@ public class ClienteViewHelper implements IViewHelper {
 
             return cliente;
 
+        } else if(operacao.equals("listar")) {
+            Usuario usuarioLogado = (Usuario) request.getSession().getAttribute("usuarioLogado");
+
+            Cliente cliente = new Cliente();
+
+            cliente.setUsuario(usuarioLogado);
+
+            return cliente;
         }
 
         return null;
@@ -76,9 +79,9 @@ public class ClienteViewHelper implements IViewHelper {
     public void setView(Result result, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String operacao = request.getParameter("operacao");
 
-        Cliente cliente = (Cliente) result.getEntidades().get(0);
+        if(operacao.equals("salvar")) {
+            Cliente cliente = (Cliente) result.getEntidades().get(0);
 
-        if(operacao.equals("salvar") && request.getRequestURL().toString() != "/admin/cadastrarCliente") {
             if(result.getMsg() == null) {
                 response.sendRedirect("login.jsp");
             } else {
@@ -91,6 +94,12 @@ public class ClienteViewHelper implements IViewHelper {
                 request.setAttribute("cliente", cliente);
                 request.getRequestDispatcher("cadastro.jsp").forward(request, response);
             }
+        } else if(operacao.equals("listar")) {
+            Cliente cliente = (Cliente) result.getEntidades().get(0);
+
+            request.setAttribute("clienteLogado", cliente);
+
+            request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, response);
         }
     }
 }

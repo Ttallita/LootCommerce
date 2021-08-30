@@ -18,7 +18,7 @@ public class EnderecoViewHelper implements IViewHelper {
 
         if(operacao.equals("salvar")) {
             String tpResidencia = request.getParameter("tpResidencia");
-            String tpLogradouro = request.getParameter("tpLogradouro");
+            String tpLogradouro = request.getParameter("tp-logradouro");
             String logradouro = request.getParameter("logradouro");
             String numero = request.getParameter("numero");
             String bairro = request.getParameter("bairro");
@@ -29,7 +29,6 @@ public class EnderecoViewHelper implements IViewHelper {
             String observacao = request.getParameter("observacao");
 
             Endereco endereco = new Endereco();
-
 
             endereco.setApelido("Teste");
             endereco.setTipoResidencia(tpResidencia);

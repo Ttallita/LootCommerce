@@ -24,9 +24,9 @@
               <img src="https://i.pinimg.com/474x/bb/8a/71/bb8a71ef13231a77a85267fa9e066922.jpg" class="rounded-circle" alt="icon" width="32" height="32">
             </a>
             <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-              <li><a id="perfil" class="dropdown-item link-light" href="/Ecommerce/cliente/perfil.jsp">Perfil</a></li>
-              <li><a class="dropdown-item link-light" href="/Ecommerce/cliente/consultaEnderecos.jsp">Endereços</a></li>
-              <li><a class="dropdown-item link-light" href="/Ecommerce/cliente/consultaCartao.jsp">Cartões</a></li>
+              <li><a id="perfil" class="dropdown-item link-light" href="/Ecommerce/clientes/perfil?operacao=listar">Perfil</a></li>
+              <li><a class="dropdown-item link-light" href="#">Endereços</a></li>
+              <li><a class="dropdown-item link-light" href="#">Cartões</a></li>
               <li>
                 <hr class="dropdown-divider link-light">
               </li>

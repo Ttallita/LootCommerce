@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ page buffer="64kb" %>
 
 <html>
-
 <head>
     <meta charset="UTF-8" />
     <title>Gerenciamento</title>
@@ -57,7 +57,7 @@
                                             <div class="row g-3">
                                                 <div class="col-sm-6">
                                                     <div class="input-group form-floating">
-                                                        <input type="text" class="form-control" id="nome" value="André"
+                                                        <input type="text" class="form-control" id="nome" value="${clienteLogado.usuario.nome}"
                                                             required="" disabled="">
                                                         <button onclick="editar('nome')" id="editarNome"
                                                             class="btn btn-primary" type="button"><span
@@ -111,7 +111,7 @@
                                                 <div class="col-4">
                                                     <div class="input-group form-floating">
                                                         <input type="text" class="form-control" id="cpf"
-                                                            value="123.456.789-10" required="" disabled="">
+                                                            value="${clienteLogado.cpf}" required="" disabled="">
                                                         <button onclick="editar('cpf')" class="btn btn-primary"
                                                             id="editarCpf" type="button"><span
                                                                 class="material-icons">mode_edit</span></button>
@@ -247,68 +247,30 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Rua 25 de março</td>
-                                                    <td>123</td>
-                                                    <td>Castro Alves</td>
-                                                    <td>04513-205</td>
-                                                    <td>São Paulo</td>
-                                                    <td>São Paulo</td>
-                                                    <td>Brasil</td>
-                                                    <td>Cobrança</td>
-                                                    <td>
-                                                        <span class="material-icons">
-                                                            mode_edit
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="material-icons text-danger">
-                                                            <span data-bs-toggle="modal"
-                                                                data-bs-target="#excluirEndereco"
-                                                                id="deletarEndereco">delete</span>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Rua 25 de março</td>
-                                                    <td>123</td>
-                                                    <td>Castro Alves</td>
-                                                    <td>04513-205</td>
-                                                    <td>São Paulo</td>
-                                                    <td>São Paulo</td>
-                                                    <td>Brasil</td>
-                                                    <td>Entrega</td>
-                                                    <td>
-                                                        <span class="material-icons">
-                                                            mode_edit
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="material-icons text-danger">
-                                                            delete
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Rua 25 de março</td>
-                                                    <td>123</td>
-                                                    <td>Castro Alves</td>
-                                                    <td>04513-205</td>
-                                                    <td>São Paulo</td>
-                                                    <td>São Paulo</td>
-                                                    <td>Brasil</td>
-                                                    <td>Cobrança</td>
-                                                    <td>
-                                                        <span class="material-icons">
-                                                            mode_edit
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="material-icons text-danger">
-                                                            delete
-                                                        </span>
-                                                    </td>
-                                                </tr>
+                                                <c:forEach var="endereco" items="${clienteLogado.enderecos}">
+                                                    <tr>
+                                                        <td>${endereco.logradouro}</td>
+                                                        <td>${endereco.numero}</td>
+                                                        <td>${endereco.bairro}</td>
+                                                        <td>${endereco.cep}</td>
+                                                        <td>${endereco.cidade}</td>
+                                                        <td>${endereco.estado}</td>
+                                                        <td>${endereco.pais}</td>
+                                                        <td>${endereco.tipoEndereco}</td>
+                                                        <td>
+                                                            <span class="material-icons">
+                                                                mode_edit
+                                                            </span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="material-icons text-danger">
+                                                                <span data-bs-toggle="modal"
+                                                                    data-bs-target="#excluirEndereco"
+                                                                    id="deletarEndereco">delete</span>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </c:forEach>
                                             </tbody>
                                         </table>
 
@@ -471,7 +433,6 @@
                                                             </div>
                                                         </form>
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -500,7 +461,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

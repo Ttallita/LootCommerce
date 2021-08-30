@@ -99,8 +99,6 @@ public class Facade implements IFacade {
 
         String msgValidacao = validarRegrasDeNegocio(entidade, operacao);
 
-        System.out.println(msgValidacao);
-
         if(msgValidacao == null) {
 
             IDAO dao = daosMap.get(nomeClasse);
@@ -108,7 +106,6 @@ public class Facade implements IFacade {
             List<EntidadeDominio> listaEntidades = dao.listar(entidade, operacao);
 
             result.setEntidades(listaEntidades);
-
         } else {
             result.setMsg(msgValidacao);
         }
