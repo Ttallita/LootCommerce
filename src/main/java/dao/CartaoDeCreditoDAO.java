@@ -5,10 +5,11 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.EntidadeDominio;
-import model.IEntidade;
 import model.cliente.CartaoDeCredito;
 import utils.Conexao;
 
@@ -26,8 +27,6 @@ public class CartaoDeCreditoDAO implements IDAO {
 
             String sql = "INSERT INTO cartoes ( crt_cli_usr_id, crt_numero, crt_bandeira, crt_dt_validade, crt_nome_impresso, crt_cod_seg)"
                     + " VALUES (?, ?, ?, ?, ?, ?)";
-
-
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstm.setLong(1, 1);
@@ -62,6 +61,49 @@ public class CartaoDeCreditoDAO implements IDAO {
 
     @Override
     public List<EntidadeDominio> listar(EntidadeDominio entidade, String operacao) {
-        return null;
+        CartaoDeCredito cartao = (CartaoDeCredito) entidade;
+        Conexao conexao = new Conexao();
+
+        try {
+            conn = conexao.getConexao();
+
+            String sql = "";
+
+            List<EntidadeDominio> cartoes = new ArrayList<>();
+
+            if(operacao.equals("listarPorCliente")) {
+                sql = "select * from cartoes" + 
+                        " where crt_cli_usr_id = ?";
+
+            }
+            
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            
+            pstm.setLong(1, cartao.getCliente().getId());
+            ResultSet rs = pstm.executeQuery();
+
+            System.out.println(rs);
+
+            while (rs.next()) {
+                CartaoDeCredito cartaoCliente = new CartaoDeCredito();
+                cartaoCliente.setId(rs.getLong("crt_id"));
+                cartaoCliente.setBandeira(rs.getString("crt_bandeira"));
+                cartaoCliente.setCodigo(Integer.parseInt(rs.getString("crt_cod_seg")));
+                cartaoCliente.setDataValidade(LocalDate.parse(rs.getString("crt_dt_validade")));
+                cartaoCliente.setNomeImpressoCartao(rs.getString("crt_nome_impresso"));
+                cartaoCliente.setNumCartao(rs.getString("crt_numero"));
+
+                cartoes.add(cartaoCliente);
+            }
+
+            return cartoes;
+
+        }catch (Exception e) {
+            System.err.println(e.getMessage());
+            return null;
+        } finally {
+            conexao.fecharConexao(conn);
+        }
     }
+
 }

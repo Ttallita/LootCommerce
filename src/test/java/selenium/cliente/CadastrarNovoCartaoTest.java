@@ -22,36 +22,33 @@ public class CadastrarNovoCartaoTest {
         driver.get("http://localhost:8080/Ecommerce/");
         driver.manage().window().maximize();
 
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("entrar")));
+        driver.findElement(By.id("entrar")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
+        driver.findElement(By.id("email")).sendKeys("exemplo@aaa.com");
+        driver.findElement(By.id("senha")).sendKeys("Aa$123456");
+        driver.findElement(By.id("logar")).click();
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("iconUsuario")));
         driver.findElement(By.id("iconUsuario")).click();
-        Thread.sleep(2000);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("perfil")));
         driver.findElement(By.id("perfil")).click();
-        Thread.sleep(2000);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("v-pills-cartoes-tab")));
         driver.findElement(By.id("v-pills-cartoes-tab")).click();
-        Thread.sleep(2000);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("novoCartao")));
+       /* wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("novoCartao")));
         driver.findElement(By.id("novoCartao")).click();
-        Thread.sleep(2000);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cadastrarCartao")));
         driver.findElement(By.id("numCartao")).sendKeys("5555666677778884");
-        Thread.sleep(1500);
         driver.findElement(By.id("nomeCartao")).sendKeys("Nutty agiota");
-        Thread.sleep(1500);
         Select selectTpEndereco = new Select(driver.findElement(By.id("bandeira")));
         selectTpEndereco.selectByVisibleText("Visa");
-        Thread.sleep(1500);
+        driver.findElement(By.id("dtValidade")).sendKeys("20/10/2050");
         driver.findElement(By.id("codigoCartao")).sendKeys("123");
 
-        driver.findElement(By.id("btnCadastrarCartao")).click();
-        Thread.sleep(1000);
-
-        driver.close();
+        driver.findElement(By.id("btnCadastrarCartao")).click();*/
 
     }
 

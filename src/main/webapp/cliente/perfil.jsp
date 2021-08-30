@@ -275,153 +275,113 @@
                                         </table>
 
                                         <!-- Modal Cadastro/Edição Endereços-->
-                                        <div class="modal fade" id="cadastrarEndereco" data-bs-backdrop="static"
-                                            data-bs-keyboard="false" tabindex="-1"
+                                        <div class="modal fade" id="cadastrarEndereco" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                                             aria-labelledby="cadastrarEnderecoLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered modal-xl">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="cadastrarEnderecoLabel">Cadastrar
-                                                        </h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
+                                                        <h5 class="modal-title" id="cadastrarEnderecoLabel">Cadastrar</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form class="needs-validation" novalidate>
+                                                        <form class="needs-validation" action="/Ecommerce/admin/cadastrarEndereco" method="POST" novalidate>
+                                                            <input type="hidden" name="operacao" value="salvar">
                                                             <div class="row g-3 mb-3">
-
                                                                 <div class="col-md-6">
                                                                     <div class="form-floating">
-                                                                        <select class="form-select" id="tpResidencia"
-                                                                            required="">
+                                                                        <select class="form-select" id="tpResidencia" name="tpResidencia" required>
                                                                             <option value="">Selecione</option>
                                                                             <option>Casa</option>
                                                                             <option>Apartamento</option>
                                                                             <option>Outro</option>
                                                                         </select>
                                                                         <label>Tipo de residência</label>
-                                                                        <div class="invalid-feedback">Selecione um tipo
-                                                                            de
-                                                                            residência válido.</div>
+                                                                        <div class="invalid-feedback">Selecione um tipo de residência válido.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="tpLogradouro" placeholder="" value=""
-                                                                            required="">
-                                                                        <label for="tpLogradouro"
-                                                                            class="form-label">Tipo
-                                                                            de logradouro</label>
-                                                                        <div class="invalid-feedback">Insira um tipo de
-                                                                            logradouro.</div>
+                                                                        <input type="text" class="form-control" id="tpLogradouro" name="tpLogradouro" required>
+                                                                        <label for="tpLogradouro" class="form-label">Tipo de logradouro</label>
+                                                                        <div class="invalid-feedback">Insira um tipo de logradouro.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-5">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="logradouro" placeholder="" value=""
-                                                                            required="">
-                                                                        <label for="logradouro"
-                                                                            class="form-label">Logradouro</label>
-                                                                        <div class="invalid-feedback">Insira o
-                                                                            logradouro.
-                                                                        </div>
+                                                                        <input type="text" class="form-control" id="logradouro" name="logradouro" required>
+                                                                        <label for="logradouro" class="form-label">Logradouro</label>
+                                                                        <div class="invalid-feedback">Insira o logradouro.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-3">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="numero" placeholder="" value=""
-                                                                            required="">
-                                                                        <label for="numero"
-                                                                            class="form-label">Número</label>
-                                                                        <div class="invalid-feedback">Insira o número.
-                                                                        </div>
+                                                                        <input type="text" class="form-control" id="numero" name="numero" required>
+                                                                        <label for="numero" class="form-label">Número</label>
+                                                                        <div class="invalid-feedback">Insira o número. </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="bairro" placeholder="" value=""
-                                                                            required="">
-                                                                        <label for="bairro"
-                                                                            class="form-label">Bairro</label>
-                                                                        <div class="invalid-feedback">Insira um bairro.
-                                                                        </div>
+                                                                        <input type="text" class="form-control" id="bairro" name="bairro" required>
+                                                                        <label for="bairro"  class="form-label">Bairro</label>
+                                                                        <div class="invalid-feedback">Insira um bairro.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control" id="cep"
-                                                                            placeholder="00000-000" required="">
+                                                                        <input type="text" class="form-control" id="cep" name="cep" required="">
                                                                         <label for="cep" class="form-label">CEP</label>
-                                                                        <div class="invalid-feedback">Insira um cep
-                                                                            válido.
-                                                                        </div>
+                                                                        <div class="invalid-feedback">Insira um cep válido.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-floating">
-                                                                        <select class="form-select" id="cidade"
-                                                                            required="">
+                                                                        <select class="form-select" id="cidade" name="cidade" required>
                                                                             <option value="">Selecione</option>
                                                                             <option>São Paulo</option>
                                                                         </select>
                                                                         <label>Cidade</label>
-                                                                        <div class="invalid-feedback">Selecione uma
-                                                                            cidade.
-                                                                        </div>
+                                                                        <div class="invalid-feedback">Selecione uma cidade. </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-floating">
-                                                                        <select class="form-select" id="estado"
-                                                                            required="">
+                                                                        <select class="form-select" id="estado" name="estado" required>
                                                                             <option value="">Selecione</option>
                                                                             <option>São Paulo</option>
                                                                         </select>
                                                                         <label>Estado</label>
-                                                                        <div class="invalid-feedback">Selecione um
-                                                                            estado.
-                                                                        </div>
+                                                                        <div class="invalid-feedback">Selecione um estado.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-floating">
                                                                         <label for="pais" class="form-label"></label>
-                                                                        <select class="form-select" id="pais"
-                                                                            required="">
+                                                                        <select class="form-select" id="pais" name="pais" required>
                                                                             <option value="">Selecione</option>
                                                                             <option>Brasil</option>
                                                                         </select>
                                                                         <label>País</label>
-                                                                        <div class="invalid-feedback">Selecione um país.
-                                                                        </div>
+                                                                        <div class="invalid-feedback">Selecione um país. </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="observacao" placeholder="">
-                                                                        <label for="observacao"
-                                                                            class="form-label">Observação<span
-                                                                                class="text-muted">(Opcional)</span></label>
+                                                                        <input type="text" class="form-control" id="observacao" name="observacao">
+                                                                        <label for="observacao"  class="form-label">Observação
+                                                                        <span class="text-muted">(Opcional)</span></label>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-floating">
-                                                                        <select class="form-select" id="tpEndereco"
-                                                                            required="">
+                                                                        <select class="form-select" id="tpEndereco" name="tpEndereco" required>
                                                                             <option value="">Selecione</option>
                                                                             <option>Cobrança</option>
                                                                             <option>Entrega</option>
                                                                             <option>Cobrança/Entrega</option>
                                                                         </select>
                                                                         <label>Tipo de Endereço</label>
-                                                                        <div class="invalid-feedback">Selecione um tipo
-                                                                            de
-                                                                            endereço.</div>
+                                                                        <div class="invalid-feedback">Selecione um tipo de endereço.</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -484,60 +444,29 @@
                                                     <th scope="col">Número</th>
                                                     <th scope="col">Bandeira</th>
                                                     <th scope="col">Código</th>
+                                                    <th scope="col">Data validade</th>
                                                     <th scope="col">Alterar</th>
                                                     <th scope="col">Excluir</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>ANDRE GOMES</td>
-                                                    <td>123131231412412</td>
-                                                    <td>VISA</td>
-                                                    <td>233</td>
-                                                    <td>
-                                                        <span class="material-icons">
-                                                            mode_edit
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="material-icons text-danger">
-                                                            <span data-bs-toggle="modal" data-bs-target="#excluirCartao"
-                                                                id="deletarCartao">delete</span>
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>TALLITA SOUZA</td>
-                                                    <td>123131231412412</td>
-                                                    <td>VISA</td>
-                                                    <td>233</td>
-                                                    <td>
-                                                        <span class="material-icons">
-                                                            mode_edit
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="material-icons text-danger">
-                                                            delete
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>RUAN CAMPOS</td>
-                                                    <td>123131231412412</td>
-                                                    <td>VISA</td>
-                                                    <td>233</td>
-                                                    <td>
-                                                        <span class="material-icons">
-                                                            mode_edit
-                                                        </span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="material-icons text-danger">
-                                                            delete
-                                                        </span>
-                                                    </td>
-                                                </tr>
+                                                <c:forEach var="cartao" items="${clienteLogado.cartoesDeCredito}">
+                                                    <tr>
+                                                        <td>${cartao.nomeImpressoCartao}</td>
+                                                        <td>${cartao.numCartao}</td>
+                                                        <td>${cartao.bandeira}</td>
+                                                        <td>${cartao.codigo}</td>
+                                                        <td>${cartao.dataValidade}</td>
+                                                        <td>
+                                                            <span class="material-icons"> mode_edit</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="material-icons text-danger">
+                                                                <span data-bs-toggle="modal" data-bs-target="#excluirEndereco" id="deletarEndereco">delete</span>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </c:forEach>
                                             </tbody>
                                         </table>
 
@@ -553,64 +482,53 @@
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form class="needs-validation" novalidate>
+                                                        <form class="needs-validation" action="/Ecommerce/admin/cadastrarCartao" method="POST" novalidate>
+                                                            <input type="hidden" name="operacao" value="salvar">
                                                             <div class="row g-3 mb-3">
                                                                 <div class="col-md-6">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="numCartao" placeholder="" value=""
-                                                                            required="">
-                                                                        <label for="numCartao" class="form-label">Número
-                                                                            do
-                                                                            cartão</label>
-                                                                        <div class="invalid-feedback">Insira um número
-                                                                            para
-                                                                            o cartão.</div>
+                                                                        <input type="text" class="form-control" id="numCartao" name="numCartao" required>
+                                                                        <label for="numCartao" class="form-label">Número do cartão</label>
+                                                                        <div class="invalid-feedback">Insira um número para o cartão.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="nomeCartao" placeholder="" value=""
-                                                                            required="">
-                                                                        <label for="nomeCartao" required>Nome do
-                                                                            cartão</label>
-                                                                        <div class="invalid-feedback">Insira um nome
-                                                                            para o cartão.</div>
+                                                                        <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" required>
+                                                                        <label for="nomeCartao" required>Nome do  cartão</label>
+                                                                        <div class="invalid-feedback">Insira um nome para o cartão.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-3">
                                                                     <div class="form-floating">
-                                                                        <select class="form-select" id="bandeira"
-                                                                            required>
+                                                                        <select class="form-select" id="bandeira" name="bandeira" required>
                                                                             <option value="">Selecione</option>
                                                                             <option>Visa</option>
                                                                             <option>Mastercard</option>
                                                                         </select>
                                                                         <label>Bandeira</label>
-                                                                        <div class="invalid-feedback">Selecione a
-                                                                            bandeira do cartão.</div>
+                                                                        <div class="invalid-feedback">Selecione a bandeira do cartão.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-2">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="codigoCartao" placeholder="" value=""
-                                                                            required>
-                                                                        <label for="nomeCartao"
-                                                                            class="form-label">Código</label>
-                                                                        <div class="invalid-feedback">Insira o código.
-                                                                        </div>
+                                                                        <input type="text" class="form-control" id="codigoCartao" name="codigoCartao" required>
+                                                                        <label for="nomeCartao" class="form-label">Código</label>
+                                                                        <div class="invalid-feedback">Insira o código. </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3">
+                                                                    <div class="form-floating">
+                                                                      <input type="date" class="form-control" id="dtValidade" name="dtValidade" required>
+                                                                      <label for="nomeCartao" class="form-label">Data de Validade</label>
+                                                                      <div class="invalid-feedback">Insira data de validade.</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
                                                             <div class="modal-footer">
-                                                                <button type="button" id="btnCancelarCartaoNovo"
-                                                                    class="btn btn-secondary"
-                                                                    data-bs-dismiss="modal">Cancelar</button>
-                                                                <input type="submit" id="btnCadastrarCartao"
-                                                                    value="Cadastrar" class="btn btn-success">
+                                                                <button type="button" id="btnCancelarCartaoNovo" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                                <input type="submit" id="btnCadastrarCartao" value="Cadastrar" class="btn btn-success">
                                                             </div>
                                                         </form>
                                                     </div>

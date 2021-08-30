@@ -19,50 +19,46 @@ public class CadastrarNovoEnderecoTest {
         WebDriver driver = new ChromeDriver();
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        driver.get("http://localhost:8080/Ecommerce/cliente/perfil.jsp");
+        driver.get("http://localhost:8080/Ecommerce/");
         driver.manage().window().maximize();
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("entrar")));
+        driver.findElement(By.id("entrar")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
+        driver.findElement(By.id("email")).sendKeys("exemplo@aaa.com");
+        driver.findElement(By.id("senha")).sendKeys("Aa$123456");
+        driver.findElement(By.id("logar")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("iconUsuario")));
+        driver.findElement(By.id("iconUsuario")).click();
+        driver.findElement(By.id("perfil")).click();
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("v-pills-enderecos-tab")));
-        Thread.sleep(1000);
+
         driver.findElement(By.id("v-pills-enderecos-tab")).click();
-        Thread.sleep(2000);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("novoEndereco")));
         driver.findElement(By.id("novoEndereco")).click();
-        Thread.sleep(2000);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cadastrarEndereco")));
         Select selectTpResidencia = new Select(driver.findElement(By.id("tpResidencia")));
         selectTpResidencia.selectByVisibleText("Casa");
-        Thread.sleep(1500);
         driver.findElement(By.id("tpLogradouro")).sendKeys("Rua");
-        Thread.sleep(1500);
         driver.findElement(By.id("logradouro")).sendKeys("Flores");
-        Thread.sleep(1500);
         driver.findElement(By.id("numero")).sendKeys("123");
-        Thread.sleep(1500);
         driver.findElement(By.id("bairro")).sendKeys("Batata Palha");
-        Thread.sleep(1500);
         driver.findElement(By.id("cep")).sendKeys("12345-678");
-        Thread.sleep(1500);
         Select selectCidade = new Select(driver.findElement(By.id("cidade")));
         selectCidade.selectByVisibleText("São Paulo");
-        Thread.sleep(1500);
         Select selectEstado = new Select(driver.findElement(By.id("estado")));
         selectEstado.selectByVisibleText("São Paulo");
-        Thread.sleep(1500);
         Select selectPais = new Select(driver.findElement(By.id("pais")));
         selectPais.selectByVisibleText("Brasil");
-        Thread.sleep(1500);
         driver.findElement(By.id("observacao")).sendKeys("Próximo a fábrica de sorvete Solvente");
-        Thread.sleep(1500);
         Select selectTpEndereco = new Select(driver.findElement(By.id("tpEndereco")));
         selectTpEndereco.selectByVisibleText("Entrega");
-        Thread.sleep(1500);
         driver.findElement(By.id("btnCadastrar")).click();
-        Thread.sleep(1000);
-
-        driver.close();
 
     }
 
