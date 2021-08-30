@@ -47,8 +47,6 @@ public class EnderecoDAO implements IDAO{
                 enderecoId = rs.getLong(1);
             }
 
-
-
             return enderecoId;
         }catch (Exception e) {
             System.err.println(e.getMessage());
@@ -86,7 +84,6 @@ public class EnderecoDAO implements IDAO{
                         " inner join enderecos_cliente" +
                         " on ecl_end_id = end_id" +
                         " where ecl_cli_id = ?";
-
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);

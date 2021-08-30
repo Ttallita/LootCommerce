@@ -20,7 +20,7 @@
         </div>
         <div class="d-flex align-items-center">
           <div>
-              <a href="login.jsp" class="btn btn-outline-light ms-3">Entrar</a>
+              <a href="login.jsp" id="entrar" class="btn btn-outline-light ms-3">Entrar</a>
           </div>
           <div>
               <a href="cadastro.jsp" class="btn btn-outline-primary ms-3">Cadastre-se</a>

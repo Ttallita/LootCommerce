@@ -172,16 +172,16 @@
                             </div>
                             <div class="col-md-6">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="tp-logradouro" placeholder="" value="${cliente.endereco.tipoLogradouro}"
-                                  name="tp-logradouro">
-                                <label for="tp-logradouro" class="form-label">Tipo de logradouro</label>
+                                <input type="text" class="form-control" id="tpLogradouro" value="${cliente.endereco.tipoLogradouro}"
+                                  name="tpLogradouro">
+                                <label class="form-label">Tipo de logradouro</label>
                               </div>
                             </div>
                             <div class="col-md-5">
                               <div class="form-floating">
                                 <input type="text" class="form-control" id="logradouro" placeholder="" value="${cliente.endereco.logradouro}"
                                   name="logradouro">
-                                <label for="logradouro" class="form-label">Logradouro</label>
+                                <label class="form-label">Logradouro</label>
                               </div>
                             </div>
                             <div class="col-md-3">
