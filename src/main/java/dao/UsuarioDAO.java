@@ -58,7 +58,30 @@ public class UsuarioDAO implements IDAO{
 
     @Override
     public boolean atualizar(EntidadeDominio entidade) {
-        return false;
+
+        Usuario usuario = (Usuario) entidade;
+        Conexao conexao = new Conexao();
+
+        try {
+            conn = conexao.getConexao();
+
+            String sql = "UPDATE usuarios SET usr_email = ?, usr_senha = ?";
+
+            PreparedStatement pstm = conn.prepareStatement(sql);
+
+            pstm.setString(3, usuario.getEmail());
+            pstm.setString(4, usuario.getSenha());
+            pstm.execute();
+
+            return true;
+
+        }catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
+
+        }finally {
+            conexao.fecharConexao(conn);
+        }
     }
 
     @Override
@@ -97,7 +120,7 @@ public class UsuarioDAO implements IDAO{
                     usuarioLogado.setEmail(rs.getString("usr_email"));
                     usuarioLogado.setTipoUsuario(rs.getString("usr_tipo").equals("CLIENTE") ? UsuarioType.CLIENTE : UsuarioType.ADMINISTRADOR);
                     usuarioLogado.setSenha(rs.getString("usr_senha"));
-                    usuarioLogado.setNome(rs.getString("usr_prim_nome") + rs.getString("usr_ult_nome"));
+                    usuarioLogado.setNome(rs.getString("usr_prim_nome") + " " + rs.getString("usr_ult_nome"));
 
                     entidadeDominios.add(usuarioLogado);
                 }

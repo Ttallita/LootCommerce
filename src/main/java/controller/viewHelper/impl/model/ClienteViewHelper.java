@@ -4,6 +4,7 @@ import controller.viewHelper.IViewHelper;
 import model.EntidadeDominio;
 import model.Result;
 import model.Usuario;
+import model.UsuarioType;
 import model.cliente.Cliente;
 import model.cliente.Endereco;
 import model.cliente.Telefone;
@@ -67,9 +68,19 @@ public class ClienteViewHelper implements IViewHelper {
 
             Cliente cliente = new Cliente();
 
+
+
             cliente.setUsuario(usuarioLogado);
 
             return cliente;
+        } else if(operacao.equals("atualizar")){
+            Usuario usuarioLogado = (Usuario) request.getSession().getAttribute("usuarioLogado");
+
+            Cliente cliente = new Cliente();
+
+            cliente.setUsuario(usuarioLogado);
+
+
         }
 
         return null;
@@ -97,6 +108,8 @@ public class ClienteViewHelper implements IViewHelper {
         } else if(operacao.equals("listar")) {
             Cliente cliente = (Cliente) result.getEntidades().get(0);
 
+            request.setAttribute("nome", cliente.getUsuario().getNome().split(" ")[0]);
+            request.setAttribute("sobrenome", cliente.getUsuario().getNome().split(" ")[1]);
             request.setAttribute("clienteLogado", cliente);
 
             request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, response);

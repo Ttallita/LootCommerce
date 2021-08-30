@@ -19,7 +19,7 @@
     <div class="wrapper container mt-3">
         <main class="content">
             <div class="container-fluid p-0">
-                <h1 class="h3 mb-3">André Gomes</h1>
+                <h1 class="h3 mb-3">${nome} ${sobrenome}</h1>
                 <div class="row">
                     <div class="col-md-3 col-xl-2">
                         <div class="list-group btn-group-vertical">
@@ -57,7 +57,7 @@
                                             <div class="row g-3">
                                                 <div class="col-sm-6">
                                                     <div class="input-group form-floating">
-                                                        <input type="text" class="form-control" id="nome" value="${clienteLogado.usuario.nome}"
+                                                        <input type="text" class="form-control" id="nome" value="${nome}"
                                                             required="" disabled="">
                                                         <button onclick="editar('nome')" id="editarNome"
                                                             class="btn btn-primary" type="button"><span
@@ -70,7 +70,7 @@
                                                 <div class="col-sm-6">
                                                     <div class="input-group form-floating">
                                                         <input type="text" class="form-control" id="sobrenome"
-                                                            value="Gomes" required="" disabled="">
+                                                            value="${sobrenome}" required="" disabled="">
                                                         <button onclick="editar('sobrenome')" id="editarSobrenome"
                                                             class="btn btn-primary" type="button"><span
                                                                 class="material-icons">mode_edit</span></button>
@@ -82,8 +82,8 @@
                                                 <div class="col-md-4">
                                                     <div class="input-group form-floating">
                                                         <select class="form-select" id="genero" required="" disabled="">
-                                                            <option>Masculino</option>
                                                             <option value="">Selecione</option>
+                                                            <option>Masculino</option>
                                                             <option>Feminimo</option>
                                                             <option>Outro</option>
                                                             <option>Prefiro não informar</option>
@@ -99,7 +99,7 @@
                                                 <div class="col-md-4">
                                                     <div class="input-group form-floating">
                                                         <input type="date" class="form-control" id="dataNasc"
-                                                            value="1900-04-01" required="" disabled="">
+                                                            value="${clienteLogado.dataNascimento}" required="" disabled="">
                                                         <button onclick="editar('dataNasc')" id="editarDataNasc"
                                                             class="btn btn-primary" type="button"><span
                                                                 class="material-icons">mode_edit</span></button>
@@ -126,7 +126,7 @@
                                                             disabled="">
                                                             <option value="">Selecione</option>
                                                             <option>Celular</option>
-                                                            <option selected>Residêncial</option>
+                                                            <option>Residêncial</option>
                                                         </select>
                                                         <button onclick="editar('tipoTelefone')" id="editarTpTelefone"
                                                             class="btn btn-primary" type="button"><span
@@ -139,7 +139,7 @@
                                                 <div class="col-3">
                                                     <div class="input-group form-floating">
                                                         <input type="phone" class="form-control" id="telefone"
-                                                            value="90000-0000" required="" disabled="">
+                                                            value="${clienteLogado.telefone.ddd} ${clienteLogado.telefone.numero}" required="" disabled="">
                                                         <button onclick="editar('telefone')" id="editarTelefone"
                                                             class="btn btn-primary" type="button"><span
                                                                 class="material-icons">mode_edit</span></button>
@@ -165,11 +165,12 @@
                                     <div class="card-body">
                                         <h4 class="mb-3">Alterar senha</h4>
 
-                                        <form>
+                                        <form action="/Ecommerce/clientes/perfil" method="POST">
+                                            <input type="hidden" name="operacao" value="alterar"/>
                                             <div class="col-6 ">
                                                 <div class="input-group form-floating">
                                                     <input type="email" class="form-control" id="emailAtual"
-                                                        placeholder="" value="andre.soares9@fatec.sp.gov.br"
+                                                        placeholder="" value="${clienteLogado.usuario.email}"
                                                         disabled="">
                                                     <button onclick="editar('emailAtual')" id="editarEmail"
                                                         class="btn btn-primary" type="button"><span
@@ -193,22 +194,13 @@
                                                     <input type="password" class="form-control" id="senha"
                                                         placeholder="" required="">
                                                     <label class="form-label">Senha Nova</label>
-                                                    <div class="invalid-feedback">
-                                                        A senha deve possuir pelo menos 8 caracteres, ter letras
-                                                        maiúsculas e minúsculas e conter
-                                                        caracteres especiais.
-                                                    </div>
                                                 </div>
 
                                                 <div class="col-6 form-floating">
                                                     <input type="password" class="form-control" id="senhaConfirmacao"
                                                         placeholder="" required="">
                                                     <label class="form-label">Confirme a nova senha</label>
-                                                    <div class="invalid-feedback">
-                                                        As senhas não são as mesmas.
-                                                    </div>
                                                 </div>
-
                                             </div>
                                             <hr class="my-4">
                                             <button id="alterarSenha" class="btn btn-primary mt-auto btn-lg"

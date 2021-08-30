@@ -52,7 +52,16 @@ public class Facade implements IFacade {
         Map<String, List<IStrategy>> regrasDeNegocioCliente = new HashMap<>();
         regrasDeNegocioCliente.put("salvar", regraDeNegocioSalvarCliente);
 
+        //Lista de regras de validação da atualização de usuario
+        List<IStrategy> regrasDeNegocioAtualizarUsuario = new ArrayList<>();
+        regrasDeNegocioAtualizarUsuario.add(verificarSenhaStrategy);
+
+        //Mapa das regras de négocio do usuario por operação
+        Map<String, List<IStrategy>> regrasDeNegocioUsuario = new HashMap<>();
+        regrasDeNegocioUsuario.put("atualizar", regrasDeNegocioAtualizarUsuario);
+
         regrasDeNegocioMap.put(Cliente.class.getName(), regrasDeNegocioCliente);
+        regrasDeNegocioMap.put(Usuario.class.getName(), regrasDeNegocioUsuario);
     }
 
 
@@ -83,7 +92,28 @@ public class Facade implements IFacade {
 
     @Override
     public Result atualizar(EntidadeDominio entidade) {
-        return null;
+
+        result = new Result();
+
+        String classe = entidade.getClass().getName();
+
+        String msgValidacao = validarRegrasDeNegocio(entidade, "atualizar");
+
+        List<EntidadeDominio> entidades = new ArrayList<>();
+        entidades.add(entidade);
+
+        result.setEntidades(entidades);
+
+        if(msgValidacao == null) {
+            IDAO dao = daosMap.get(classe);
+
+            dao.atualizar(entidade);
+        } else {
+            result.setMsg(msgValidacao);
+        }
+
+        return result;
+
     }
 
     @Override
