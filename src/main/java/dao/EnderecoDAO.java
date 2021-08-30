@@ -1,7 +1,6 @@
 package dao;
 
 import model.EntidadeDominio;
-import model.IEntidade;
 import model.cliente.Endereco;
 import utils.Conexao;
 
@@ -46,6 +45,8 @@ public class EnderecoDAO implements IDAO{
                 enderecoId = rs.getLong(1);
             }
 
+
+
             return enderecoId;
         }catch (Exception e) {
             System.err.println(e.getMessage());
@@ -67,7 +68,7 @@ public class EnderecoDAO implements IDAO{
     }
 
     @Override
-    public List<IEntidade> listar() {
+    public List<EntidadeDominio> listar(EntidadeDominio entidade, String operacao) {
         return null;
     }
 }

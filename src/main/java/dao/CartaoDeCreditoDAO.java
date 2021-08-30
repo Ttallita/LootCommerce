@@ -61,9 +61,7 @@ public class CartaoDeCreditoDAO implements IDAO {
     }
 
     @Override
-    public List<IEntidade> listar() {
-        // TODO Auto-generated method stub
+    public List<EntidadeDominio> listar(EntidadeDominio entidade, String operacao) {
         return null;
     }
-
 }

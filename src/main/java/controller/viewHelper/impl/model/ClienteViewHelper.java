@@ -80,11 +80,13 @@ public class ClienteViewHelper implements IViewHelper {
 
         if(operacao.equals("salvar")) {
             if(result.getMsg() == null) {
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                response.sendRedirect("login.jsp");
             } else {
 
                 String[] messagensDeErro = result.getMsg().split("\n");
 
+                request.setAttribute("nome", cliente.getUsuario().getNome().split(" ")[0]);
+                request.setAttribute("sobrenome", cliente.getUsuario().getNome().split(" ")[1]);
                 request.setAttribute("mensagem", messagensDeErro);
                 request.setAttribute("cliente", cliente);
                 request.getRequestDispatcher("cadastro.jsp").forward(request, response);

@@ -81,8 +81,7 @@ public class ClienteDAO implements IDAO{
     }
 
     @Override
-    public List<IEntidade> listar() {
-
+    public List<EntidadeDominio> listar(EntidadeDominio entidade, String operacao) {
         return null;
     }
 }

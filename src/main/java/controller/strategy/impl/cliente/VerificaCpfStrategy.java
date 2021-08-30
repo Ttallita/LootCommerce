@@ -13,6 +13,11 @@ public class VerificaCpfStrategy implements IStrategy {
 
         String cpf = cliente.getCpf();
 
+        cpf = cpf.replace(".", "");
+        cpf = cpf.replace("-", "");
+
+        System.out.println(cpf);
+
         if(cpf.trim().isEmpty()) {
             return "Digite um cpf válido";
         }

@@ -1,14 +1,15 @@
 package dao;
 
 import model.EntidadeDominio;
-import model.IEntidade;
 import model.Usuario;
+import model.UsuarioType;
 import utils.Conexao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioDAO implements IDAO{
@@ -66,7 +67,50 @@ public class UsuarioDAO implements IDAO{
     }
 
     @Override
-    public List<IEntidade> listar() {
-        return null;
+    public List<EntidadeDominio> listar(EntidadeDominio entidade, String operacao) {
+        Usuario usuario = (Usuario) entidade;
+        Conexao conexao = new Conexao();
+
+        try {
+            conn = conexao.getConexao();
+
+            String sql = "";
+
+            List<EntidadeDominio> entidadeDominios = new ArrayList<>();
+
+            if(operacao.equals("login")) {
+                sql = "SELECT * from usuarios where usr_email  = ? and usr_senha = ?";
+            }
+
+            PreparedStatement pstm = conn.prepareStatement(sql);
+
+            if(operacao.equals("login")) {
+                pstm.setString(1, usuario.getEmail());
+                pstm.setString(2, usuario.getSenha());
+
+                ResultSet rs = pstm.executeQuery();
+
+                while (rs.next()) {
+                    Usuario usuarioLogado = new Usuario();
+
+                    usuarioLogado.setId(rs.getLong("usr_id"));
+                    usuarioLogado.setEmail(rs.getString("usr_email"));
+                    usuarioLogado.setTipoUsuario(rs.getString("usr_tipo").equals("CLIENTE") ? UsuarioType.CLIENTE : UsuarioType.ADMINISTRADOR);
+                    usuarioLogado.setSenha(rs.getString("usr_senha"));
+                    usuarioLogado.setNome(rs.getString("usr_prim_nome") + rs.getString("usr_ult_nome"));
+
+                    entidadeDominios.add(usuarioLogado);
+                }
+
+            }
+
+            return entidadeDominios;
+
+        }catch (Exception e) {
+            System.err.println(e.getMessage());
+            return null;
+        }finally {
+            conexao.fecharConexao(conn);
+        }
     }
 }

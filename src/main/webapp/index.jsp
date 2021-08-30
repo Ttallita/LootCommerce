@@ -10,8 +10,14 @@
 
 </head>
 <body class="bg-default">
-    <!-- Navigation-->
-    <c:import url="/includes/header-deslogado.jsp" charEncoding="UTF-8"/>
+    <c:choose>
+        <c:when test = "${usuarioLogado != null}">
+            <c:import url="/includes/header.jsp" charEncoding="UTF-8"/>
+        </c:when>
+        <c:otherwise>
+            <c:import url="/includes/header-deslogado.jsp" charEncoding="UTF-8"/>
+        </c:otherwise>
+    </c:choose>
     <!-- Header-->
     <header class="bg-dark">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">

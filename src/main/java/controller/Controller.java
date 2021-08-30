@@ -2,9 +2,9 @@ package controller;
 
 import controller.command.*;
 import controller.viewHelper.IViewHelper;
+import controller.viewHelper.impl.LoginViewHelper;
 import controller.viewHelper.impl.model.CartaoDeCreditoViewHelper;
 import controller.viewHelper.impl.model.ClienteViewHelper;
-import controller.viewHelper.impl.model.EnderecoViewHelper;
 import model.EntidadeDominio;
 import model.Result;
 
@@ -36,17 +36,27 @@ public class Controller extends HttpServlet{
         commands.put("atualizar", new AtualizarCommand());
         commands.put("listar", new ListarCommand());
         commands.put("remover", new ExcluirCommand());
+        commands.put("login", new ListarCommand());
 
         viewHelpers = new HashMap<>();
         viewHelpers.put("/Ecommerce/cadastro", new ClienteViewHelper());
-        viewHelpers.put("/Ecommerce/admin/cadastrarCliente", new ClienteViewHelper());
         viewHelpers.put("/Ecommerce/admin/cadastrarCartao", new CartaoDeCreditoViewHelper());
-        viewHelpers.put("/Ecommerce/admin/cadastrarEndereco", new EnderecoViewHelper());
+        viewHelpers.put("/Ecommerce/login", new LoginViewHelper());
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+
+        if(req.getRequestURI().equals("/Ecommerce/logout")) {
+            if(req.getSession().getAttribute("usuarioLogado") != null) {
+                req.getSession().invalidate();
+            }
+
+            resp.sendRedirect("index.jsp");
+            return;
+        }
+
+        processaRequest(req, resp);
     }
 
     @Override
@@ -61,9 +71,7 @@ public class Controller extends HttpServlet{
 
         ICommand command = commands.get(operacao);
 
-        System.out.println("a");
         IViewHelper viewHelper = viewHelpers.get(req.getRequestURI());
-        System.out.println("a");
 
         EntidadeDominio entidade = viewHelper.getEntidade(req);
 

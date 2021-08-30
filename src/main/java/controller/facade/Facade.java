@@ -4,13 +4,13 @@ import controller.strategy.IStrategy;
 import controller.strategy.impl.cliente.*;
 import dao.CartaoDeCreditoDAO;
 import dao.ClienteDAO;
-import dao.EnderecoDAO;
 import dao.IDAO;
+import dao.UsuarioDAO;
 import model.Result;
 import model.EntidadeDominio;
+import model.Usuario;
 import model.cliente.CartaoDeCredito;
 import model.cliente.Cliente;
-import model.cliente.Endereco;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,16 +28,18 @@ public class Facade implements IFacade {
         daosMap = new HashMap<>();
         daosMap.put(Cliente.class.getName(), new ClienteDAO());
         daosMap.put(CartaoDeCredito.class.getName(), new CartaoDeCreditoDAO());
-        daosMap.put(Endereco.class.getName(), new EnderecoDAO());
+        daosMap.put(Usuario.class.getName(), new UsuarioDAO());
 
         regrasDeNegocioMap = new HashMap<>();
 
+        // Regras de validação
         ValidarDataStrategy validarDataStrategy = new ValidarDataStrategy();
         VerificaClienteStrategy verificaClienteStrategy = new VerificaClienteStrategy();
         VerificaCpfStrategy verificaCpfStrategy = new VerificaCpfStrategy();
         VerificarEmailStrategy verificarEmailStrategy = new VerificarEmailStrategy();
         VerificarSenhaStrategy verificarSenhaStrategy = new VerificarSenhaStrategy();
 
+        //Lista de regras de validação do cliente
         List<IStrategy> regraDeNegocioSalvarCliente = new ArrayList<>();
 
         regraDeNegocioSalvarCliente.add(validarDataStrategy);
@@ -46,6 +48,7 @@ public class Facade implements IFacade {
         regraDeNegocioSalvarCliente.add(verificarEmailStrategy);
         regraDeNegocioSalvarCliente.add(verificarSenhaStrategy);
 
+        //Mapa das regras de négocio do cliente por operação
         Map<String, List<IStrategy>> regrasDeNegocioCliente = new HashMap<>();
         regrasDeNegocioCliente.put("salvar", regraDeNegocioSalvarCliente);
 
@@ -89,8 +92,28 @@ public class Facade implements IFacade {
     }
 
     @Override
-    public Result listar(EntidadeDominio entidade) {
-        return null;
+    public Result listar(EntidadeDominio entidade, String operacao) {
+        result = new Result();
+
+        String nomeClasse = entidade.getClass().getName();
+
+        String msgValidacao = validarRegrasDeNegocio(entidade, operacao);
+
+        System.out.println(msgValidacao);
+
+        if(msgValidacao == null) {
+
+            IDAO dao = daosMap.get(nomeClasse);
+
+            List<EntidadeDominio> listaEntidades = dao.listar(entidade, operacao);
+
+            result.setEntidades(listaEntidades);
+
+        } else {
+            result.setMsg(msgValidacao);
+        }
+
+        return result;
     }
 
     public String validarRegrasDeNegocio(EntidadeDominio entidadeDominio, String operacao) {

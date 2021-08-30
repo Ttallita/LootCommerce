@@ -34,7 +34,6 @@ public class CadastroTest {
         campoEmail.sendKeys(email);
 
         campoSenha.sendKeys(senha);
-
         campoConfirmacao.sendKeys(senha);
 
         WebElement nextButton = driver.findElement(By.id("nextBtn"));
@@ -51,7 +50,7 @@ public class CadastroTest {
         String nome = "André";
         String sobrenome = "Gomes";
         String dataNascimento = "22/04/1999";
-        String cpf = "87934188412";
+        String cpf = "123.143.545-12";
 
         campoNome.sendKeys(nome);
         campoSobrenome.sendKeys(sobrenome);
@@ -72,8 +71,8 @@ public class CadastroTest {
 
         nextButton.click();
 
-        WebElement campoTipoResidencia = driver.findElement(By.id("tpResidencia"));
-        WebElement campoTipoLogradouro = driver.findElement(By.id("tpLogradouro"));
+        WebElement campoTipoResidencia = driver.findElement(By.id("tp-residencia"));
+        WebElement campoTipoLogradouro = driver.findElement(By.id("tp-logradouro"));
         WebElement campoLogradouro = driver.findElement(By.id("logradouro"));
         WebElement campoNumero = driver.findElement(By.id("numero"));
         WebElement campoBairro = driver.findElement(By.id("bairro"));

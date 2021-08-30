@@ -12,5 +12,5 @@ public interface IViewHelper {
 
     public EntidadeDominio getEntidade(HttpServletRequest request);
 
-    public void setView(Result result, HttpServletRequest request, HttpServletResponse httpResponse) throws IOException, ServletException;
+    public void setView(Result result, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException;
 }
