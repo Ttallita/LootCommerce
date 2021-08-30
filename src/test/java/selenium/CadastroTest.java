@@ -24,8 +24,8 @@ public class CadastroTest {
         Thread.sleep(2000);
         driver.navigate().to("http://localhost:8080/Ecommerce/cadastro.jsp");
 
-        String email = "andre.soares9@fatec.sp.gov.com";
-        String senha = "Admads123!";
+        String email = "andre.gomes7110@gmail.com";
+        String senha = "Hitagi710!";
 
         WebElement campoEmail = driver.findElement(By.id("email"));
         WebElement campoSenha = driver.findElement(By.id("senha"));
@@ -50,7 +50,7 @@ public class CadastroTest {
         String nome = "André";
         String sobrenome = "Gomes";
         String dataNascimento = "22/04/1999";
-        String cpf = "123.143.545-12";
+        String cpf = "443.020.908.12";
 
         campoNome.sendKeys(nome);
         campoSobrenome.sendKeys(sobrenome);

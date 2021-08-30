@@ -16,6 +16,7 @@ public class Endereco extends EntidadeDominio {
     private String observacoes;
     private EnderecoType tipoEndereco;
     private String apelido;
+    private Cliente cliente;
 
     public String getTipoResidencia() {
         return tipoResidencia;
@@ -111,5 +112,13 @@ public class Endereco extends EntidadeDominio {
 
     public void setApelido(String apelido) {
         this.apelido = apelido;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 }

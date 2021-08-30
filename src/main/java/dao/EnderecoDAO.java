@@ -2,9 +2,11 @@ package dao;
 
 import model.EntidadeDominio;
 import model.cliente.Endereco;
+import model.cliente.EnderecoType;
 import utils.Conexao;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EnderecoDAO implements IDAO{
@@ -69,6 +71,67 @@ public class EnderecoDAO implements IDAO{
 
     @Override
     public List<EntidadeDominio> listar(EntidadeDominio entidade, String operacao) {
-        return null;
+        Endereco endereco = (Endereco) entidade;
+        Conexao conexao = new Conexao();
+
+        try {
+            conn = conexao.getConexao();
+
+            String sql = "";
+
+            List<EntidadeDominio> enderecos = new ArrayList<>();
+
+            if(operacao.equals("listarPorCliente")) {
+                sql = "select * from enderecos" +
+                        " inner join enderecos_cliente" +
+                        " on ecl_end_id = end_id" +
+                        " where ecl_cli_id = ?";
+
+            }
+
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setLong(1, endereco.getCliente().getId());
+
+            ResultSet rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                Endereco enderecoCliente = new Endereco();
+                enderecoCliente.setId(rs.getLong("end_id"));
+                enderecoCliente.setApelido(rs.getString("end_nome"));
+                enderecoCliente.setTipoLogradouro(rs.getString("end_tp_logradouro"));
+                enderecoCliente.setLogradouro(rs.getString("end_logradouro"));
+                enderecoCliente.setNumero(Integer.parseInt(rs.getString("end_num")));
+                enderecoCliente.setBairro(rs.getString("end_bairro"));
+                enderecoCliente.setCep(rs.getString("end_cep"));
+                enderecoCliente.setCidade(rs.getString("end_cidade"));
+                enderecoCliente.setEstado(rs.getString("end_estado"));
+                enderecoCliente.setPais(rs.getString("end_pais"));
+                enderecoCliente.setObservacoes(rs.getString("end_observacao"));
+
+                String tpEndereco = rs.getString("end_tp");
+                EnderecoType enderecoType;
+
+                if (tpEndereco.equals("COBRANCA")) {
+                    enderecoType = EnderecoType.COBRANCA;
+                } else if (tpEndereco.equals("ENTREGA")) {
+                    enderecoType = EnderecoType.ENTREGA;
+                } else {
+                    enderecoType = EnderecoType.COBRANCA_ENTREGA;
+                }
+
+                enderecoCliente.setTipoEndereco(enderecoType);
+
+
+                enderecos.add(enderecoCliente);
+            }
+
+            return enderecos;
+
+        }catch (Exception e) {
+            System.err.println(e.getMessage());
+            return null;
+        } finally {
+            conexao.fecharConexao(conn);
+        }
     }
 }

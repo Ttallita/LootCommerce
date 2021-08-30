@@ -14,8 +14,7 @@ public class Cliente extends EntidadeDominio {
     private String cpf;
     private Telefone telefone;
     private Endereco endereco;
-    private List<Endereco> enderecoEntrega;
-    private List<Endereco> enderecoCobranca;
+    private List<Endereco> enderecos;
     private List<CartaoDeCredito> cartoesDeCredito;
     private int ranking;
     private Usuario usuario;
@@ -60,20 +59,12 @@ public class Cliente extends EntidadeDominio {
         this.endereco = endereco;
     }
 
-    public List<Endereco> getEnderecoEntrega() {
-        return enderecoEntrega;
+    public List<Endereco> getEnderecos() {
+        return enderecos;
     }
 
-    public void setEnderecoEntrega(List<Endereco> enderecoEntrega) {
-        this.enderecoEntrega = enderecoEntrega;
-    }
-
-    public List<Endereco> getEnderecoCobranca() {
-        return enderecoCobranca;
-    }
-
-    public void setEnderecoCobranca(List<Endereco> enderecoCobranca) {
-        this.enderecoCobranca = enderecoCobranca;
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
     }
 
     public List<CartaoDeCredito> getCartoesDeCredito() {
@@ -108,8 +99,6 @@ public class Cliente extends EntidadeDominio {
                 ", cpf='" + cpf + '\'' +
                 ", telefone=" + telefone +
                 ", endereco=" + endereco +
-                ", enderecoEntrega=" + enderecoEntrega +
-                ", enderecoCobranca=" + enderecoCobranca +
                 ", cartoesDeCredito=" + cartoesDeCredito +
                 ", ranking=" + ranking +
                 ", usuario=" + usuario +

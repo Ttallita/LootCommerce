@@ -75,8 +75,6 @@ public class Controller extends HttpServlet{
 
         ICommand command = commands.get(operacao);
 
-        System.out.println(req.getRequestURI());
-
         IViewHelper viewHelper = viewHelpers.get(req.getRequestURI());
 
         EntidadeDominio entidade = viewHelper.getEntidade(req);

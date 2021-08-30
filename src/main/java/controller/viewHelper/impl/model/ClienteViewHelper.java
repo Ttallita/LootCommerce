@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class ClienteViewHelper implements IViewHelper {
 
@@ -23,11 +24,6 @@ public class ClienteViewHelper implements IViewHelper {
         String id = request.getParameter("txtNome");
 
         if(operacao.equals("salvar")) {
-            String email = request.getParameter("email");
-            String senha = request.getParameter("senha");
-            String senhaConfirmacao = request.getParameter("senhaConfirmacao");
-            String nome = request.getParameter("nome");
-            String sobrenome = request.getParameter("sobrenome");
             String genero = request.getParameter("genero");
             String dataNasc = request.getParameter("date");
             String cpf = request.getParameter("cpf");
@@ -37,7 +33,6 @@ public class ClienteViewHelper implements IViewHelper {
             String phoneCompleto;
             String ddd = "";
             String phone = "";
-
 
             phoneCompleto = request.getParameter("phone");
 
