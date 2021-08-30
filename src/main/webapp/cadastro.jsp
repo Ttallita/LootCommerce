@@ -28,7 +28,7 @@
                 </ul>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Continuar</button>
+                <button type="button" class="btn btn-primary"  data-bs-dismiss="modal">Continuar</button>
               </div>
             </div>
           </div>
@@ -59,23 +59,20 @@
                             </h5>
                             <div class="col-12">
                               <div class="form-floating">
-                                <input type="email" class="form-control" id="email" name="email" placeholder=""
-                                  value="">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="" value="${cliente.usuario.email}">
                                 <label for="email" class="form-label">Email</label>
                               </div>
                             </div>
                             <div class="col-6">
                               <div class="form-floating">
-                                <input type="password" class="form-control" id="senha" name="senha" placeholder=""
-                                  value="">
-                                <label for="senha" class="form-label">Senha</label>
+                                <input type="password" class="form-control" id="senha" name="senha" placeholder="" value="${cliente.usuario.senha}">
+                                <label for="senha" class="form-label" >Senha</label>
                               </div>
                             </div>
 
                             <div class="col-6">
                               <div class="form-floating">
-                                <input type="password" class="form-control" name="senhaConfirmacao"
-                                  id="senhaConfirmacao" placeholder="" value="">
+                                <input type="password" class="form-control" name="senhaConfirmacao" id="senhaConfirmacao" placeholder="" value="${cliente.usuario.confirmarSenha}">
                                 <label for="senha-confirmacao" class="form-label">Insira novamente</label>
                               </div>
                             </div>
@@ -88,14 +85,13 @@
                             </h5>
                             <div class="col-sm-5 form-outline">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="nome" name="nome" placeholder="" value="">
+                                <input type="text" class="form-control" id="nome" name="nome" placeholder="" value="${nome}">
                                 <label for="floatingPassword" class="form-label">Nome</label>
                               </div>
                             </div>
                             <div class="col-sm-7">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder=""
-                                  value="">
+                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="" value="${sobrenome}">
                                 <label for="sobrenome" class="form-label">Sobrenome</label>
                               </div>
                             </div>
@@ -115,7 +111,7 @@
 
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <input type="date" class="form-control" id="date" name="date" value="">
+                                <input type="date" class="form-control" id="date" name="date" value="${cliente.dataNascimento}">
                                 <label for="pais" class="form-label">Data de nascimento</label>
                                 <div class="invalid-feedback">Selecione sua data de nascimento.</div>
                               </div>
@@ -123,7 +119,7 @@
 
                             <div class="col-3">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" value=""
+                                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" value="${cliente.cpf}"
                                   name="cpf">
                                 <label for="cpf" class="form-label">CPF</label>
                                 <div class="invalid-feedback">Insira seu número de CPF.</div>
@@ -149,7 +145,7 @@
 
                             <div class="col-5">
                               <div class="form-floating">
-                                <input type="phone" class="form-control" id="phone" placeholder="" value=""
+                                <input type="phone" class="form-control" id="phone" placeholder="" value="${cliente.telefone.ddd} ${cliente.telefone.numero}"
                                   name="phone">
                                 <label for="phone" class="form-label">Número</label>
                                 <div class="invalid-feedback">Insira um Telefone válido.</div>
@@ -176,35 +172,35 @@
                             </div>
                             <div class="col-md-6">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="tp-logradouro" placeholder="" value=""
+                                <input type="text" class="form-control" id="tp-logradouro" placeholder="" value="${cliente.endereco.tipoLogradouro}"
                                   name="tp-logradouro">
                                 <label for="tp-logradouro" class="form-label">Tipo de logradouro</label>
                               </div>
                             </div>
                             <div class="col-md-5">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="logradouro" placeholder="" value=""
+                                <input type="text" class="form-control" id="logradouro" placeholder="" value="${cliente.endereco.logradouro}"
                                   name="logradouro">
                                 <label for="logradouro" class="form-label">Logradouro</label>
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="numero" placeholder="" value=""
+                                <input type="text" class="form-control" id="numero" placeholder="" value="${cliente.endereco.numero}"
                                   name="numero">
                                 <label for="numero" class="form-label">Número</label>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="bairro" placeholder="" value=""
+                                <input type="text" class="form-control" id="bairro" placeholder="" value="${cliente.endereco.bairro}"
                                   name="bairro">
                                 <label for="bairro" class="form-label">Bairro</label>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="cep" placeholder="00000-000" name="cep">
+                                <input type="text" class="form-control" id="cep" placeholder="00000-000" name="cep" value="${cliente.endereco.cep}">
                                 <label for="cep" class="form-label">CEP</label>
                               </div>
                             </div>
@@ -238,7 +234,7 @@
                             </div>
                             <div class="col-md-8">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="observacao" placeholder="">
+                                <input type="text" class="form-control" id="observacao" placeholder="" value="${cliente.endereco.observacoes}">
                                 <label for="observacao" class="form-label">Observação<span
                                     class="text-muted">(Opcional)</span></label>
                               </div>

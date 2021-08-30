@@ -9,9 +9,11 @@ public class VerificarEmailStrategy implements IStrategy {
     @Override
     public String processa(EntidadeDominio entidade) {
 
-        String nomeClasse = entidade.getClass().getName();
+        String nomeClasse = entidade.getClass().getSimpleName();
 
         String email = "";
+
+        System.out.println(nomeClasse);
 
         if(nomeClasse.equals("Cliente")) {
             Cliente cliente = (Cliente) entidade;

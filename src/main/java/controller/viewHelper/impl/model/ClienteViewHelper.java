@@ -84,6 +84,8 @@ public class ClienteViewHelper implements IViewHelper {
 
                 String[] messagensDeErro = result.getMsg().split("\n");
 
+                request.setAttribute("nome", cliente.getUsuario().getNome().split(" ")[0]);
+                request.setAttribute("sobrenome", cliente.getUsuario().getNome().split(" ")[1]);
                 request.setAttribute("mensagem", messagensDeErro);
                 request.setAttribute("cliente", cliente);
                 request.getRequestDispatcher("cadastro.jsp").forward(request, response);

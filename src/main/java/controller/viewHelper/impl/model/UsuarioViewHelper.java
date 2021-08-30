@@ -22,7 +22,7 @@ public class UsuarioViewHelper implements IViewHelper {
             String sobrenome = request.getParameter("sobrenome");
             String email = request.getParameter("email");
             String senha = request.getParameter("senha");
-            String confirmarSenha = request.getParameter("senhaConfirmar");
+            String confirmarSenha = request.getParameter("senhaConfirmacao");
 
             Usuario usuario = new Usuario();
             usuario.setNome(nome + " " + sobrenome);

@@ -10,13 +10,15 @@ public class VerificarSenhaStrategy implements IStrategy {
     @Override
     public String processa(EntidadeDominio entidade) {
 
-        String nomeClasse = entidade.getClass().getName();
+        String nomeClasse = entidade.getClass().getSimpleName();
 
         String senha = "";
+        String senhaConfirmacao = "";
 
         if(nomeClasse.equals("Cliente")) {
             Cliente cliente = (Cliente) entidade;
             senha = cliente.getUsuario().getSenha();
+            senhaConfirmacao = cliente.getUsuario().getConfirmarSenha();
 
         } else  {
             Usuario usuario = (Usuario) entidade;
@@ -29,6 +31,13 @@ public class VerificarSenhaStrategy implements IStrategy {
         boolean maiscula = false;
         boolean minuscula = false;
         boolean especial = false;
+
+        System.out.println(senhaConfirmacao);
+        System.out.println(senha);
+
+        if(!senha.equals(senhaConfirmacao)) {
+            return "As senhas não coincidem";
+        }
 
         if(senha.trim().length() > 7) {
             tamanho = true;
