@@ -78,7 +78,7 @@ public class ClienteViewHelper implements IViewHelper {
 
         Cliente cliente = (Cliente) result.getEntidades().get(0);
 
-        if(operacao.equals("salvar")) {
+        if(operacao.equals("salvar") && request.getRequestURL().toString() != "/admin/cadastrarCliente") {
             if(result.getMsg() == null) {
                 response.sendRedirect("login.jsp");
             } else {

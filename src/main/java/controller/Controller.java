@@ -40,6 +40,7 @@ public class Controller extends HttpServlet{
 
         viewHelpers = new HashMap<>();
         viewHelpers.put("/Ecommerce/cadastro", new ClienteViewHelper());
+        viewHelpers.put("/Ecommerce/admin/cadastrarCliente", new ClienteViewHelper());
         viewHelpers.put("/Ecommerce/admin/cadastrarCartao", new CartaoDeCreditoViewHelper());
         viewHelpers.put("/Ecommerce/login", new LoginViewHelper());
     }
