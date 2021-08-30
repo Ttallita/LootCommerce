@@ -21,7 +21,7 @@ import java.util.Map;
         "/login",
         "/logout",
         "/cadastro",
-        "/clientes",
+        "/clientes/*",
         "/admin/*"
 })
 public class Controller extends HttpServlet{
@@ -39,9 +39,13 @@ public class Controller extends HttpServlet{
         commands.put("login", new ListarCommand());
 
         viewHelpers = new HashMap<>();
+
         viewHelpers.put("/Ecommerce/cadastro", new ClienteViewHelper());
-        viewHelpers.put("/Ecommerce/admin/cadastrarCartao", new CartaoDeCreditoViewHelper());
         viewHelpers.put("/Ecommerce/login", new LoginViewHelper());
+
+        viewHelpers.put("/Ecommerce/clientes/perfil", new ClienteViewHelper());
+
+        viewHelpers.put("/Ecommerce/admin/cartoes", new CartaoDeCreditoViewHelper());
     }
 
     @Override
@@ -70,6 +74,8 @@ public class Controller extends HttpServlet{
         String operacao = req.getParameter("operacao");
 
         ICommand command = commands.get(operacao);
+
+        System.out.println(req.getRequestURI());
 
         IViewHelper viewHelper = viewHelpers.get(req.getRequestURI());
 

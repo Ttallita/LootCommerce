@@ -66,6 +66,14 @@ public class ClienteViewHelper implements IViewHelper {
 
             return cliente;
 
+        } else if(operacao.equals("listar")) {
+            Usuario usuarioLogado = (Usuario) request.getSession().getAttribute("usuarioLogado");
+
+            Cliente cliente = new Cliente();
+
+            cliente.setUsuario(usuarioLogado);
+
+            return cliente;
         }
 
         return null;
@@ -75,9 +83,9 @@ public class ClienteViewHelper implements IViewHelper {
     public void setView(Result result, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String operacao = request.getParameter("operacao");
 
-        Cliente cliente = (Cliente) result.getEntidades().get(0);
-
         if(operacao.equals("salvar")) {
+            Cliente cliente = (Cliente) result.getEntidades().get(0);
+
             if(result.getMsg() == null) {
                 response.sendRedirect("login.jsp");
             } else {
@@ -90,6 +98,12 @@ public class ClienteViewHelper implements IViewHelper {
                 request.setAttribute("cliente", cliente);
                 request.getRequestDispatcher("cadastro.jsp").forward(request, response);
             }
+        } else if(operacao.equals("listar")) {
+            Cliente cliente = (Cliente) result.getEntidades().get(0);
+
+            request.setAttribute("clienteLogado", cliente);
+
+            request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, response);
         }
     }
 }

@@ -99,4 +99,20 @@ public class Cliente extends EntidadeDominio {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "genero='" + genero + '\'' +
+                ", dataNascimento='" + dataNascimento + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", telefone=" + telefone +
+                ", endereco=" + endereco +
+                ", enderecoEntrega=" + enderecoEntrega +
+                ", enderecoCobranca=" + enderecoCobranca +
+                ", cartoesDeCredito=" + cartoesDeCredito +
+                ", ranking=" + ranking +
+                ", usuario=" + usuario +
+                '}';
+    }
 }

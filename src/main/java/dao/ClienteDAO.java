@@ -2,12 +2,15 @@ package dao;
 
 import model.IEntidade;
 import model.Usuario;
+import model.UsuarioType;
 import model.cliente.Cliente;
 import model.EntidadeDominio;
 import model.cliente.Endereco;
+import model.cliente.Telefone;
 import utils.Conexao;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteDAO implements IDAO{
@@ -82,6 +85,56 @@ public class ClienteDAO implements IDAO{
 
     @Override
     public List<EntidadeDominio> listar(EntidadeDominio entidade, String operacao) {
-        return null;
+        Cliente cliente = (Cliente) entidade;
+        Conexao conexao = new Conexao();
+
+        try {
+            conn = conexao.getConexao();
+
+            String sql = "";
+
+            if(operacao.equals("listar")) {
+                sql = "SELECT * from clientes where cli_usr_id = ?";
+            }
+
+            List<EntidadeDominio> entidadeDominios = new ArrayList<>();
+
+            PreparedStatement pstm = conn.prepareStatement(sql);
+
+            if(operacao.equals("listar")) {
+                pstm.setLong(1, cliente.getUsuario().getId());
+
+                ResultSet rs = pstm.executeQuery();
+
+                while (rs.next()) {
+                    Cliente clienteLogado = new Cliente();
+
+                    clienteLogado.setGenero(rs.getString("cli_genero"));
+                    clienteLogado.setDataNascimento(rs.getDate("cli_dt_nasc").toString());
+                    clienteLogado.setCpf(rs.getString("cli_cpf"));
+
+                    String ddd = rs.getString("cli_telefone_ddd");
+                    String phone = rs.getString("cli_telefone_num");
+                    String tipoTelefone = rs.getString("cli_telefone_tp");
+
+                    Telefone telefone = new Telefone();
+                    telefone.setDdd(ddd);
+                    telefone.setNumero(phone);
+                    telefone.setTipo(tipoTelefone);
+
+                    clienteLogado.setTelefone(telefone);
+                    clienteLogado.setUsuario(cliente.getUsuario());
+
+                    entidadeDominios.add(clienteLogado);
+                }
+            }
+
+            return entidadeDominios;
+        }catch (Exception e) {
+            System.err.println(e.getMessage());
+            return null;
+        }finally {
+            conexao.fecharConexao(conn);
+        }
     }
 }
