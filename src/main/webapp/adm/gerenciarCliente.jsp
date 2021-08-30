@@ -117,7 +117,7 @@
                         <div class="col-3">
                           <div class="input-group form-floating">
                             <input type="phone" class="form-control" id="telefone" value="90000-0000" required="" disabled="">
-                            <button onclick="editar('telefone')" id="editarPhone" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                            <button onclick="editar('telefone')" id="editarTelefone" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
                             <label class="form-label">Telefone</label>
                             <div class="invalid-feedback">Campo obrigatório.</div>
                           </div>
@@ -215,11 +215,12 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <form class="needs-validation" novalidate="">
+                        <form class="needs-validation" action="/Ecommerce/admin/cadastrarEndereco" method="POST" novalidate="">
+                          <input type="hidden" name="operacao" value="salvar">
                           <div class="row g-3 mb-3">
                             <div class="col-md-6">
                               <div class="form-floating">
-                                <select class="form-select" id="tp-residencia" required="">
+                                <select class="form-select" id="tpResidencia" name="tpResidencia" required="">
                                   <option value="">Selecione</option>
                                   <option>Casa</option>
                                   <option>Apartamento</option>
@@ -231,42 +232,42 @@
                             </div>
                             <div class="col-md-6">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="tp-logradouro" placeholder="" value="" required="">
-                                <label for="tp-logradouro" class="form-label">Tipo de logradouro</label>
+                                <input type="text" class="form-control" id="tpLogradouro" name="tpLogradouro" placeholder="" value="" required="">
+                                <label for="tpLogradouro" class="form-label">Tipo de logradouro</label>
                                 <div class="invalid-feedback">Insira um tipo de logradouro.</div>
                               </div>
                             </div>
                             <div class="col-md-5">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="logradouro" placeholder="" value="" required="">
+                                <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="" value="" required="">
                                 <label for="logradouro" class="form-label">Logradouro</label>
                                 <div class="invalid-feedback">Insira o logradouro.</div>
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="numero" placeholder="" value="" required="">
+                                <input type="text" class="form-control" id="numero" name="numero" placeholder="" value="" required="">
                                 <label for="numero" class="form-label">Número</label>
                                 <div class="invalid-feedback">Insira o número.</div>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="bairro" placeholder="" value="" required="">
+                                <input type="text" class="form-control" id="bairro" name="bairro" placeholder="" value="" required="">
                                 <label for="bairro" class="form-label">Bairro</label>
                                 <div class="invalid-feedback">Insira um bairro.</div>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="cep" placeholder="00000-000" required="">
+                                <input type="text" class="form-control" id="cep" name="cep" placeholder="00000-000" required="">
                                 <label for="cep" class="form-label">CEP</label>
                                 <div class="invalid-feedback">Insira um cep válido.</div>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <select class="form-select" id="cidade" required="">
+                                <select class="form-select" id="cidade" name="cidade" required="">
                                   <option value="">Selecione</option>
                                   <option>São Paulo</option>
                                 </select>
@@ -276,7 +277,7 @@
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <select class="form-select" id="estado" required="">
+                                <select class="form-select" id="estado" name="estado" required="">
                                   <option value="">Selecione</option>
                                   <option>São Paulo</option>
                                 </select>
@@ -287,7 +288,7 @@
                             <div class="col-md-4">
                               <div class="form-floating">
                                 <label for="pais" class="form-label"></label>
-                                <select class="form-select" id="pais" required="">
+                                <select class="form-select" id="pais" name="pais" required="">
                                   <option value="">Selecione</option>
                                   <option>Brasil</option>
                                 </select>
@@ -297,13 +298,13 @@
                             </div>
                             <div class="col-md-8">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="observacao" placeholder="">
+                                <input type="text" class="form-control" id="observacao" name="observacao" placeholder="">
                                 <label for="observacao" class="form-label">Observação<span class="text-muted">(Opcional)</span></label>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <select class="form-select" id="tpEndereco" required="">
+                                <select class="form-select" id="tpEndereco" name="tpEndereco" required="">
                                   <option value="">Selecione</option>
                                   <option>Cobrança</option>
                                   <option>Entrega</option>
@@ -336,8 +337,8 @@
                         Tem certeza que deseja excluir esse endereço?
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary">Cancelar</button>
-                        <button type="button" id="btnInativar" data-bs-dismiss="modal" class="btn btn-danger">Excluir</button>
+                        <button type="button" id="btnCancelar" data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</button>
+                        <button type="button" id="btnInativar" class="btn btn-danger">Excluir</button>
                       </div>
                     </div>
                   </div>
@@ -502,8 +503,8 @@
                         Tem certeza que deseja excluir esse cartão?
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary">Cancelar</button>
-                        <button type="button" id="btnInativar" data-bs-dismiss="modal" class="btn btn-danger">Excluir</button>
+                        <button type="button" id="btnCancelar" data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</button>
+                        <button type="button" id="btnInativar" class="btn btn-danger">Excluir</button>
                       </div>
                     </div>
                   </div>

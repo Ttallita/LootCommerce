@@ -32,10 +32,10 @@ public class CadastrarNovoEnderecoTest {
         Thread.sleep(2000);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cadastrarEndereco")));
-        Select selectTpResidencia = new Select(driver.findElement(By.id("tp-residencia")));
+        Select selectTpResidencia = new Select(driver.findElement(By.id("tpResidencia")));
         selectTpResidencia.selectByVisibleText("Casa");
         Thread.sleep(1500);
-        driver.findElement(By.id("tp-logradouro")).sendKeys("Rua");
+        driver.findElement(By.id("tpLogradouro")).sendKeys("Rua");
         Thread.sleep(1500);
         driver.findElement(By.id("logradouro")).sendKeys("Flores");
         Thread.sleep(1500);

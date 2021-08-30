@@ -48,8 +48,8 @@ public class GerenciarCadastrarEnderecoTest {
         btnNovoEndereco.click();
         Thread.sleep(2000);
 
-        WebElement campoTipoResidencia = driver.findElement(By.id("tp-residencia"));
-        WebElement campoTipoLogradouro = driver.findElement(By.id("tp-logradouro"));
+        WebElement campoTipoResidencia = driver.findElement(By.id("tpResidencia"));
+        WebElement campoTipoLogradouro = driver.findElement(By.id("tpLogradouro"));
         WebElement campoLogradouro = driver.findElement(By.id("logradouro"));
         WebElement campoNumero = driver.findElement(By.id("numero"));
         WebElement campoBairro = driver.findElement(By.id("bairro"));

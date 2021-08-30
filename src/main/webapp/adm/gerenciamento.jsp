@@ -335,72 +335,55 @@
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form class="needs-validation w-75 p-3" id="form-cadastro"
-                                                            novalidate>
+                                                        <form class="needs-validation w-75" id="form-cadastro" action="/Ecommerce/admin/cadastrarCliente" method="POST" novalidate>
+                                                            <input type="hidden" name="operacao" value="salvar">
                                                             <h1 class="h3 mb-3 fw-normal text-center">Novo Cliente</h1>
                                                             <div class="row g-3 mb-3">
                                                                 <div class="col-12">
                                                                     <div class="form-floating">
-                                                                        <input type="email" class="form-control"
-                                                                            id="email" placeholder="" value="" required>
-                                                                        <label for="email"
-                                                                            class="form-label">Email</label>
-                                                                        <div class="invalid-feedback">Insira um email
-                                                                            válido.</div>
+                                                                        <input type="email" class="form-control" id="email" name="email" required>
+                                                                        <label for="email" class="form-label">Email</label>
+                                                                        <div class="invalid-feedback">Insira um email válido.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-6">
                                                                     <div class="form-floating">
-                                                                        <input type="password" class="form-control"
-                                                                            id="senha" placeholder="" value="" required>
-                                                                        <label for="senha"
-                                                                            class="form-label">Senha</label>
-                                                                        <div class="invalid-feedback">A senha deve
-                                                                            possuir pelo menos 8 caracteres, ter letras
-                                                                            maiúsculas e minúsculas e conter caracteres
-                                                                            especiais.</div>
+                                                                        <input type="password" class="form-control" id="senha" name="senha" required>
+                                                                        <label for="senha" class="form-label">Senha</label>
+                                                                        <div class="invalid-feedback">
+                                                                            A senha deve possuir pelo menos 8 caracteres, ter letras
+                                                                            maiúsculas e minúsculas e conter caracteres especiais.
+                                                                        </div>
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="col-6">
                                                                     <div class="form-floating">
-                                                                        <input type="password" class="form-control"
-                                                                            id="senhaConfirmacao" placeholder=""
-                                                                            value="" required>
-                                                                        <label for="senha-confirmacao"
-                                                                            class="form-label">Insira novamente</label>
-                                                                        <div class="invalid-feedback">As senhas não são
-                                                                            as mesmas.</div>
+                                                                        <input type="password" class="form-control" id="senhaConfirmacao" name="senhaConfirmacao" required>
+                                                                        <label for="senha-confirmacao" class="form-label">Insira novamente</label>
+                                                                        <div class="invalid-feedback">As senhas não são as mesmas.</div>
                                                                     </div>
                                                                 </div>
 
                                                                 <!-- Dados pessoais -->
                                                                 <div class="col-sm-5 form-outline">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="nome" placeholder="" value="" required>
-                                                                        <label for="floatingPassword"
-                                                                            class="form-label">Nome</label>
-                                                                        <div class="invalid-feedback">Insira seu
-                                                                            primeiro nome.</div>
+                                                                        <input type="text" class="form-control" id="nome" name="nome" required>
+                                                                        <label for="floatingPassword" class="form-label">Nome</label>
+                                                                        <div class="invalid-feedback">Insira seu primeiro nome.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-sm-7">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="sobrenome" placeholder="" value=""
-                                                                            required>
-                                                                        <label for="sobrenome"
-                                                                            class="form-label">Sobrenome</label>
-                                                                        <div class="invalid-feedback">Insira seu
-                                                                            sobrenome.</div>
+                                                                        <input type="text" class="form-control" id="sobrenome" name="sobrenome" required>
+                                                                        <label for="sobrenome" class="form-label">Sobrenome</label>
+                                                                        <div class="invalid-feedback">Insira seu sobrenome.</div>
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="col-md-6">
                                                                     <div class="form-floating">
-                                                                        <select class="form-select" id="genero"
-                                                                            required>
+                                                                        <select class="form-select" id="genero" name="genero" required>
                                                                             <option value="">Selecione</option>
                                                                             <option>Masculino</option>
                                                                             <option>Feminimo</option>
@@ -408,108 +391,81 @@
                                                                             <option>Prefiro não informar</option>
                                                                         </select>
                                                                         <label>Gênero</label>
-                                                                        <div class="invalid-feedback">Selecione um
-                                                                            gênero.</div>
+                                                                        <div class="invalid-feedback">Selecione um gênero.</div>
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="col-md-6">
                                                                     <div class="form-floating">
-                                                                        <input type="date" class="form-control"
-                                                                            id="date" value="" required>
-                                                                        <label for="pais" class="form-label">Data de
-                                                                            nascimento</label>
-                                                                        <div class="invalid-feedback">Selecione sua data
-                                                                            de nascimento.</div>
+                                                                        <input type="date" class="form-control" id="date" name="date" required>
+                                                                        <label for="pais" class="form-label">Data de nascimento</label>
+                                                                        <div class="invalid-feedback">Selecione sua data de nascimento.</div>
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="col-4">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control" id="cpf"
-                                                                            placeholder="000.000.000-00" value=""
-                                                                            required>
+                                                                        <input type="text" class="form-control" id="cpf" name="cpf" required>
                                                                         <label for="cpf" class="form-label">CPF</label>
-                                                                        <div class="invalid-feedback">Insira seu número
-                                                                            de CPF.</div>
+                                                                        <div class="invalid-feedback">Insira seu número de CPF.</div>
                                                                     </div>
                                                                 </div>
 
                                                                 <!-- Telefone -->
                                                                 <div class="col-3 form-outline">
                                                                     <div class="form-floating">
-                                                                        <select class="form-select" id="tipoTelefone"
-                                                                            required>
+                                                                        <select class="form-select" id="tipoTelefone" name="tipoTelefone" required>
                                                                             <option value="">Selecione</option>
                                                                             <option>Residêncial</option>
                                                                             <option>Celular</option>>
                                                                         </select>
-                                                                        <label for="phone" class="form-label">Tipo de
-                                                                            Telefone</label>
-                                                                        <div class="invalid-feedback">Insira um tipo de
-                                                                            telefone.</div>
+                                                                        <label for="phone" class="form-label">Tipo de Telefone</label>
+                                                                        <div class="invalid-feedback">Insira um tipo de telefone.</div>
                                                                     </div>
                                                                 </div>
 
                                                                 <div class="col-5">
                                                                     <div class="form-floating">
-                                                                        <input type="phone" class="form-control"
-                                                                            id="phone" placeholder="" value="" required>
-                                                                        <label for="phone"
-                                                                            class="form-label">Telefone</label>
-                                                                        <div class="invalid-feedback">Insira um Telefone
-                                                                            válido.</div>
+                                                                        <input type="phone" class="form-control" id="phone" name="phone" required>
+                                                                        <label for="phone" class="form-label">Telefone</label>
+                                                                        <div class="invalid-feedback">Insira um Telefone válido.</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
                                                             <hr>
-                                                            <h5 class="mb-3 fw-normal text-center">Endereço de
-                                                                Residêncial</h5>
+                                                            <h5 class="mb-3 fw-normal text-center">Endereço de Residêncial</h5>
                                                             <!--Endereço-->
                                                             <div class="row g-3 mb-3">
                                                                 <div class="col-md-6">
                                                                     <div class="form-floating">
-                                                                        <select class="form-select" id="tp-residencia"
-                                                                            required>
+                                                                        <select class="form-select" id="tpResidencia" name="tpResidencia" required>
                                                                             <option value="">Selecione</option>
                                                                             <option>Casa</option>
                                                                             <option>Apartamento</option>
                                                                             <option>Outro</option>
                                                                         </select>
                                                                         <label>Tipo de residência</label>
-                                                                        <div class="invalid-feedback">Selecione um tipo
-                                                                            de residência válido.</div>
+                                                                        <div class="invalid-feedback">Selecione um tipo de residência válido.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="tp-logradouro" placeholder="" value=""
-                                                                            required>
-                                                                        <label for="tp-logradouro"
-                                                                            class="form-label">Tipo de
-                                                                            logradouro</label>
-                                                                        <div class="invalid-feedback">Insira um tipo de
-                                                                            logradouro.</div>
+                                                                        <input type="text" class="form-control" id="tpLogradouro" name="tpLogradouro" required>
+                                                                        <label for="tpLogradouro" class="form-label">Tipo de logradouro</label>
+                                                                        <div class="invalid-feedback">Insira um tipo de logradouro.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-5">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="logradouro" placeholder="" value=""
-                                                                            required>
-                                                                        <label for="logradouro"
-                                                                            class="form-label">Logradouro</label>
-                                                                        <div class="invalid-feedback">Insira o
-                                                                            logradouro.</div>
+                                                                        <input type="text" class="form-control" id="logradouro" name="logradouro" required>
+                                                                        <label for="logradouro" class="form-label">Logradouro</label>
+                                                                        <div class="invalid-feedback">Insira o logradouro.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-3">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="numero" placeholder="" value=""
-                                                                            required>
+                                                                        <input type="text" class="form-control" id="numero" name="numero" required>
                                                                         <label for="numero"
                                                                             class="form-label">Número</label>
                                                                         <div class="invalid-feedback">Insira o número.
@@ -518,9 +474,7 @@
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="bairro" placeholder="" value=""
-                                                                            required>
+                                                                        <input type="text" class="form-control" id="bairro" name="bairro" required>
                                                                         <label for="bairro"
                                                                             class="form-label">Bairro</label>
                                                                         <div class="invalid-feedback">Insira um bairro.
@@ -529,8 +483,7 @@
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control" id="cep"
-                                                                            placeholder="00000-000" required>
+                                                                        <input type="text" class="form-control" id="cep" name="cep" required>
                                                                         <label for="cep" class="form-label">CEP</label>
                                                                         <div class="invalid-feedback">Insira um cep
                                                                             válido.</div>
@@ -538,47 +491,41 @@
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-floating">
-                                                                        <select class="form-select" id="cidade"
-                                                                            required>
+                                                                        <select class="form-select" id="cidade" name="cidade" required>
                                                                             <option value="">Selecione</option>
                                                                             <option>São Paulo</option>
                                                                         </select>
                                                                         <label>Cidade</label>
-                                                                        <div class="invalid-feedback">Selecione uma
-                                                                            cidade.</div>
+                                                                        <div class="invalid-feedback">Selecione uma cidade.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-floating">
-                                                                        <select class="form-select" id="estado"
-                                                                            required>
+                                                                        <select class="form-select" id="estado" name="estado" required>
                                                                             <option value="">Selecione</option>
                                                                             <option>São Paulo</option>
                                                                         </select>
                                                                         <label>Estado</label>
-                                                                        <div class="invalid-feedback">Selecione um
-                                                                            estado.</div>
+                                                                        <div class="invalid-feedback">Selecione um estado.</div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <div class="form-floating">
                                                                         <label for="pais" class="form-label"></label>
-                                                                        <select class="form-select" id="pais" required>
+                                                                        <select class="form-select" id="pais" name="pais" required>
                                                                             <option value="">Selecione</option>
                                                                             <option>Brasil</option>
                                                                         </select>
                                                                         <label>País</label>
-                                                                        <div class="invalid-feedback">Selecione um país.
-                                                                        </div>
+                                                                        <div class="invalid-feedback">Selecione um país. </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-8">
                                                                     <div class="form-floating">
-                                                                        <input type="text" class="form-control"
-                                                                            id="observacao" placeholder="">
-                                                                        <label for="observacao"
-                                                                            class="form-label">Observação<span
-                                                                                class="text-muted">(Opcional)</span></label>
+                                                                        <input type="text" class="form-control" id="observacao" name="observacao" placeholder="">
+                                                                        <label for="observacao" class="form-label">
+                                                                            Observação <span class="text-muted">(Opcional)</span>
+                                                                        </label>
                                                                     </div>
                                                                 </div>
                                                             </div>

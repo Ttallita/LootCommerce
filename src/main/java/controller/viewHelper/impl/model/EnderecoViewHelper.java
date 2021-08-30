@@ -17,8 +17,8 @@ public class EnderecoViewHelper implements IViewHelper {
         String operacao = request.getParameter("operacao");
 
         if(operacao.equals("salvar")) {
-            String tpResidencia = request.getParameter("tp-residencia");
-            String tpLogradouro = request.getParameter("tp-logradouro");
+            String tpResidencia = request.getParameter("tpResidencia");
+            String tpLogradouro = request.getParameter("tpLogradouro");
             String logradouro = request.getParameter("logradouro");
             String numero = request.getParameter("numero");
             String bairro = request.getParameter("bairro");
@@ -29,6 +29,7 @@ public class EnderecoViewHelper implements IViewHelper {
             String observacao = request.getParameter("observacao");
 
             Endereco endereco = new Endereco();
+
 
             endereco.setApelido("Teste");
             endereco.setTipoResidencia(tpResidencia);
@@ -46,10 +47,10 @@ public class EnderecoViewHelper implements IViewHelper {
             endereco.setPais(pais);
             endereco.setObservacoes(observacao);
 
-            if(!request.getParameterMap().containsKey("tp_endereco")) {
+            if(!request.getParameterMap().containsKey("tpEndereco")) {
                endereco.setTipoEndereco(EnderecoType.COBRANCA_ENTREGA);
             } else {
-                String tpEndereco = request.getParameter("tp_endereco");
+                String tpEndereco = request.getParameter("tpEndereco");
 
                 if(tpEndereco.contains("Cobrança")) {
                     endereco.setTipoEndereco(EnderecoType.COBRANCA);

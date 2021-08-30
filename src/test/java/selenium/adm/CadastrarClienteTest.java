@@ -38,8 +38,8 @@ public class CadastrarClienteTest{
         WebElement campoCpf = driver.findElement(By.id("cpf"));
         WebElement campoTipoTelefone = driver.findElement(By.id("tipoTelefone"));
         WebElement campoTelefone = driver.findElement(By.id("phone"));
-        WebElement campoTipoResidencia = driver.findElement(By.id("tp-residencia"));
-        WebElement campoTipoLogradouro = driver.findElement(By.id("tp-logradouro"));
+        WebElement campoTipoResidencia = driver.findElement(By.id("tpResidencia"));
+        WebElement campoTipoLogradouro = driver.findElement(By.id("tpLogradouro"));
         WebElement campoLogradouro = driver.findElement(By.id("logradouro"));
         WebElement campoNumero = driver.findElement(By.id("numero"));
         WebElement campoBairro = driver.findElement(By.id("bairro"));

@@ -62,7 +62,6 @@ CREATE TABLE enderecos (
     PRIMARY KEY (end_id)
 );
 
-
 CREATE TABLE enderecos_cliente(
     ecl_id serial NOT NULL,
     ecl_end_id int NOT NULL,
