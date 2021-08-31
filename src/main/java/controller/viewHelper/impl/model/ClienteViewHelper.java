@@ -69,7 +69,6 @@ public class ClienteViewHelper implements IViewHelper {
             Cliente cliente = new Cliente();
 
 
-
             cliente.setUsuario(usuarioLogado);
 
             return cliente;
@@ -78,9 +77,38 @@ public class ClienteViewHelper implements IViewHelper {
 
             Cliente cliente = new Cliente();
 
+            String nome = request.getParameter("nome");
+            String sobrenome = request.getParameter("sobrenome");
+            String genero = request.getParameter("genero");
+            String dataNasc = request.getParameter("date");
+            String cpf = request.getParameter("cpf");
+
+            String tipoTelefone = request.getParameter("tipoTelefone");
+
+            String phoneCompleto;
+            String ddd = "";
+            String phone = "";
+
+            phoneCompleto = request.getParameter("phone");
+
+            if(!phoneCompleto.isEmpty()) {
+                ddd = request.getParameter("phone").split(" ")[0];
+                phone = request.getParameter("phone").split(" ")[1];
+            }
+
+            Telefone telefone = new Telefone();
+            telefone.setTipo(tipoTelefone);
+            telefone.setDdd(ddd);
+            telefone.setNumero(phone);
+
+            cliente.setGenero(genero);
+            cliente.setDataNascimento(dataNasc);
+            cliente.setCpf(cpf);
+            cliente.setTelefone(telefone);
             cliente.setUsuario(usuarioLogado);
+            cliente.getUsuario().setNome(nome + sobrenome);
 
-
+            return cliente;
         }
 
         return null;
@@ -113,6 +141,15 @@ public class ClienteViewHelper implements IViewHelper {
             request.setAttribute("clienteLogado", cliente);
 
             request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, response);
+        } else if(operacao.equals("atualizar")) {
+            Cliente cliente = (Cliente) result.getEntidades().get(0);
+
+            request.setAttribute("nome", cliente.getUsuario().getNome().split(" ")[0]);
+            request.setAttribute("sobrenome", cliente.getUsuario().getNome().split(" ")[1]);
+            request.setAttribute("clienteLogado", cliente);
+
+            request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, response);
+
         }
     }
 }

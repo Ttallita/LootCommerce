@@ -78,7 +78,36 @@ public class ClienteDAO implements IDAO{
 
     @Override
     public boolean atualizar(EntidadeDominio entidade) {
-        return false;
+
+        Cliente cliente = (Cliente) entidade;
+        Conexao conexao = new Conexao();
+
+        try {
+            conn = conexao.getConexao();
+
+            String sql = "UPDATE cliente SET cli_cpf = ?, cli_dt_nasc = ?, cli_genero = ?, cli_telefone_num = ?, cli_telefone_ddd = ?, cli_telefone_tp = ?";
+
+            PreparedStatement pstm = conn.prepareStatement(sql);
+
+            pstm.setString(2, cliente.getCpf());
+            pstm.setDate(3, Date.valueOf(cliente.getDataNascimento()));
+            pstm.setString(4, cliente.getGenero());
+            pstm.setString(5, cliente.getTelefone().getNumero());
+            pstm.setString(6, cliente.getTelefone().getDdd());
+            pstm.setString(7, cliente.getTelefone().getTipo());
+
+
+            new UsuarioDAO().atualizar(cliente.getUsuario());
+            return true;
+
+        }catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
+
+        }finally {
+            conexao.fecharConexao(conn);
+        }
+
     }
 
     @Override

@@ -6,6 +6,7 @@ import controller.viewHelper.impl.LoginViewHelper;
 import controller.viewHelper.impl.model.CartaoDeCreditoViewHelper;
 import controller.viewHelper.impl.model.ClienteViewHelper;
 import controller.viewHelper.impl.model.EnderecoViewHelper;
+import controller.viewHelper.impl.model.UsuarioViewHelper;
 import model.EntidadeDominio;
 import model.Result;
 
@@ -45,6 +46,9 @@ public class Controller extends HttpServlet{
         viewHelpers.put("/Ecommerce/login", new LoginViewHelper());
 
         viewHelpers.put("/Ecommerce/clientes/perfil", new ClienteViewHelper());
+        viewHelpers.put("/Ecommerce/clientes/perfil/editarSenha", new UsuarioViewHelper());
+
+
         viewHelpers.put("/Ecommerce/clientes/cadastrarCartao", new CartaoDeCreditoViewHelper());
         viewHelpers.put("/Ecommerce/clientes/cadastrarEndereco", new EnderecoViewHelper());
 
@@ -77,6 +81,8 @@ public class Controller extends HttpServlet{
         req.setCharacterEncoding("UTF-8");
 
         String operacao = req.getParameter("operacao");
+
+        System.out.println(operacao);
 
         ICommand command = commands.get(operacao);
 

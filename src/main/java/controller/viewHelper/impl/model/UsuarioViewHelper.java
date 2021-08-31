@@ -38,12 +38,7 @@ public class UsuarioViewHelper implements IViewHelper {
             String email = request.getParameter("email");
             String senhaAtual = request.getParameter("senhaAtual");
             String senha = request.getParameter("senha");
-            String senhaConfirmar = request.getParameter("senhaConfirmar");
-
-            if(!senhaAtual.equals(usuarioLogado.getSenha())) {
-                request.setAttribute("msgSenhaAtual", "Erro! Senha atua incorreta");
-                return null;
-            }
+            String senhaConfirmar = request.getParameter("senhaConfirmacao");
 
             Usuario usuario = usuarioLogado;
             usuario.setEmail(email);

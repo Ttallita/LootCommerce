@@ -1,6 +1,6 @@
 package model;
 
-public class Usuario extends EntidadeDominio{
+public class    Usuario extends EntidadeDominio{
 
     private String nome;
     private String email;

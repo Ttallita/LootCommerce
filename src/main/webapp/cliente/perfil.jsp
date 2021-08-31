@@ -165,8 +165,8 @@
                                     <div class="card-body">
                                         <h4 class="mb-3">Alterar senha</h4>
 
-                                        <form action="/Ecommerce/clientes/perfil" method="POST">
-                                            <input type="hidden" name="operacao" value="alterar"/>
+                                        <form action="/Ecommerce/clientes/perfil/editarSenha" method="POST">
+                                            <input type="hidden" name="operacao" value="atualizar">
                                             <div class="col-6 ">
                                                 <div class="input-group form-floating">
                                                     <input type="email" class="form-control" id="emailAtual"
@@ -179,11 +179,8 @@
                                                     <div class="invalid-feedback">Email inválido.</div>
                                                 </div>
                                             </div>
-                                        </form>
 
-                                        <form class="needs-validation" novalidate="">
                                             <div class="vstack gap-3 text-center">
-
                                                 <div class="col-6 form-floating">
                                                     <input type="password" class="form-control" id="senhaAtual"
                                                         placeholder="" required="">
@@ -192,13 +189,13 @@
 
                                                 <div class="col-6 form-floating">
                                                     <input type="password" class="form-control" id="senha"
-                                                        placeholder="" required="">
+                                                        placeholder="" required="" name="senha">
                                                     <label class="form-label">Senha Nova</label>
                                                 </div>
 
                                                 <div class="col-6 form-floating">
                                                     <input type="password" class="form-control" id="senhaConfirmacao"
-                                                        placeholder="" required="">
+                                                        placeholder="" required="" name="senhaConfirmacao">
                                                     <label class="form-label">Confirme a nova senha</label>
                                                 </div>
                                             </div>

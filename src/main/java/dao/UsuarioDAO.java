@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class UsuarioDAO implements IDAO{
 
@@ -65,10 +66,12 @@ public class UsuarioDAO implements IDAO{
         try {
             conn = conexao.getConexao();
 
-            String sql = "UPDATE usuarios SET usr_email = ?, usr_senha = ?";
+            String sql = "UPDATE usuarios SET usr_prim_nome = ?, usr_ult_nome = ?, usr_email = ?, usr_senha = ?";
 
             PreparedStatement pstm = conn.prepareStatement(sql);
 
+            pstm.setString(1, usuario.getNome().split(" ")[0]);
+            pstm.setString(2, usuario.getNome().split(" ")[1]);
             pstm.setString(3, usuario.getEmail());
             pstm.setString(4, usuario.getSenha());
             pstm.execute();

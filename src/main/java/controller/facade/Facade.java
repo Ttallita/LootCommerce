@@ -133,6 +133,8 @@ public class Facade implements IFacade {
 
             List<EntidadeDominio> listaEntidades = dao.listar(entidade, operacao);
 
+
+
             result.setEntidades(listaEntidades);
         } else {
             result.setMsg(msgValidacao);
