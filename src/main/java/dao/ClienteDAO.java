@@ -58,7 +58,6 @@ public class ClienteDAO implements IDAO{
             sql = "INSERT INTO enderecos_cliente (ecl_end_id, ecl_cli_id)" +
                     "VALUES (?, ?)";
 
-
             pstm = conn.prepareStatement(sql);
 
             pstm.setLong(1, idEndereco);
@@ -129,58 +128,139 @@ public class ClienteDAO implements IDAO{
                 sql = "SELECT * from clientes where cli_usr_id = ?";
             }
 
+            if(operacao.equals("listarTodos")) {
+                sql = "select * from usuarios full join clientes on usr_id = cli_usr_id";
+            }
+
             List<EntidadeDominio> entidadeDominios = new ArrayList<>();
 
             PreparedStatement pstm = conn.prepareStatement(sql);
 
             if(operacao.equals("listar")) {
                 pstm.setLong(1, cliente.getUsuario().getId());
+            }
+            ResultSet rs = pstm.executeQuery();
 
-                ResultSet rs = pstm.executeQuery();
+            while (rs.next()) {
+                Cliente clienteLogado = new Cliente();
 
-                while (rs.next()) {
-                    Cliente clienteLogado = new Cliente();
+                clienteLogado.setId(rs.getLong("cli_usr_id"));
 
-                    clienteLogado.setId(rs.getLong("cli_usr_id"));
-                    clienteLogado.setGenero(rs.getString("cli_genero"));
-                    clienteLogado.setDataNascimento(rs.getDate("cli_dt_nasc").toString());
-                    clienteLogado.setCpf(rs.getString("cli_cpf"));
-
-                    String ddd = rs.getString("cli_telefone_ddd");
-                    String phone = rs.getString("cli_telefone_num");
-                    String tipoTelefone = rs.getString("cli_telefone_tp");
-
-                    Telefone telefone = new Telefone();
-                    telefone.setDdd(ddd);
-                    telefone.setNumero(phone);
-                    telefone.setTipo(tipoTelefone);
-
-                    Endereco endereco = new Endereco();
-                    endereco.setCliente(clienteLogado);
-
-                    CartaoDeCredito cartao = new CartaoDeCredito();
-                    cartao.setCliente(clienteLogado);
-
-                    List<EntidadeDominio> enderecos = new EnderecoDAO().listar(endereco, "listarPorCliente");
-                    List<Endereco> enderecosConvertidos = enderecos.stream()
-                            .map(enderecoMap -> (Endereco) enderecoMap)
-                            .collect(Collectors.toList());
-
-                    List<EntidadeDominio> cartoes = new CartaoDeCreditoDAO().listar(cartao, "listarPorCliente");
-                    List<CartaoDeCredito> cartoesConvertidos = cartoes.stream()
-                            .map(cartaoMap -> (CartaoDeCredito) cartaoMap)
-                            .collect(Collectors.toList());
-
-                    clienteLogado.setTelefone(telefone);
-                    clienteLogado.setUsuario(cliente.getUsuario());
-                    clienteLogado.setEnderecos(enderecosConvertidos);
-                    clienteLogado.setCartoesDeCredito(cartoesConvertidos);
-
-                    entidadeDominios.add(clienteLogado);
+                if(operacao.equals("listarTodos")){
+                    clienteLogado.setNome(rs.getString("usr_prim_nome"));
+                    clienteLogado.setSobrenome(rs.getString("usr_ult_nome"));
                 }
+
+                clienteLogado.setGenero(rs.getString("cli_genero"));
+                clienteLogado.setDataNascimento(rs.getDate("cli_dt_nasc").toString());
+                clienteLogado.setCpf(rs.getString("cli_cpf"));
+
+                String ddd = rs.getString("cli_telefone_ddd");
+                String phone = rs.getString("cli_telefone_num");
+                String tipoTelefone = rs.getString("cli_telefone_tp");
+
+                Telefone telefone = new Telefone();
+                telefone.setDdd(ddd);
+                telefone.setNumero(phone);
+                telefone.setTipo(tipoTelefone);
+
+                Endereco endereco = new Endereco();
+                endereco.setCliente(clienteLogado);
+
+                CartaoDeCredito cartao = new CartaoDeCredito();
+                cartao.setCliente(clienteLogado);
+
+                List<EntidadeDominio> enderecos = new EnderecoDAO().listar(endereco, "listarPorCliente");
+                List<Endereco> enderecosConvertidos = enderecos.stream()
+                        .map(enderecoMap -> (Endereco) enderecoMap)
+                        .collect(Collectors.toList());
+
+                List<EntidadeDominio> cartoes = new CartaoDeCreditoDAO().listar(cartao, "listarPorCliente");
+                List<CartaoDeCredito> cartoesConvertidos = cartoes.stream()
+                        .map(cartaoMap -> (CartaoDeCredito) cartaoMap)
+                        .collect(Collectors.toList());
+
+                clienteLogado.setTelefone(telefone);
+                clienteLogado.setUsuario(cliente.getUsuario());
+                clienteLogado.setEnderecos(enderecosConvertidos);
+                clienteLogado.setCartoesDeCredito(cartoesConvertidos);
+
+                entidadeDominios.add(clienteLogado);
+            }
+            return entidadeDominios;
+        }catch (Exception e) {
+            System.err.println(e.getMessage());
+            return null;
+        }finally {
+            conexao.fecharConexao(conn);
+        }
+    }
+
+    public Cliente listar(EntidadeDominio entidade, String operacao, int id) {
+        Cliente cliente = (Cliente) entidade;
+        Conexao conexao = new Conexao();
+
+        try {
+            conn = conexao.getConexao();
+
+            String sql = "";
+
+            if(operacao.equals("listar")) {
+                sql = "select * from clientes left join usuarios on usr_id = ?";
             }
 
-            return entidadeDominios;
+            PreparedStatement pstm = conn.prepareStatement(sql);
+
+            pstm.setLong(1, id);
+
+            ResultSet rs = pstm.executeQuery();
+
+            Cliente clienteLogado = new Cliente();
+
+            while (rs.next()) {
+                clienteLogado.setId(rs.getLong("cli_usr_id"));
+                clienteLogado.setNome(rs.getString("usr_prim_nome"));
+                clienteLogado.setSobrenome(rs.getString("usr_ult_nome"));
+                clienteLogado.setEmail(rs.getString("usr_email"));
+                clienteLogado.setGenero(rs.getString("cli_genero"));
+                clienteLogado.setDataNascimento(rs.getDate("cli_dt_nasc").toString());
+                clienteLogado.setCpf(rs.getString("cli_cpf"));
+
+                String ddd = rs.getString("cli_telefone_ddd");
+                String phone = rs.getString("cli_telefone_num");
+                String tipoTelefone = rs.getString("cli_telefone_tp");
+
+                Telefone telefone = new Telefone();
+                telefone.setDdd(ddd);
+                telefone.setNumero(phone);
+                telefone.setTipo(tipoTelefone);
+
+                Endereco endereco = new Endereco();
+                endereco.setCliente(clienteLogado);
+
+                CartaoDeCredito cartao = new CartaoDeCredito();
+                cartao.setCliente(clienteLogado);
+
+                List<EntidadeDominio> enderecos = new EnderecoDAO().listar(endereco, "listarPorCliente");
+                List<Endereco> enderecosConvertidos = enderecos.stream()
+                        .map(enderecoMap -> (Endereco) enderecoMap)
+                        .collect(Collectors.toList());
+
+                List<EntidadeDominio> cartoes = new CartaoDeCreditoDAO().listar(cartao, "listarPorCliente");
+                List<CartaoDeCredito> cartoesConvertidos = cartoes.stream()
+                        .map(cartaoMap -> (CartaoDeCredito) cartaoMap)
+                        .collect(Collectors.toList());
+
+                clienteLogado.setTelefone(telefone);
+                clienteLogado.setUsuario(cliente.getUsuario());
+                clienteLogado.setEnderecos(enderecosConvertidos);
+                clienteLogado.setCartoesDeCredito(cartoesConvertidos);
+
+                return clienteLogado;
+            }
+            
+            return null;
+
         }catch (Exception e) {
             System.err.println(e.getMessage());
             return null;

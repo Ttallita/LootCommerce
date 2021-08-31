@@ -13,8 +13,6 @@ public class VerificarEmailStrategy implements IStrategy {
 
         String email = "";
 
-        System.out.println(nomeClasse);
-
         if(nomeClasse.equals("Cliente")) {
             Cliente cliente = (Cliente) entidade;
             email = cliente.getUsuario().getEmail();

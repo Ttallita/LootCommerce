@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page buffer="64kb" %>
 
 <html>
 
@@ -43,7 +44,7 @@
                       <div class="row g-3">
                         <div class="col-sm-6">
                           <div class="input-group form-floating">
-                            <input type="text" class="form-control" id="nome" value="Tiger" required="" disabled="">
+                            <input type="text" class="form-control" id="nome" value="${cliente.nome}" required="" disabled="">
                             <button onclick="editar('nome')" id="editarNome" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
                             <label class="form-label">Nome</label>
                             <div class="invalid-feedback">Campo obrigatório.</div>
@@ -52,7 +53,7 @@
 
                         <div class="col-sm-6">
                           <div class="input-group form-floating">
-                            <input type="text" class="form-control" id="sobrenome" value="Nixon" required="" disabled="">
+                            <input type="text" class="form-control" id="sobrenome" value="${cliente.sobrenome}" required="" disabled="">
                             <button onclick="editar('sobrenome')" id="editarSobrenome" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
                             <label class="form-label">Sobrenome</label>
                             <div class="invalid-feedback">Campo obrigatório.</div>
@@ -62,6 +63,7 @@
                         <div class="col-md-4">
                           <div class="input-group form-floating">
                             <select class="form-select" id="genero" required="" disabled="">
+                              <option>${cliente.genero}</option>
                               <option>Masculino</option>
                               <option value="">Selecione</option>
                               <option>Feminimo</option>
@@ -76,7 +78,7 @@
 
                         <div class="col-md-4">
                           <div class="input-group form-floating">
-                            <input type="date" class="form-control" id="dataNasc" value="1900-04-01" required="" disabled="">
+                            <input type="date" class="form-control" id="dataNasc" value="${cliente.dataNascimento}" required="" disabled="">
                             <button onclick="editar('dataNasc')" id="editarDataNasc" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
                             <label class="form-label">Data de nascimento</label>
                             <div class="invalid-feedback">Campo obrigatório.</div>
@@ -85,7 +87,7 @@
 
                         <div class="col-4">
                           <div class="input-group form-floating">
-                            <input type="text" class="form-control" id="cpf" value="123.456.789-10" required="" disabled="">
+                            <input type="text" class="form-control" id="cpf" value="${cliente.cpf}" required="" disabled="">
                             <button onclick="editar('cpf')" class="btn btn-primary" id="editarCpf" type="button"><span class="material-icons">mode_edit</span></button>
                             <label class="form-label">CPF</label>
                             <div class="invalid-feedback">Campo obrigatório.</div>
@@ -94,7 +96,7 @@
 
                         <div class="col-12">
                           <div class="input-group form-floating">
-                            <input type="email" class="form-control" id="email" value="nome@email.com" required="" disabled="">
+                            <input type="email" class="form-control" id="email" value="${cliente.email}" required="" disabled="">
                             <button onclick="editar('email')" class="btn btn-primary" id="editarEmail" type="button"><span class="material-icons">mode_edit</span></button>
                             <label class="form-label">Email</label>
                             <div class="invalid-feedback">Campo obrigatório.</div>
@@ -104,6 +106,7 @@
                         <div class="col-3">
                           <div class="input-group form-floating">
                             <select class="form-select" id="tipoTelefone" required="" disabled="">
+                              <option>${cliente.telefone.tipo}</option>
                               <option value="">Selecione</option>
                               <option>Celular</option>
                               <option selected="">Residêncial</option>
@@ -116,18 +119,9 @@
 
                         <div class="col-3">
                           <div class="input-group form-floating">
-                            <input type="phone" class="form-control" id="telefone" value="90000-0000" required="" disabled="">
+                            <input type="phone" class="form-control" id="telefone" value="${cliente.telefone.numero}" required="" disabled="">
                             <button onclick="editar('telefone')" id="editarTelefone" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
                             <label class="form-label">Telefone</label>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
-                          </div>
-                        </div>
-
-                        <div class="col-6">
-                          <div class="input-group form-floating">
-                            <input type="password" class="form-control" id="senha" value="123456" required="" disabled="">
-                            <button onclick="editar('senha')" class="btn btn-primary" id="editarSenha" type="button"><span class="material-icons">mode_edit</span></button>
-                            <label class="form-label">Senha</label>
                             <div class="invalid-feedback">Campo obrigatório.</div>
                           </div>
                         </div>
@@ -144,7 +138,6 @@
                 <!--Transações-->
                 <div class="tab-pane fade" id="nav-transacoes" role="tabpanel" aria-labelledby="nav-transacoes-tab">
                   <h4 class="mb-3">Histórico de Transações</h4>
-
 
                   <table class="table table-hover table-sm table-responsive">
                     <thead>
@@ -215,7 +208,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <form class="needs-validation" action="/Ecommerce/admin/cadastrarEndereco" method="POST" novalidate="">
+                        <form class="needs-validation" action="/Ecommerce/admin/enderecos" method="POST" novalidate="">
                           <input type="hidden" name="operacao" value="salvar">
                           <div class="row g-3 mb-3">
                             <div class="col-md-6">
@@ -365,66 +358,26 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Rua 25 de março</td>
-                        <td>123</td>
-                        <td>Castro Alves</td>
-                        <td>04513-205</td>
-                        <td>São Paulo</td>
-                        <td>São Paulo</td>
-                        <td>Brasil</td>
-                        <td>Cobrança</td>
-                        <td>
-                          <span class="material-icons">
-                            mode_edit
-                          </span>
-                        </td>
-                        <td>
-                          <span class="material-icons text-danger">
-                            <span data-bs-toggle="modal" data-bs-target="#excluirEndereco" id="deletarEndereco">delete</span>
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Rua 25 de março</td>
-                        <td>123</td>
-                        <td>Castro Alves</td>
-                        <td>04513-205</td>
-                        <td>São Paulo</td>
-                        <td>São Paulo</td>
-                        <td>Brasil</td>
-                        <td>Entrega</td>
-                        <td>
-                          <span class="material-icons">
-                            mode_edit
-                          </span>
-                        </td>
-                        <td>
-                          <span class="material-icons text-danger">
-                            delete
-                          </span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Rua 25 de março</td>
-                        <td>123</td>
-                        <td>Castro Alves</td>
-                        <td>04513-205</td>
-                        <td>São Paulo</td>
-                        <td>São Paulo</td>
-                        <td>Brasil</td>
-                        <td>Cobrança</td>
-                        <td>
-                          <span class="material-icons">
-                            mode_edit
-                          </span>
-                        </td>
-                        <td>
-                          <span class="material-icons text-danger">
-                            delete
-                          </span>
-                        </td>
-                      </tr>
+                      <c:forEach var="endereco" items="${cliente.enderecos}">
+                        <tr>
+                            <td>${endereco.logradouro}</td>
+                            <td>${endereco.numero}</td>
+                            <td>${endereco.bairro}</td>
+                            <td>${endereco.cep}</td>
+                            <td>${endereco.cidade}</td>
+                            <td>${endereco.estado}</td>
+                            <td>${endereco.pais}</td>
+                            <td>${endereco.tipoEndereco}</td>
+                            <td>
+                                <span class="material-icons">mode_edit</span>
+                            </td>
+                            <td>
+                              <span class="material-icons text-danger">
+                                <span data-bs-toggle="modal" data-bs-target="#excluirEndereco" id="deletarEndereco">delete</span>
+                              </span>
+                            </td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                   </table>
                 </div>
@@ -437,7 +390,7 @@
                         <h5 class="modal-title" id="cadastrarCartaoLabel">Cadastrar</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
-                      <form class="needs-validation" action="/Ecommerce/admin/cadastrarCartao" method="POST" novalidate="">
+                      <form class="needs-validation" action="/Ecommerce/admin/cartoes" method="POST" novalidate="">
                         <input type="hidden" name="operacao" value="salvar">
                         <div class="modal-body">
                             <div class="row g-3 mb-3">
@@ -523,24 +476,30 @@
                         <th scope="col">Número</th>
                         <th scope="col">Bandeira</th>
                         <th scope="col">Código</th>
+                        <th scope="col">Validade</th>
                         <th scope="col">Alterar</th>
                         <th scope="col">Excluir</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>ANDRE GOMES</td>
-                        <td>123131231412412</td>
-                        <td>VISA</td>
-                        <td>233</td>
-                        <td>
-                          <span class="material-icons">mode_edit</span>
-                        </td>
-                        <td>
-                          <span class="material-icons text-danger">
-                            <span data-bs-toggle="modal" data-bs-target="#excluirCartao" id="deletarCartao">delete</span>
-                          </span>
-                        </td>
+                        <c:forEach var="cartao" items="${cliente.cartoesDeCredito}">
+                          <tr>
+                              <td>${cartao.nomeImpressoCartao}</td>
+                              <td>${cartao.numCartao}</td>
+                              <td>${cartao.bandeira}</td>
+                              <td>${cartao.codigo}</td>
+                              <td>${cartao.dataValidade}</td>
+                              <td>
+                                  <span class="material-icons"> mode_edit</span>
+                              </td>
+                              <td>
+                                  <span class="material-icons text-danger">
+                                      <span data-bs-toggle="modal" data-bs-target="#excluirCartao" id="deletarCartao">delete</span>
+                                  </span>
+                              </td>
+                          </tr>
+                        </c:forEach>
                       </tr>
                     </tbody>
                   </table>
@@ -559,7 +518,7 @@
                     <div class="col mr-2">
                       <div class="text-primary text-uppercase mb-1">
                         Rank</div>
-                      <div class="h5 mb-0">5</div>
+                      <div class="h5 mb-0">${cliente.ranking}</div>
                     </div>
                   </div>
                 </div>

@@ -32,9 +32,6 @@ public class VerificarSenhaStrategy implements IStrategy {
         boolean minuscula = false;
         boolean especial = false;
 
-        System.out.println(senhaConfirmacao);
-        System.out.println(senha);
-
         if(!senha.equals(senhaConfirmacao)) {
             return "As senhas não coincidem";
         }
@@ -61,7 +58,6 @@ public class VerificarSenhaStrategy implements IStrategy {
         if(!maiscula || !minuscula || !especial || !tamanho) {
             return "Senha inválida";
         }
-
 
         return null;
     }

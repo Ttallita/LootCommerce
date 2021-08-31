@@ -49,8 +49,7 @@
       <div class="container">
         <div class="navbar-collapse">
           <ul class="navbar-nav">
-            <li class="active"><a href="#" class="nav-link">Home</a>
-            </li>
+            <li class="active"><a href="#" class="nav-link">Home</a></li>
           </ul>
           <ul class="navbar-nav">
             <!--

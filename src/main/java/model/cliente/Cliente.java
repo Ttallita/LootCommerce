@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
-public class Cliente extends EntidadeDominio {
+public class Cliente extends Usuario {
 
     private String genero;
     private String dataNascimento;

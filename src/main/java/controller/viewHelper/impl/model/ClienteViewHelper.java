@@ -68,7 +68,6 @@ public class ClienteViewHelper implements IViewHelper {
 
             Cliente cliente = new Cliente();
 
-
             cliente.setUsuario(usuarioLogado);
 
             return cliente;

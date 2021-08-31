@@ -127,13 +127,11 @@ public class Facade implements IFacade {
         String nomeClasse = entidade.getClass().getName();
 
         String msgValidacao = validarRegrasDeNegocio(entidade, operacao);
-
+        //?
         if(msgValidacao == null) {
             IDAO dao = daosMap.get(nomeClasse);
 
             List<EntidadeDominio> listaEntidades = dao.listar(entidade, operacao);
-
-
 
             result.setEntidades(listaEntidades);
         } else {

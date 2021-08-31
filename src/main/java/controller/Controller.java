@@ -3,10 +3,7 @@ package controller;
 import controller.command.*;
 import controller.viewHelper.IViewHelper;
 import controller.viewHelper.impl.LoginViewHelper;
-import controller.viewHelper.impl.model.CartaoDeCreditoViewHelper;
-import controller.viewHelper.impl.model.ClienteViewHelper;
-import controller.viewHelper.impl.model.EnderecoViewHelper;
-import controller.viewHelper.impl.model.UsuarioViewHelper;
+import controller.viewHelper.impl.model.*;
 import model.EntidadeDominio;
 import model.Result;
 
@@ -47,14 +44,13 @@ public class Controller extends HttpServlet{
 
         viewHelpers.put("/Ecommerce/clientes/perfil", new ClienteViewHelper());
         viewHelpers.put("/Ecommerce/clientes/perfil/editarSenha", new UsuarioViewHelper());
+        viewHelpers.put("/Ecommerce/clientes/perfil/cartoes", new CartaoDeCreditoViewHelper());
+        viewHelpers.put("/Ecommerce/clientes/enderecos", new EnderecoViewHelper());
 
-
-        viewHelpers.put("/Ecommerce/clientes/cadastrarCartao", new CartaoDeCreditoViewHelper());
-        viewHelpers.put("/Ecommerce/clientes/cadastrarEndereco", new EnderecoViewHelper());
-
-        viewHelpers.put("/Ecommerce/admin/cadastrarCliente", new ClienteViewHelper());
-        viewHelpers.put("/Ecommerce/admin/cadastrarCartao", new CartaoDeCreditoViewHelper());
-        viewHelpers.put("/Ecommerce/admin/cadastrarEndereco", new EnderecoViewHelper());
+        viewHelpers.put("/Ecommerce/admin/clientes", new ClienteAdminViewHelper());
+        viewHelpers.put("/Ecommerce/admin/cliente", new ClienteAdminViewHelper());
+        viewHelpers.put("/Ecommerce/admin/cartoes", new CartaoDeCreditoAdminViewHelper());
+        viewHelpers.put("/Ecommerce/admin/enderecos", new EnderecoAdminViewHelper());
     }
 
     @Override
@@ -81,8 +77,6 @@ public class Controller extends HttpServlet{
         req.setCharacterEncoding("UTF-8");
 
         String operacao = req.getParameter("operacao");
-
-        System.out.println(operacao);
 
         ICommand command = commands.get(operacao);
 

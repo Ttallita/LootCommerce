@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ page buffer="64kb" %>
 
 <html>
 
@@ -18,7 +19,7 @@
     <div class="wrapper container mt-3">
         <main class="content">
             <div class="container-fluid p-0">
-                <h1 class="h3 mb-3">Administrador</h1>
+                <h1 class="h3 mb-3">Administrador ${nome}</h1>
                 <div class="row">
                     <div class="col-md-3 col-xl-2">
                         <div class="list-group btn-group-vertical">
@@ -85,8 +86,8 @@
                                             <!-- Button trigger modal -->
                                             <button type="button" id="novoCliente" class="btn btn-primary mb-3 float-end"
                                                 data-bs-toggle="modal" data-bs-target="#cadastrar">
-                                                <span class="material-icons inline-icon">group_add</span>Cadastrar
-                                                cliente</a>
+                                                <span class="material-icons inline-icon">group_add</span>
+                                                Cadastrar cliente
                                             </button>
                                         </div>
                                         <div class="input-group mb-3">
@@ -141,184 +142,44 @@
                                                         <th>Gênero</th>
                                                         <th>Rank</th>
                                                         <th>Nascimento</th>
+                                                        <th>Telefone</th>
                                                         <th>Opções</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>1</td>
-                                                        <td>Tiger Nixon</td>
-                                                        <td>000.000.000-00</td>
-                                                        <td>M</td>
-                                                        <td>61</td>
-                                                        <td>2011/04/25</td>
-                                                        <td>
-                                                            <div>
-                                                                <button class="btn btn-outline-dark" type="button"
-                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <span class="material-icons">
-                                                                        list
-                                                                    </span>
-                                                                </button>
-                                                                <ul class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton1">
-                                                                    <li><a class="dropdown-item" id="gerenciarLink"
-                                                                            href="/Ecommerce/adm/gerenciarCliente.jsp">Gerenciar</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider link-light">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#"
-                                                                            data-bs-toggle="modal" id="inativarLink"
-                                                                            data-bs-target="#inativar">Inativar</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2</td>
-                                                        <td>Garrett Winters</td>
-                                                        <td>000.000.000-00</td>
-                                                        <td>M</td>
-                                                        <td>63</td>
-                                                        <td>2011/07/25</td>
-                                                        <td>
-                                                            <div>
-                                                                <button class="btn btn-outline-dark" type="button"
-                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <span class="material-icons">
-                                                                        list
-                                                                    </span>
-                                                                </button>
-                                                                <ul class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton1">
-                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider link-light">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#">Inativar</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="table-secondary">
-                                                        <td class="table-secondary">3</td>
-                                                        <td class="table-secondary">Bruno Nash</td>
-                                                        <td class="table-secondary">000.000.000-00</td>
-                                                        <td class="table-secondary">M</td>
-                                                        <td class="table-secondary">38</td>
-                                                        <td class="table-secondary">2011/05/03</td>
-                                                        <td class="table-secondary">
-                                                            <div>
-                                                                <button class="btn btn-outline-dark" type="button"
-                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <span class="material-icons">
-                                                                        list
-                                                                    </span>
-                                                                </button>
-                                                                <ul class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton1">
-                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider link-light">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#">Ativar</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>4</td>
-                                                        <td>Sakura Yamamoto</td>
-                                                        <td>000.000.000-00</td>
-                                                        <td>N/A</td>
-                                                        <td>37</td>
-                                                        <td>2009/08/19</td>
-                                                        <td>
-                                                            <div>
-                                                                <button class="btn btn-outline-dark" type="button"
-                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <span class="material-icons">
-                                                                        list
-                                                                    </span>
-                                                                </button>
-                                                                <ul class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton1">
-                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider link-light">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#">Inativar</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    <tr>
-                                                        <td>5</td>
-                                                        <td>Thor Walton</td>
-                                                        <td>000.000.000-00</td>
-                                                        <td>M</td>
-                                                        <td>61</td>
-                                                        <td>2013/08/11</td>
-                                                        <td>
-                                                            <div>
-                                                                <button class="btn btn-outline-dark" type="button"
-                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <span class="material-icons">
-                                                                        list
-                                                                    </span>
-                                                                </button>
-                                                                <ul class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton1">
-                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider link-light">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#">Inativar</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>6</td>
-                                                        <td>Donna Snider</td>
-                                                        <td>000.000.000-00</td>
-                                                        <td>F</td>
-                                                        <td>27</td>
-                                                        <td>2011/01/25</td>
-                                                        <td>
-                                                            <div>
-                                                                <button class="btn btn-outline-dark" type="button"
-                                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                                                    aria-expanded="false">
-                                                                    <span class="material-icons">
-                                                                        list
-                                                                    </span>
-                                                                </button>
-                                                                <ul class="dropdown-menu"
-                                                                    aria-labelledby="dropdownMenuButton1">
-                                                                    <li><a class="dropdown-item" href="#">Gerenciar</a>
-                                                                    </li>
-                                                                    <li>
-                                                                        <hr class="dropdown-divider link-light">
-                                                                    </li>
-                                                                    <li><a class="dropdown-item" href="#">Inativar</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
+                                                    <c:forEach var="cliente" items="${clientes}">
+                                                        <tr>
+                                                            <td>${cliente.id}</td>
+                                                            <td>${cliente.nome} ${cliente.sobrenome}</td>
+                                                            <td>${cliente.cpf}</td>
+                                                            <td>${cliente.genero}</td>
+                                                            <td>${cliente.ranking}</td>
+                                                            <td>${cliente.dataNascimento}</td>
+                                                            <td>${cliente.telefone.numero}</td>
+                                                            <td>
+                                                                <div>
+                                                                    <button class="btn btn-outline-dark" type="button"
+                                                                        id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                                        aria-expanded="false">
+                                                                        <span class="material-icons"> list</span>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu"
+                                                                        aria-labelledby="dropdownMenuButton1">
+                                                                        <li><a class="dropdown-item" id="gerenciarLink"
+                                                                                href="/Ecommerce/admin/cliente?operacao=listar">Gerenciar</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <hr class="dropdown-divider link-light">
+                                                                        </li>
+                                                                        <li>
+                                                                            <a class="dropdown-item" href="#" data-bs-toggle="modal" id="inativarLink" data-bs-target="#inativar">
+                                                                            Inativar</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </c:forEach>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -335,7 +196,7 @@
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form class="needs-validation w-75" id="form-cadastro" action="/Ecommerce/admin/cadastrarCliente" method="POST" novalidate>
+                                                        <form class="needs-validation w-75" id="form-cadastro" action="/Ecommerce/admin/clientes" method="POST" novalidate>
                                                             <input type="hidden" name="operacao" value="salvar">
                                                             <h1 class="h3 mb-3 fw-normal text-center">Novo Cliente</h1>
                                                             <div class="row g-3 mb-3">

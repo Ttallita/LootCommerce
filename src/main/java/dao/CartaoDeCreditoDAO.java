@@ -74,15 +74,12 @@ public class CartaoDeCreditoDAO implements IDAO {
             if(operacao.equals("listarPorCliente")) {
                 sql = "select * from cartoes" + 
                         " where crt_cli_usr_id = ?";
-
             }
             
             PreparedStatement pstm = conn.prepareStatement(sql);
             
             pstm.setLong(1, cartao.getCliente().getId());
             ResultSet rs = pstm.executeQuery();
-
-            System.out.println(rs);
 
             while (rs.next()) {
                 CartaoDeCredito cartaoCliente = new CartaoDeCredito();
