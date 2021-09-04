@@ -160,7 +160,7 @@
                             </h5>
                             <div class="col-md-6">
                               <div class="form-floating">
-                                <select class="form-select" id="tp-residencia" name="tp-residencia">
+                                <select class="form-select" id="tpResidencia" name="tpResidencia">
                                   <option value="">Selecione</option>
                                   <option>Casa</option>
                                   <option>Apartamento</option>
