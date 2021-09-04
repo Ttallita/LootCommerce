@@ -33,8 +33,8 @@ public class Facade implements IFacade {
 
         // Regras de validação
         ValidarDataStrategy validarDataStrategy = new ValidarDataStrategy();
-        VerificaClienteStrategy verificaClienteStrategy = new VerificaClienteStrategy();
-        VerificaCpfStrategy verificaCpfStrategy = new VerificaCpfStrategy();
+        VerificarClienteStrategy verificarClienteStrategy = new VerificarClienteStrategy();
+        VerificarCpfStrategy verificarCpfStrategy = new VerificarCpfStrategy();
         VerificarEmailStrategy verificarEmailStrategy = new VerificarEmailStrategy();
         VerificarSenhaStrategy verificarSenhaStrategy = new VerificarSenhaStrategy();
 
@@ -42,8 +42,8 @@ public class Facade implements IFacade {
         List<IStrategy> regraDeNegocioSalvarCliente = new ArrayList<>();
 
         regraDeNegocioSalvarCliente.add(validarDataStrategy);
-        regraDeNegocioSalvarCliente.add(verificaClienteStrategy);
-        regraDeNegocioSalvarCliente.add(verificaCpfStrategy);
+        regraDeNegocioSalvarCliente.add(verificarClienteStrategy);
+        regraDeNegocioSalvarCliente.add(verificarCpfStrategy);
         regraDeNegocioSalvarCliente.add(verificarEmailStrategy);
         regraDeNegocioSalvarCliente.add(verificarSenhaStrategy);
 

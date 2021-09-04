@@ -71,7 +71,7 @@ public class UsuarioDAO implements IDAO{
             PreparedStatement pstm = conn.prepareStatement(sql);
 
             pstm.setString(1, usuario.getNome().split(" ")[0]);
-            pstm.setString(2, usuario.getNome().split(" ")[1]);
+            pstm.setString(2, usuario.getSobrenome().split(" ")[1]);
             pstm.setString(3, usuario.getEmail());
             pstm.setString(4, usuario.getSenha());
             pstm.execute();

@@ -95,7 +95,6 @@ public class ClienteDAO implements IDAO{
             pstm.setString(6, cliente.getTelefone().getDdd());
             pstm.setString(7, cliente.getTelefone().getTipo());
 
-
             new UsuarioDAO().atualizar(cliente.getUsuario());
             return true;
 

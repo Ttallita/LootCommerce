@@ -37,7 +37,7 @@ public class CadastrarNovoCartaoTest {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("v-pills-cartoes-tab")));
         driver.findElement(By.id("v-pills-cartoes-tab")).click();
 
-       /* wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("novoCartao")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("novoCartao")));
         driver.findElement(By.id("novoCartao")).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cadastrarCartao")));
@@ -48,7 +48,7 @@ public class CadastrarNovoCartaoTest {
         driver.findElement(By.id("dtValidade")).sendKeys("20/10/2050");
         driver.findElement(By.id("codigoCartao")).sendKeys("123");
 
-        driver.findElement(By.id("btnCadastrarCartao")).click();*/
+        driver.findElement(By.id("btnCadastrarCartao")).click();
 
     }
 

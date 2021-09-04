@@ -83,7 +83,6 @@ public class ClienteViewHelper implements IViewHelper {
             String cpf = request.getParameter("cpf");
 
             String tipoTelefone = request.getParameter("tipoTelefone");
-
             String phoneCompleto;
             String ddd = "";
             String phone = "";

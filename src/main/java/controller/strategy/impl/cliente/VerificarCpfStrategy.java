@@ -6,7 +6,7 @@ import model.cliente.Cliente;
 
 import java.util.InputMismatchException;
 
-public class VerificaCpfStrategy implements IStrategy {
+public class VerificarCpfStrategy implements IStrategy {
     @Override
     public String processa(EntidadeDominio entidade) {
         Cliente cliente = (Cliente) entidade;

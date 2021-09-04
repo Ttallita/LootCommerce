@@ -4,7 +4,7 @@ import controller.strategy.IStrategy;
 import model.EntidadeDominio;
 import model.cliente.Cliente;
 
-public class VerificaClienteStrategy implements IStrategy {
+public class VerificarClienteStrategy implements IStrategy {
 
     @Override
     public String processa(EntidadeDominio entidade) {
