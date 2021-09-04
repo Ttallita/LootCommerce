@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="22F2A59C-B6B7-11C6-0FA0-92E151171A79" name="produtos_em_venda">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 19:40:32 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PRODUTOS_pro_id" id="0B065721-E0C1-AAE8-9E09-E63DEB5921F7">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 19:40:32 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="86492390-2508-0E73-CD80-BACDABCC2A98" referredColumn="CFEA7B44-B221-1E18-F9FA-810782DEFFF9"/>
+</associations>
+</Column>
+<Column name="VENDAS_vnd_id" id="51876FA0-76A1-21B2-D9F8-C666125895A6">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 19:40:32 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2868E08C-6926-224A-8442-43B293E14086" referredColumn="4A04C9DC-7210-0EB0-7327-CAEC57526291"/>
+</associations>
+</Column>
+<Column name="prv_quant" id="EC741793-E6D5-C6A0-00CB-F94A2752FC42">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 19:40:32 UTC</createdTime>
+<generatorID>47C897CA-8423-6C70-FF62-4BA4F937BDA2</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C93BD9CB-63F0-1294-76FD-ACA2E9027B47" name="produtos_em_venda_PK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 19:40:32 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B065721-E0C1-AAE8-9E09-E63DEB5921F7"/>
+<colUsage columnID="51876FA0-76A1-21B2-D9F8-C666125895A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E36566CD-5CC3-EBE8-E4AE-8C5E90F48AD7" name="produtos_em_venda_PRODUTOS_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 19:40:32 UTC</createdTime>
+<generatorID>39F734FE-75B7-B7C5-0703-1310153D955B</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0B065721-E0C1-AAE8-9E09-E63DEB5921F7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1ABCAE9E-9A3E-7A95-FC58-D1AFDB761651" name="produtos_em_venda_VENDAS_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 19:40:32 UTC</createdTime>
+<generatorID>39F734FE-75B7-B7C5-0703-1310153D955B</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="51876FA0-76A1-21B2-D9F8-C666125895A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

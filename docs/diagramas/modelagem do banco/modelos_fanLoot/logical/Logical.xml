@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="C711AC3A-9444-F8D5-1E83-49792FFFA3C0" mainViewID="324F39B5-ABF3-FDAC-A2CF-7F6BC3D12ABD">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 13:20:24 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

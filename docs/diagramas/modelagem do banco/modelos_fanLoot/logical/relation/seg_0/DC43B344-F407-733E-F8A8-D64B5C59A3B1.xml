@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="cupons_cliente" directorySegmentName="seg_0" id="DC43B344-F407-733E-F8A8-D64B5C59A3B1">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 17:15:48 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+</engineerTo>
+<sourcePk>C035C167-64FC-82D5-B4A0-BF0BFCFD0255</sourcePk>
+<targetPk>7D66B5A6-4246-5335-C21F-9B5D47EEF2A0</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>FEEBE5BD-AA6C-5161-4348-C9B7F8962C12</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>847B05E5-26AE-0D45-BB6E-D2EA74919B1C</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

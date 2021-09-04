@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="vendas_cliente" directorySegmentName="seg_0" id="EA0EFB33-4F5A-FD83-EA88-9F040E0A9495">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 16:42:02 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+</engineerTo>
+<sourcePk>C035C167-64FC-82D5-B4A0-BF0BFCFD0255</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>FEEBE5BD-AA6C-5161-4348-C9B7F8962C12</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C0AD4E76-F5C8-0F0C-19D5-56023008B247</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

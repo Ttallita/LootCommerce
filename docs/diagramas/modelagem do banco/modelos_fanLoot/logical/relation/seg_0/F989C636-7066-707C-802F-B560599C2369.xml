@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="carrinho_cliente" directorySegmentName="seg_0" id="F989C636-7066-707C-802F-B560599C2369">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 17:03:32 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+</engineerTo>
+<sourcePk>C035C167-64FC-82D5-B4A0-BF0BFCFD0255</sourcePk>
+<targetPk>D33464CF-F220-65E1-CE1E-83803635147E</targetPk>
+<identifying>true</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>FEEBE5BD-AA6C-5161-4348-C9B7F8962C12</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>A21D61C8-183E-E025-73E5-A9FC056DBDB7</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

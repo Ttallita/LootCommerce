@@ -1,0 +1,31 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="produtos_em_carrinho" directorySegmentName="seg_0" id="73C2C751-D293-BA84-E6E4-043FDCF8B2B0">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 18:39:18 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+</engineerTo>
+<sourcePk>92B0538D-C347-6944-4084-35971034CA0C</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>88D6902D-1928-6AA4-BEB8-FFEE7C1192D7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>A21D61C8-183E-E025-73E5-A9FC056DBDB7</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="prc_quant" id="6A97F6FC-604F-1AF2-D53F-4AE3A75D3BBD">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 19:35:07 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+</engineerTo>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

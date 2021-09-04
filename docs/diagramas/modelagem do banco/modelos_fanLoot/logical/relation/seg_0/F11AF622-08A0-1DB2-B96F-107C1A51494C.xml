@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="categorias_produtos" directorySegmentName="seg_0" id="F11AF622-08A0-1DB2-B96F-107C1A51494C">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 16:43:24 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>51564118-4E7D-DC3B-743B-F4BCECCB5768</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>88D6902D-1928-6AA4-BEB8-FFEE7C1192D7</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

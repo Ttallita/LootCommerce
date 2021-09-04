@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B722241B-B3FF-27A7-00A2-B3D6A60E15A8" containerWithKeyObject="1B1446BE-14A7-3A52-DFA6-078C1F429F36" localFKIndex="18E6F66C-E8A3-790A-6304-DFF153A65F6B" name="CLIENTES_CARRINHOS_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 19:45:07 UTC</createdTime>
+<generatorID>F989C636-7066-707C-802F-B560599C2369</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<referredTableLongName>CARRINHOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D6B67335-4AAC-43CF-4B26-08C78E1E8BC2</referredTableID>
+<keyObject>A4D78AAE-FC20-9386-459B-D61E64366EE3</keyObject>
+<referredKeyID>A4D78AAE-FC20-9386-459B-D61E64366EE3</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>car_cli_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
