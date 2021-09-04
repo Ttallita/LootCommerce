@@ -32,7 +32,7 @@
               </li>
               <li>
                 <form action="/Ecommerce/logout">
-                    <input type="submit" class="dropdown-item link-light" value="Sair"/>
+                    <input type="submit" class="dropdown-item link-light" id="sair" value="Sair"/>
                 </form>
               </li>
             </ul>

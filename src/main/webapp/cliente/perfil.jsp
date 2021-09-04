@@ -53,11 +53,12 @@
                                 <div class="shadow">
                                     <div class="card-body">
                                         <h4 class="mb-3">Conta</h4>
-                                        <form class="needs-validation text-center" novalidate="">
+                                        <form class="needs-validation text-center" action="/Ecommerce/clientes/perfil" method="POST" novalidate="">
+                                            <input type="hidden" name="operacao" value="atualizar">
                                             <div class="row g-3">
                                                 <div class="col-sm-6">
                                                     <div class="input-group form-floating">
-                                                        <input type="text" class="form-control" id="nome" value="${nome}"
+                                                        <input type="text" class="form-control" id="nome" name="nome" value="${nome}"
                                                             required="" disabled="">
                                                         <button onclick="editar('nome')" id="editarNome"
                                                             class="btn btn-primary" type="button"><span
@@ -69,7 +70,7 @@
 
                                                 <div class="col-sm-6">
                                                     <div class="input-group form-floating">
-                                                        <input type="text" class="form-control" id="sobrenome"
+                                                        <input type="text" class="form-control" id="sobrenome" name="sobrenome"
                                                             value="${sobrenome}" required="" disabled="">
                                                         <button onclick="editar('sobrenome')" id="editarSobrenome"
                                                             class="btn btn-primary" type="button"><span
@@ -81,8 +82,8 @@
 
                                                 <div class="col-md-4">
                                                     <div class="input-group form-floating">
-                                                        <select class="form-select" id="genero" required="" disabled="">
-                                                            <option value="">Selecione</option>
+                                                        <select class="form-select" id="genero"  required="" disabled="">
+                                                            <option name="genero" value="${clienteLogado.genero}">Selecione</option>
                                                             <option>Masculino</option>
                                                             <option>Feminimo</option>
                                                             <option>Outro</option>
@@ -98,7 +99,7 @@
 
                                                 <div class="col-md-4">
                                                     <div class="input-group form-floating">
-                                                        <input type="date" class="form-control" id="dataNasc"
+                                                        <input type="date" class="form-control" id="dataNasc" name="date"
                                                             value="${clienteLogado.dataNascimento}" required="" disabled="">
                                                         <button onclick="editar('dataNasc')" id="editarDataNasc"
                                                             class="btn btn-primary" type="button"><span
@@ -110,8 +111,7 @@
 
                                                 <div class="col-4">
                                                     <div class="input-group form-floating">
-                                                        <input type="text" class="form-control" id="cpf"
-                                                            value="${clienteLogado.cpf}" required="" disabled="">
+                                                        <input type="text" class="form-control" id="cpf" name="cpf" value="${clienteLogado.cpf}" required="" disabled="">
                                                         <button onclick="editar('cpf')" class="btn btn-primary"
                                                             id="editarCpf" type="button"><span
                                                                 class="material-icons">mode_edit</span></button>
@@ -122,15 +122,14 @@
 
                                                 <div class="col-3">
                                                     <div class="input-group form-floating">
-                                                        <select class="form-select" id="tipoTelefone" required=""
-                                                            disabled="">
+                                                        <select class="form-select" id="tipoTelefone"  required="" disabled="">
+                                                            <option name="tipoTelefone" value="${clienteLogado.telefone.tipo}">${clienteLogado.telefone.tipo}</option>
                                                             <option value="">Selecione</option>
                                                             <option>Celular</option>
                                                             <option>Residêncial</option>
                                                         </select>
-                                                        <button onclick="editar('tipoTelefone')" id="editarTpTelefone"
-                                                            class="btn btn-primary" type="button"><span
-                                                                class="material-icons">mode_edit</span></button>
+                                                        <button onclick="editar('tipoTelefone')" id="editarTpTelefone" class="btn btn-primary" type="button">
+                                                            <span class="material-icons">mode_edit</span></button>
                                                         <label class="form-label">Tipo de Telefone</label>
                                                         <div class="invalid-feedback">Campo obrigatório.</div>
                                                     </div>
@@ -138,11 +137,9 @@
 
                                                 <div class="col-3">
                                                     <div class="input-group form-floating">
-                                                        <input type="phone" class="form-control" id="telefone"
-                                                            value="${clienteLogado.telefone.ddd} ${clienteLogado.telefone.numero}" required="" disabled="">
-                                                        <button onclick="editar('telefone')" id="editarTelefone"
-                                                            class="btn btn-primary" type="button"><span
-                                                                class="material-icons">mode_edit</span></button>
+                                                        <input type="phone" class="form-control" id="phone" name="phone" value="${clienteLogado.telefone.ddd},${clienteLogado.telefone.numero}" required="" disabled="">
+                                                        <button onclick="editar('phone')" id="editarTelefone" class="btn btn-primary" type="button">
+                                                            <span class="material-icons">mode_edit</span></button>
                                                         <label class="form-label">Telefone</label>
                                                         <div class="invalid-feedback">Campo obrigatório.</div>
                                                     </div>
@@ -150,7 +147,7 @@
 
                                             </div>
                                             <hr class="my-4">
-                                            <button class="btn btn-primary mt-auto btn-lg" type="submit" disabled="">
+                                            <button class="btn btn-primary mt-auto btn-lg" id="atualizarDados" type="submit" disabled="">
                                                 Atualizar
                                             </button>
                                         </form>
@@ -273,7 +270,7 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form class="needs-validation" action="/Ecommerce/admin/cadastrarEndereco" method="POST" novalidate>
+                                                        <form class="needs-validation" action="/Ecommerce/admin/enderecos" method="POST" novalidate>
                                                             <input type="hidden" name="operacao" value="salvar">
                                                             <div class="row g-3 mb-3">
                                                                 <div class="col-md-6">
@@ -471,7 +468,7 @@
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form class="needs-validation" action="/Ecommerce/admin/cadastrarCartao" method="POST" novalidate>
+                                                        <form class="needs-validation" action="/Ecommerce/clientes/perfil/cartoes" method="POST" novalidate>
                                                             <input type="hidden" name="operacao" value="salvar">
                                                             <div class="row g-3 mb-3">
                                                                 <div class="col-md-6">
