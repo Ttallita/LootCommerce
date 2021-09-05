@@ -26,11 +26,11 @@ public class EnderecoViewHelper implements IViewHelper {
             String cidade = request.getParameter("cidade");
             String estado = request.getParameter("estado");
             String pais = request.getParameter("pais");
+            String apelido = request.getParameter("apelido");
             String observacao = request.getParameter("observacao");
 
             Endereco endereco = new Endereco();
 
-            endereco.setApelido("Teste");
             endereco.setTipoResidencia(tpResidencia);
             endereco.setTipoLogradouro(tpLogradouro);
             endereco.setLogradouro(logradouro);
@@ -44,6 +44,7 @@ public class EnderecoViewHelper implements IViewHelper {
             endereco.setCidade(cidade);
             endereco.setEstado(estado);
             endereco.setPais(pais);
+            endereco.setApelido(apelido);
             endereco.setObservacoes(observacao);
 
             if(!request.getParameterMap().containsKey("tpEndereco")) {

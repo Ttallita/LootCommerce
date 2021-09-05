@@ -123,7 +123,6 @@ public class ClienteViewHelper implements IViewHelper {
             if(result.getMsg() == null) {
                 response.sendRedirect("login.jsp");
             } else {
-
                 String[] mensagensDeErro = result.getMsg().split("\n");
 
                 request.setAttribute("nome", cliente.getUsuario().getNome().split(" ")[0]);

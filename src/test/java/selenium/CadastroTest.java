@@ -80,6 +80,7 @@ public class CadastroTest {
         WebElement campoCidade = driver.findElement(By.id("cidade"));
         WebElement campoEstado = driver.findElement(By.id("estado"));
         WebElement campoPais = driver.findElement(By.id("pais"));
+        WebElement campoApelido = driver.findElement(By.id("apelido"));
         WebElement campoObservacao = driver.findElement(By.id("observacao"));
 
         Select selectTipoResidencia = new Select(campoTipoResidencia);
@@ -93,6 +94,7 @@ public class CadastroTest {
         String bairro = "Moema";
         String cep = "12334-230";
         String observacao = "Sem observações";
+        String apelido = "Minha casa";
 
         selectTipoResidencia.selectByIndex(1);
         campoTipoLogradouro.sendKeys(tipoLogradouro);
@@ -103,8 +105,8 @@ public class CadastroTest {
         selectCidade.selectByIndex(1);
         selectEstado.selectByIndex(1);
         selectPais.selectByIndex(1);
+        campoApelido.sendKeys(apelido);
         campoObservacao.sendKeys(observacao);
-
 
         WebElement formCadastro = driver.findElement(By.id("form-cadastro"));
         formCadastro.submit();

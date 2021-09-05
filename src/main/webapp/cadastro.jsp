@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page buffer="64kb" %>
 <html>
     <head>
       <meta charset="UTF-8" />
@@ -170,35 +171,35 @@
                             </div>
                             <div class="col-md-6">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="tpLogradouro" value="${cliente.endereco.tipoLogradouro}"
+                                <input type="text" class="form-control" id="tpLogradouro" value="${cliente.enderecos[0].tipoLogradouro}"
                                   name="tpLogradouro">
                                 <label class="form-label">Tipo de logradouro</label>
                               </div>
                             </div>
                             <div class="col-md-5">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="logradouro" placeholder="" value="${cliente.endereco.logradouro}"
+                                <input type="text" class="form-control" id="logradouro" placeholder="" value="${cliente.enderecos[0].logradouro}"
                                   name="logradouro">
                                 <label class="form-label">Logradouro</label>
                               </div>
                             </div>
                             <div class="col-md-3">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="numero" placeholder="" value="${cliente.endereco.numero}"
+                                <input type="text" class="form-control" id="numero" placeholder="" value="${cliente.enderecos[0].numero}"
                                   name="numero">
                                 <label for="numero" class="form-label">Número</label>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="bairro" placeholder="" value="${cliente.endereco.bairro}"
+                                <input type="text" class="form-control" id="bairro" placeholder="" value="${cliente.enderecos[0].bairro}"
                                   name="bairro">
                                 <label for="bairro" class="form-label">Bairro</label>
                               </div>
                             </div>
                             <div class="col-md-4">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="cep" placeholder="00000-000" name="cep" value="${cliente.endereco.cep}">
+                                <input type="text" class="form-control" id="cep" placeholder="00000-000" name="cep" value="${cliente.enderecos[0].cep}">
                                 <label for="cep" class="form-label">CEP</label>
                               </div>
                             </div>
@@ -232,7 +233,13 @@
                             </div>
                             <div class="col-md-8">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="observacao" placeholder="" value="${cliente.endereco.observacoes}">
+                                <input type="text" class="form-control" id="apelido" name="apelido" placeholder="" value="${cliente.enderecos[0].apelido}">
+                                <label for="apelido" class="form-label">Apelido do endereço</label>
+                              </div>
+                            </div>
+                            <div class="col-md-8">
+                              <div class="form-floating">
+                                <input type="text" class="form-control" id="observacao" placeholder="" value="${cliente.enderecos[0].observacoes}">
                                 <label for="observacao" class="form-label">Observação<span
                                     class="text-muted">(Opcional)</span></label>
                               </div>

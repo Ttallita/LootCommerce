@@ -17,8 +17,6 @@ public class EnderecoDAO implements IDAO{
     public Long salvar(EntidadeDominio entidade) {
         Endereco endereco = (Endereco) entidade;
 
-        System.out.println(endereco.getCliente().getId());
-
         Conexao conexao = new Conexao();
         try {
             conn = conexao.getConexao();

@@ -2,6 +2,7 @@ package controller.facade;
 
 import controller.strategy.IStrategy;
 import controller.strategy.impl.cliente.*;
+import controller.strategy.impl.endereco.VerificarEnderecoStrategy;
 import dao.*;
 import model.Result;
 import model.EntidadeDominio;
@@ -37,6 +38,7 @@ public class Facade implements IFacade {
         VerificarCpfStrategy verificarCpfStrategy = new VerificarCpfStrategy();
         VerificarEmailStrategy verificarEmailStrategy = new VerificarEmailStrategy();
         VerificarSenhaStrategy verificarSenhaStrategy = new VerificarSenhaStrategy();
+        VerificarEnderecoStrategy verificarEnderecoStrategy = new VerificarEnderecoStrategy();
 
         //Lista de regras de validação do cliente
         List<IStrategy> regraDeNegocioSalvarCliente = new ArrayList<>();
@@ -46,6 +48,7 @@ public class Facade implements IFacade {
         regraDeNegocioSalvarCliente.add(verificarCpfStrategy);
         regraDeNegocioSalvarCliente.add(verificarEmailStrategy);
         regraDeNegocioSalvarCliente.add(verificarSenhaStrategy);
+        regraDeNegocioSalvarCliente.add(verificarEnderecoStrategy);
 
         //Mapa das regras de négocio do cliente por operação
         Map<String, List<IStrategy>> regrasDeNegocioCliente = new HashMap<>();
