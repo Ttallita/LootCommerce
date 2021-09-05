@@ -5,6 +5,7 @@ CREATE TABLE usuarios (
     usr_email varchar(255) NOT NULL,
     usr_senha varchar(20) NOT NULL,
     usr_tipo varchar(255) NOT NULL,
+    usr_ativo boolean NOT NULL,
 
     PRIMARY KEY (usr_id)
 );
@@ -17,7 +18,6 @@ CREATE TABLE clientes (
     cli_telefone_num varchar(10) NOT NULL,
     cli_telefone_ddd varchar(2) NOT NULL,
     cli_telefone_tp varchar(11) NOT NULL,
-    cli_is_ativo boolean NOT NULL,
     cli_rank int,
 
     PRIMARY KEY (cli_usr_id),
@@ -65,7 +65,6 @@ CREATE TABLE enderecos (
     CONSTRAINT fk_end_cli FOREIGN KEY (end_cli_usr_id) REFERENCES clientes (cli_usr_id)
 
 );
-
 CREATE TABLE categorias(
     ctg_id serial NOT NULL,
     ctg_nome varchar(255) NOT NULL,

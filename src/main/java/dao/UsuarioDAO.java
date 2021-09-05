@@ -25,8 +25,8 @@ public class UsuarioDAO implements IDAO{
         try {
             conn = conexao.getConexao();
 
-            String sql = "INSERT INTO usuarios (usr_prim_nome, usr_ult_nome, usr_email, usr_senha, usr_tipo)" +
-                    "VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO usuarios (usr_prim_nome, usr_ult_nome, usr_email, usr_senha, usr_tipo, usr_ativo)" +
+                    "VALUES (?, ?, ?, ?, ?, ?)";
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstm.setString(1, usuario.getNome().split(" ")[0]);
@@ -34,6 +34,7 @@ public class UsuarioDAO implements IDAO{
             pstm.setString(3, usuario.getEmail());
             pstm.setString(4, usuario.getSenha());
             pstm.setString(5, usuario.getTipoUsuario().toString());
+            pstm.setBoolean(6, usuario.isAtivo());
 
             pstm.execute();
 

@@ -30,6 +30,7 @@ public class UsuarioViewHelper implements IViewHelper {
             usuario.setSenha(senha);
             usuario.setConfirmarSenha(confirmarSenha);
             usuario.setTipoUsuario(UsuarioType.CLIENTE);
+            usuario.setAtivo(true);
 
             return usuario;
         } else if (operacao.equals("atualizar")) {

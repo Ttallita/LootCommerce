@@ -31,10 +31,8 @@ public class ClienteDAO implements IDAO{
                     " VALUES (?, ?, ?, ?, ?, ?, ?)";
 
             Usuario usuario = cliente.getUsuario();
-            Endereco endereco = cliente.getEndereco();
 
             Long idUser = new UsuarioDAO().salvar(usuario);
-            Long idEndereco = new EnderecoDAO().salvar(endereco);
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstm.setLong(1, idUser);
@@ -55,15 +53,11 @@ public class ClienteDAO implements IDAO{
                 idCliente = rs.getLong(1);
             }
 
-            sql = "INSERT INTO enderecos_cliente (ecl_end_id, ecl_cli_id)" +
-                    "VALUES (?, ?)";
+            Endereco endereco = cliente.getEnderecos().get(0);
+            endereco.setCliente(cliente);
+            endereco.getCliente().setId(idCliente);
 
-            pstm = conn.prepareStatement(sql);
-
-            pstm.setLong(1, idEndereco);
-            pstm.setLong(2, idCliente);
-
-            pstm.execute();
+            new EnderecoDAO().salvar(endereco);
 
             return idCliente;
         }catch (Exception e) {
@@ -115,7 +109,7 @@ public class ClienteDAO implements IDAO{
 
     @Override
     public List<EntidadeDominio> listar(EntidadeDominio entidade, String operacao) {
-        Cliente cliente = (Cliente) entidade;
+        /*Cliente cliente = (Cliente) entidade;
         Conexao conexao = new Conexao();
 
         try {
@@ -192,79 +186,8 @@ public class ClienteDAO implements IDAO{
             return null;
         }finally {
             conexao.fecharConexao(conn);
-        }
-    }
+        }*/
 
-    public Cliente listar(EntidadeDominio entidade, String operacao, int id) {
-        Cliente cliente = (Cliente) entidade;
-        Conexao conexao = new Conexao();
-
-        try {
-            conn = conexao.getConexao();
-
-            String sql = "";
-
-            if(operacao.equals("listar")) {
-                sql = "select * from clientes left join usuarios on usr_id = ?";
-            }
-
-            PreparedStatement pstm = conn.prepareStatement(sql);
-
-            pstm.setLong(1, id);
-
-            ResultSet rs = pstm.executeQuery();
-
-            Cliente clienteLogado = new Cliente();
-
-            while (rs.next()) {
-                clienteLogado.setId(rs.getLong("cli_usr_id"));
-                clienteLogado.setNome(rs.getString("usr_prim_nome"));
-                clienteLogado.setSobrenome(rs.getString("usr_ult_nome"));
-                clienteLogado.setEmail(rs.getString("usr_email"));
-                clienteLogado.setGenero(rs.getString("cli_genero"));
-                clienteLogado.setDataNascimento(rs.getDate("cli_dt_nasc").toString());
-                clienteLogado.setCpf(rs.getString("cli_cpf"));
-
-                String ddd = rs.getString("cli_telefone_ddd");
-                String phone = rs.getString("cli_telefone_num");
-                String tipoTelefone = rs.getString("cli_telefone_tp");
-
-                Telefone telefone = new Telefone();
-                telefone.setDdd(ddd);
-                telefone.setNumero(phone);
-                telefone.setTipo(tipoTelefone);
-
-                Endereco endereco = new Endereco();
-                endereco.setCliente(clienteLogado);
-
-                CartaoDeCredito cartao = new CartaoDeCredito();
-                cartao.setCliente(clienteLogado);
-
-                List<EntidadeDominio> enderecos = new EnderecoDAO().listar(endereco, "listarPorCliente");
-                List<Endereco> enderecosConvertidos = enderecos.stream()
-                        .map(enderecoMap -> (Endereco) enderecoMap)
-                        .collect(Collectors.toList());
-
-                List<EntidadeDominio> cartoes = new CartaoDeCreditoDAO().listar(cartao, "listarPorCliente");
-                List<CartaoDeCredito> cartoesConvertidos = cartoes.stream()
-                        .map(cartaoMap -> (CartaoDeCredito) cartaoMap)
-                        .collect(Collectors.toList());
-
-                clienteLogado.setTelefone(telefone);
-                clienteLogado.setUsuario(cliente.getUsuario());
-                clienteLogado.setEnderecos(enderecosConvertidos);
-                clienteLogado.setCartoesDeCredito(cartoesConvertidos);
-
-                return clienteLogado;
-            }
-            
-            return null;
-
-        }catch (Exception e) {
-            System.err.println(e.getMessage());
-            return null;
-        }finally {
-            conexao.fecharConexao(conn);
-        }
+        return null;
     }
 }

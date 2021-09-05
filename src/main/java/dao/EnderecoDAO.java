@@ -17,25 +17,28 @@ public class EnderecoDAO implements IDAO{
     public Long salvar(EntidadeDominio entidade) {
         Endereco endereco = (Endereco) entidade;
 
+        System.out.println(endereco.getCliente().getId());
+
         Conexao conexao = new Conexao();
         try {
             conn = conexao.getConexao();
 
-            String sql = "INSERT INTO enderecos (end_tp, end_nome, end_tp_logradouro, end_logradouro, end_num, end_bairro, end_cep, end_cidade, end_estado, end_pais, end_observacao)" +
-                    " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO enderecos (end_cli_usr_id, end_tp, end_nome, end_tp_logradouro, end_logradouro, end_num, end_bairro, end_cep, end_cidade, end_estado, end_pais, end_observacao)" +
+                    " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            pstm.setString(1, endereco.getTipoEndereco().toString());
-            pstm.setString(2, endereco.getApelido());
-            pstm.setString(3, endereco.getTipoLogradouro());
-            pstm.setString(4, endereco.getLogradouro());
-            pstm.setInt(5, endereco.getNumero());
-            pstm.setString(6, endereco.getBairro());
-            pstm.setString(7, endereco.getCep());
-            pstm.setString(8, endereco.getCidade());
-            pstm.setString(9, endereco.getEstado());
-            pstm.setString(10, endereco.getPais());
-            pstm.setString(11, endereco.getObservacoes());
+            pstm.setLong(1,endereco.getCliente().getId());
+            pstm.setString(2, endereco.getTipoEndereco().toString());
+            pstm.setString(3, endereco.getApelido());
+            pstm.setString(4, endereco.getTipoLogradouro());
+            pstm.setString(5, endereco.getLogradouro());
+            pstm.setInt(6, endereco.getNumero());
+            pstm.setString(7, endereco.getBairro());
+            pstm.setString(8, endereco.getCep());
+            pstm.setString(9, endereco.getCidade());
+            pstm.setString(10, endereco.getEstado());
+            pstm.setString(11, endereco.getPais());
+            pstm.setString(12, endereco.getObservacoes());
 
             pstm.execute();
 

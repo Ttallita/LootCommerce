@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <html>
-
+<html>
     <head>
       <meta charset="UTF-8" />
       <title>Cadastro</title>
@@ -9,7 +8,6 @@
       <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
       <link rel="stylesheet" type="text/css" href='assets/css/style.css' />
     </head>
-
     <body class="bg-gradient-primary">
 
       <c:if test="${not empty requestScope.mensagem}">

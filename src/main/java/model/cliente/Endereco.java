@@ -121,4 +121,5 @@ public class Endereco extends EntidadeDominio {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
+
 }

@@ -7,13 +7,12 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
-public class Cliente extends Usuario {
+public class Cliente extends EntidadeDominio {
 
     private String genero;
     private String dataNascimento;
     private String cpf;
     private Telefone telefone;
-    private Endereco endereco;
     private List<Endereco> enderecos;
     private List<CartaoDeCredito> cartoesDeCredito;
     private int ranking;
@@ -51,14 +50,6 @@ public class Cliente extends Usuario {
         this.telefone = telefone;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
-
     public List<Endereco> getEnderecos() {
         return enderecos;
     }
@@ -91,17 +82,4 @@ public class Cliente extends Usuario {
         this.usuario = usuario;
     }
 
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "genero='" + genero + '\'' +
-                ", dataNascimento='" + dataNascimento + '\'' +
-                ", cpf='" + cpf + '\'' +
-                ", telefone=" + telefone +
-                ", endereco=" + endereco +
-                ", cartoesDeCredito=" + cartoesDeCredito +
-                ", ranking=" + ranking +
-                ", usuario=" + usuario +
-                '}';
-    }
 }

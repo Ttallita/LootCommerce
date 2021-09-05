@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteViewHelper implements IViewHelper {
@@ -21,8 +22,6 @@ public class ClienteViewHelper implements IViewHelper {
     @Override
     public EntidadeDominio getEntidade(HttpServletRequest request) {
         String operacao = request.getParameter("operacao");
-
-        String id = request.getParameter("txtNome");
 
         if(operacao.equals("salvar")) {
             String genero = request.getParameter("genero");
@@ -47,22 +46,24 @@ public class ClienteViewHelper implements IViewHelper {
             telefone.setDdd(ddd);
             telefone.setNumero(phone);
 
+            IViewHelper usuarioVH = new UsuarioViewHelper();
+            Usuario usuario = (Usuario) usuarioVH.getEntidade(request);
+
             IViewHelper enderecoVH = new EnderecoViewHelper();
             Endereco endereco = (Endereco) enderecoVH.getEntidade(request);
 
-            IViewHelper usuarioVH = new UsuarioViewHelper();
-            Usuario usuario = (Usuario) usuarioVH.getEntidade(request);
+            List<Endereco> enderecos = new ArrayList<>();
+            enderecos.add(endereco);
 
             Cliente cliente = new Cliente();
             cliente.setGenero(genero);
             cliente.setDataNascimento(dataNasc);
             cliente.setCpf(cpf);
             cliente.setTelefone(telefone);
-            cliente.setEndereco(endereco);
             cliente.setUsuario(usuario);
+            cliente.setEnderecos(enderecos);
 
             return cliente;
-
         } else if(operacao.equals("listar")) {
             Usuario usuarioLogado = (Usuario) request.getSession().getAttribute("usuarioLogado");
 

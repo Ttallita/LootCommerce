@@ -56,7 +56,7 @@ public class ClienteAdminViewHelper implements IViewHelper{
             cliente.setDataNascimento(dataNasc);
             cliente.setCpf(cpf);
             cliente.setTelefone(telefone);
-            cliente.setEndereco(endereco);
+            //cliente.setEndereco(endereco);
             cliente.setUsuario(usuario);
             
             return cliente;
@@ -82,22 +82,22 @@ public class ClienteAdminViewHelper implements IViewHelper{
         if(operacao.equals("salvar")) {
 
         } else if(operacao.equals("listar")) {
-            if(request.getRequestURI().toString().equals("/Ecommerce/admin/cliente")){
-                EntidadeDominio cliente = new Cliente();
-                EntidadeDominio clienteConsultado = new ClienteDAO().listar(cliente, "listar", 1);
-
-                request.setAttribute("cliente", clienteConsultado);
-        
-                request.getRequestDispatcher("/adm/gerenciarCliente.jsp").forward(request, response);
-                
-            } else {
-                EntidadeDominio cliente = new Cliente();
-                List<EntidadeDominio> clientes = new ClienteDAO().listar(cliente, "listarTodos");
-        
-                request.setAttribute("clientes", clientes);
-        
-                request.getRequestDispatcher("/adm/gerenciamento.jsp").forward(request, response);
-            }
+//            if(request.getRequestURI().toString().equals("/Ecommerce/admin/cliente")){
+//                EntidadeDominio cliente = new Cliente();
+//                //EntidadeDominio clienteConsultado = new ClienteDAO().listar(cliente, "listar", 1);
+//
+//                request.setAttribute("cliente", clienteConsultado);
+//
+//                request.getRequestDispatcher("/adm/gerenciarCliente.jsp").forward(request, response);
+//
+//            } else {
+//                EntidadeDominio cliente = new Cliente();
+//                List<EntidadeDominio> clientes = new ClienteDAO().listar(cliente, "listarTodos");
+//
+//                request.setAttribute("clientes", clientes);
+//
+//                request.getRequestDispatcher("/adm/gerenciamento.jsp").forward(request, response);
+//            }
 
         }
     }
