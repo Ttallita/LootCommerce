@@ -42,6 +42,7 @@ public class Facade implements IFacade {
 
         //Lista de regras de validação do cliente
         List<IStrategy> regraDeNegocioSalvarCliente = new ArrayList<>();
+        List<IStrategy> regraDeNegocioAtualizarCliente = new ArrayList<>();
 
         regraDeNegocioSalvarCliente.add(validarDataStrategy);
         regraDeNegocioSalvarCliente.add(verificarClienteStrategy);
@@ -50,20 +51,16 @@ public class Facade implements IFacade {
         regraDeNegocioSalvarCliente.add(verificarSenhaStrategy);
         regraDeNegocioSalvarCliente.add(verificarEnderecoStrategy);
 
+        regraDeNegocioAtualizarCliente.add(validarDataStrategy);
+        regraDeNegocioAtualizarCliente.add(verificarClienteStrategy);
+        regraDeNegocioAtualizarCliente.add(verificarCpfStrategy);
+
         //Mapa das regras de négocio do cliente por operação
         Map<String, List<IStrategy>> regrasDeNegocioCliente = new HashMap<>();
         regrasDeNegocioCliente.put("salvar", regraDeNegocioSalvarCliente);
-
-        //Lista de regras de validação da atualização de usuario
-        List<IStrategy> regrasDeNegocioAtualizarUsuario = new ArrayList<>();
-        regrasDeNegocioAtualizarUsuario.add(verificarSenhaStrategy);
-
-        //Mapa das regras de négocio do usuario por operação
-        Map<String, List<IStrategy>> regrasDeNegocioUsuario = new HashMap<>();
-        regrasDeNegocioUsuario.put("atualizar", regrasDeNegocioAtualizarUsuario);
+        regrasDeNegocioCliente.put("atualizar", regraDeNegocioAtualizarCliente);
 
         regrasDeNegocioMap.put(Cliente.class.getName(), regrasDeNegocioCliente);
-        regrasDeNegocioMap.put(Usuario.class.getName(), regrasDeNegocioUsuario);
     }
 
 

@@ -78,18 +78,24 @@ public class ClienteDAO implements IDAO{
         try {
             conn = conexao.getConexao();
 
-            String sql = "UPDATE cliente SET cli_cpf = ?, cli_dt_nasc = ?, cli_genero = ?, cli_telefone_num = ?, cli_telefone_ddd = ?, cli_telefone_tp = ?";
+            String sql = "UPDATE clientes SET cli_prim_nome = ?, cli_ult_nome = ?, cli_cpf = ?, cli_dt_nasc = ?, cli_genero = ?, cli_telefone_num = ?, cli_telefone_ddd = ?, cli_telefone_tp = ?" +
+                    "WHERE cli_usr_id = ?";
 
             PreparedStatement pstm = conn.prepareStatement(sql);
 
-            pstm.setString(2, cliente.getCpf());
-            pstm.setDate(3, Date.valueOf(cliente.getDataNascimento()));
-            pstm.setString(4, cliente.getGenero());
-            pstm.setString(5, cliente.getTelefone().getNumero());
-            pstm.setString(6, cliente.getTelefone().getDdd());
-            pstm.setString(7, cliente.getTelefone().getTipo());
+            pstm.setString(1, cliente.getNome());
+            pstm.setString(2, cliente.getSobrenome());
+            pstm.setString(3, cliente.getCpf());
+            pstm.setDate(4, Date.valueOf(cliente.getDataNascimento()));
+            pstm.setString(5, cliente.getGenero());
+            pstm.setString(6, cliente.getTelefone().getNumero());
+            pstm.setString(7, cliente.getTelefone().getDdd());
+            pstm.setString(8, cliente.getTelefone().getTipo());
 
-            new UsuarioDAO().atualizar(cliente.getUsuario());
+            pstm.setLong(9, cliente.getUsuario().getId());
+
+            pstm.execute();
+
             return true;
 
         }catch (Exception e) {

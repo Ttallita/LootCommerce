@@ -77,6 +77,42 @@ public class ClienteViewHelper implements IViewHelper {
             cliente.setUsuario(usuario);
 
             return cliente;
+        } else if(operacao.equals("atualizar")) {
+            Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
+
+            Cliente cliente = new Cliente();
+
+            String nome = request.getParameter("nome");
+            String sobrenome = request.getParameter("sobrenome");
+            String genero = request.getParameter("genero");
+            String dataNasc = request.getParameter("date");
+            String cpf = request.getParameter("cpf");
+
+            String tipoTelefone = request.getParameter("tipoTelefone");
+
+            String phoneCompleto = request.getParameter("phone");
+            String ddd = "";
+            String phone = "";
+
+            if(!phoneCompleto.isEmpty()) {
+                ddd = request.getParameter("phone").split(" ")[0];
+                phone = request.getParameter("phone").split(" ")[1];
+            }
+
+            Telefone telefone = new Telefone();
+            telefone.setTipo(tipoTelefone);
+            telefone.setDdd(ddd);
+            telefone.setNumero(phone);
+
+            cliente.setNome(nome);
+            cliente.setSobrenome(sobrenome);
+            cliente.setGenero(genero);
+            cliente.setDataNascimento(LocalDate.parse(dataNasc, DateTimeFormatter.ISO_LOCAL_DATE));
+            cliente.setCpf(cpf);
+            cliente.setTelefone(telefone);
+            cliente.setUsuario(usuario);
+
+            return cliente;
         }
 
         return null;
@@ -109,7 +145,7 @@ public class ClienteViewHelper implements IViewHelper {
 
             request.setAttribute("clienteLogado", cliente);
 
-            request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, response);
+           response.sendRedirect("/Ecommerce/clientes/perfil?operacao=listar");
 
         }
     }
