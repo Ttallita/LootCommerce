@@ -19,7 +19,7 @@
     <div class="wrapper container mt-3">
         <main class="content">
             <div class="container-fluid p-0">
-                <h1 class="h3 mb-3">${nome} ${sobrenome}</h1>
+                <h1 class="h3 mb-3">${clienteLogado.nome} ${clienteLogado.sobrenome}</h1>
                 <div class="row">
                     <div class="col-md-3 col-xl-2">
                         <div class="list-group btn-group-vertical">
@@ -58,7 +58,7 @@
                                             <div class="row g-3">
                                                 <div class="col-sm-6">
                                                     <div class="input-group form-floating">
-                                                        <input type="text" class="form-control" id="nome" name="nome" value="${nome}"
+                                                        <input type="text" class="form-control" id="nome" name="nome" value="${clienteLogado.nome}"
                                                             required="" disabled="">
                                                         <button onclick="editar('nome')" id="editarNome"
                                                             class="btn btn-primary" type="button"><span
@@ -71,7 +71,7 @@
                                                 <div class="col-sm-6">
                                                     <div class="input-group form-floating">
                                                         <input type="text" class="form-control" id="sobrenome" name="sobrenome"
-                                                            value="${sobrenome}" required="" disabled="">
+                                                            value="${clienteLogado.sobrenome}" required="" disabled="">
                                                         <button onclick="editar('sobrenome')" id="editarSobrenome"
                                                             class="btn btn-primary" type="button"><span
                                                                 class="material-icons">mode_edit</span></button>

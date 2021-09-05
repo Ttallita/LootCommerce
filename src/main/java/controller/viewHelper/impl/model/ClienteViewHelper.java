@@ -70,6 +70,13 @@ public class ClienteViewHelper implements IViewHelper {
             cliente.setEnderecos(enderecos);
 
             return cliente;
+        } else if(operacao.equals("listar")) {
+            Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
+
+            Cliente cliente = new Cliente();
+            cliente.setUsuario(usuario);
+
+            return cliente;
         }
 
         return null;

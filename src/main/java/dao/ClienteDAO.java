@@ -6,10 +6,13 @@ import model.cliente.Cliente;
 import model.EntidadeDominio;
 import model.cliente.Endereco;
 
+import model.cliente.Telefone;
 import utils.Conexao;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ClienteDAO implements IDAO{
     private Connection conn;
@@ -106,7 +109,7 @@ public class ClienteDAO implements IDAO{
 
     @Override
     public List<EntidadeDominio> listar(EntidadeDominio entidade, String operacao) {
-        /*Cliente cliente = (Cliente) entidade;
+        Cliente cliente = (Cliente) entidade;
         Conexao conexao = new Conexao();
 
         try {
@@ -129,6 +132,7 @@ public class ClienteDAO implements IDAO{
             if(operacao.equals("listar")) {
                 pstm.setLong(1, cliente.getUsuario().getId());
             }
+
             ResultSet rs = pstm.executeQuery();
 
             while (rs.next()) {
@@ -136,13 +140,10 @@ public class ClienteDAO implements IDAO{
 
                 clienteLogado.setId(rs.getLong("cli_usr_id"));
 
-                if(operacao.equals("listarTodos")){
-                    clienteLogado.setNome(rs.getString("usr_prim_nome"));
-                    clienteLogado.setSobrenome(rs.getString("usr_ult_nome"));
-                }
-
+                clienteLogado.setNome(rs.getString("cli_prim_nome"));
+                clienteLogado.setSobrenome(rs.getString("cli_ult_nome"));
                 clienteLogado.setGenero(rs.getString("cli_genero"));
-                clienteLogado.setDataNascimento(rs.getDate("cli_dt_nasc").toString());
+                clienteLogado.setDataNascimento(rs.getDate("cli_dt_nasc").toLocalDate());
                 clienteLogado.setCpf(rs.getString("cli_cpf"));
 
                 String ddd = rs.getString("cli_telefone_ddd");
@@ -157,23 +158,14 @@ public class ClienteDAO implements IDAO{
                 Endereco endereco = new Endereco();
                 endereco.setCliente(clienteLogado);
 
-                CartaoDeCredito cartao = new CartaoDeCredito();
-                cartao.setCliente(clienteLogado);
-
                 List<EntidadeDominio> enderecos = new EnderecoDAO().listar(endereco, "listarPorCliente");
                 List<Endereco> enderecosConvertidos = enderecos.stream()
                         .map(enderecoMap -> (Endereco) enderecoMap)
                         .collect(Collectors.toList());
 
-                List<EntidadeDominio> cartoes = new CartaoDeCreditoDAO().listar(cartao, "listarPorCliente");
-                List<CartaoDeCredito> cartoesConvertidos = cartoes.stream()
-                        .map(cartaoMap -> (CartaoDeCredito) cartaoMap)
-                        .collect(Collectors.toList());
-
                 clienteLogado.setTelefone(telefone);
                 clienteLogado.setUsuario(cliente.getUsuario());
                 clienteLogado.setEnderecos(enderecosConvertidos);
-                clienteLogado.setCartoesDeCredito(cartoesConvertidos);
 
                 entidadeDominios.add(clienteLogado);
             }
@@ -183,8 +175,6 @@ public class ClienteDAO implements IDAO{
             return null;
         }finally {
             conexao.fecharConexao(conn);
-        }*/
-
-        return null;
+        }
     }
 }

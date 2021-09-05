@@ -82,9 +82,7 @@ public class EnderecoDAO implements IDAO{
 
             if(operacao.equals("listarPorCliente")) {
                 sql = "select * from enderecos" +
-                        " inner join enderecos_cliente" +
-                        " on ecl_end_id = end_id" +
-                        " where ecl_cli_id = ?";
+                        " where end_cli_usr_id = ?";
             }
 
             PreparedStatement pstm = conn.prepareStatement(sql);
