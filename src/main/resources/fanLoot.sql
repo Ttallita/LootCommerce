@@ -1,7 +1,5 @@
 CREATE TABLE usuarios (
     usr_id serial NOT NULL,
-    usr_prim_nome varchar(15) NOT NULL,
-	usr_ult_nome varchar(45) NOT NULL,
     usr_email varchar(255) NOT NULL,
     usr_senha varchar(20) NOT NULL,
     usr_tipo varchar(255) NOT NULL,
@@ -12,6 +10,8 @@ CREATE TABLE usuarios (
 
 CREATE TABLE clientes (
     cli_usr_id serial NOT NULL,
+    cli_prim_nome varchar(15) NOT NULL,
+    cli_ult_nome varchar(45) NOT NULL,
     cli_cpf varchar(14) NOT NULL,
     cli_dt_nasc date NOT NULL,
     cli_genero varchar(10) NOT NULL,

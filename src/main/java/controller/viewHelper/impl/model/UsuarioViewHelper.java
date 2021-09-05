@@ -25,7 +25,6 @@ public class UsuarioViewHelper implements IViewHelper {
             String confirmarSenha = request.getParameter("senhaConfirmacao");
 
             Usuario usuario = new Usuario();
-            usuario.setNome(nome + " " + sobrenome);
             usuario.setEmail(email);
             usuario.setSenha(senha);
             usuario.setConfirmarSenha(confirmarSenha);

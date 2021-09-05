@@ -25,7 +25,7 @@ public class CadastroTest {
         driver.navigate().to("http://localhost:8080/Ecommerce/cadastro.jsp");
 
         String email = "andre.gomes7110@gmail.com";
-        String senha = "Hitagi710!";
+        String senha = "ita10!";
 
         WebElement campoEmail = driver.findElement(By.id("email"));
         WebElement campoSenha = driver.findElement(By.id("senha"));

@@ -25,16 +25,14 @@ public class UsuarioDAO implements IDAO{
         try {
             conn = conexao.getConexao();
 
-            String sql = "INSERT INTO usuarios (usr_prim_nome, usr_ult_nome, usr_email, usr_senha, usr_tipo, usr_ativo)" +
-                    "VALUES (?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO usuarios (usr_email, usr_senha, usr_tipo, usr_ativo)" +
+                    "VALUES (?, ?, ?, ?)";
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            pstm.setString(1, usuario.getNome().split(" ")[0]);
-            pstm.setString(2, usuario.getNome().split(" ")[1]);
-            pstm.setString(3, usuario.getEmail());
-            pstm.setString(4, usuario.getSenha());
-            pstm.setString(5, usuario.getTipoUsuario().toString());
-            pstm.setBoolean(6, usuario.isAtivo());
+            pstm.setString(1, usuario.getEmail());
+            pstm.setString(2, usuario.getSenha());
+            pstm.setString(3, usuario.getTipoUsuario().toString());
+            pstm.setBoolean(4, usuario.isAtivo());
 
             pstm.execute();
 
@@ -60,32 +58,7 @@ public class UsuarioDAO implements IDAO{
 
     @Override
     public boolean atualizar(EntidadeDominio entidade) {
-
-        Usuario usuario = (Usuario) entidade;
-        Conexao conexao = new Conexao();
-
-        try {
-            conn = conexao.getConexao();
-
-            String sql = "UPDATE usuarios SET usr_prim_nome = ?, usr_ult_nome = ?, usr_email = ?, usr_senha = ?";
-
-            PreparedStatement pstm = conn.prepareStatement(sql);
-
-            pstm.setString(1, usuario.getNome().split(" ")[0]);
-            pstm.setString(2, usuario.getSobrenome().split(" ")[1]);
-            pstm.setString(3, usuario.getEmail());
-            pstm.setString(4, usuario.getSenha());
-            pstm.execute();
-
-            return true;
-
-        }catch (Exception e) {
-            System.err.println(e.getMessage());
-            return false;
-
-        }finally {
-            conexao.fecharConexao(conn);
-        }
+        return false;
     }
 
     @Override
@@ -124,7 +97,6 @@ public class UsuarioDAO implements IDAO{
                     usuarioLogado.setEmail(rs.getString("usr_email"));
                     usuarioLogado.setTipoUsuario(rs.getString("usr_tipo").equals("CLIENTE") ? UsuarioType.CLIENTE : UsuarioType.ADMINISTRADOR);
                     usuarioLogado.setSenha(rs.getString("usr_senha"));
-                    usuarioLogado.setNome(rs.getString("usr_prim_nome") + " " + rs.getString("usr_ult_nome"));
 
                     entidadeDominios.add(usuarioLogado);
                 }

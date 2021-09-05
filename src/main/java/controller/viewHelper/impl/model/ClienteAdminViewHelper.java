@@ -13,6 +13,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class ClienteAdminViewHelper implements IViewHelper{
@@ -53,7 +55,7 @@ public class ClienteAdminViewHelper implements IViewHelper{
 
             Cliente cliente = new Cliente();
             cliente.setGenero(genero);
-            cliente.setDataNascimento(dataNasc);
+            cliente.setDataNascimento(LocalDate.parse(dataNasc, DateTimeFormatter.ISO_LOCAL_DATE));
             cliente.setCpf(cpf);
             cliente.setTelefone(telefone);
             //cliente.setEndereco(endereco);

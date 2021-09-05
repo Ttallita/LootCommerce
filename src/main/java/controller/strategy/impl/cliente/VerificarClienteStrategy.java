@@ -10,20 +10,20 @@ public class VerificarClienteStrategy implements IStrategy {
     public String processa(EntidadeDominio entidade) {
         Cliente cliente = (Cliente) entidade;
 
-        if(cliente.getUsuario().getNome().trim().isEmpty()) {
+        if(cliente.getNome().trim().isEmpty()) {
             return "Digite um nome válido";
         }
 
 
-        if(cliente.getUsuario().getNome().split(" ").length < 2) {
-            return "Digite um sobrenome";
+        if(cliente.getSobrenome().trim().isEmpty()) {
+            return "Digite um sobrenome válido";
         }
 
         if(cliente.getGenero().equals("Selecione")) {
             return "Escolha um gênero valído";
         }
 
-        if(cliente.getTelefone().getTipo().equals("Selecione")) {
+        if(cliente.getTelefone().getTipo().equals("")) {
             return "Escolha um tipo de telefone válido";
         }
 

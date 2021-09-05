@@ -1,20 +1,15 @@
 package dao;
 
-import model.IEntidade;
 import model.Usuario;
-import model.UsuarioType;
-import model.cliente.CartaoDeCredito;
+
 import model.cliente.Cliente;
 import model.EntidadeDominio;
 import model.cliente.Endereco;
-import model.cliente.Telefone;
-import org.w3c.dom.ls.LSException;
+
 import utils.Conexao;
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ClienteDAO implements IDAO{
     private Connection conn;
@@ -27,8 +22,8 @@ public class ClienteDAO implements IDAO{
         try {
             conn = conexao.getConexao();
 
-            String sql = "INSERT INTO clientes (cli_usr_id, cli_cpf, cli_dt_nasc, cli_genero, cli_telefone_num, cli_telefone_ddd, cli_telefone_tp)" +
-                    " VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO clientes (cli_usr_id, cli_prim_nome, cli_ult_nome, cli_cpf, cli_dt_nasc, cli_genero, cli_telefone_num, cli_telefone_ddd, cli_telefone_tp)" +
+                    " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             Usuario usuario = cliente.getUsuario();
 
@@ -36,12 +31,14 @@ public class ClienteDAO implements IDAO{
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstm.setLong(1, idUser);
-            pstm.setString(2, cliente.getCpf());
-            pstm.setDate(3, Date.valueOf(cliente.getDataNascimento()));
-            pstm.setString(4, cliente.getGenero());
-            pstm.setString(5, cliente.getTelefone().getNumero());
-            pstm.setString(6, cliente.getTelefone().getDdd());
-            pstm.setString(7, cliente.getTelefone().getTipo());
+            pstm.setString(2, cliente.getNome());
+            pstm.setString(3, cliente.getSobrenome());
+            pstm.setString(4, cliente.getCpf());
+            pstm.setDate(5, Date.valueOf(cliente.getDataNascimento()));
+            pstm.setString(6, cliente.getGenero());
+            pstm.setString(7, cliente.getTelefone().getNumero());
+            pstm.setString(8, cliente.getTelefone().getDdd());
+            pstm.setString(9, cliente.getTelefone().getTipo());
 
             pstm.execute();
 
