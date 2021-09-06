@@ -143,23 +143,13 @@
                                             <input type="hidden" name="operacao" value="atualizar">
                                             <div class="col-6 ">
                                                 <div class="input-group form-floating">
-                                                    <input type="email" class="form-control" id="emailAtual"
-                                                        placeholder="" value="${clienteLogado.usuario.email}"
-                                                        disabled="">
-                                                    <button onclick="editar('emailAtual')" id="editarEmail"
-                                                        class="btn btn-primary" type="button"><span
-                                                            class="material-icons">mode_edit</span></button>
+                                                    <input type="email" class="form-control" name="email" id="emailAtual"
+                                                        placeholder="" value="${clienteLogado.usuario.email}">
                                                     <label class="form-label">Email</label>
-                                                    <div class="invalid-feedback">Email inválido.</div>
                                                 </div>
                                             </div>
 
                                             <div class="vstack gap-3 text-center">
-                                                <div class="col-6 form-floating">
-                                                    <input type="password" class="form-control" id="senhaAtual"
-                                                        placeholder="" required="">
-                                                    <label class="form-label">Senha Atual</label>
-                                                </div>
 
                                                 <div class="col-6 form-floating">
                                                     <input type="password" class="form-control" id="senha"
