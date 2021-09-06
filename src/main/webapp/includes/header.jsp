@@ -6,7 +6,7 @@
 
     <div class="navbar">
       <div class="container">
-        <a href="index.html">
+        <a href="index.jsp">
           <img src="/Ecommerce/assets/img/logo_header.png" max-height="100" alt="fanLoot" width="130">
         </a>
 
