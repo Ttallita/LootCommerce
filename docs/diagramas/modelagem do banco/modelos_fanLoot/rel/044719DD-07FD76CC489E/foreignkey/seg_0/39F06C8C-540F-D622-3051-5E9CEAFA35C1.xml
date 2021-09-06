@@ -9,7 +9,7 @@
 <referredTableID>C9F2EF82-B885-C574-AD7A-4BB640828265</referredTableID>
 <keyObject>F05997F3-FE2E-097E-A22B-C19E7001A171</keyObject>
 <referredKeyID>F05997F3-FE2E-097E-A22B-C19E7001A171</referredKeyID>
-<mandatory>true</mandatory>
+<mandatory>false</mandatory>
 <refColNames>fab_id</refColNames>
 <transferable>true</transferable>
 <rely>false</rely>

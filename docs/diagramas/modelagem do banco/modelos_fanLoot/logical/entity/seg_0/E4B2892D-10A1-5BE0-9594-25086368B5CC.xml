@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E511B7E4-C104-FCA4-96DF-4E11D7CDF360" name="FABRICANTES">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E4B2892D-10A1-5BE0-9594-25086368B5CC" name="GRUPOS_PRECIFICACAO">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-02 13:59:00 UTC</createdTime>
+<createdTime>2021-09-06 05:03:25 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
 <item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="fab_id" id="3F124E3D-41C3-93AB-0DC5-BC4F3AAECC5A">
+<Attribute name="grp_id" id="4F298436-4A65-3A24-29BB-B0A9174F9869">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-02 16:03:50 UTC</createdTime>
+<createdTime>2021-09-06 05:03:59 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
 <item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
@@ -25,12 +25,12 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>8</dataTypePrecision>
-<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="fab_nome" id="F2924C10-5118-14A1-DD79-D02FB5FC399A">
+<Attribute name="grp_nome" id="0117D705-7AF8-13AF-4B82-C1485BCF1267">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-02 16:03:50 UTC</createdTime>
+<createdTime>2021-09-06 05:04:54 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
 <item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
@@ -41,19 +41,32 @@
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="grp_porcentagem" id="5A1747A8-3B83-8C18-7E0A-31FE313B7273">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-06 05:04:40 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,1,2</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="C5BBD029-4169-C5C9-CA6C-B13DE76B0BE0" name="FABRICANTES PK">
+<identifier id="DC55BDE5-42EA-E731-6E19-F975AB297C84" name="GRUPOS_PRECIFICACAO PK">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-02 16:04:23 UTC</createdTime>
+<createdTime>2021-09-06 05:04:09 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="false"/>
+<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>3F124E3D-41C3-93AB-0DC5-BC4F3AAECC5A</attributeRef>
+<attributeRef>4F298436-4A65-3A24-29BB-B0A9174F9869</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

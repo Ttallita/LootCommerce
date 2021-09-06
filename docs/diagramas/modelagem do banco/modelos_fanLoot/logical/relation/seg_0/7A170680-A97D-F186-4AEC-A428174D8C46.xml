@@ -1,17 +1,17 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_7" directorySegmentName="seg_0" id="10B65698-3EB0-7DB0-3CC9-D43C42C743EC">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="precificacao_de_produto" directorySegmentName="seg_0" id="7A170680-A97D-F186-4AEC-A428174D8C46">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-02 17:13:15 UTC</createdTime>
+<createdTime>2021-09-06 05:07:07 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
 <item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
 </engineerTo>
-<sourcePk>C5BBD029-4169-C5C9-CA6C-B13DE76B0BE0</sourcePk>
+<sourcePk>DC55BDE5-42EA-E731-6E19-F975AB297C84</sourcePk>
 <identifying>false</identifying>
 <optionalSource>false</optionalSource>
 <optionalTarget>true</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
-<sourceEntity>E511B7E4-C104-FCA4-96DF-4E11D7CDF360</sourceEntity>
+<sourceEntity>E4B2892D-10A1-5BE0-9594-25086368B5CC</sourceEntity>
 <targetCardinalityString>*</targetCardinalityString>
 <targetEntity>88D6902D-1928-6AA4-BEB8-FFEE7C1192D7</targetEntity>
 <transferable>true</transferable>

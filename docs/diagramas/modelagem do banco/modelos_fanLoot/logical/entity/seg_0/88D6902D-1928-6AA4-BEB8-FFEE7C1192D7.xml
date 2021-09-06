@@ -41,9 +41,23 @@
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="pro_preco" id="C397E4EB-463A-1D31-7B4A-D0E840AD3FBE">
+<Attribute name="pro_valor_compra" id="E233F0A0-A588-254A-805B-FDB5EFFCAE5D">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-02 16:00:04 UTC</createdTime>
+<createdTime>2021-09-06 05:19:52 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pro_valor_venda" id="539EC265-5B34-EEAF-60C7-0BBD0A55A3DF">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-06 05:20:02 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
 <item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
@@ -93,7 +107,7 @@
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="pro_cod_barraas" id="3FF13553-0E91-624D-97DC-F3F14AD1FE93">
+<Attribute name="pro_cod_barras" id="3FF13553-0E91-624D-97DC-F3F14AD1FE93">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 17:11:45 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
@@ -119,20 +133,6 @@
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="pro_avaliacao" id="C75DF562-D651-59FA-D47F-FEB2235D0E65">
-<createdBy>Souza</createdBy>
-<createdTime>2021-09-02 16:01:55 UTC</createdTime>
-<ownerDesignName>modelos_fanLoot</ownerDesignName>
-<engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>255</dataTypeSize>
-<ownDataTypeParameters>255,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="fab_id" id="B47413D0-FBAB-1E65-FA62-E07078E1EA8F">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 17:13:15 UTC</createdTime>
@@ -141,12 +141,13 @@
 <engineerTo>
 <item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <referedAttribute>3F124E3D-41C3-93AB-0DC5-BC4F3AAECC5A</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>8</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="pro_limitado" id="4EF106FA-8D6D-E535-683E-F81C3FE27474">
 <createdBy>Souza</createdBy>
@@ -158,6 +159,22 @@
 <nullsAllowed>true</nullsAllowed>
 <use>0</use>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="grp_id" id="15DB0ADA-AFD8-C3AD-E96F-BE9E3BCE2B68">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-06 05:07:07 UTC</createdTime>
+<generatorID>7A170680-A97D-F186-4AEC-A428174D8C46</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>4F298436-4A65-3A24-29BB-B0A9174F9869</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

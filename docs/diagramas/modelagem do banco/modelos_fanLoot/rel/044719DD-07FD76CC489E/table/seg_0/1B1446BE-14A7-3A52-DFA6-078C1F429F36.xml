@@ -128,7 +128,7 @@
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="usr_id1" id="58E90F0A-110E-9051-89DC-224DFCCD16DB">
+<Column name="usr_id2" id="58E90F0A-110E-9051-89DC-224DFCCD16DB">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 19:45:07 UTC</createdTime>
 <generatorID>2535B7CF-D528-BBD0-1B1D-DB7AED61B9AA</generatorID>
@@ -136,7 +136,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
@@ -187,9 +188,9 @@
 <colUsage columnID="BF17ECBE-CA6F-0D12-CA39-5F7FC64E4AEC"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="18E6F66C-E8A3-790A-6304-DFF153A65F6B" name="CLIENTES_CARRINHOS_FK">
+<ind_PK_UK id="2F176852-24B4-1A21-3B83-3F6BA028DB6C" name="CLIENTES_CARRINHOS_FK">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-02 19:45:07 UTC</createdTime>
+<createdTime>2021-09-06 05:12:22 UTC</createdTime>
 <generatorID>F989C636-7066-707C-802F-B560599C2369</generatorID>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <indexState>Foreign Key</indexState>

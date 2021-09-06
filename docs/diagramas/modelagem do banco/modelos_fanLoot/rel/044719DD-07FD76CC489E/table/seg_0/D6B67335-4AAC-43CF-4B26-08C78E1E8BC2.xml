@@ -43,7 +43,7 @@
 <ownDataTypeParameters>,8,2</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="car_cli_usr_id" id="9C39B14F-E061-F889-8A7E-0471C1AE4A51">
+<Column name="CLIENTES_usr_id" id="9C39B14F-E061-F889-8A7E-0471C1AE4A51">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 18:57:40 UTC</createdTime>
 <generatorID>FF5A0DE8-A168-CCA6-05DE-AEA08C538E21</generatorID>
@@ -52,7 +52,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>6</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -71,6 +71,16 @@
 <isRelationshipColumn>true</isRelationshipColumn>
 <dependOnForeignKeyID>E2471440-9050-E0CD-7BAB-6068F5250C80</dependOnForeignKeyID>
 <isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+<Column name="car_prazo_finalizacao" id="57ACBBD0-BDF7-2782-0E24-E6B9B3FEE6D5">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-06 05:12:22 UTC</createdTime>
+<generatorID>95C09C18-7A71-DCF5-EAEB-78BA31F29D25</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">

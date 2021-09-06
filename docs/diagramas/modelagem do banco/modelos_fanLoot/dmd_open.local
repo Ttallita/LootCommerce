@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <design id="63F30558-1DBE-1B23-0680-77CE08FE0BE2">
 	<models>
-		<model id="044719DD-8B05-125C-013E-07FD76CC489E" open="true" open_d_pm="false"/>
+		<model id="044719DD-8B05-125C-013E-07FD76CC489E" open="true" open_d_pm="true"/>
 	</models>
 </design>

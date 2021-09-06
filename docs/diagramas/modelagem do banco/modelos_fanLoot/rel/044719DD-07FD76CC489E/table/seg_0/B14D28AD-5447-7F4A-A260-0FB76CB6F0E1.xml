@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B14D28AD-5447-7F4A-A260-0FB76CB6F0E1" name="GRUPOS_PRECIFICACAO">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-06 05:12:22 UTC</createdTime>
+<generatorID>E4B2892D-10A1-5BE0-9594-25086368B5CC</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="grp_id" id="C423FF62-5955-2464-8D98-DC77E38F2A5A">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-06 05:12:22 UTC</createdTime>
+<generatorID>4F298436-4A65-3A24-29BB-B0A9174F9869</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="grp_nome" id="A9A0B711-C4E9-0171-2101-C9337A8F5C4E">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-06 05:12:22 UTC</createdTime>
+<generatorID>0117D705-7AF8-13AF-4B82-C1485BCF1267</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="grp_porcentagem" id="10CCCCBA-0A1C-FCD4-3F38-A21707E39FE5">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-06 05:12:22 UTC</createdTime>
+<generatorID>5A1747A8-3B83-8C18-7E0A-31FE313B7273</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,1,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3DA81488-F45F-9DD6-1F96-F9478E8D4E3E" name="GRUPOS_PRECIFICACAO_PK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-06 05:12:22 UTC</createdTime>
+<generatorID>DC55BDE5-42EA-E731-6E19-F975AB297C84</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C423FF62-5955-2464-8D98-DC77E38F2A5A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

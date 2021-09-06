@@ -117,20 +117,48 @@
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="pro_fab_id" id="C0375B5E-C689-A154-2FA1-1CCCE0C44C65">
+<Column name="FABRICANTES_fab_id" id="C0375B5E-C689-A154-2FA1-1CCCE0C44C65">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 18:57:40 UTC</createdTime>
 <generatorID>B47413D0-FBAB-1E65-FA62-E07078E1EA8F</generatorID>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>8</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="39F06C8C-540F-D622-3051-5E9CEAFA35C1" referredColumn="73DE676B-6AE6-EA24-E354-B9792F69B47D"/>
+</associations>
+</Column>
+<Column name="pro_limitado" id="0CA2F02E-E35D-B857-5594-DF7A3B561A07">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-06 05:12:22 UTC</createdTime>
+<generatorID>4EF106FA-8D6D-E535-683E-F81C3FE27474</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GRUPOS_PRECIFICACAO_grp_id" id="CDB5018E-123A-3FFD-B080-2E0E4B07F207">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-06 05:12:22 UTC</createdTime>
+<generatorID>15DB0ADA-AFD8-C3AD-E96F-BE9E3BCE2B68</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="30B7FECB-3FAD-22D2-E23D-9E987C64F167" referredColumn="C423FF62-5955-2464-8D98-DC77E38F2A5A"/>
 </associations>
 </Column>
 </columns>
@@ -156,6 +184,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="C0375B5E-C689-A154-2FA1-1CCCE0C44C65"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4F4D477C-2566-C025-4AE8-7A9AEC6CFDA0" name="PRODUTOS_GRUPOS_PRECIFICACAO_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-06 05:12:22 UTC</createdTime>
+<generatorID>7A170680-A97D-F186-4AEC-A428174D8C46</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CDB5018E-123A-3FFD-B080-2E0E4B07F207"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
