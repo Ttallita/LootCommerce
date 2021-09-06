@@ -1,14 +1,12 @@
 package dao;
 
-import model.IEntidade;
 import model.Usuario;
-import model.UsuarioType;
-import model.cliente.CartaoDeCredito;
+
 import model.cliente.Cliente;
 import model.EntidadeDominio;
 import model.cliente.Endereco;
+
 import model.cliente.Telefone;
-import org.w3c.dom.ls.LSException;
 import utils.Conexao;
 
 import java.sql.*;
@@ -27,8 +25,8 @@ public class ClienteDAO implements IDAO{
         try {
             conn = conexao.getConexao();
 
-            String sql = "INSERT INTO clientes (cli_usr_id, cli_cpf, cli_dt_nasc, cli_genero, cli_telefone_num, cli_telefone_ddd, cli_telefone_tp)" +
-                    " VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO clientes (cli_usr_id, cli_prim_nome, cli_ult_nome, cli_cpf, cli_dt_nasc, cli_genero, cli_telefone_num, cli_telefone_ddd, cli_telefone_tp)" +
+                    " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             Usuario usuario = cliente.getUsuario();
 
@@ -36,12 +34,14 @@ public class ClienteDAO implements IDAO{
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstm.setLong(1, idUser);
-            pstm.setString(2, cliente.getCpf());
-            pstm.setDate(3, Date.valueOf(cliente.getDataNascimento()));
-            pstm.setString(4, cliente.getGenero());
-            pstm.setString(5, cliente.getTelefone().getNumero());
-            pstm.setString(6, cliente.getTelefone().getDdd());
-            pstm.setString(7, cliente.getTelefone().getTipo());
+            pstm.setString(2, cliente.getNome());
+            pstm.setString(3, cliente.getSobrenome());
+            pstm.setString(4, cliente.getCpf());
+            pstm.setDate(5, Date.valueOf(cliente.getDataNascimento()));
+            pstm.setString(6, cliente.getGenero());
+            pstm.setString(7, cliente.getTelefone().getNumero());
+            pstm.setString(8, cliente.getTelefone().getDdd());
+            pstm.setString(9, cliente.getTelefone().getTipo());
 
             pstm.execute();
 
@@ -78,18 +78,24 @@ public class ClienteDAO implements IDAO{
         try {
             conn = conexao.getConexao();
 
-            String sql = "UPDATE cliente SET cli_cpf = ?, cli_dt_nasc = ?, cli_genero = ?, cli_telefone_num = ?, cli_telefone_ddd = ?, cli_telefone_tp = ?";
+            String sql = "UPDATE clientes SET cli_prim_nome = ?, cli_ult_nome = ?, cli_cpf = ?, cli_dt_nasc = ?, cli_genero = ?, cli_telefone_num = ?, cli_telefone_ddd = ?, cli_telefone_tp = ?" +
+                    "WHERE cli_usr_id = ?";
 
             PreparedStatement pstm = conn.prepareStatement(sql);
 
-            pstm.setString(2, cliente.getCpf());
-            pstm.setDate(3, Date.valueOf(cliente.getDataNascimento()));
-            pstm.setString(4, cliente.getGenero());
-            pstm.setString(5, cliente.getTelefone().getNumero());
-            pstm.setString(6, cliente.getTelefone().getDdd());
-            pstm.setString(7, cliente.getTelefone().getTipo());
+            pstm.setString(1, cliente.getNome());
+            pstm.setString(2, cliente.getSobrenome());
+            pstm.setString(3, cliente.getCpf());
+            pstm.setDate(4, Date.valueOf(cliente.getDataNascimento()));
+            pstm.setString(5, cliente.getGenero());
+            pstm.setString(6, cliente.getTelefone().getNumero());
+            pstm.setString(7, cliente.getTelefone().getDdd());
+            pstm.setString(8, cliente.getTelefone().getTipo());
 
-            new UsuarioDAO().atualizar(cliente.getUsuario());
+            pstm.setLong(9, cliente.getUsuario().getId());
+
+            pstm.execute();
+
             return true;
 
         }catch (Exception e) {
@@ -109,7 +115,7 @@ public class ClienteDAO implements IDAO{
 
     @Override
     public List<EntidadeDominio> listar(EntidadeDominio entidade, String operacao) {
-        /*Cliente cliente = (Cliente) entidade;
+        Cliente cliente = (Cliente) entidade;
         Conexao conexao = new Conexao();
 
         try {
@@ -132,6 +138,7 @@ public class ClienteDAO implements IDAO{
             if(operacao.equals("listar")) {
                 pstm.setLong(1, cliente.getUsuario().getId());
             }
+
             ResultSet rs = pstm.executeQuery();
 
             while (rs.next()) {
@@ -139,13 +146,10 @@ public class ClienteDAO implements IDAO{
 
                 clienteLogado.setId(rs.getLong("cli_usr_id"));
 
-                if(operacao.equals("listarTodos")){
-                    clienteLogado.setNome(rs.getString("usr_prim_nome"));
-                    clienteLogado.setSobrenome(rs.getString("usr_ult_nome"));
-                }
-
+                clienteLogado.setNome(rs.getString("cli_prim_nome"));
+                clienteLogado.setSobrenome(rs.getString("cli_ult_nome"));
                 clienteLogado.setGenero(rs.getString("cli_genero"));
-                clienteLogado.setDataNascimento(rs.getDate("cli_dt_nasc").toString());
+                clienteLogado.setDataNascimento(rs.getDate("cli_dt_nasc").toLocalDate());
                 clienteLogado.setCpf(rs.getString("cli_cpf"));
 
                 String ddd = rs.getString("cli_telefone_ddd");
@@ -160,23 +164,14 @@ public class ClienteDAO implements IDAO{
                 Endereco endereco = new Endereco();
                 endereco.setCliente(clienteLogado);
 
-                CartaoDeCredito cartao = new CartaoDeCredito();
-                cartao.setCliente(clienteLogado);
-
                 List<EntidadeDominio> enderecos = new EnderecoDAO().listar(endereco, "listarPorCliente");
                 List<Endereco> enderecosConvertidos = enderecos.stream()
                         .map(enderecoMap -> (Endereco) enderecoMap)
                         .collect(Collectors.toList());
 
-                List<EntidadeDominio> cartoes = new CartaoDeCreditoDAO().listar(cartao, "listarPorCliente");
-                List<CartaoDeCredito> cartoesConvertidos = cartoes.stream()
-                        .map(cartaoMap -> (CartaoDeCredito) cartaoMap)
-                        .collect(Collectors.toList());
-
                 clienteLogado.setTelefone(telefone);
                 clienteLogado.setUsuario(cliente.getUsuario());
                 clienteLogado.setEnderecos(enderecosConvertidos);
-                clienteLogado.setCartoesDeCredito(cartoesConvertidos);
 
                 entidadeDominios.add(clienteLogado);
             }
@@ -186,8 +181,6 @@ public class ClienteDAO implements IDAO{
             return null;
         }finally {
             conexao.fecharConexao(conn);
-        }*/
-
-        return null;
+        }
     }
 }

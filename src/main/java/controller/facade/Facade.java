@@ -42,6 +42,10 @@ public class Facade implements IFacade {
 
         //Lista de regras de validação do cliente
         List<IStrategy> regraDeNegocioSalvarCliente = new ArrayList<>();
+        List<IStrategy> regraDeNegocioAtualizarCliente = new ArrayList<>();
+
+        //Lista de regras de validação de usuario
+        List<IStrategy> regraDeNegocioAtualizarUsuario = new ArrayList<>();
 
         regraDeNegocioSalvarCliente.add(validarDataStrategy);
         regraDeNegocioSalvarCliente.add(verificarClienteStrategy);
@@ -50,17 +54,19 @@ public class Facade implements IFacade {
         regraDeNegocioSalvarCliente.add(verificarSenhaStrategy);
         regraDeNegocioSalvarCliente.add(verificarEnderecoStrategy);
 
+        regraDeNegocioAtualizarCliente.add(validarDataStrategy);
+        regraDeNegocioAtualizarCliente.add(verificarClienteStrategy);
+        regraDeNegocioAtualizarCliente.add(verificarCpfStrategy);
+
+        regraDeNegocioAtualizarUsuario.add(verificarEmailStrategy);
+        regraDeNegocioSalvarCliente.add(verificarSenhaStrategy);
+
         //Mapa das regras de négocio do cliente por operação
         Map<String, List<IStrategy>> regrasDeNegocioCliente = new HashMap<>();
         regrasDeNegocioCliente.put("salvar", regraDeNegocioSalvarCliente);
+        regrasDeNegocioCliente.put("atualizar", regraDeNegocioAtualizarCliente);
 
-        //Lista de regras de validação da atualização de usuario
-        List<IStrategy> regrasDeNegocioAtualizarUsuario = new ArrayList<>();
-        regrasDeNegocioAtualizarUsuario.add(verificarSenhaStrategy);
-
-        //Mapa das regras de négocio do usuario por operação
         Map<String, List<IStrategy>> regrasDeNegocioUsuario = new HashMap<>();
-        regrasDeNegocioUsuario.put("atualizar", regrasDeNegocioAtualizarUsuario);
 
         regrasDeNegocioMap.put(Cliente.class.getName(), regrasDeNegocioCliente);
         regrasDeNegocioMap.put(Usuario.class.getName(), regrasDeNegocioUsuario);
@@ -130,7 +136,7 @@ public class Facade implements IFacade {
         String nomeClasse = entidade.getClass().getName();
 
         String msgValidacao = validarRegrasDeNegocio(entidade, operacao);
-        //?
+
         if(msgValidacao == null) {
             IDAO dao = daosMap.get(nomeClasse);
 

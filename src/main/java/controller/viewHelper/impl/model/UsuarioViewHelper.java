@@ -25,7 +25,6 @@ public class UsuarioViewHelper implements IViewHelper {
             String confirmarSenha = request.getParameter("senhaConfirmacao");
 
             Usuario usuario = new Usuario();
-            usuario.setNome(nome + " " + sobrenome);
             usuario.setEmail(email);
             usuario.setSenha(senha);
             usuario.setConfirmarSenha(confirmarSenha);
@@ -37,7 +36,6 @@ public class UsuarioViewHelper implements IViewHelper {
             Usuario usuarioLogado = (Usuario) request.getSession().getAttribute("usuarioLogado");
 
             String email = request.getParameter("email");
-            String senhaAtual = request.getParameter("senhaAtual");
             String senha = request.getParameter("senha");
             String senhaConfirmar = request.getParameter("senhaConfirmacao");
 
@@ -54,6 +52,16 @@ public class UsuarioViewHelper implements IViewHelper {
 
     @Override
     public void setView(Result result, HttpServletRequest request, HttpServletResponse httpResponse) throws IOException, ServletException {
+        String operacao = request.getParameter("operacao");
 
+        if(operacao.equals("atualizar")) {
+            Usuario usuario = (Usuario) result.getEntidades().get(0);
+
+            if(result.getMsg() == null) {
+                request.setAttribute("usuarioLogado", usuario);
+
+                httpResponse.sendRedirect("/Ecommerce/clientes/perfil?operacao=listar");
+            }
+        }
     }
 }

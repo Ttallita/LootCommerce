@@ -84,13 +84,13 @@
                             </h5>
                             <div class="col-sm-5 form-outline">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="nome" name="nome" placeholder="" value="${nome}">
+                                <input type="text" class="form-control" id="nome" name="nome" placeholder="" value="${cliente.nome}">
                                 <label for="floatingPassword" class="form-label">Nome</label>
                               </div>
                             </div>
                             <div class="col-sm-7">
                               <div class="form-floating">
-                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="" value="${sobrenome}">
+                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="" value="${cliente.sobrenome}">
                                 <label for="sobrenome" class="form-label">Sobrenome</label>
                               </div>
                             </div>

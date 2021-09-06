@@ -19,7 +19,7 @@
     <div class="wrapper container mt-3">
         <main class="content">
             <div class="container-fluid p-0">
-                <h1 class="h3 mb-3">${nome} ${sobrenome}</h1>
+                <h1 class="h3 mb-3">${clienteLogado.nome} ${clienteLogado.sobrenome}</h1>
                 <div class="row">
                     <div class="col-md-3 col-xl-2">
                         <div class="list-group btn-group-vertical">
@@ -56,98 +56,75 @@
                                         <form class="needs-validation text-center" action="/Ecommerce/clientes/perfil" method="POST" novalidate="">
                                             <input type="hidden" name="operacao" value="atualizar">
                                             <div class="row g-3">
+
                                                 <div class="col-sm-6">
                                                     <div class="input-group form-floating">
-                                                        <input type="text" class="form-control" id="nome" name="nome" value="${nome}"
-                                                            required="" disabled="">
-                                                        <button onclick="editar('nome')" id="editarNome"
-                                                            class="btn btn-primary" type="button"><span
-                                                                class="material-icons">mode_edit</span></button>
+                                                        <input type="text" class="form-control" id="nome" name="nome" value="${clienteLogado.nome}"
+                                                            required="">
+
                                                         <label class="form-label">Nome</label>
-                                                        <div class="invalid-feedback">Campo obrigatório.</div>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-sm-6">
                                                     <div class="input-group form-floating">
                                                         <input type="text" class="form-control" id="sobrenome" name="sobrenome"
-                                                            value="${sobrenome}" required="" disabled="">
-                                                        <button onclick="editar('sobrenome')" id="editarSobrenome"
-                                                            class="btn btn-primary" type="button"><span
-                                                                class="material-icons">mode_edit</span></button>
+                                                            value="${clienteLogado.sobrenome}" required="">
+
                                                         <label class="form-label">Sobrenome</label>
-                                                        <div class="invalid-feedback">Campo obrigatório.</div>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-4">
                                                     <div class="input-group form-floating">
-                                                        <select class="form-select" id="genero"  required="" disabled="">
+                                                        <select class="form-select" id="genero" name="genero"  required="">
                                                             <option name="genero" value="${clienteLogado.genero}">Selecione</option>
                                                             <option>Masculino</option>
-                                                            <option>Feminimo</option>
+                                                            <option>Feminino</option>
                                                             <option>Outro</option>
                                                             <option>Prefiro não informar</option>
                                                         </select>
-                                                        <button onclick="editar('genero')" id="editarGenero"
-                                                            class="btn btn-primary" type="button"><span
-                                                                class="material-icons">mode_edit</span></button>
                                                         <label class="form-label">Gênero</label>
-                                                        <div class="invalid-feedback">Campo obrigatório.</div>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-md-4">
                                                     <div class="input-group form-floating">
                                                         <input type="date" class="form-control" id="dataNasc" name="date"
-                                                            value="${clienteLogado.dataNascimento}" required="" disabled="">
-                                                        <button onclick="editar('dataNasc')" id="editarDataNasc"
-                                                            class="btn btn-primary" type="button"><span
-                                                                class="material-icons">mode_edit</span></button>
+                                                            value="${clienteLogado.dataNascimento}" required="">
                                                         <label class="form-label">Data de nascimento</label>
-                                                        <div class="invalid-feedback">Campo obrigatório.</div>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-4">
                                                     <div class="input-group form-floating">
-                                                        <input type="text" class="form-control" id="cpf" name="cpf" value="${clienteLogado.cpf}" required="" disabled="">
-                                                        <button onclick="editar('cpf')" class="btn btn-primary"
-                                                            id="editarCpf" type="button"><span
-                                                                class="material-icons">mode_edit</span></button>
+                                                        <input type="text" class="form-control" id="cpf" name="cpf" value="${clienteLogado.cpf}" required="">
                                                         <label class="form-label">CPF</label>
-                                                        <div class="invalid-feedback">Campo obrigatório.</div>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-3">
                                                     <div class="input-group form-floating">
-                                                        <select class="form-select" id="tipoTelefone"  required="" disabled="">
+                                                        <select class="form-select" id="tipoTelefone" name="tipoTelefone" required="">
                                                             <option name="tipoTelefone" value="${clienteLogado.telefone.tipo}">${clienteLogado.telefone.tipo}</option>
                                                             <option value="">Selecione</option>
                                                             <option>Celular</option>
                                                             <option>Residêncial</option>
                                                         </select>
-                                                        <button onclick="editar('tipoTelefone')" id="editarTpTelefone" class="btn btn-primary" type="button">
-                                                            <span class="material-icons">mode_edit</span></button>
                                                         <label class="form-label">Tipo de Telefone</label>
-                                                        <div class="invalid-feedback">Campo obrigatório.</div>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-3">
                                                     <div class="input-group form-floating">
-                                                        <input type="phone" class="form-control" id="phone" name="phone" value="${clienteLogado.telefone.ddd},${clienteLogado.telefone.numero}" required="" disabled="">
-                                                        <button onclick="editar('phone')" id="editarTelefone" class="btn btn-primary" type="button">
-                                                            <span class="material-icons">mode_edit</span></button>
+                                                        <input type="phone" class="form-control" id="phone" name="phone" value="${clienteLogado.telefone.ddd},${clienteLogado.telefone.numero}" required="">
                                                         <label class="form-label">Telefone</label>
-                                                        <div class="invalid-feedback">Campo obrigatório.</div>
                                                     </div>
                                                 </div>
 
                                             </div>
                                             <hr class="my-4">
-                                            <button class="btn btn-primary mt-auto btn-lg" id="atualizarDados" type="submit" disabled="">
+                                            <button class="btn btn-primary mt-auto btn-lg" id="atualizarDados" type="submit">
                                                 Atualizar
                                             </button>
                                         </form>
@@ -166,23 +143,13 @@
                                             <input type="hidden" name="operacao" value="atualizar">
                                             <div class="col-6 ">
                                                 <div class="input-group form-floating">
-                                                    <input type="email" class="form-control" id="emailAtual"
-                                                        placeholder="" value="${clienteLogado.usuario.email}"
-                                                        disabled="">
-                                                    <button onclick="editar('emailAtual')" id="editarEmail"
-                                                        class="btn btn-primary" type="button"><span
-                                                            class="material-icons">mode_edit</span></button>
+                                                    <input type="email" class="form-control" name="email" id="emailAtual"
+                                                        placeholder="" value="${clienteLogado.usuario.email}">
                                                     <label class="form-label">Email</label>
-                                                    <div class="invalid-feedback">Email inválido.</div>
                                                 </div>
                                             </div>
 
                                             <div class="vstack gap-3 text-center">
-                                                <div class="col-6 form-floating">
-                                                    <input type="password" class="form-control" id="senhaAtual"
-                                                        placeholder="" required="">
-                                                    <label class="form-label">Senha Atual</label>
-                                                </div>
 
                                                 <div class="col-6 form-floating">
                                                     <input type="password" class="form-control" id="senha"
@@ -563,7 +530,6 @@
 <script src='<c:url value="/webjars/jquery-mask-plugin/1.14.16/dist/jquery.mask.min.js"/>'></script>
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
 <script src='<c:url value="/assets/js/form-validation.js"/>'></script>
-<script src='<c:url value="/assets/js/disable-enable-form.js"/>'></script>
 
 <script>
     $(document).ready(function () {

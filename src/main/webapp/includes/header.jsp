@@ -6,7 +6,7 @@
 
     <div class="navbar">
       <div class="container">
-        <a href="index.jsp">
+        <a href="/Ecommerce/index.jsp">
           <img src="/Ecommerce/assets/img/logo_header.png" max-height="100" alt="fanLoot" width="130">
         </a>
 
@@ -21,7 +21,7 @@
         <div class="d-flex align-items-center">
           <div class="dropdown">
             <a href="#" id="iconUsuario" data-bs-toggle="dropdown" aria-expanded="false" class="text-decoration-none dropdown-toggle link-light">
-              <img src="https://i.pinimg.com/474x/bb/8a/71/bb8a71ef13231a77a85267fa9e066922.jpg" class="rounded-circle" alt="icon" width="32" height="32">
+                Meus dados
             </a>
             <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
               <li><a id="perfil" class="dropdown-item link-light" href="/Ecommerce/clientes/perfil?operacao=listar">Perfil</a></li>
