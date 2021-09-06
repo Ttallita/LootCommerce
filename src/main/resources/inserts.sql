@@ -1,3 +1,11 @@
+-- FABRICANTES
+-- GRUPOS DE PRECIFICAÇÃO
+-- CATEGORIAS
+-- CIDADES/ESTADOS/PAISES
+
+
+
+
 INSERT INTO "clientes" (cli_id,cli_cpm_id,cli_crt_id,cli_cpf,cli_dt_nasc,cli_genero,cli_telefone_num,cli_telefone_ddd,cli_telefone_tp,cli_email,cli_senha) VALUES (1,null,null,8,'30/01/1980','M','7281-1080','11','Residencial','Curabitur@consequatlectussit.ca','Aa@123456');
 INSERT INTO "clientes" (cli_id,cli_cpm_id,cli_crt_id,cli_cpf,cli_dt_nasc,cli_genero,cli_telefone_num,cli_telefone_ddd,cli_telefone_tp,cli_email,cli_senha) VALUES (2,null,null,2,'10/10/1998','M','7993-7889','15','Celular','mi.Aliquam@Proineget.net','Aa@123456');
 INSERT INTO "clientes" (cli_id,cli_cpm_id,cli_crt_id,cli_cpf,cli_dt_nasc,cli_genero,cli_telefone_num,cli_telefone_ddd,cli_telefone_tp,cli_email,cli_senha) VALUES (11,null,null,6,'20/05/1998','F','3090-4464','80','Celular','mi@erat.com','Aa@123456');

@@ -72,6 +72,41 @@ CREATE TABLE categorias(
     PRIMARY KEY (ctg_id)
 );
 
+CREATE TABLE fabricantes(
+    fab_id serial NOT NULL,
+    fab_nome varchar(255) NOT NULL,
+
+    PRIMARY KEY (fab_id)
+);
+
+CREATE TABLE grupos_precificacao(
+    grp_id serial NOT NULL,
+    grp_nome varchar(255) NOT NULL,
+    grp_porcentagem numeric(8,2) NOT NULL,
+
+    PRIMARY KEY(grp_id)
+);
+
+CREATE TABLE produtos(
+--Todo produto que for inativado manualmente deve ter uma justificativa e uma categoria de inativação associada.
+	pro_id serial NOT NULL,
+    pro_ctg_id int NOT NULL,
+    pro_fab_id int NOT NULL,
+    pro_grp_id int NOT NULL,
+	pro_nome varchar(255) NOT NULL,
+	pro_valor_compra numeric(8, 2) NOT NULL, --NOT NULL??????????
+	pro_valor_venda numeric(8, 2) NOT NULL,
+    pro_quant_estoque int NOT NULL,
+	pro_descricao varchar(255) NOT NULL,
+	pro_material varchar(255) NOT NULL,
+    pro_cod_barras varchar(255) NOT NULL,
+    pro_link varchar(255) NOT NULL,
+
+    PRIMARY KEY (pro_id),
+    CONSTRAINT fk_pro_fab FOREIGN KEY (pro_fab_id) REFERENCES fabricantes (fab_id),
+    CONSTRAINT fk_pro_grp FOREIGN KEY (pro_grp_id) REFERENCES grupos_precificacao (grp_id)
+);
+
 CREATE TABLE categorias_produtos(
     ctp_pro_id int NOT NULL,
     ctp_ctg_id int NOT NULL,
@@ -81,30 +116,21 @@ CREATE TABLE categorias_produtos(
     CONSTRAINT fk_ctp_ctg FOREIGN KEY (ctp_ctg_id) REFERENCES categorias (ctg_id)
 );
 
-CREATE TABLE fabricantes(
-    fab_id serial NOT NULL,
-    fab_nome varchar(255) NOT NULL,
+CREATE TABLE categorias_inativacao(
+    cti_id serial NOT NULL,
+    cti_nome varchar(255),
+    cti_justific varchar(255),
 
-    PRIMARY KEY (fab_id)
+    PRIMARY KEY (cti_id)
 );
 
-CREATE TABLE produtos(
-	pro_id serial NOT NULL,
-    pro_ctg_id int NOT NULL,
-    pro_fab_id int NOT NULL,
-	pro_nome varchar(255) NOT NULL,
-	pro_preco numeric(8, 2) NOT NULL,
-    pro_quant_estoque int NOT NULL,
-	pro_descricao varchar(255) NOT NULL,
-	pro_material varchar(255) NOT NULL,
-    pro_cod_barras varchar(255) NOT NULL
-    pro_link varchar(255) NOT NULL,
-	pro_avalicao varchar(255),
+CREATE TABLE categorias_ativacao(
+    cta_id serial NOT NULL,
+    cta_nome varchar(255),
 
-    PRIMARY KEY (pro_id),
-    CONSTRAINT fk_pro_fab FOREIGN KEY (pro_fab_id) REFERENCES fabricantes (fab_id),
-    CONSTRAINT fk_pro_ctg FOREIGN KEY (pro_ctg_id) REFERENCES categorias_produto (ctg_id)
+    PRIMARY KEY (cta_id)
 );
+
 
 CREATE TABLE carrinhos(
     car_cli_id serial NOT NULL,
@@ -120,6 +146,7 @@ CREATE TABLE produtos_em_carrinho(
     prc_pro_id int NOT NULL,
     prc_car_cli_id int NOT NULL,
     prc_quant int NOT NULL,
+    -- MARGEM DE LUCRO
 
     PRIMARY KEY (prc_pro_id, prc_car_cli_id),
     CONSTRAINT fk_prc_pro FOREIGN KEY (prc_pro_id) REFERENCES produtos (pro_id),
