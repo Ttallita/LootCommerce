@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="51564118-4E7D-DC3B-743B-F4BCECCB5768" name="CATEGORIAS">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BE7973CF-CEF8-23F5-8707-F5BA5DAF0EE5" name="PRODUTO_ESTADO">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-02 13:58:54 UTC</createdTime>
+<createdTime>2021-09-07 15:52:04 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
 <item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ctg_id" id="5782B720-887F-7696-B719-9721E42E9603">
+<Attribute name="pre_id" id="00E2FDD7-D82C-7108-AB7F-5178F86092CD">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-02 16:02:54 UTC</createdTime>
+<createdTime>2021-09-07 15:52:13 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
 <item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
@@ -25,12 +25,12 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>8</dataTypePrecision>
-<ownDataTypeParameters>,8,</ownDataTypeParameters>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="ctg_nome" id="381338D8-F7B6-E995-99A0-D1D2988FDA03">
+<Attribute name="pre_justificativa" id="0E8AB506-5146-2880-2794-B92454DCA828">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-02 16:03:04 UTC</createdTime>
+<createdTime>2021-09-07 15:52:27 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
 <item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
@@ -41,11 +41,24 @@
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="pre_tipo" id="EA3AF5B1-FE7E-7DAB-D6C2-625D8570E44A">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 15:56:40 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="0A0E3D96-3038-9B13-E848-FDF4BBA19D7E" name="CATEGORIAS PK">
+<identifier id="BDA0D64D-5727-C387-F136-E3336EA37691" name="CATEGORIAS_INATIVACAO PK">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-02 16:03:44 UTC</createdTime>
+<createdTime>2021-09-07 15:52:41 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
 <engineerTo>
@@ -53,7 +66,7 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>5782B720-887F-7696-B719-9721E42E9603</attributeRef>
+<attributeRef>00E2FDD7-D82C-7108-AB7F-5178F86092CD</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

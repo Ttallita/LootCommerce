@@ -4,7 +4,7 @@
 <createdTime>2021-09-06 05:03:25 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,7 +20,7 @@
 <createdTime>2021-09-06 05:03:59 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,7 +33,7 @@
 <createdTime>2021-09-06 05:04:54 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -46,7 +46,7 @@
 <createdTime>2021-09-06 05:04:40 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -55,14 +55,29 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,1,2</ownDataTypeParameters>
 </Attribute>
+<Attribute name="grp_margem_lucro" id="F7138F9F-6910-44AC-0CEB-1FBCC13F123C">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 16:35:53 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="DC55BDE5-42EA-E731-6E19-F975AB297C84" name="GRUPOS_PRECIFICACAO PK">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-06 05:04:09 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

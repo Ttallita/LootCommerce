@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="B3036023-F799-DB10-7046-68C3FC2DCF17" containerWithKeyObject="FABE8A7D-E233-00B1-D499-F82052A3A800" localFKIndex="0DB79E92-112B-7516-0FF6-C1CC76E75712" name="fk_pro_fab">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 16:33:49 UTC</createdTime>
+<generatorID>10B65698-3EB0-7DB0-3CC9-D43C42C743EC</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<referredTableLongName>FABRICANTES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D1A8ED1D-A57C-5CBE-D45E-445A40128110</referredTableID>
+<keyObject>829E167C-86B8-C601-3DC1-B7264F1AC796</keyObject>
+<referredKeyID>829E167C-86B8-C601-3DC1-B7264F1AC796</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>fab_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

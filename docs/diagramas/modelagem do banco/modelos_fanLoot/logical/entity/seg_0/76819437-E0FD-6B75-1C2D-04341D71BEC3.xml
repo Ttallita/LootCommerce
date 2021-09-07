@@ -28,32 +28,6 @@
 <dataTypePrecision>6</dataTypePrecision>
 <ownDataTypeParameters>,6,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="usr_prim_nome" id="2C3924A3-6AB4-6C09-E2CC-ED8EAF96D43C">
-<createdBy>Souza</createdBy>
-<createdTime>2021-09-02 14:15:41 UTC</createdTime>
-<ownerDesignName>modelos_fanLoot</ownerDesignName>
-<engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>15</dataTypeSize>
-<ownDataTypeParameters>15,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="usr_ult_nome" id="1CFB9DF1-BAF8-EB4B-E0F9-1FDD72CCA4CD">
-<createdBy>Souza</createdBy>
-<createdTime>2021-09-02 14:15:42 UTC</createdTime>
-<ownerDesignName>modelos_fanLoot</ownerDesignName>
-<engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>45</dataTypeSize>
-<ownDataTypeParameters>45,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="usr_email" id="D881E4E3-1CD7-DDDA-48D8-E32BB8556DA4">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 14:16:24 UTC</createdTime>

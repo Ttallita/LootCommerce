@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_14" directorySegmentName="seg_0" id="CF2A6CE3-76BA-8FA2-8C03-4CA7C5605A9B">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 15:54:13 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+</engineerTo>
+<sourcePk>BDA0D64D-5727-C387-F136-E3336EA37691</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>BE7973CF-CEF8-23F5-8707-F5BA5DAF0EE5</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>88D6902D-1928-6AA4-BEB8-FFEE7C1192D7</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

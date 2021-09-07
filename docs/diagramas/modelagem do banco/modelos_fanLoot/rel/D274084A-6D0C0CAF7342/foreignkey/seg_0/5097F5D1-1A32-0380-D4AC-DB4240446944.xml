@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5097F5D1-1A32-0380-D4AC-DB4240446944" containerWithKeyObject="3C901A6A-5310-AE98-0C61-7886AF34C318" localFKIndex="D2C5C2A4-D93D-6374-D068-874208911BDF" name="fk_cpm_cli_usr">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 16:33:49 UTC</createdTime>
+<generatorID>DC43B344-F407-733E-F8A8-D64B5C59A3B1</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<referredTableLongName>CLIENTES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>9E090793-48F4-E21B-92C4-1FCEACF317AB</referredTableID>
+<keyObject>35BC7486-B93E-6EC8-F799-1BE10BB08D27</keyObject>
+<referredKeyID>35BC7486-B93E-6EC8-F799-1BE10BB08D27</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>cli_usr_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="45C72D28-327C-C865-024F-37019C754F68" name="PRODUTOS_EM_CARRINHO">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 16:33:49 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="prc_pro_id" id="C0560434-0120-4066-15CF-8825DC424CC1">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 16:33:49 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F60C7DE0-D5CF-355A-1EFC-C3975077EAD7" referredColumn="CCF05958-69E9-6D3A-0802-A02F5840A70E"/>
+</associations>
+</Column>
+<Column name="prc_cli_usr_id" id="B029F40B-B093-26F8-5366-994024CE6FB4">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 16:33:49 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C881A85F-EEE9-6BD2-3E18-BB0C07769E99" referredColumn="247F4DCF-4A8A-BF5F-A8BF-6520F8BBBFED"/>
+</associations>
+</Column>
+<Column name="prc_quant" id="09038F91-9BB2-EBFA-4781-42D07421E039">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 16:33:49 UTC</createdTime>
+<generatorID>6A97F6FC-604F-1AF2-D53F-4AE3A75D3BBD</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6E7F10FB-6189-FE10-E43C-9AF0A1917490" name="pk_prc">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 16:33:49 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0560434-0120-4066-15CF-8825DC424CC1"/>
+<colUsage columnID="B029F40B-B093-26F8-5366-994024CE6FB4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B99CC002-104E-12D7-F7F6-DA6002368A5E" name="fk_prc_cli_usr">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 16:33:49 UTC</createdTime>
+<generatorID>73C2C751-D293-BA84-E6E4-043FDCF8B2B0</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C0560434-0120-4066-15CF-8825DC424CC1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="142ACCAE-91AD-08CC-1435-8E35877E1D20" name="fk_prc_car">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 16:33:49 UTC</createdTime>
+<generatorID>73C2C751-D293-BA84-E6E4-043FDCF8B2B0</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B029F40B-B093-26F8-5366-994024CE6FB4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

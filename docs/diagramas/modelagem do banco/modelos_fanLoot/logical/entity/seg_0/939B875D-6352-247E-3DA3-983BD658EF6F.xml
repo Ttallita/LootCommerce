@@ -4,7 +4,7 @@
 <createdTime>2021-09-02 13:31:15 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -15,25 +15,26 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="crt_id" id="03E37694-7369-8D33-8C4A-C8993C8840CB">
+<Attribute name="crt_id" id="2507AF66-A896-B6E3-FC9E-56523B30B614">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-02 16:23:37 UTC</createdTime>
+<createdTime>2021-09-07 16:41:34 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>6</dataTypePrecision>
-<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
 </Attribute>
 <Attribute name="crt_numero" id="6973E9F1-12BE-6FE4-13BE-398ED39A670F">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 16:23:48 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -46,7 +47,7 @@
 <createdTime>2021-09-02 16:24:19 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -59,7 +60,7 @@
 <createdTime>2021-09-02 16:24:57 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -72,7 +73,7 @@
 <createdTime>2021-09-02 16:25:19 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -84,7 +85,7 @@
 <createdTime>2021-09-02 16:25:46 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -98,7 +99,7 @@
 <generatorID>301E5EE6-EDAA-582F-3678-7927DD8813A7</generatorID>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <referedAttribute>56C1ACC0-18FC-9853-8542-D18581E277A1</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -115,12 +116,12 @@
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="false"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>03E37694-7369-8D33-8C4A-C8993C8840CB</attributeRef>
 <attributeRef>872B7B81-4FBA-0EEE-C2CE-85D0F15862A9</attributeRef>
+<attributeRef>2507AF66-A896-B6E3-FC9E-56523B30B614</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
