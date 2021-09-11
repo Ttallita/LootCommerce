@@ -65,7 +65,25 @@ public class EnderecoDAO implements IDAO{
 
     @Override
     public boolean deletar(EntidadeDominio entidade) {
-        return false;
+        Endereco endereco = (Endereco) entidade;
+        Conexao conexao = new Conexao();
+        try {
+            conn = conexao.getConexao();
+
+            String sql = "DELETE FROM enderecos WHERE end_id = ?";
+
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setLong(1, endereco.getId());
+
+            pstm.execute();
+
+            return true;
+        }catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
+        }finally {
+            conexao.fecharConexao(conn);
+        }
     }
 
     @Override

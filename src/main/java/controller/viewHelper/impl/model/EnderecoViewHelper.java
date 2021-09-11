@@ -1,6 +1,7 @@
 package controller.viewHelper.impl.model;
 
 import controller.viewHelper.IViewHelper;
+import dao.ClienteDAO;
 import model.EntidadeDominio;
 import model.Result;
 import model.Usuario;
@@ -12,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class EnderecoViewHelper implements IViewHelper {
 
@@ -75,6 +77,14 @@ public class EnderecoViewHelper implements IViewHelper {
             }
 
             return endereco;
+        } else if(operacao.equals("remover")) {
+            Endereco endereco = new Endereco();
+
+            Long idEndereco = Long.parseLong(request.getParameter("idEndereco"));
+
+            endereco.setId(idEndereco);
+
+            return endereco;
         }
 
         return null;
@@ -85,9 +95,44 @@ public class EnderecoViewHelper implements IViewHelper {
         String operacao = request.getParameter("operacao");
 
         if(operacao.equals("salvar")) {
+            Usuario usuarioLogado = (Usuario) request.getSession().getAttribute("usuarioLogado");
+            Cliente cliente = new Cliente();
+            cliente.setUsuario(usuarioLogado);
+
+            List<EntidadeDominio> entidade  = new ClienteDAO().listar(cliente, "listar");
+            cliente = (Cliente) entidade.get(0);
+
+            request.setAttribute("clienteLogado", cliente);
             request.setAttribute("aba", "enderecos");
 
-            httpResponse.sendRedirect("cliente/perfil.jsp?operacao=listar");
+            if(result.getMsg() == null) {
+                request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, httpResponse);
+            } else {
+                String msgErro[] = result.getMsg().split("\n");
+
+                request.setAttribute("mensagem", msgErro);
+                request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, httpResponse);
+            }
+        } else if(operacao.equals("remover")) {
+            Usuario usuarioLogado = (Usuario) request.getSession().getAttribute("usuarioLogado");
+            Cliente cliente = new Cliente();
+            cliente.setUsuario(usuarioLogado);
+
+            List<EntidadeDominio> entidade  = new ClienteDAO().listar(cliente, "listar");
+            cliente = (Cliente) entidade.get(0);
+
+            request.setAttribute("clienteLogado", cliente);
+            request.setAttribute("aba", "enderecos");
+
+            if(result.getMsg() == null) {
+                request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, httpResponse);
+            } else {
+                String msgErro[] = result.getMsg().split("\n");
+
+                request.setAttribute("mensagem", msgErro);
+                request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, httpResponse);
+            }
+
         }
     }
 }

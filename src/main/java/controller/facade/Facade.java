@@ -47,6 +47,9 @@ public class Facade implements IFacade {
         //Lista de regras de validação de usuario
         List<IStrategy> regraDeNegocioAtualizarUsuario = new ArrayList<>();
 
+        //Lista de regras de validação de email
+        List<IStrategy> regraDeNegocioSalvarEndereco = new ArrayList<>();
+
         regraDeNegocioSalvarCliente.add(validarDataStrategy);
         regraDeNegocioSalvarCliente.add(verificarClienteStrategy);
         regraDeNegocioSalvarCliente.add(verificarCpfStrategy);
@@ -61,6 +64,8 @@ public class Facade implements IFacade {
         regraDeNegocioAtualizarUsuario.add(verificarEmailStrategy);
         regraDeNegocioAtualizarUsuario.add(verificarSenhaStrategy);
 
+        regraDeNegocioSalvarEndereco.add(verificarEnderecoStrategy);
+
         //Mapa das regras de négocio do cliente por operação
         Map<String, List<IStrategy>> regrasDeNegocioCliente = new HashMap<>();
         regrasDeNegocioCliente.put("salvar", regraDeNegocioSalvarCliente);
@@ -69,8 +74,12 @@ public class Facade implements IFacade {
         Map<String, List<IStrategy>> regrasDeNegocioUsuario = new HashMap<>();
         regrasDeNegocioUsuario.put("atualizar", regraDeNegocioAtualizarUsuario);
 
+        Map<String, List<IStrategy>> regrasDeNegocioEndereco = new HashMap<>();
+        regrasDeNegocioEndereco.put("salvar", regraDeNegocioSalvarEndereco);
+
         regrasDeNegocioMap.put(Cliente.class.getName(), regrasDeNegocioCliente);
         regrasDeNegocioMap.put(Usuario.class.getName(), regrasDeNegocioUsuario);
+        regrasDeNegocioMap.put(Endereco.class.getName(), regrasDeNegocioEndereco);
     }
 
 
@@ -127,6 +136,27 @@ public class Facade implements IFacade {
 
     @Override
     public Result deletar(EntidadeDominio entidade) {
+        result = new Result();
+
+        String nomeClasse = entidade.getClass().getName();
+
+        String msgValidacao = validarRegrasDeNegocio(entidade, "remover");
+
+        if(msgValidacao == null) {
+            IDAO idao = daosMap.get(nomeClasse);
+
+            List<EntidadeDominio> entidadeDominios = new ArrayList<>();
+            entidadeDominios.add(entidade);
+
+
+            result.setEntidades(entidadeDominios);
+
+            idao.deletar(entidade);
+
+            return result;
+        } else {
+            result.setMsg(msgValidacao);
+        }
         return null;
     }
 

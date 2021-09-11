@@ -26,8 +26,8 @@ public class CadastrarNovoEnderecoTest {
         driver.findElement(By.id("entrar")).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
-        driver.findElement(By.id("email")).sendKeys("andre.gomes7110@gmail.com");
-        driver.findElement(By.id("senha")).sendKeys("Hitagi710!");
+        driver.findElement(By.id("email")).sendKeys("userexample@gmail.com");
+        driver.findElement(By.id("senha")).sendKeys("Teste123!");
         driver.findElement(By.id("logar")).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("iconUsuario")));
@@ -60,6 +60,8 @@ public class CadastrarNovoEnderecoTest {
         Select selectTpEndereco = new Select(driver.findElement(By.id("tpEndereco")));
         selectTpEndereco.selectByVisibleText("Entrega");
         driver.findElement(By.id("btnCadastrar")).click();
+
+        driver.quit();
 
     }
 

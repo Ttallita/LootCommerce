@@ -213,7 +213,7 @@
                                 </div>
 
                                 <!--endereços-->
-                                <div class="tab-pane fade ${not empty aba && aba == 'endereco' ? 'active show' : ''}" id="v-pills-enderecos" role="tabpanel"
+                                <div class="tab-pane fade ${not empty aba && aba == 'enderecos' ? 'active show' : ''}" id="v-pills-enderecos" role="tabpanel"
                                     aria-labelledby="v-pills-enderecos-tab">
                                     <div class="shadow">
                                         <div class="card-body">
@@ -225,7 +225,7 @@
                                                     class="material-icons inline-icon">add_circle_outline</span>Novo
                                                 Endereço
                                             </button>
-                                            <table class="table table-hover table-sm table-responsive">
+                                            <table id="table-enderecos" class="table table-hover table-sm table-responsive">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">Logradouro</th>
@@ -257,10 +257,9 @@
                                                                 </span>
                                                             </td>
                                                             <td>
-                                                                <span class="material-icons text-danger">
-                                                                    <span data-bs-toggle="modal"
-                                                                        data-bs-target="#excluirEndereco"
-                                                                        id="deletarEndereco">delete</span>
+                                                                <span class="material-icons text-danger" data-bs-toggle="modal"
+                                                                data-bs-target="#excluirEndereco${endereco.id}">
+                                                                        delete
                                                                 </span>
                                                             </td>
                                                         </tr>
@@ -443,30 +442,35 @@
                                             </div>
 
                                             <!-- Modal Exclusão Endereço -->
-                                            <div class="modal fade" id="excluirEndereco" data-bs-backdrop="static"
+                                            <c:forEach var="endereco" items="${clienteLogado.enderecos}">
+                                                <div class="modal fade" id="excluirEndereco${endereco.id}" data-bs-backdrop="static"
                                                 data-bs-keyboard="false" tabindex="-1"
                                                 aria-labelledby="excluirEnderecoLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered modal-sm">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="excluirEnderecoLabel">
-                                                                Excluir</h5>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Tem certeza que deseja excluir esse endereço?
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-secondary">Cancelar</button>
-                                                            <button type="button" id="btnExcluirEndereco"
-                                                                data-bs-dismiss="modal"
-                                                                class="btn btn-danger">Excluir</button>
+                                                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="excluirEnderecoLabel">
+                                                                    Excluir</h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Tem certeza que deseja excluir esse endereço?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button"
+                                                                    class="btn btn-secondary"  data-bs-dismiss="modal"
+                                                                   >Cancelar</button>
+                                                                <form action="../clientes/enderecos" method="POST">
+                                                                    <input type="hidden" value="remover" name="operacao"/>
+                                                                    <input type="hidden" value="${endereco.id}" name="idEndereco"/>
+                                                                    <input type="submit"  class="btn btn-danger" value="Excluir" name="excluir"/>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </c:forEach>
                                         </div>
                                     </div>
                                 </div>
