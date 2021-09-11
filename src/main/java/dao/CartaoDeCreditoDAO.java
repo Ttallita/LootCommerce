@@ -29,7 +29,7 @@ public class CartaoDeCreditoDAO implements IDAO {
                     + " VALUES (?, ?, ?, ?, ?, ?)";
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            pstm.setLong(1, 1);
+            pstm.setLong(1, cartao.getCliente().getUsuario().getId());
             pstm.setString(2, cartao.getNumCartao());
             pstm.setString(3, cartao.getBandeira());
             pstm.setDate(4, Date.valueOf(cartao.getDataValidade()));

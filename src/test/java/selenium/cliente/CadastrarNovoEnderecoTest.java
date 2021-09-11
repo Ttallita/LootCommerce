@@ -62,7 +62,6 @@ public class CadastrarNovoEnderecoTest {
         driver.findElement(By.id("btnCadastrar")).click();
 
         driver.quit();
-
     }
 
 }

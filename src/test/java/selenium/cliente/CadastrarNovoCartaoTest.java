@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/*
+/**
  * @author Tallita
  */
 
@@ -26,8 +26,8 @@ public class CadastrarNovoCartaoTest {
         driver.findElement(By.id("entrar")).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
-        driver.findElement(By.id("email")).sendKeys("exemplo@aaa.com");
-        driver.findElement(By.id("senha")).sendKeys("Aa$123456");
+        driver.findElement(By.id("email")).sendKeys("userexample@gmail.com");
+        driver.findElement(By.id("senha")).sendKeys("Teste123!");
         driver.findElement(By.id("logar")).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("iconUsuario")));

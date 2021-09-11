@@ -58,9 +58,9 @@ public class EnderecoViewHelper implements IViewHelper {
             } else {
                 String tpEndereco = request.getParameter("tpEndereco");
 
-                if(tpEndereco.contains("Cobrança")) {
+                if(tpEndereco.equals("Cobrança")) {
                     endereco.setTipoEndereco(EnderecoType.COBRANCA);
-                } else if(tpEndereco.contains("Entrega")) {
+                } else if(tpEndereco.equals("Entrega")) {
                     endereco.setTipoEndereco(EnderecoType.ENTREGA);
                 } else {
                     endereco.setTipoEndereco(EnderecoType.COBRANCA_ENTREGA);
@@ -112,9 +112,9 @@ public class EnderecoViewHelper implements IViewHelper {
 
             String tpEndereco = request.getParameter("tpEndereco");
 
-            if(tpEndereco.contains("Cobrança")) {
+            if(tpEndereco.equals("Cobrança")) {
                 endereco.setTipoEndereco(EnderecoType.COBRANCA);
-            } else if(tpEndereco.contains("Entrega")) {
+            } else if(tpEndereco.equals("Entrega")) {
                 endereco.setTipoEndereco(EnderecoType.ENTREGA);
             } else {
                 endereco.setTipoEndereco(EnderecoType.COBRANCA_ENTREGA);

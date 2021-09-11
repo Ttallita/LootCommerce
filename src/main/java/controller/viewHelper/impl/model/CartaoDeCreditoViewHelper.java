@@ -3,7 +3,9 @@ package controller.viewHelper.impl.model;
 import controller.viewHelper.IViewHelper;
 import model.EntidadeDominio;
 import model.Result;
+import model.Usuario;
 import model.cliente.CartaoDeCredito;
+import model.cliente.Cliente;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -31,6 +33,12 @@ public class CartaoDeCreditoViewHelper implements IViewHelper {
             cartao.setCodigo(codigoCartao);
             cartao.setNomeImpressoCartao(nomeCartao);
             cartao.setDataValidade(dtValidade);
+
+            Cliente cliente = new Cliente();
+            Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
+            cliente.setUsuario(usuario);
+
+            cartao.setCliente(cliente);
 
             return cartao;
         }
