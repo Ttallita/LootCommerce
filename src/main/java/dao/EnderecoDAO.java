@@ -60,7 +60,41 @@ public class EnderecoDAO implements IDAO{
 
     @Override
     public boolean atualizar(EntidadeDominio entidade) {
-        return false;
+        Endereco endereco = (Endereco) entidade;
+        Conexao conexao = new Conexao();
+
+        try {
+            conn = conexao.getConexao();
+
+            String sql = "UPDATE enderecos " +
+                    "SET end_tp = ?, end_nome = ?, end_tp_logradouro = ?, end_logradouro = ?, end_num = ?, end_bairro = ?, end_cep = ?, end_cidade = ?, end_estado = ?, end_pais = ?, end_observacao = ? " +
+                    "WHERE end_id = ?";
+
+            PreparedStatement pstm = conn.prepareStatement(sql);
+
+            pstm.setString(1, endereco.getTipoEndereco().toString());
+            pstm.setString(2, endereco.getApelido());
+            pstm.setString(3, endereco.getTipoLogradouro());
+            pstm.setString(4, endereco.getLogradouro());
+            pstm.setInt(5, endereco.getNumero());
+            pstm.setString(6, endereco.getBairro());
+            pstm.setString(7, endereco.getCep());
+            pstm.setString(8, endereco.getCidade());
+            pstm.setString(9, endereco.getEstado());
+            pstm.setString(10, endereco.getPais());
+            pstm.setString(11, endereco.getObservacoes());
+            pstm.setLong(12, endereco.getId());
+
+            pstm.execute();
+
+            return true;
+        }catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
+        }finally {
+            conexao.fecharConexao(conn);
+        }
+
     }
 
     @Override

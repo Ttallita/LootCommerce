@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page buffer="64kb" %>
 <html>
     <head>
         <meta charset="UTF-8" />
@@ -252,7 +253,9 @@
                                                             <td>${endereco.pais}</td>
                                                             <td>${endereco.tipoEndereco}</td>
                                                             <td>
-                                                                <span class="material-icons">
+                                                                <span class="material-icons"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#editarEndereco${endereco.id}">
                                                                     mode_edit
                                                                 </span>
                                                             </td>
@@ -267,7 +270,7 @@
                                                 </tbody>
                                             </table>
 
-                                            <!-- Modal Cadastro/Edição Endereços-->
+                                            <!-- Modal Cadastro -->
                                             <div class="modal fade" id="cadastrarEndereco" data-bs-backdrop="static"
                                                 data-bs-keyboard="false" tabindex="-1"
                                                 aria-labelledby="cadastrarEnderecoLabel" aria-hidden="true">
@@ -296,8 +299,6 @@
                                                                                 <option>Outro</option>
                                                                             </select>
                                                                             <label>Tipo de residência</label>
-                                                                            <div class="invalid-feedback">Selecione
-                                                                                um tipo de residência válido.</div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-6">
@@ -308,8 +309,6 @@
                                                                             <label for="tpLogradouro"
                                                                                 class="form-label">Tipo de
                                                                                 logradouro</label>
-                                                                            <div class="invalid-feedback">Insira um
-                                                                                tipo de logradouro.</div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-5">
@@ -319,8 +318,6 @@
                                                                                 required>
                                                                             <label for="logradouro"
                                                                                 class="form-label">Logradouro</label>
-                                                                            <div class="invalid-feedback">Insira o
-                                                                                logradouro.</div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-3">
@@ -329,8 +326,6 @@
                                                                                 id="numero" name="numero" required>
                                                                             <label for="numero"
                                                                                 class="form-label">Número</label>
-                                                                            <div class="invalid-feedback">Insira o
-                                                                                número. </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-4">
@@ -339,8 +334,6 @@
                                                                                 id="bairro" name="bairro" required>
                                                                             <label for="bairro"
                                                                                 class="form-label">Bairro</label>
-                                                                            <div class="invalid-feedback">Insira um
-                                                                                bairro.</div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-4">
@@ -349,8 +342,6 @@
                                                                                 id="cep" name="cep" required="">
                                                                             <label for="cep"
                                                                                 class="form-label">CEP</label>
-                                                                            <div class="invalid-feedback">Insira um
-                                                                                cep válido.</div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-4">
@@ -361,8 +352,6 @@
                                                                                 <option>São Paulo</option>
                                                                             </select>
                                                                             <label>Cidade</label>
-                                                                            <div class="invalid-feedback">Selecione
-                                                                                uma cidade. </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-4">
@@ -373,8 +362,6 @@
                                                                                 <option>São Paulo</option>
                                                                             </select>
                                                                             <label>Estado</label>
-                                                                            <div class="invalid-feedback">Selecione
-                                                                                um estado.</div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-4">
@@ -387,8 +374,6 @@
                                                                                 <option>Brasil</option>
                                                                             </select>
                                                                             <label>País</label>
-                                                                            <div class="invalid-feedback">Selecione
-                                                                                um país. </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-8">
@@ -396,7 +381,6 @@
                                                                             <input type="text" class="form-control"
                                                                                 id="apelido" name="apelido">
                                                                             <label for="apelido" class="form-label">Apelido do endereço</label>
-
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-md-8">
@@ -420,8 +404,6 @@
                                                                                 <option>Cobrança/Entrega</option>
                                                                             </select>
                                                                             <label>Tipo de Endereço</label>
-                                                                            <div class="invalid-feedback">Selecione
-                                                                                um tipo de endereço.</div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -432,7 +414,8 @@
                                                                         data-bs-dismiss="modal">
                                                                         Cancelar
                                                                     </button>
-                                                                    <button type="submit" id="btnCadastrar"
+                                                                    <button type="submit" 
+                                                                        id="btnCadastrar"
                                                                         class="btn btn-success">Cadastrar</button>
                                                                 </div>
                                                             </form>
@@ -440,6 +423,172 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            
+                                            <!-- Modal Editar Endereço-->
+                                            <c:forEach var="endereco" items="${clienteLogado.enderecos}">
+                                                <div class="modal fade" id="editarEndereco${endereco.id}" data-bs-backdrop="static"
+                                                data-bs-keyboard="false" tabindex="-1"
+                                                aria-labelledby="editarEnderecoLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="cadastrarEnderecoLabel">
+                                                                    Editar</h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form class="needs-validation"
+                                                                    action="../clientes/enderecos" method="POST"
+                                                                    novalidate>
+                                                                    <input type="hidden" name="operacao" value="atualizar">
+                                                                    <div class="row g-3 mb-3">
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-floating">
+                                                                                <select class="form-select"
+                                                                                    id="tpResidencia"
+                                                                                    name="tpResidencia">
+                                                                                    <option value="">Selecione</option>
+                                                                                    <option>Casa</option>
+                                                                                    <option>Apartamento</option>
+                                                                                    <option>Outro</option>
+                                                                                </select>
+                                                                                <label>Tipo de residência</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-floating">
+                                                                                <input type="text" 
+                                                                                    class="form-control"
+                                                                                    id="tpLogradouro"
+                                                                                    name="tpLogradouro"
+                                                                                    value="${endereco.tipoLogradouro}">
+                                                                                <label for="tpLogradouro"
+                                                                                    class="form-label">Tipo de
+                                                                                    logradouro</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-5">
+                                                                            <div class="form-floating">
+                                                                                <input type="text" class="form-control"
+                                                                                    id="logradouro" name="logradouro"
+                                                                                    value="${endereco.logradouro}">
+                                                                                <label for="logradouro"
+                                                                                    class="form-label">Logradouro</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-3">
+                                                                            <div class="form-floating">
+                                                                                <input type="text" class="form-control"
+                                                                                    id="numero" name="numero" 
+                                                                                    value="${endereco.numero}">
+                                                                                <label for="numero"
+                                                                                    class="form-label">Número</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-floating">
+                                                                                <input type="text" class="form-control"
+                                                                                    id="bairro" name="bairro" 
+                                                                                    value="${endereco.bairro}">
+                                                                                <label for="bairro"
+                                                                                    class="form-label">Bairro</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-floating">
+                                                                                <input type="text" class="form-control"
+                                                                                    id="cep" name="cep" 
+                                                                                    value="${endereco.cep}">
+                                                                                <label for="cep"
+                                                                                    class="form-label">CEP</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-floating">
+                                                                                <select class="form-select" id="cidade"
+                                                                                    name="cidade" required>
+                                                                                    <option value="">Selecione</option>
+                                                                                    <option>São Paulo</option>
+                                                                                </select>
+                                                                                <label>Cidade</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-floating">
+                                                                                <select class="form-select" id="estado"
+                                                                                    name="estado" required>
+                                                                                    <option value="">Selecione</option>
+                                                                                    <option>São Paulo</option>
+                                                                                </select>
+                                                                                <label>Estado</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-floating">
+                                                                                <label for="pais"
+                                                                                    class="form-label"></label>
+                                                                                <select class="form-select" id="pais"
+                                                                                    name="pais" required>
+                                                                                    <option value="">Selecione</option>
+                                                                                    <option>Brasil</option>
+                                                                                </select>
+                                                                                <label>País</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8">
+                                                                            <div class="form-floating">
+                                                                                <input type="text" class="form-control"
+                                                                                    id="apelido" name="apelido"
+                                                                                    value="${endereco.apelido}">
+                                                                                <label for="apelido" class="form-label">Apelido do endereço</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-8">
+                                                                            <div class="form-floating">
+                                                                                <input type="text" class="form-control"
+                                                                                    id="observacao" name="observacao"
+                                                                                    value="${endereco.observacoes}">
+                                                                                <label for="observacao"
+                                                                                    class="form-label">Observação
+                                                                                    <span
+                                                                                        class="text-muted">(Opcional)</span></label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="form-floating">
+                                                                                <select class="form-select"
+                                                                                    id="tpEndereco" name="tpEndereco"
+                                                                                    required>
+                                                                                    <option value="">Selecione</option>
+                                                                                    <option>Cobrança</option>
+                                                                                    <option>Entrega</option>
+                                                                                    <option>Cobrança/Entrega</option>
+                                                                                </select>
+                                                                                <label>Tipo de Endereço</label>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button"
+                                                                            id="btnCancelarEnderecoNovo"
+                                                                            class="btn btn-secondary"
+                                                                            data-bs-dismiss="modal">
+                                                                            Cancelar
+                                                                        </button>
+                                                                        <form action="../clientes/enderecos" method="POST">
+                                                                            <input type="hidden" value="atualizar" name="operacao"/>
+                                                                            <input type="hidden" value="${endereco.id}" name="idEndereco"/>
+                                                                            <input type="submit"  class="btn btn-primary" value="Editar" name="atualizar"/>
+                                                                        </form>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </c:forEach>
+
 
                                             <!-- Modal Exclusão Endereço -->
                                             <c:forEach var="endereco" items="${clienteLogado.enderecos}">
