@@ -37,20 +37,25 @@ public class LoginViewHelper implements IViewHelper {
         String operacao = request.getParameter("operacao");
 
         if(operacao.equals("login")) {
+            if(result.getMsg() == null) {
+                List<EntidadeDominio> entidades = result.getEntidades();
 
-            List<EntidadeDominio> entidades = result.getEntidades();
+                if(entidades.size() > 0) {
+                    Usuario usuario = (Usuario) entidades.get(0);
 
-            if(entidades.size() > 0) {
-                Usuario usuario = (Usuario) entidades.get(0);
+                    request.getSession().setAttribute("usuarioLogado", usuario);
 
-                request.getSession().setAttribute("usuarioLogado", usuario);
+                    if(usuario.getTipoUsuario().equals(UsuarioType.CLIENTE)) {
+                        response.sendRedirect("index.jsp");
+                    }
 
-                if(usuario.getTipoUsuario().equals(UsuarioType.CLIENTE)) {
-                    response.sendRedirect("index.jsp");
+                } else {
+                    request.setAttribute("mensagem", "Email e/ou senha incorretos");
+                    request.getRequestDispatcher("login.jsp").forward(request, response);
                 }
-
             } else {
-                request.setAttribute("mensagem", "Email e/ou senha incorretos");
+                String msgErros[] = result.getMsg().split("\n");
+                request.setAttribute("mensagem", msgErros);
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         }

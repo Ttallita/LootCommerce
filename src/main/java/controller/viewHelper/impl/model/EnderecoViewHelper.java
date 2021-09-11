@@ -3,11 +3,15 @@ package controller.viewHelper.impl.model;
 import controller.viewHelper.IViewHelper;
 import model.EntidadeDominio;
 import model.Result;
+import model.Usuario;
+import model.cliente.Cliente;
 import model.cliente.Endereco;
 import model.cliente.EnderecoType;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 public class EnderecoViewHelper implements IViewHelper {
 
@@ -61,6 +65,15 @@ public class EnderecoViewHelper implements IViewHelper {
                 }
             }
 
+
+            if(request.getSession().getAttribute("usuarioLogado") != null) {
+                Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
+                Cliente cliente = new Cliente();
+                cliente.setUsuario(usuario);
+                cliente.setId(usuario.getId());
+                endereco.setCliente(cliente);
+            }
+
             return endereco;
         }
 
@@ -68,7 +81,13 @@ public class EnderecoViewHelper implements IViewHelper {
     }
 
     @Override
-    public void setView(Result result, HttpServletRequest request, HttpServletResponse httpResponse) {
+    public void setView(Result result, HttpServletRequest request, HttpServletResponse httpResponse) throws IOException, ServletException {
+        String operacao = request.getParameter("operacao");
 
+        if(operacao.equals("salvar")) {
+            request.setAttribute("aba", "enderecos");
+
+            httpResponse.sendRedirect("cliente/perfil.jsp?operacao=listar");
+        }
     }
 }

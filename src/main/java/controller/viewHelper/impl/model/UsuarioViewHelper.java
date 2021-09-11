@@ -1,15 +1,18 @@
 package controller.viewHelper.impl.model;
 
 import controller.viewHelper.IViewHelper;
+import dao.ClienteDAO;
 import model.EntidadeDominio;
 import model.Result;
 import model.Usuario;
 import model.UsuarioType;
+import model.cliente.Cliente;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 public class UsuarioViewHelper implements IViewHelper {
 
@@ -57,10 +60,23 @@ public class UsuarioViewHelper implements IViewHelper {
         if(operacao.equals("atualizar")) {
             Usuario usuario = (Usuario) result.getEntidades().get(0);
 
-            if(result.getMsg() == null) {
-                request.setAttribute("usuarioLogado", usuario);
+            Cliente cliente = new Cliente();
+            cliente.setUsuario(usuario);
 
-                httpResponse.sendRedirect("/LootCommerce/clientes/perfil?operacao=listar");
+            List<EntidadeDominio> entidade  = new ClienteDAO().listar(cliente, "listar");
+            cliente = (Cliente) entidade.get(0);
+
+            request.setAttribute("clienteLogado", cliente);
+            request.setAttribute("aba", "senha");
+
+            if(result.getMsg() == null) {
+                request.getSession().setAttribute("usuarioLogado", usuario);
+                request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, httpResponse);
+            } else {
+                String msgErro[] = result.getMsg().split("\n");
+
+                request.setAttribute("mensagem", msgErro);
+                request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, httpResponse);
             }
         }
     }

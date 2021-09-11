@@ -82,6 +82,8 @@ public class Controller extends HttpServlet{
 
         IViewHelper viewHelper = viewHelpers.get(req.getRequestURI());
 
+        System.out.println(req.getRequestURI());
+
         EntidadeDominio entidade = viewHelper.getEntidade(req);
 
         Result result;

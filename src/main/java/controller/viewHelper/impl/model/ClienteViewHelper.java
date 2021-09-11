@@ -145,8 +145,7 @@ public class ClienteViewHelper implements IViewHelper {
 
             request.setAttribute("clienteLogado", cliente);
 
-           response.sendRedirect("/LootCommerce/clientes/perfil?operacao=listar");
-
+            response.sendRedirect("/LootCommerce/clientes/perfil?operacao=listar");
         }
     }
 }

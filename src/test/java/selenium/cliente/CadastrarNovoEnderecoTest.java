@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/*
+/**
  * @author Tallita
  */
 
@@ -26,8 +26,8 @@ public class CadastrarNovoEnderecoTest {
         driver.findElement(By.id("entrar")).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
-        driver.findElement(By.id("email")).sendKeys("exemplo@aaa.com");
-        driver.findElement(By.id("senha")).sendKeys("Aa$123456");
+        driver.findElement(By.id("email")).sendKeys("andre.gomes7110@gmail.com");
+        driver.findElement(By.id("senha")).sendKeys("Hitagi710!");
         driver.findElement(By.id("logar")).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("iconUsuario")));
@@ -55,6 +55,7 @@ public class CadastrarNovoEnderecoTest {
         selectEstado.selectByVisibleText("São Paulo");
         Select selectPais = new Select(driver.findElement(By.id("pais")));
         selectPais.selectByVisibleText("Brasil");
+        driver.findElement(By.id("apelido")).sendKeys("Minha casa");
         driver.findElement(By.id("observacao")).sendKeys("Próximo a fábrica de sorvete Solvente");
         Select selectTpEndereco = new Select(driver.findElement(By.id("tpEndereco")));
         selectTpEndereco.selectByVisibleText("Entrega");

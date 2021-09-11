@@ -59,7 +59,7 @@ public class Facade implements IFacade {
         regraDeNegocioAtualizarCliente.add(verificarCpfStrategy);
 
         regraDeNegocioAtualizarUsuario.add(verificarEmailStrategy);
-        regraDeNegocioSalvarCliente.add(verificarSenhaStrategy);
+        regraDeNegocioAtualizarUsuario.add(verificarSenhaStrategy);
 
         //Mapa das regras de négocio do cliente por operação
         Map<String, List<IStrategy>> regrasDeNegocioCliente = new HashMap<>();
@@ -67,6 +67,7 @@ public class Facade implements IFacade {
         regrasDeNegocioCliente.put("atualizar", regraDeNegocioAtualizarCliente);
 
         Map<String, List<IStrategy>> regrasDeNegocioUsuario = new HashMap<>();
+        regrasDeNegocioUsuario.put("atualizar", regraDeNegocioAtualizarUsuario);
 
         regrasDeNegocioMap.put(Cliente.class.getName(), regrasDeNegocioCliente);
         regrasDeNegocioMap.put(Usuario.class.getName(), regrasDeNegocioUsuario);
@@ -149,7 +150,7 @@ public class Facade implements IFacade {
 
         return result;
     }
-
+    
     public String validarRegrasDeNegocio(EntidadeDominio entidadeDominio, String operacao) {
         String nomeClasse = entidadeDominio.getClass().getName();
 

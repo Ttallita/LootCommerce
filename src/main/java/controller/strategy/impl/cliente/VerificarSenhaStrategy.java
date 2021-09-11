@@ -23,6 +23,7 @@ public class VerificarSenhaStrategy implements IStrategy {
         } else  {
             Usuario usuario = (Usuario) entidade;
             senha = usuario.getSenha();
+            senhaConfirmacao = usuario.getConfirmarSenha();
         }
 
         String caracteresEspeciais = "!@#$%&*()'+,-./:;<=>?[]^_`{|}";
