@@ -18,7 +18,7 @@ public class CadastrarEnderecoExcecaoTest {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
-        driver.get("http://localhost:8080/Ecommerce/adm/gerenciamento.jsp");
+        driver.get("http://localhost:8080/LootCommerce/adm/gerenciamento.jsp");
         driver.manage().window().maximize();
 
         Thread.sleep(1000);

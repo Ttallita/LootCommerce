@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>' />
   <link rel="stylesheet" type="text/css"
     href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
-  <link rel="stylesheet" type="text/css" href='/Ecommerce/assets/css/style.css' />
+  <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/style.css' />
 </head>
 
 <body class="bg-default">
@@ -20,7 +20,7 @@
     <main>
       <div class="row mt-4">
         <div class="col-md-1">
-          <a type="button" id="voltarGerencia" class="btn btn-primary" href="/Ecommerce/adm/gerenciamento.jsp">
+          <a type="button" id="voltarGerencia" class="btn btn-primary" href="/LootCommerce/adm/gerenciamento.jsp">
               <span class="material-icons">keyboard_backspace</span></a>
         </div>
         <div class="col-lg-9">
@@ -208,7 +208,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <form class="needs-validation" action="/Ecommerce/admin/enderecos" method="POST" novalidate="">
+                        <form class="needs-validation" action="/LootCommerce/admin/enderecos" method="POST" novalidate="">
                           <input type="hidden" name="operacao" value="salvar">
                           <div class="row g-3 mb-3">
                             <div class="col-md-6">
@@ -390,7 +390,7 @@
                         <h5 class="modal-title" id="cadastrarCartaoLabel">Cadastrar</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
-                      <form class="needs-validation" action="/Ecommerce/admin/cartoes" method="POST" novalidate="">
+                      <form class="needs-validation" action="/LootCommerce/admin/cartoes" method="POST" novalidate="">
                         <input type="hidden" name="operacao" value="salvar">
                         <div class="modal-body">
                             <div class="row g-3 mb-3">

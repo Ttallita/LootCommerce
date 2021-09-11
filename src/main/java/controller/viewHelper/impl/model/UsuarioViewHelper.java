@@ -60,7 +60,7 @@ public class UsuarioViewHelper implements IViewHelper {
             if(result.getMsg() == null) {
                 request.setAttribute("usuarioLogado", usuario);
 
-                httpResponse.sendRedirect("/Ecommerce/clientes/perfil?operacao=listar");
+                httpResponse.sendRedirect("/LootCommerce/clientes/perfil?operacao=listar");
             }
         }
     }

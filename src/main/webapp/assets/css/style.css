@@ -85,12 +85,12 @@ input.invalid {
     display:block!important
 }
 .bg-login-image{
-    background:url(/Ecommerce/assets/img/login_miku.png);
+    background:url(/LootCommerce/assets/img/login_miku.png);
     background-position:center;
     background-size:cover
 }
 .bg-cadastro-image{
-    background:url(/Ecommerce/assets/img/cadastro_kong.png);
+    background:url(/LootCommerce/assets/img/cadastro_kong.png);
     background-position:center;
     background-size:cover
 }

@@ -9,7 +9,7 @@
     <title>Gerenciamento</title>
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>' />
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
-    <link rel="stylesheet" type="text/css" href='/Ecommerce/assets/css/style.css' />
+    <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/style.css' />
 </head>
 
 <body class="bg-default">
@@ -166,7 +166,7 @@
                                                                     <ul class="dropdown-menu"
                                                                         aria-labelledby="dropdownMenuButton1">
                                                                         <li><a class="dropdown-item" id="gerenciarLink"
-                                                                                href="/Ecommerce/admin/cliente?operacao=listar">Gerenciar</a>
+                                                                                href="/LootCommerce/admin/cliente?operacao=listar">Gerenciar</a>
                                                                         </li>
                                                                         <li>
                                                                             <hr class="dropdown-divider link-light">
@@ -196,7 +196,7 @@
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form class="needs-validation w-75" id="form-cadastro" action="/Ecommerce/admin/clientes" method="POST" novalidate>
+                                                        <form class="needs-validation w-75" id="form-cadastro" action="/LootCommerce/admin/clientes" method="POST" novalidate>
                                                             <input type="hidden" name="operacao" value="salvar">
                                                             <h1 class="h3 mb-3 fw-normal text-center">Novo Cliente</h1>
                                                             <div class="row g-3 mb-3">

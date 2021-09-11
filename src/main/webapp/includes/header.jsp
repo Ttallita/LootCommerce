@@ -6,8 +6,8 @@
 
     <div class="navbar">
       <div class="container">
-        <a href="/Ecommerce/index.jsp">
-          <img src="/Ecommerce/assets/img/logo_header.png" max-height="100" alt="fanLoot" width="130">
+        <a href="/LootCommerce/index.jsp">
+          <img src="/LootCommerce/assets/img/logo_header.png" max-height="100" alt="fanLoot" width="130">
         </a>
 
         <div class="col-lg-6">
@@ -24,14 +24,14 @@
                 Meus dados
             </a>
             <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-              <li><a id="perfil" class="dropdown-item link-light" href="/Ecommerce/clientes/perfil?operacao=listar">Perfil</a></li>
+              <li><a id="perfil" class="dropdown-item link-light" href="/LootCommerce/clientes/perfil?operacao=listar">Perfil</a></li>
               <li><a class="dropdown-item link-light" href="#">Endereços</a></li>
               <li><a class="dropdown-item link-light" href="#">Cartões</a></li>
               <li>
                 <hr class="dropdown-divider link-light">
               </li>
               <li>
-                <form action="/Ecommerce/logout">
+                <form action="/LootCommerce/logout">
                     <input type="submit" class="dropdown-item link-light" id="sair" value="Sair"/>
                 </form>
               </li>

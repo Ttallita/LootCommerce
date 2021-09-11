@@ -18,7 +18,7 @@ public class AlterarSenhaTest {
         WebDriver driver = new ChromeDriver();
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        driver.get("http://localhost:8080/Ecommerce/cliente/perfil.jsp");
+        driver.get("http://localhost:8080/LootCommerce/cliente/perfil.jsp");
         driver.manage().window().maximize();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("v-pills-alterar-senha-tab")));

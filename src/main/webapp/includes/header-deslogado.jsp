@@ -7,7 +7,7 @@
     <div class="navbar">
       <div class="container">
         <a href="index.html">
-          <img src="/Ecommerce/assets/img/logo_header.png" max-height="100" alt="fanLoot" width="130">
+          <img src="/LootCommerce/assets/img/logo_header.png" max-height="100" alt="fanLoot" width="130">
         </a>
 
         <div class="col-lg-6">

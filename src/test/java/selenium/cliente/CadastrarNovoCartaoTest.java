@@ -19,7 +19,7 @@ public class CadastrarNovoCartaoTest {
         WebDriver driver = new ChromeDriver();
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        driver.get("http://localhost:8080/Ecommerce/");
+        driver.get("http://localhost:8080/LootCommerce/");
         driver.manage().window().maximize();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("entrar")));

@@ -44,10 +44,10 @@
                   <div class="col-lg-6">
                     <div class="p-5">
                       <main>
-                        <form class="needs-validation" id="form-cadastro" action="/Ecommerce/cadastro" method="POST"
+                        <form class="needs-validation" id="form-cadastro" action="/LootCommerce/cadastro" method="POST"
                           novalidate="">
                           <input type="hidden" name="operacao" value="salvar">
-                          <img class="mb-4 text-center" src="/Ecommerce/assets/img/logo_fanloot.png" alt=""
+                          <img class="mb-4 text-center" src="/LootCommerce/assets/img/logo_fanloot.png" alt=""
                             max-height="100" width="100">
                           <h1 class="h3 mb-3 fw-normal text-center">Cadastrar</h1>
 

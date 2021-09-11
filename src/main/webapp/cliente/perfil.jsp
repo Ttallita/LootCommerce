@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>' />
     <link rel="stylesheet" type="text/css"
         href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
-    <link rel="stylesheet" type="text/css" href='/Ecommerce/assets/css/style.css' />
+    <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/style.css' />
 </head>
 
 <body class="bg-default">
@@ -53,7 +53,7 @@
                                 <div class="shadow">
                                     <div class="card-body">
                                         <h4 class="mb-3">Conta</h4>
-                                        <form class="needs-validation text-center" action="/Ecommerce/clientes/perfil" method="POST" novalidate="">
+                                        <form class="needs-validation text-center" action="/LootCommerce/clientes/perfil" method="POST" novalidate="">
                                             <input type="hidden" name="operacao" value="atualizar">
                                             <div class="row g-3">
 
@@ -139,7 +139,7 @@
                                     <div class="card-body">
                                         <h4 class="mb-3">Alterar senha</h4>
 
-                                        <form action="/Ecommerce/clientes/perfil/editarSenha" method="POST">
+                                        <form action="/LootCommerce/clientes/perfil/editarSenha" method="POST">
                                             <input type="hidden" name="operacao" value="atualizar">
                                             <div class="col-6 ">
                                                 <div class="input-group form-floating">
@@ -237,7 +237,7 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form class="needs-validation" action="/Ecommerce/admin/enderecos" method="POST" novalidate>
+                                                        <form class="needs-validation" action="/LootCommerce/admin/enderecos" method="POST" novalidate>
                                                             <input type="hidden" name="operacao" value="salvar">
                                                             <div class="row g-3 mb-3">
                                                                 <div class="col-md-6">
@@ -435,7 +435,7 @@
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form class="needs-validation" action="/Ecommerce/clientes/perfil/cartoes" method="POST" novalidate>
+                                                        <form class="needs-validation" action="/LootCommerce/clientes/perfil/cartoes" method="POST" novalidate>
                                                             <input type="hidden" name="operacao" value="salvar">
                                                             <div class="row g-3 mb-3">
                                                                 <div class="col-md-6">

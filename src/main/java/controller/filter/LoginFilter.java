@@ -19,7 +19,7 @@ public class LoginFilter implements Filter {
         Usuario usuarioLogado = (Usuario) req.getSession().getAttribute("usuarioLogado");
 
         if(usuarioLogado != null) {
-            res.sendRedirect("/Ecommerce/index.jsp");
+            res.sendRedirect("/LootCommerce/index.jsp");
 
             return;
         }

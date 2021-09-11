@@ -84,7 +84,7 @@ public class ClienteAdminViewHelper implements IViewHelper{
         if(operacao.equals("salvar")) {
 
         } else if(operacao.equals("listar")) {
-//            if(request.getRequestURI().toString().equals("/Ecommerce/admin/cliente")){
+//            if(request.getRequestURI().toString().equals("/LootCommerce/admin/cliente")){
 //                EntidadeDominio cliente = new Cliente();
 //                //EntidadeDominio clienteConsultado = new ClienteDAO().listar(cliente, "listar", 1);
 //

@@ -16,11 +16,11 @@ public class LoginTest {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
-        driver.get("http://localhost:8080/Ecommerce");
+        driver.get("http://localhost:8080/LootCommerce");
         driver.manage().window().maximize();
 
         Thread.sleep(2000);
-        driver.navigate().to("http://localhost:8080/Ecommerce/login.jsp");
+        driver.navigate().to("http://localhost:8080/LootCommerce/login.jsp");
 
         WebElement campoEmail = driver.findElement(By.id("email"));
         WebElement campoSenha = driver.findElement(By.id("senha"));

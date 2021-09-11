@@ -39,24 +39,24 @@ public class Controller extends HttpServlet{
 
         viewHelpers = new HashMap<>();
 
-        viewHelpers.put("/Ecommerce/cadastro", new ClienteViewHelper());
-        viewHelpers.put("/Ecommerce/login", new LoginViewHelper());
+        viewHelpers.put("/LootCommerce/cadastro", new ClienteViewHelper());
+        viewHelpers.put("/LootCommerce/login", new LoginViewHelper());
 
-        viewHelpers.put("/Ecommerce/clientes/perfil", new ClienteViewHelper());
-        viewHelpers.put("/Ecommerce/clientes/perfil/editarSenha", new UsuarioViewHelper());
-        viewHelpers.put("/Ecommerce/clientes/perfil/cartoes", new CartaoDeCreditoViewHelper());
-        viewHelpers.put("/Ecommerce/clientes/enderecos", new EnderecoViewHelper());
+        viewHelpers.put("/LootCommerce/clientes/perfil", new ClienteViewHelper());
+        viewHelpers.put("/LootCommerce/clientes/perfil/editarSenha", new UsuarioViewHelper());
+        viewHelpers.put("/LootCommerce/clientes/perfil/cartoes", new CartaoDeCreditoViewHelper());
+        viewHelpers.put("/LootCommerce/clientes/enderecos", new EnderecoViewHelper());
 
-        viewHelpers.put("/Ecommerce/admin/clientes", new ClienteAdminViewHelper());
-        viewHelpers.put("/Ecommerce/admin/cliente", new ClienteAdminViewHelper());
-        viewHelpers.put("/Ecommerce/admin/cartoes", new CartaoDeCreditoAdminViewHelper());
-        viewHelpers.put("/Ecommerce/admin/enderecos", new EnderecoAdminViewHelper());
+        viewHelpers.put("/LootCommerce/admin/clientes", new ClienteAdminViewHelper());
+        viewHelpers.put("/LootCommerce/admin/cliente", new ClienteAdminViewHelper());
+        viewHelpers.put("/LootCommerce/admin/cartoes", new CartaoDeCreditoAdminViewHelper());
+        viewHelpers.put("/LootCommerce/admin/enderecos", new EnderecoAdminViewHelper());
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        if(req.getRequestURI().equals("/Ecommerce/logout")) {
+        if(req.getRequestURI().equals("/LootCommerce/logout")) {
             if(req.getSession().getAttribute("usuarioLogado") != null) {
                 req.getSession().invalidate();
             }

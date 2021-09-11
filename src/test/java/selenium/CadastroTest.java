@@ -18,11 +18,11 @@ public class CadastroTest {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
-        driver.get("http://localhost:8080/Ecommerce");
+        driver.get("http://localhost:8080/LootCommerce");
         driver.manage().window().maximize();
 
         Thread.sleep(2000);
-        driver.navigate().to("http://localhost:8080/Ecommerce/cadastro.jsp");
+        driver.navigate().to("http://localhost:8080/LootCommerce/cadastro.jsp");
 
         String email = "andre.gomes7110@gmail.com";
         String senha = "Hitagi710!";

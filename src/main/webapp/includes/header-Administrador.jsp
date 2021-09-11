@@ -1,8 +1,8 @@
 <header class="p-3 bg-dark ">
     <div class="container" >
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <a href="/Ecommerce/">
-                <img src="/Ecommerce/assets/img/logo_header.png" alt="" max-height="100" width="130">
+            <a href="/LootCommerce/">
+                <img src="/LootCommerce/assets/img/logo_header.png" alt="" max-height="100" width="130">
             </a>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <!-- <li>
@@ -26,11 +26,11 @@
                     <li><a class="dropdown-item link-light" href="#">Perfil</a></li>
 
                     <!-- mostra apenas quando usuario for Administrador -->
-                    <li><a class="dropdown-item link-light" href="/Ecommerce/adm/gerenciamento.jsp">Gerenciamento</a></li>
+                    <li><a class="dropdown-item link-light" href="/LootCommerce/adm/gerenciamento.jsp">Gerenciamento</a></li>
                     <li><hr class="dropdown-divider link-light"></li>
 
                     <li>
-                        <form action="/Ecommerce/logout">
+                        <form action="/LootCommerce/logout">
                             <input type="submit" class="dropdown-item link-light" value="Sair"/>
                         </form>
                     </li>

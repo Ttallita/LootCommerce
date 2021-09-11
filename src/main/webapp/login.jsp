@@ -39,9 +39,9 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <main>
-                                      <form class="text-center" action="/Ecommerce/login" method="POST">
+                                      <form class="text-center" action="/LootCommerce/login" method="POST">
                                         <input type="hidden" name="operacao" value="login"/>
-                                        <img class="mb-4" src="/Ecommerce/assets/img/logo_fanloot.png" alt="" max-height="100" width="100">
+                                        <img class="mb-4" src="/LootCommerce/assets/img/logo_fanloot.png" alt="" max-height="100" width="100">
                                         <h1 class="h3 mb-3 fw-normal">Login</h1>
                                         <div class="form-floating mb-2">
                                           <input type="email" class="form-control" id="email" name="email" placeholder="">
