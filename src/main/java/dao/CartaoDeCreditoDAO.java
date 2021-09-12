@@ -49,14 +49,30 @@ public class CartaoDeCreditoDAO implements IDAO {
 
     @Override
     public boolean atualizar(EntidadeDominio entidade) {
-        // TODO Auto-generated method stub
         return false;
     }
 
     @Override
     public boolean deletar(EntidadeDominio entidade) {
-        // TODO Auto-generated method stub
-        return false;
+        CartaoDeCredito cartaoDeCredito = (CartaoDeCredito) entidade;
+        Conexao conexao = new Conexao();
+        try {
+            conn = conexao.getConexao();
+
+            String sql = "DELETE FROM cartoes WHERE crt_id = ?";
+
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setLong(1, cartaoDeCredito.getId());
+
+            pstm.execute();
+
+            return true;
+        }catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
+        }finally {
+            conexao.fecharConexao(conn);
+        }
     }
 
     @Override

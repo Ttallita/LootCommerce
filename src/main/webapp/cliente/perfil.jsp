@@ -260,8 +260,9 @@
                                                                 </span>
                                                             </td>
                                                             <td>
-                                                                <span class="material-icons text-danger" data-bs-toggle="modal"
-                                                                data-bs-target="#excluirEndereco${endereco.id}">
+                                                                <span class="material-icons text-danger" 
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#excluirEndereco${endereco.id}">
                                                                         delete
                                                                 </span>
                                                             </td>
@@ -663,10 +664,10 @@
                                                                 <span class="material-icons"> mode_edit</span>
                                                             </td>
                                                             <td>
-                                                                <span class="material-icons text-danger">
-                                                                    <span data-bs-toggle="modal"
-                                                                        data-bs-target="#excluirEndereco"
-                                                                        id="deletarEndereco">delete</span>
+                                                                <span class="material-icons text-danger"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#excluirCartao${cartao.id}">
+                                                                   delete
                                                                 </span>
                                                             </td>
                                                         </tr>
@@ -674,6 +675,7 @@
                                                 </tbody>
                                             </table>
 
+                                            
                                             <!-- Modal Cadastro/Edição Cartão -->
                                             <div class="modal fade" id="cadastrarCartao" data-bs-backdrop="static"
                                                 data-bs-keyboard="false" tabindex="-1"
@@ -768,30 +770,35 @@
                                             </div>
 
                                             <!-- Modal Excluir Cartão -->
-                                            <div class="modal fade" id="excluirCartao" data-bs-backdrop="static"
-                                                data-bs-keyboard="false" tabindex="-1"
-                                                aria-labelledby="excluirCartaoLabel" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered modal-sm">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="excluirCartaoLabel">Excluir
-                                                            </h5>
-                                                            <button type="button" class="btn-close"
-                                                                data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            Tem certeza que deseja excluir esse cartão?
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button"
-                                                                class="btn btn-secondary">Cancelar</button>
-                                                            <button type="button" id="btnExcluirCartao"
-                                                                data-bs-dismiss="modal"
-                                                                class="btn btn-danger">Excluir</button>
+                                            <c:forEach var="cartao" items="${clienteLogado.cartoesDeCredito}">
+                                                <div class="modal fade" id="excluirCartao${cartao.id}" data-bs-backdrop="static"
+                                                    data-bs-keyboard="false" tabindex="-1"
+                                                    aria-labelledby="excluirCartaoLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="excluirCartaoLabel">Excluir
+                                                                </h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Tem certeza que deseja excluir esse cartão?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button"
+                                                                    data-bs-dismiss="modal"
+                                                                    class="btn btn-secondary">Cancelar</button>
+                                                                <form action="../clientes/cartoes" method="POST">
+                                                                    <input type="hidden" value="remover" name="operacao"/>
+                                                                    <input type="hidden" value="${cartao.id}" name="idCartao"/>
+                                                                    <input type="submit"  class="btn btn-danger" value="Excluir" name="excluir"/>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </c:forEach>
                                         </div>
                                     </div>
                                 </div>

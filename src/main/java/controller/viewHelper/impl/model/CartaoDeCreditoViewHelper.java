@@ -41,6 +41,13 @@ public class CartaoDeCreditoViewHelper implements IViewHelper {
             cartao.setCliente(cliente);
 
             return cartao;
+        } else if(operacao.equals("remover")) {
+            String idCartao = request.getParameter("idCartao");
+
+            CartaoDeCredito cartaoDeCredito = new CartaoDeCredito();
+            cartaoDeCredito.setId(Long.parseLong(idCartao));
+
+            return cartaoDeCredito;
         }
         return null;
     }

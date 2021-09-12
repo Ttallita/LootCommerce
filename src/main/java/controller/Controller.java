@@ -44,7 +44,7 @@ public class Controller extends HttpServlet{
 
         viewHelpers.put("/LootCommerce/clientes/perfil", new ClienteViewHelper());
         viewHelpers.put("/LootCommerce/clientes/perfil/editarSenha", new UsuarioViewHelper());
-        viewHelpers.put("/LootCommerce/clientes/perfil/cartoes", new CartaoDeCreditoViewHelper());
+        viewHelpers.put("/LootCommerce/clientes/cartoes", new CartaoDeCreditoViewHelper());
         viewHelpers.put("/LootCommerce/clientes/enderecos", new EnderecoViewHelper());
 
         viewHelpers.put("/LootCommerce/admin/clientes", new ClienteAdminViewHelper());
