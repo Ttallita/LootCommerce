@@ -40,29 +40,27 @@
                 <!--Dados Pessoais-->
                 <div class="tab-pane fade active show" id="nav-dados-pessoais" role="tabpanel" aria-labelledby="nav-dados-pessoais-tab">
                   <div class="card-body">
-                    <form class="needs-validation text-center" novalidate="">
+                    <form class="needs-validation text-center" action="/LootCommerce/admin/cliente" method="POST">
+                      <input type="hidden" value="${cliente.id}" name="idCliente"/>
+                      <input type="hidden" value="atualizar" name="operacao"/>
                       <div class="row g-3">
                         <div class="col-sm-6">
                           <div class="input-group form-floating">
-                            <input type="text" class="form-control" id="nome" value="${cliente.nome}" required="" disabled="">
-                            <button onclick="editar('nome')" id="editarNome" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                            <input type="text" class="form-control" name="nome" id="nome" value="${cliente.nome}">
                             <label class="form-label">Nome</label>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
                           </div>
                         </div>
 
                         <div class="col-sm-6">
                           <div class="input-group form-floating">
-                            <input type="text" class="form-control" id="sobrenome" value="${cliente.sobrenome}" required="" disabled="">
-                            <button onclick="editar('sobrenome')" id="editarSobrenome" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                            <input type="text" class="form-control" name="sobrenome" id="sobrenome" value="${cliente.sobrenome}">
                             <label class="form-label">Sobrenome</label>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
                           </div>
                         </div>
 
                         <div class="col-md-4">
                           <div class="input-group form-floating">
-                            <select class="form-select" id="genero" required="" disabled="">
+                            <select class="form-select" name="genero" id="genero">
                               <option>${cliente.genero}</option>
                               <option>Masculino</option>
                               <option value="">Selecione</option>
@@ -70,48 +68,32 @@
                               <option>Outro</option>
                               <option>Prefiro não informar</option>
                             </select>
-                            <button onclick="editar('genero')" id="editarGenero" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
                             <label class="form-label">Gênero</label>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
                           </div>
                         </div>
 
                         <div class="col-md-4">
                           <div class="input-group form-floating">
-                            <input type="date" class="form-control" id="dataNasc" value="${cliente.dataNascimento}" required="" disabled="">
-                            <button onclick="editar('dataNasc')" id="editarDataNasc" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                            <input type="date" class="form-control" name="date" id="dataNasc" value="${cliente.dataNascimento}">
                             <label class="form-label">Data de nascimento</label>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
                           </div>
                         </div>
 
                         <div class="col-4">
                           <div class="input-group form-floating">
-                            <input type="text" class="form-control" id="cpf" value="${cliente.cpf}" required="" disabled="">
-                            <button onclick="editar('cpf')" class="btn btn-primary" id="editarCpf" type="button"><span class="material-icons">mode_edit</span></button>
+                            <input type="text" class="form-control" name="cpf" id="cpf" value="${cliente.cpf}" >
                             <label class="form-label">CPF</label>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
-                          </div>
-                        </div>
-
-                        <div class="col-12">
-                          <div class="input-group form-floating">
-                            <input type="email" class="form-control" id="email" value="${cliente.email}" required="" disabled="">
-                            <button onclick="editar('email')" class="btn btn-primary" id="editarEmail" type="button"><span class="material-icons">mode_edit</span></button>
-                            <label class="form-label">Email</label>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
                           </div>
                         </div>
 
                         <div class="col-3">
                           <div class="input-group form-floating">
-                            <select class="form-select" id="tipoTelefone" required="" disabled="">
+                            <select class="form-select" name="tipoTelefone" id="tipoTelefone">
                               <option>${cliente.telefone.tipo}</option>
                               <option value="">Selecione</option>
                               <option>Celular</option>
                               <option selected="">Residêncial</option>
                             </select>
-                            <button onclick="editar('tipoTelefone')" id="editarTpTelefone" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
                             <label class="form-label">Tipo de Telefone</label>
                             <div class="invalid-feedback">Campo obrigatório.</div>
                           </div>
@@ -119,18 +101,14 @@
 
                         <div class="col-3">
                           <div class="input-group form-floating">
-                            <input type="phone" class="form-control" id="telefone" value="${cliente.telefone.numero}" required="" disabled="">
-                            <button onclick="editar('telefone')" id="editarTelefone" class="btn btn-primary" type="button"><span class="material-icons">mode_edit</span></button>
+                            <input type="phone" class="form-control" name="phone" id="telefone" value="${cliente.telefone.ddd} ${cliente.telefone.numero}">
                             <label class="form-label">Telefone</label>
-                            <div class="invalid-feedback">Campo obrigatório.</div>
                           </div>
                         </div>
 
                       </div>
                       <hr class="my-4">
-                      <button class="btn btn-primary mt-auto btn-lg" type="submit" disabled="">
-                        Atualizar
-                      </button>
+                      <input type="submit" class="btn btn-primary mt-auto btn-lg" value="Atualizar"/>
                     </form>
                   </div>
                 </div>

@@ -108,32 +108,37 @@ public class UsuarioDAO implements IDAO{
                 sql = "SELECT * from usuarios where usr_email  = ? and usr_senha = ?";
             }
 
+            if(operacao.equals("listarAdm")) {
+                sql = "SELECT * from usuarios where usr_id = ?";
+            }
+
             PreparedStatement pstm = conn.prepareStatement(sql);
 
             if(operacao.equals("login")) {
                 pstm.setString(1, usuario.getEmail());
                 pstm.setString(2, usuario.getSenha());
+            } else if(operacao.equals("listarAdm")) {
+                pstm.setLong(1, usuario.getId());
+            }
 
-                ResultSet rs = pstm.executeQuery();
+            ResultSet rs = pstm.executeQuery();
 
-                while (rs.next()) {
-                    Usuario usuarioLogado = new Usuario();
+            while (rs.next()) {
+                Usuario usuarioLogado = new Usuario();
 
-                    usuarioLogado.setId(rs.getLong("usr_id"));
-                    usuarioLogado.setEmail(rs.getString("usr_email"));
-                    usuarioLogado.setTipoUsuario(rs.getString("usr_tipo").equals("CLIENTE") ? UsuarioType.CLIENTE : UsuarioType.ADMINISTRADOR);
-                    usuarioLogado.setSenha(rs.getString("usr_senha"));
-                    usuarioLogado.setAtivo(rs.getBoolean("usr_ativo"));
+                usuarioLogado.setId(rs.getLong("usr_id"));
+                usuarioLogado.setEmail(rs.getString("usr_email"));
+                usuarioLogado.setTipoUsuario(rs.getString("usr_tipo").equals("CLIENTE") ? UsuarioType.CLIENTE : UsuarioType.ADMINISTRADOR);
+                usuarioLogado.setSenha(rs.getString("usr_senha"));
+                usuarioLogado.setAtivo(rs.getBoolean("usr_ativo"));
 
-                    entidadeDominios.add(usuarioLogado);
-                }
-
+                entidadeDominios.add(usuarioLogado);
             }
 
             return entidadeDominios;
 
         }catch (Exception e) {
-            System.err.println(e.getMessage());
+            System.err.println("Usuario DAO" + e.getMessage());
             return null;
         }finally {
             conexao.fecharConexao(conn);

@@ -47,6 +47,8 @@ public class LoginViewHelper implements IViewHelper {
 
                     if(usuario.getTipoUsuario().equals(UsuarioType.CLIENTE)) {
                         response.sendRedirect("index.jsp");
+                    } else {
+                        response.sendRedirect("/LootCommerce/admin/controle?operacao=listarTodos");
                     }
 
                 } else {

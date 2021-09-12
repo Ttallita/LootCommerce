@@ -19,14 +19,11 @@
                 <input type="search" class="form-control" placeholder="Pesquisa..." aria-label="Search">
             </form>
             <div class="dropdown text-end">
-                <a href="#" class="d-block text-decoration-none dropdown-toggle link-light" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://i.pinimg.com/474x/bb/8a/71/bb8a71ef13231a77a85267fa9e066922.jpg" alt="mdo" class="rounded-circle" width="32" height="32">
+                <a href="#" class="d-block text-decoration-none dropdown-toggle link-light" id="dropdownAdm" data-bs-toggle="dropdown" aria-expanded="false">
+                    Adminstração
                 </a>
                 <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item link-light" href="#">Perfil</a></li>
-
-                    <!-- mostra apenas quando usuario for Administrador -->
-                    <li><a class="dropdown-item link-light" href="/LootCommerce/adm/gerenciamento.jsp">Gerenciamento</a></li>
+                    <li><a class="dropdown-item link-light" id="gerenciamento" href="/LootCommerce/admin/controle?operacao=listarTodos">Gerenciamento</a></li>
                     <li><hr class="dropdown-divider link-light"></li>
 
                     <li>

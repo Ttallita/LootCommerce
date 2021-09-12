@@ -12,7 +12,14 @@
 <body class="bg-default">
     <c:choose>
         <c:when test = "${usuarioLogado != null}">
-            <c:import url="/includes/header.jsp" charEncoding="UTF-8"/>
+            <c:choose>
+                <c:when test = "${usuarioLogado.tipoUsuario == 'CLIENTE'}">
+                    <c:import url="/includes/header.jsp" charEncoding="UTF-8"/>
+                </c:when>
+                <c:otherwise>
+                    <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8"/>
+                </c:otherwise>
+            </c:choose>
         </c:when>
         <c:otherwise>
             <c:import url="/includes/header-deslogado.jsp" charEncoding="UTF-8"/>
