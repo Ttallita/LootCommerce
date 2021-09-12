@@ -49,7 +49,33 @@ public class CartaoDeCreditoDAO implements IDAO {
 
     @Override
     public boolean atualizar(EntidadeDominio entidade) {
-        return false;
+        CartaoDeCredito cartao = (CartaoDeCredito) entidade;
+        Conexao conexao = new Conexao();
+
+        try {
+            conn = conexao.getConexao();
+
+            String sql = "UPDATE cartoes " +
+                    "SET crt_numero = ?, crt_bandeira = ?, crt_dt_validade = ?, crt_nome_impresso = ?, crt_cod_seg = ? " +
+                    "WHERE crt_id = ?";
+
+            PreparedStatement pstm = conn.prepareStatement(sql);
+            pstm.setString(1, cartao.getNumCartao());
+            pstm.setString(2, cartao.getBandeira());
+            pstm.setDate(3, Date.valueOf(cartao.getDataValidade()));
+            pstm.setString(4, cartao.getNomeImpressoCartao());
+            pstm.setString(5, String.valueOf(cartao.getCodigo()));
+            pstm.setLong(6, cartao.getId());
+
+            pstm.execute();
+
+            return true;
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return false;
+        } finally {
+            conexao.fecharConexao(conn);
+        }
     }
 
     @Override

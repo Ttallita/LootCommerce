@@ -41,6 +41,30 @@ public class CartaoDeCreditoViewHelper implements IViewHelper {
             cartao.setCliente(cliente);
 
             return cartao;
+        }else if(operacao.equals("atualizar")) {
+            String numCartao = request.getParameter("numCartao");
+            String bandeira = request.getParameter("bandeira");
+            int codigoCartao = Integer.parseInt(request.getParameter("codigoCartao"));
+            String nomeCartao = request.getParameter("nomeCartao");
+            LocalDate dtValidade = LocalDate.parse(request.getParameter("dtValidade"));
+            String idCartao = request.getParameter("idCartao");
+
+            CartaoDeCredito cartao = new CartaoDeCredito();
+
+            cartao.setId(Long.parseLong(idCartao));
+            cartao.setNumCartao(numCartao);
+            cartao.setBandeira(bandeira);
+            cartao.setCodigo(codigoCartao);
+            cartao.setNomeImpressoCartao(nomeCartao);
+            cartao.setDataValidade(dtValidade);
+
+            Cliente cliente = new Cliente();
+            Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
+            cliente.setUsuario(usuario);
+
+            cartao.setCliente(cliente);
+
+            return cartao;
         } else if(operacao.equals("remover")) {
             String idCartao = request.getParameter("idCartao");
 
