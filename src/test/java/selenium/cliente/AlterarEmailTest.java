@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/*
+/**
  * @author Tallita
  */
 
@@ -21,6 +21,14 @@ public class AlterarEmailTest {
         driver.get("http://localhost:8080/LootCommerce/");
         driver.manage().window().maximize();
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("entrar")));
+        driver.findElement(By.id("entrar")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
+        driver.findElement(By.id("email")).sendKeys("userexample@gmail.com");
+        driver.findElement(By.id("senha")).sendKeys("Teste123!");
+        driver.findElement(By.id("logar")).click();
+
         Thread.sleep(2000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("iconUsuario")));
         driver.findElement(By.id("iconUsuario")).click();
@@ -33,14 +41,14 @@ public class AlterarEmailTest {
         driver.findElement(By.id("v-pills-alterar-senha-tab")).click();
         Thread.sleep(2000);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("editarEmail")));
-        driver.findElement(By.id("editarEmail")).click();
-        Thread.sleep(1500);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("emailAtual")));
         driver.findElement(By.id("emailAtual")).clear();
         Thread.sleep(1500);
         driver.findElement(By.id("emailAtual")).sendKeys("nome@email.com");
         Thread.sleep(2000);
 
+        driver.findElement(By.id("alterarDados")).submit();
+        Thread.sleep(2000);
         driver.close();
 
     }

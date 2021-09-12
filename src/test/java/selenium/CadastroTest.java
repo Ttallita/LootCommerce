@@ -111,5 +111,7 @@ public class CadastroTest {
         WebElement formCadastro = driver.findElement(By.id("form-cadastro"));
         formCadastro.submit();
 
+        driver.quit();
+
     }
 }

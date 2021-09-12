@@ -20,7 +20,7 @@
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header bg-danger text-white">
-                <h5 class="modal-title">Erro ao cadastrar</h5>
+                 <h5 class="modal-title">Erro ao cadastrar</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -192,21 +192,21 @@
 
                                                     <div class="col-6 form-floating">
                                                         <input type="password" class="form-control" id="senha"
-                                                            placeholder="" required="" name="senha">
+                                                            placeholder=""  name="senha">
                                                         <label class="form-label">Senha Nova</label>
                                                     </div>
 
                                                     <div class="col-6 form-floating">
                                                         <input type="password" class="form-control"
-                                                            id="senhaConfirmacao" placeholder="" required=""
+                                                            id="senhaConfirmacao" placeholder=""
                                                             name="senhaConfirmacao">
                                                         <label class="form-label">Confirme a nova senha</label>
                                                     </div>
                                                 </div>
                                                 <hr class="my-4">
-                                                <button id="alterarSenha" class="btn btn-primary mt-auto btn-lg"
+                                                <button id="alterarDados" class="btn btn-primary mt-auto btn-lg"
                                                     type="submit">
-                                                    Alterar senha
+                                                    Atualizar Dados
                                                 </button>
                                             </form>
                                         </div>
@@ -623,7 +623,7 @@
                                 </div>
 
                                 <!--cartões-->
-                                <div class="tab-pane fade" id="v-pills-cartoes" role="tabpanel"
+                                <div class="tab-pane fade  ${not empty aba && aba == 'cartoes' ? 'active show' : ''}" id="v-pills-cartoes" role="tabpanel"
                                     aria-labelledby="v-pills-cartoes-tab">
                                     <div class="shadow">
                                         <div class="card-body">
@@ -636,7 +636,7 @@
                                                 Cartão
                                             </button>
 
-                                            <table class="table table-hover table-sm table-responsive">
+                                            <table id="table-cartoes" class="table table-hover table-sm table-responsive">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">Nome Impresso</th>
@@ -695,7 +695,7 @@
                                                                 <div class="row g-3 mb-3">
                                                                     <div class="col-md-6">
                                                                         <div class="form-floating">
-                                                                            <input type="text" class="form-control"
+                                                                            <input type="number" class="form-control"
                                                                                 id="numCartao" name="numCartao"
                                                                                 required>
                                                                             <label for="numCartao"

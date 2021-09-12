@@ -3,11 +3,14 @@ package selenium.cliente;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/*
+import java.util.List;
+
+/**
  * @author Tallita
  */
 
@@ -21,6 +24,14 @@ public class ExcluirCartaoTest {
         driver.get("http://localhost:8080/LootCommerce/");
         driver.manage().window().maximize();
 
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("entrar")));
+        driver.findElement(By.id("entrar")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
+        driver.findElement(By.id("email")).sendKeys("userexample@gmail.com");
+        driver.findElement(By.id("senha")).sendKeys("Teste123!");
+        driver.findElement(By.id("logar")).click();
+
         Thread.sleep(2000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("iconUsuario")));
         driver.findElement(By.id("iconUsuario")).click();
@@ -33,12 +44,18 @@ public class ExcluirCartaoTest {
         driver.findElement(By.id("v-pills-cartoes-tab")).click();
         Thread.sleep(2000);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("deletarCartao")));
-        driver.findElement(By.id("deletarCartao")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("table-cartoes")));
+        WebElement tableEnderecos = driver.findElement(By.id("table-cartoes"));
+        List<WebElement> rowsEnderecos = tableEnderecos.findElements(By.tagName("tr"));
+        List<WebElement> columnsEnderecos = rowsEnderecos.get(1).findElements(By.tagName("td"));
+
+        WebElement removerIcon = columnsEnderecos.get(6).findElement(By.tagName("span"));
+        removerIcon.click();
+
         Thread.sleep(2000);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("excluirCartao")));
-        driver.findElement(By.id("btnExcluirCartao")).click();
-        Thread.sleep(1000);
+        List<WebElement> removerButtons = driver.findElements(By.name("excluir"));
+
+        removerButtons.get(0).click();
 
         driver.close();
 
