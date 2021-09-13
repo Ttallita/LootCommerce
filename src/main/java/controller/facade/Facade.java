@@ -1,6 +1,7 @@
 package controller.facade;
 
 import controller.strategy.IStrategy;
+import controller.strategy.impl.cartao.ValidarCartaoStrategy;
 import controller.strategy.impl.cliente.*;
 import controller.strategy.impl.endereco.VerificarEnderecoStrategy;
 import dao.*;
@@ -39,6 +40,7 @@ public class Facade implements IFacade {
         VerificarEmailStrategy verificarEmailStrategy = new VerificarEmailStrategy();
         VerificarSenhaStrategy verificarSenhaStrategy = new VerificarSenhaStrategy();
         VerificarEnderecoStrategy verificarEnderecoStrategy = new VerificarEnderecoStrategy();
+        ValidarCartaoStrategy validarCartaoStrategy = new ValidarCartaoStrategy();
 
         //Lista de regras de validação do cliente
         List<IStrategy> regraDeNegocioSalvarCliente = new ArrayList<>();
@@ -47,8 +49,13 @@ public class Facade implements IFacade {
         //Lista de regras de validação de usuario
         List<IStrategy> regraDeNegocioAtualizarUsuario = new ArrayList<>();
 
-        //Lista de regras de validação de email
+        //Lista de regras de validação do endereço
         List<IStrategy> regraDeNegocioSalvarEndereco = new ArrayList<>();
+        List<IStrategy> regraDeNegocioAtualizarEndereco = new ArrayList<>();
+
+        //Lista de regraas de validação de cartão
+        List<IStrategy> regraDeNegocioSalvarCartao = new ArrayList<>();
+        List<IStrategy> regraDeNegocioAtualziarCartao = new ArrayList<>();
 
         regraDeNegocioSalvarCliente.add(validarDataStrategy);
         regraDeNegocioSalvarCliente.add(verificarClienteStrategy);
@@ -65,21 +72,34 @@ public class Facade implements IFacade {
         regraDeNegocioAtualizarUsuario.add(verificarSenhaStrategy);
 
         regraDeNegocioSalvarEndereco.add(verificarEnderecoStrategy);
+        regraDeNegocioAtualizarEndereco.add(verificarEnderecoStrategy);
+
+        regraDeNegocioSalvarCartao.add(validarCartaoStrategy);
+        regraDeNegocioAtualziarCartao.add(validarCartaoStrategy);
 
         //Mapa das regras de négocio do cliente por operação
         Map<String, List<IStrategy>> regrasDeNegocioCliente = new HashMap<>();
         regrasDeNegocioCliente.put("salvar", regraDeNegocioSalvarCliente);
         regrasDeNegocioCliente.put("atualizar", regraDeNegocioAtualizarCliente);
 
+        //Mapa regra de négocio de usuario
         Map<String, List<IStrategy>> regrasDeNegocioUsuario = new HashMap<>();
         regrasDeNegocioUsuario.put("atualizar", regraDeNegocioAtualizarUsuario);
 
+        //Mapa regra de négocio de endereco
         Map<String, List<IStrategy>> regrasDeNegocioEndereco = new HashMap<>();
         regrasDeNegocioEndereco.put("salvar", regraDeNegocioSalvarEndereco);
+        regrasDeNegocioEndereco.put("atualizar", regraDeNegocioAtualizarEndereco);
+
+        //Mapa regra de négocio de cartao
+        Map<String, List<IStrategy>> regraDeNegocioCartao = new HashMap<>();
+        regraDeNegocioCartao.put("salvar", regraDeNegocioSalvarCartao);
+        regraDeNegocioCartao.put("atualizar", regraDeNegocioAtualziarCartao);
 
         regrasDeNegocioMap.put(Cliente.class.getName(), regrasDeNegocioCliente);
         regrasDeNegocioMap.put(Usuario.class.getName(), regrasDeNegocioUsuario);
         regrasDeNegocioMap.put(Endereco.class.getName(), regrasDeNegocioEndereco);
+        regrasDeNegocioMap.put(CartaoDeCredito.class.getName(), regraDeNegocioCartao);
     }
 
 

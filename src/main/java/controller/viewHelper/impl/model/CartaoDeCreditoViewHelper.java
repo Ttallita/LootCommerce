@@ -1,6 +1,7 @@
 package controller.viewHelper.impl.model;
 
 import controller.viewHelper.IViewHelper;
+import dao.ClienteDAO;
 import model.EntidadeDominio;
 import model.Result;
 import model.Usuario;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 public class CartaoDeCreditoViewHelper implements IViewHelper {
 
@@ -22,17 +24,25 @@ public class CartaoDeCreditoViewHelper implements IViewHelper {
         if(operacao.equals("salvar")) {
             String numCartao = request.getParameter("numCartao");
             String bandeira = request.getParameter("bandeira");
-            int codigoCartao = Integer.parseInt(request.getParameter("codigoCartao"));
+
+            String codigoCartao = request.getParameter("codigoCartao");
             String nomeCartao = request.getParameter("nomeCartao");
-            LocalDate dtValidade = LocalDate.parse(request.getParameter("dtValidade"));
 
             CartaoDeCredito cartao = new CartaoDeCredito();
 
             cartao.setNumCartao(numCartao);
             cartao.setBandeira(bandeira);
-            cartao.setCodigo(codigoCartao);
+
+            if(!codigoCartao.trim().isEmpty()) {
+                cartao.setCodigo(Integer.parseInt(codigoCartao));
+            }
+
             cartao.setNomeImpressoCartao(nomeCartao);
-            cartao.setDataValidade(dtValidade);
+
+            if(!request.getParameter("dtValidade").trim().isEmpty()) {
+                LocalDate dtValidade = LocalDate.parse(request.getParameter("dtValidade"));
+                cartao.setDataValidade(dtValidade);
+            }
 
             Cliente cliente = new Cliente();
             Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
@@ -78,6 +88,24 @@ public class CartaoDeCreditoViewHelper implements IViewHelper {
 
     @Override
     public void setView(Result result, HttpServletRequest request, HttpServletResponse httpResponse) throws IOException, ServletException {
+        Usuario usuarioLogado = (Usuario) request.getSession().getAttribute("usuarioLogado");
 
+        Cliente cliente = new Cliente();
+        cliente.setUsuario(usuarioLogado);
+
+        List<EntidadeDominio> entidade  = new ClienteDAO().listar(cliente, "listar");
+        cliente = (Cliente) entidade.get(0);
+
+        request.setAttribute("clienteLogado", cliente);
+        request.setAttribute("aba", "cartoes");
+
+        if(result.getMsg() == null) {
+            request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, httpResponse);
+        } else {
+            String msgErro[] = result.getMsg().split("\n");
+
+            request.setAttribute("mensagem", msgErro);
+            request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, httpResponse);
+        }
     }
 }

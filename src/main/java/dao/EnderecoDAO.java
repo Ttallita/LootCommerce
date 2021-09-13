@@ -176,7 +176,7 @@ public class EnderecoDAO implements IDAO{
             return enderecos;
 
         }catch (Exception e) {
-            System.err.println(e.getMessage());
+            System.err.println("Endereço error : " + e.getMessage());
             return null;
         } finally {
             conexao.fecharConexao(conn);

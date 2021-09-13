@@ -1,6 +1,7 @@
 package controller.filter;
 
 import model.Usuario;
+import model.UsuarioType;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -9,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebFilter({"/login.jsp"})
+@WebFilter({"/login.jsp", "/cadastro.jsp"})
 public class LoginFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
@@ -19,8 +20,11 @@ public class LoginFilter implements Filter {
         Usuario usuarioLogado = (Usuario) req.getSession().getAttribute("usuarioLogado");
 
         if(usuarioLogado != null) {
-            res.sendRedirect("/LootCommerce/index.jsp");
-
+            if(usuarioLogado.getTipoUsuario().equals(UsuarioType.CLIENTE)) {
+                res.sendRedirect("/LootCommerce/index.jsp");
+            } else {
+                res.sendRedirect("/LootCommerce/adm/gerenciamento.jsp");
+            }
             return;
         }
 

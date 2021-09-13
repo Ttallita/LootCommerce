@@ -36,6 +36,8 @@ public class Controller extends HttpServlet{
         commands.put("listar", new ListarCommand());
         commands.put("remover", new ExcluirCommand());
         commands.put("login", new ListarCommand());
+        commands.put("listarTodos", new ListarCommand());
+        commands.put("listarAdm", new ListarCommand());
 
         viewHelpers = new HashMap<>();
 
@@ -47,7 +49,7 @@ public class Controller extends HttpServlet{
         viewHelpers.put("/LootCommerce/clientes/cartoes", new CartaoDeCreditoViewHelper());
         viewHelpers.put("/LootCommerce/clientes/enderecos", new EnderecoViewHelper());
 
-        viewHelpers.put("/LootCommerce/admin/clientes", new ClienteAdminViewHelper());
+        viewHelpers.put("/LootCommerce/admin/controle", new ClienteAdminViewHelper());
         viewHelpers.put("/LootCommerce/admin/cliente", new ClienteAdminViewHelper());
         viewHelpers.put("/LootCommerce/admin/cartoes", new CartaoDeCreditoAdminViewHelper());
         viewHelpers.put("/LootCommerce/admin/enderecos", new EnderecoAdminViewHelper());

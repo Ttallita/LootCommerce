@@ -15,7 +15,6 @@
 <body class="bg-default">
     <!-- Navigation-->
     <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8" />
-
     <div class="wrapper container mt-3">
         <main class="content">
             <div class="container-fluid p-0">
@@ -165,8 +164,9 @@
                                                                     </button>
                                                                     <ul class="dropdown-menu"
                                                                         aria-labelledby="dropdownMenuButton1">
-                                                                        <li><a class="dropdown-item" id="gerenciarLink"
-                                                                                href="/LootCommerce/admin/cliente?operacao=listar">Gerenciar</a>
+                                                                        <li>
+                                                                            <a class="dropdown-item" id="gerenciarLink"
+                                                                                href="/LootCommerce/admin/cliente?operacao=listarAdm&id=${cliente.id}">Gerenciar</a>
                                                                         </li>
                                                                         <li>
                                                                             <hr class="dropdown-divider link-light">
@@ -196,7 +196,7 @@
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <form class="needs-validation w-75" id="form-cadastro" action="/LootCommerce/admin/clientes" method="POST" novalidate>
+                                                        <form class="needs-validation w-75" id="form-cadastro" action="/LootCommerce/admin/controle" method="POST" novalidate>
                                                             <input type="hidden" name="operacao" value="salvar">
                                                             <h1 class="h3 mb-3 fw-normal text-center">Novo Cliente</h1>
                                                             <div class="row g-3 mb-3">
@@ -383,6 +383,12 @@
                                                                 </div>
                                                                 <div class="col-md-8">
                                                                     <div class="form-floating">
+                                                                        <input type="text" class="form-control" id="apelido" name="apelido" required>
+                                                                        <label for="apelido" class="form-label">Nome do endereço</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-8">
+                                                                    <div class="form-floating">
                                                                         <input type="text" class="form-control" id="observacao" name="observacao" placeholder="">
                                                                         <label for="observacao" class="form-label">
                                                                             Observação <span class="text-muted">(Opcional)</span>
@@ -461,8 +467,7 @@
 <script src='<c:url value="/webjars/jquery/3.6.0/jquery.min.js"/>'></script>
 <script src='<c:url value="/webjars/jquery-mask-plugin/1.14.16/dist/jquery.mask.min.js"/>'></script>
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
-<script src='<c:url value="/assets/js/form-validation.js"/>'></script>
-<script src='<c:url value="/assets/js/disable-enable-form.js"/>'></script>
+
 
 <script>
     $(document).ready(function () {

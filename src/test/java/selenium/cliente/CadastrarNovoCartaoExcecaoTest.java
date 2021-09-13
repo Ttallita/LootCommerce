@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/*
+/**
  * @author Tallita
  */
 
@@ -19,8 +19,24 @@ public class CadastrarNovoCartaoExcecaoTest {
         WebDriver driver = new ChromeDriver();
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        driver.get("http://localhost:8080/LootCommerce/cliente/perfil.jsp");
+        driver.get("http://localhost:8080/LootCommerce/");
         driver.manage().window().maximize();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("entrar")));
+        driver.findElement(By.id("entrar")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
+        driver.findElement(By.id("email")).sendKeys("userexample@gmail.com");
+        driver.findElement(By.id("senha")).sendKeys("Teste123!");
+        driver.findElement(By.id("logar")).click();
+
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("iconUsuario")));
+        driver.findElement(By.id("iconUsuario")).click();
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("perfil")));
+        driver.findElement(By.id("perfil")).click();
+        Thread.sleep(2000);
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("v-pills-cartoes-tab")));
         Thread.sleep(1000);

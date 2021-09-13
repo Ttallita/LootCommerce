@@ -138,7 +138,7 @@ public class CartaoDeCreditoDAO implements IDAO {
             return cartoes;
 
         }catch (Exception e) {
-            System.err.println(e.getMessage());
+            System.err.println("Cartão de Crédito erro: " + e.getMessage());
             return null;
         } finally {
             conexao.fecharConexao(conn);

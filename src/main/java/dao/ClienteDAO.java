@@ -2,6 +2,7 @@ package dao;
 
 import model.Usuario;
 
+import model.UsuarioType;
 import model.cliente.CartaoDeCredito;
 import model.cliente.Cliente;
 import model.EntidadeDominio;
@@ -124,12 +125,13 @@ public class ClienteDAO implements IDAO{
 
             String sql = "";
 
-            if(operacao.equals("listar")) {
+            if(operacao.equals("listar") || operacao.equals("listarAdm")) {
                 sql = "SELECT * from clientes where cli_usr_id = ?";
             }
 
+
             if(operacao.equals("listarTodos")) {
-                sql = "select * from usuarios full join clientes on usr_id = cli_usr_id";
+                sql = "select * from usuarios full join clientes on usr_id = cli_usr_id where usr_tipo = 'CLIENTE'";
             }
 
             List<EntidadeDominio> entidadeDominios = new ArrayList<>();
@@ -138,6 +140,8 @@ public class ClienteDAO implements IDAO{
 
             if(operacao.equals("listar")) {
                 pstm.setLong(1, cliente.getUsuario().getId());
+            } else if(operacao.equals("listarAdm")) {
+                pstm.setLong(1, cliente.getId());
             }
 
             ResultSet rs = pstm.executeQuery();
@@ -178,8 +182,21 @@ public class ClienteDAO implements IDAO{
                         .map(cartaoMap -> (CartaoDeCredito) cartaoMap)
                         .collect(Collectors.toList());
 
+                if(operacao.equals("listar")) {
+                    clienteLogado.setUsuario(cliente.getUsuario());
+                } else if(operacao.equals("listarAdm")){
+                        clienteLogado.setUsuario((Usuario) new UsuarioDAO().listar(cliente.getUsuario(), "listarAdm").get(0));
+                } else{
+                    Usuario usuario = new Usuario();
+                    usuario.setId(rs.getLong("usr_id"));
+                    usuario.setEmail(rs.getString("usr_email"));
+                    usuario.setSenha(rs.getString("usr_senha"));
+                    usuario.setTipoUsuario(rs.getString("usr_tipo").equals("CLIENTE") ? UsuarioType.CLIENTE : UsuarioType.ADMINISTRADOR);
+                    usuario.setAtivo(rs.getBoolean("usr_ativo"));
+                    clienteLogado.setUsuario(usuario);
+                }
+
                 clienteLogado.setTelefone(telefone);
-                clienteLogado.setUsuario(cliente.getUsuario());
                 clienteLogado.setEnderecos(enderecosConvertidos);
                 clienteLogado.setCartoesDeCredito(cartaoDeCreditosConvertidos);
 
@@ -187,7 +204,7 @@ public class ClienteDAO implements IDAO{
             }
             return entidadeDominios;
         }catch (Exception e) {
-            System.err.println(e.getMessage());
+            System.err.println("ClienteDAO erro: " + e.getMessage());
             return null;
         }finally {
             conexao.fecharConexao(conn);

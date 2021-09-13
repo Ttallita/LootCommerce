@@ -42,10 +42,16 @@ public class UsuarioViewHelper implements IViewHelper {
             String senha = request.getParameter("senha");
             String senhaConfirmar = request.getParameter("senhaConfirmacao");
 
-            Usuario usuario = usuarioLogado;
+            Usuario usuario;
+            usuario = usuarioLogado;
             usuario.setEmail(email);
-            usuario.setSenha(senha);
-            usuario.setConfirmarSenha(senhaConfirmar);
+
+            if(senha.equals("") && senhaConfirmar.equals("")) {
+                usuario.setConfirmarSenha(usuario.getSenha());
+            } else {
+                usuario.setSenha(senha);
+                usuario.setConfirmarSenha(senhaConfirmar);
+            }
 
             return usuario;
         }

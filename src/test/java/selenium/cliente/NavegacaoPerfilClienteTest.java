@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/*
+/**
  * @author Tallita
  */
 
@@ -20,6 +20,13 @@ public class NavegacaoPerfilClienteTest {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.get("http://localhost:8080/LootCommerce/");
         driver.manage().window().maximize();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("entrar")));
+        driver.findElement(By.id("entrar")).click();
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
+        driver.findElement(By.id("email")).sendKeys("userexample@gmail.com");
+        driver.findElement(By.id("senha")).sendKeys("Teste123!");
+        driver.findElement(By.id("logar")).click();
 
         Thread.sleep(2000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("iconUsuario")));

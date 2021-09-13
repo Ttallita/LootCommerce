@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-/*
+/**
  * @author Tallita
  */
 
@@ -48,8 +48,10 @@ public class ExcluirEnderecoTest {
         WebElement removerIcon = columnsEnderecos.get(9).findElement(By.tagName("span"));
         removerIcon.click();
 
+        Thread.sleep(2000);
+        List<WebElement> removerButtons = driver.findElements(By.name("excluir"));
 
-        driver.close();
+        removerButtons.get(0).click();
     }
 
 }

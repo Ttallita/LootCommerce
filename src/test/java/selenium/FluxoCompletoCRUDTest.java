@@ -17,6 +17,7 @@ public class FluxoCompletoCRUDTest {
         WebDriver driver = new ChromeDriver();
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
+
         driver.get("http://localhost:8080/LootCommerce/");
         driver.manage().window().maximize();
 
@@ -24,8 +25,8 @@ public class FluxoCompletoCRUDTest {
         driver.navigate().to("http://localhost:8080/LootCommerce/cadastro.jsp");
 
         //Cadastro
-        String email = "andre.gomes7110@gmail.com";
-        String senha = "Hitagi710!";
+        String email = "tallita@gmail.com";
+        String senha = "testeCompleto123!";
 
         WebElement campoEmail = driver.findElement(By.id("email"));
         WebElement campoSenha = driver.findElement(By.id("senha"));
@@ -47,10 +48,10 @@ public class FluxoCompletoCRUDTest {
 
         Select selectGenero = new Select(campoGenero);
 
-        String nome = "André";
-        String sobrenome = "Gomes";
+        String nome = "Tallita";
+        String sobrenome = "Souza";
         String dataNascimento = "22/04/1999";
-        String cpf = "443.020.908.12";
+        String cpf = "404.915.110-35";
 
         campoNome.sendKeys(nome);
         campoSobrenome.sendKeys(sobrenome);
@@ -80,6 +81,7 @@ public class FluxoCompletoCRUDTest {
         WebElement campoCidade = driver.findElement(By.id("cidade"));
         WebElement campoEstado = driver.findElement(By.id("estado"));
         WebElement campoPais = driver.findElement(By.id("pais"));
+        WebElement campoApelido = driver.findElement(By.id("apelido"));
         WebElement campoObservacao = driver.findElement(By.id("observacao"));
 
         Select selectTipoResidencia = new Select(campoTipoResidencia);
@@ -93,6 +95,7 @@ public class FluxoCompletoCRUDTest {
         String bairro = "Moema";
         String cep = "12334-230";
         String observacao = "Sem observações";
+        String apelido = "Minha casa";
 
         selectTipoResidencia.selectByIndex(1);
         campoTipoLogradouro.sendKeys(tipoLogradouro);
@@ -103,6 +106,7 @@ public class FluxoCompletoCRUDTest {
         selectCidade.selectByIndex(1);
         selectEstado.selectByIndex(1);
         selectPais.selectByIndex(1);
+        campoApelido.sendKeys(apelido);
         campoObservacao.sendKeys(observacao);
 
         WebElement formCadastro = driver.findElement(By.id("form-cadastro"));
@@ -114,10 +118,10 @@ public class FluxoCompletoCRUDTest {
         WebElement botarLogar = driver.findElement(By.id("logar"));
 
         campoEmail.sendKeys(email);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         campoSenha.sendKeys(senha);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         botarLogar.click();
 
@@ -147,13 +151,15 @@ public class FluxoCompletoCRUDTest {
         selectEstado.selectByVisibleText("São Paulo");
         selectPais = new Select(driver.findElement(By.id("pais")));
         selectPais.selectByVisibleText("Brasil");
+        driver.findElement(By.id("apelido")).sendKeys("Minha casa");
         driver.findElement(By.id("observacao")).sendKeys("Próximo a fábrica de sorvete Solvente");
         Select selectTpEndereco = new Select(driver.findElement(By.id("tpEndereco")));
         selectTpEndereco.selectByVisibleText("Entrega");
         driver.findElement(By.id("btnCadastrar")).click();
 
+        Thread.sleep(2000);
+
         //Cadastro Cartao
-        driver.navigate().to("http://localhost:8080/LootCommerce/clientes/perfil?operacao=listar");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("v-pills-cartoes-tab")));
         driver.findElement(By.id("v-pills-cartoes-tab")).click();
 
@@ -162,7 +168,7 @@ public class FluxoCompletoCRUDTest {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cadastrarCartao")));
         driver.findElement(By.id("numCartao")).sendKeys("5555666677778884");
-        driver.findElement(By.id("nomeCartao")).sendKeys("Nutty agiota");
+        driver.findElement(By.id("nomeCartao")).sendKeys("TALLITA SOUZA");
         selectTpEndereco = new Select(driver.findElement(By.id("bandeira")));
         selectTpEndereco.selectByVisibleText("Visa");
         driver.findElement(By.id("dtValidade")).sendKeys("20/10/2050");
@@ -170,14 +176,15 @@ public class FluxoCompletoCRUDTest {
 
         driver.findElement(By.id("btnCadastrarCartao")).click();
 
+        Thread.sleep(2000);
+
         //Logout
-        driver.navigate().to("http://localhost:8080/LootCommerce/");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("iconUsuario")));
         driver.findElement(By.id("iconUsuario")).click();
         driver.findElement(By.id("sair")).click();
 
         //Cadastrar Cliente
-        driver.navigate().to("http://localhost:8080/LootCommerce/clientes/perfil?operacao=listar");
+       /* driver.navigate().to("http://localhost:8080/Ecommerce/clientes/perfil?operacao=listar");
         WebElement tabCliente = driver.findElement(By.id("v-pills-clientes-tab"));
 
         tabCliente.click();
@@ -275,13 +282,14 @@ public class FluxoCompletoCRUDTest {
         btnCadastrar.click();
 
         //Acessar Cliente
-        driver.navigate().to("http://localhost:8080/LootCommerce/admin/clientes?operacao=listar");
+        driver.navigate().to("http://localhost:8080/Ecommerce/admin/clientes?operacao=listar");
         tabCliente = driver.findElement(By.id("v-pills-clientes-tab"));
 
         tabCliente.click();
 
         Thread.sleep(1000);
-        driver.findElement(By.id("gerenciarLink")).click();
+        driver.findElement(By.id("gerenciarLink")).click();*/
 
+        driver.quit();
     }
 }
