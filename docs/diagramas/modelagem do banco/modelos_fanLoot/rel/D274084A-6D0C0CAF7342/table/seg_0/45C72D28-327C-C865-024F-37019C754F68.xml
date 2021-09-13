@@ -42,7 +42,9 @@
 <createdTime>2021-09-07 16:33:49 UTC</createdTime>
 <generatorID>6A97F6FC-604F-1AF2-D53F-4AE3A75D3BBD</generatorID>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 <isRelationshipColumn>true</isRelationshipColumn>

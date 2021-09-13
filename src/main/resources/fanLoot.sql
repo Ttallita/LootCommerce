@@ -83,6 +83,7 @@ CREATE TABLE grupos_precificacao(
     grp_id serial NOT NULL,
     grp_nome varchar(255) NOT NULL,
     grp_porcentagem numeric(8,2) NOT NULL,
+    grp_margem_lucro numeric(8,2) NOT NULL,
 
     PRIMARY KEY(grp_id)
 );
@@ -116,21 +117,13 @@ CREATE TABLE categorias_produtos(
     CONSTRAINT fk_ctp_ctg FOREIGN KEY (ctp_ctg_id) REFERENCES categorias (ctg_id)
 );
 
-CREATE TABLE categorias_inativacao(
+CREATE TABLE produtos_estados(
     cti_id serial NOT NULL,
-    cti_nome varchar(255),
-    cti_justific varchar(255),
+    cti_tipo varchar(7),
+    cti_justificativa varchar(255),
 
     PRIMARY KEY (cti_id)
 );
-
-CREATE TABLE categorias_ativacao(
-    cta_id serial NOT NULL,
-    cta_nome varchar(255),
-
-    PRIMARY KEY (cta_id)
-);
-
 
 CREATE TABLE carrinhos(
     car_cli_id serial NOT NULL,
@@ -146,7 +139,6 @@ CREATE TABLE produtos_em_carrinho(
     prc_pro_id int NOT NULL,
     prc_car_cli_id int NOT NULL,
     prc_quant int NOT NULL,
-    -- MARGEM DE LUCRO
 
     PRIMARY KEY (prc_pro_id, prc_car_cli_id),
     CONSTRAINT fk_prc_pro FOREIGN KEY (prc_pro_id) REFERENCES produtos (pro_id),

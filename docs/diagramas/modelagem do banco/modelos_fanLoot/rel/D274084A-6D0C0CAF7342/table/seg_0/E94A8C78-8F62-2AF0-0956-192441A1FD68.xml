@@ -56,7 +56,9 @@
 <generatorID>95C09C18-7A71-DCF5-EAEB-78BA31F29D25</generatorID>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT015</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>

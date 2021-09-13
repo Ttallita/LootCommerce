@@ -140,8 +140,11 @@
 <generatorID>4EF106FA-8D6D-E535-683E-F81C3FE27474</generatorID>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="pro_grp_id" id="9FFDC0A6-EFD3-B81C-2A53-6D0144A27B32">
@@ -166,7 +169,6 @@
 <createdTime>2021-09-07 16:33:48 UTC</createdTime>
 <generatorID>266AAD0B-45E3-3CF4-4051-0C574FB28972</generatorID>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT006</logicalDatatype>
