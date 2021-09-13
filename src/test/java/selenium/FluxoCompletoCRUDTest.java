@@ -17,11 +17,11 @@ public class FluxoCompletoCRUDTest {
         WebDriver driver = new ChromeDriver();
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        driver.get("http://localhost:8080/Ecommerce/");
+        driver.get("http://localhost:8080/LootCommerce/");
         driver.manage().window().maximize();
 
         Thread.sleep(2000);
-        driver.navigate().to("http://localhost:8080/Ecommerce/cadastro.jsp");
+        driver.navigate().to("http://localhost:8080/LootCommerce/cadastro.jsp");
 
         //Cadastro
         String email = "andre.gomes7110@gmail.com";
@@ -153,7 +153,7 @@ public class FluxoCompletoCRUDTest {
         driver.findElement(By.id("btnCadastrar")).click();
 
         //Cadastro Cartao
-        driver.navigate().to("http://localhost:8080/Ecommerce/clientes/perfil?operacao=listar");
+        driver.navigate().to("http://localhost:8080/LootCommerce/clientes/perfil?operacao=listar");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("v-pills-cartoes-tab")));
         driver.findElement(By.id("v-pills-cartoes-tab")).click();
 
@@ -171,13 +171,13 @@ public class FluxoCompletoCRUDTest {
         driver.findElement(By.id("btnCadastrarCartao")).click();
 
         //Logout
-        driver.navigate().to("http://localhost:8080/Ecommerce/");
+        driver.navigate().to("http://localhost:8080/LootCommerce/");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("iconUsuario")));
         driver.findElement(By.id("iconUsuario")).click();
         driver.findElement(By.id("sair")).click();
 
         //Cadastrar Cliente
-        driver.navigate().to("http://localhost:8080/Ecommerce/clientes/perfil?operacao=listar");
+        driver.navigate().to("http://localhost:8080/LootCommerce/clientes/perfil?operacao=listar");
         WebElement tabCliente = driver.findElement(By.id("v-pills-clientes-tab"));
 
         tabCliente.click();
@@ -275,7 +275,7 @@ public class FluxoCompletoCRUDTest {
         btnCadastrar.click();
 
         //Acessar Cliente
-        driver.navigate().to("http://localhost:8080/Ecommerce/admin/clientes?operacao=listar");
+        driver.navigate().to("http://localhost:8080/LootCommerce/admin/clientes?operacao=listar");
         tabCliente = driver.findElement(By.id("v-pills-clientes-tab"));
 
         tabCliente.click();
