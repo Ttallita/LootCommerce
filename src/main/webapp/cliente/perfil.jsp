@@ -9,7 +9,7 @@
             href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>' />
         <link rel="stylesheet" type="text/css"
             href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
-        <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/style.css' />
+        <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/main.css' />
     </head>
 
     <body class="bg-default">

@@ -8,6 +8,10 @@ body {
     background-size:cover;
 }
 
+.btn-primary{
+    background-color:#3c61cf;
+}
+
 .btn-circle {
     width: 40px;
     height: 40px;
@@ -104,4 +108,4 @@ input.invalid {
     font-size:.875rem;
     text-decoration:none !important;
     white-space:nowrap
-   }
+}
