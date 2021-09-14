@@ -529,7 +529,5 @@
 </body>
 
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
-<script src='<c:url value="/assets/js/form-validation.js"/>'></script>
-<script src='<c:url value="/assets/js/disable-enable-form.js"/>'></script>
 
 </html>
