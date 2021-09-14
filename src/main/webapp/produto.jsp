@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>' />
     <link rel="stylesheet" type="text/css"
         href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
-    <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/style.css' />
+    <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/main.css' />
 </head>
 
 <body class="bg-default">
@@ -18,51 +18,58 @@
     <c:import url="/includes/header.jsp" charEncoding="UTF-8" />
 
     <main class="wrapper container mt-3">
-        <div class="card">
-            <div class="row no-gutters">
-                <aside class="col-md-7">
-                    <div class="gallery-wrap">
-                        <div class="img-big-wrap">
-                            <a href="#"><img src="\LootCommerce\assets\img\pelucias\miku_pelucia.jpg"></a>
-                        </div>
-                        <div class="thumbs-wrap">
-                            <a href="#" class="item-thumb"> <img
-                                    src="bootstrap-ecommerce-html/images/items/12-1.jpg"></a>
-                            <a href="#" class="item-thumb"> <img
-                                    src="bootstrap-ecommerce-html/images/items/12-2.jpg"></a>
-                            <a href="#" class="item-thumb"> <img src="bootstrap-ecommerce-html/images/items/12.jpg"></a>
-                            <a href="#" class="item-thumb"> <img src="bootstrap-ecommerce-html/images/items/4.jpg"></a>
+        <div class="row mt-4 bg-white rounded p-4 mb-3">
+            <div class="col-md-5">
+                <div>
+                    <a href="#"><img src="\LootCommerce\assets\img\pelucias\miku_pelucia.jpg" width="70%"></a>
+
+                </div>
+            </div>
+            <div class="col-md-7 border-left">
+                <div>
+                    <p class="text-muted">Pelúcia</p>
+                    <h2 class="title">Hatsune</h2>
+                    <div class="mb-3">
+                        <h4>R$ 100,00</h4>
+                    </div>10 disponíveis
+                    <p>Descrição</p>
+                    <ul class="list-group mt-4">
+
+
+
+                        <li class="d-flex  justify-content-between">
+                            <h6 class="fw-bolder">Material</h6>
+
+                            <h6 class="text-muted align-middle">material</h6>
+                        </li>
+                        <li class="d-flex  justify-content-between">
+                            <h6 class="fw-bolder">Fabricante</h6>
+
+                            <h6 class="text-muted align-middle">fabricante</h6>
+                        </li>
+
+
+
+
+
+                    </ul>
+                    <hr>
+                    <div class="row">
+                        <div class="form-group col-md flex-grow-0">
+                            <label>Quantidade</label>
+                            <input class="form-control" value="1" type="number">
                         </div>
                     </div>
-                </aside>
-                <main class="col-md-5 border-left">
-                    <div class="content-body">
-                        <p>Pelúcia</p>
-                        <h2 class="title">Hatsune</h2>
-                        <div class="mb-3">
-                            <var class="price h4">R$ 815,00</var>
-                        </div>
-                        <p>Descrição</p>
-                        <dl class="row">
-                            <dt class="col-sm-3">Material</dt>
-                            <dd class="col-sm-9">Odsy-1000</dd>
-                        </dl>
-                        <hr>
-                        <div class="row">
-                            <div class="form-group col-md flex-grow-0">
-                                <label>Quantity</label>
-                                <input class="form-control" value="1" type="number">
-                            </div>
-                        </div>
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                            <button class="btn btn-primary" type="button">Comprar</button>
-                            <button type="button" class="btn  btn-outline-primary">Adicionar ao carrinho</button>
-                        </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-primary" type="button">Comprar</button>
+                        <button type="button" class="btn  btn-outline-primary">Adicionar ao carrinho</button>
                     </div>
-                </main>
+                </div>
             </div>
         </div>
     </main>
+
+    <c:import url="/includes/footer.jsp" charEncoding="UTF-8" />
 
 </body>
 

@@ -5,10 +5,10 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>fanLoot - Homepage</title>
+    <title>LootCommerce - Homepage</title>
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>'/>
-    <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/style.css' />
+    <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/main.css' />
 
 </head>
 
@@ -61,7 +61,7 @@
         </div>
     </header>
 
-    <div class="container px-4 px-lg-5 mt-5">
+    <div class="container mt-3 mb-3 bg-white p-4">
 
         <!--Categorias-->
         <div class="row mx-5">

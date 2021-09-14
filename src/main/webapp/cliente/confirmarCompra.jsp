@@ -9,7 +9,7 @@
     <title>Confirmar compra</title>
     <link rel="stylesheet" type="text/css" href="/LootCommerce/webjars/bootstrap/5.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/LootCommerce/webjars/material-design-icons/4.0.0/material-icons.css">
-    <link rel="stylesheet" type="text/css" href="/LootCommerce/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/LootCommerce/assets/css/main.css">
 
 <body class="bg-default">
     <header>
