@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page buffer="64kb" %>
 
-<html data-lt-installed="true">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/LootCommerce/webjars/bootstrap/5.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/LootCommerce/webjars/material-design-icons/4.0.0/material-icons.css">
     <link rel="stylesheet" type="text/css" href="/LootCommerce/assets/css/main.css">
+</head>
 
 <body class="bg-default">
     <header>
@@ -179,12 +180,11 @@
             </div>
         </div>
     </main>
-
-    <c:import url="/includes/footer.jsp" charEncoding="UTF-8" />
-
-    <script src="/LootCommerce/webjars/jquery-mask-plugin/1.14.16/dist/jquery.mask.min.js"></script>
-    <script src="/LootCommerce/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
-
 </body>
+
+<c:import url="/includes/footer.jsp" charEncoding="UTF-8" />
+
+<script src="/LootCommerce/webjars/jquery-mask-plugin/1.14.16/dist/jquery.mask.min.js"></script>
+<script src="/LootCommerce/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
 
 </html>

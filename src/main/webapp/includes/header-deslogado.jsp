@@ -13,9 +13,9 @@
         <div class="col-lg-6">
           <div class="input-group">
             <input id="pesquisar"type="text" placeholder="Pesquisar..." aria-label="Username" aria-describedby="basic-addon1" class="form-control border-end-0">
-            <span class="btn input-group-text border border-start-0 bg-white">
+            <a class="btn input-group-text border border-start-0 bg-white" href="/LootCommerce/pesquisa.jsp">
                 <span class="material-icons">search</span>
-            </span>
+            </a>
           </div>
         </div>
         <div class="d-flex align-items-center">

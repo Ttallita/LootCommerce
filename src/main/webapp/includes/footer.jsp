@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<div class="bg-dark p-4">
+<footer class="bg-dark p-4">
     <div class="mx-5">
         <div class="row ">
             <div class="col-md-6">
@@ -10,7 +10,6 @@
                 <h5>Sobre</h5>
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Sobre nós</a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Features</a></li>
                 </ul>
             </div>
             <div class="col text-light">
@@ -32,4 +31,4 @@
             </ul>
         </footer>
     </div>
-</div>
+</footer>

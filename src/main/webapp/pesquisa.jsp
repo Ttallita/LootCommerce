@@ -5,54 +5,46 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Pesquisa</title>
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>' />
-    <link rel="stylesheet" type="text/css"
-        href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
+    <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
     <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/main.css' />
 </head>
 
 <body class="bg-default">
-    <!-- Navigation-->
+
     <c:import url="/includes/header.jsp" charEncoding="UTF-8" />
 
     <main class="wrapper container  ">
         <div class="row mt-4 bg-white rounded p-4 mb-3">
-            <div class="col-md-12 p-3 border rounded m-3">1-10 de mais de 50 resultados para
+            <div class="col-md-12 p-3 border rounded m-3">1-10 de 50 resultados para
                 <strong class="text-muted">"palavra pesquisada"</strong>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-5">
                 <ul class="list-group mt-4">
-
                     <h5 class="fw-bolder">Categoria</h5>
-
                     <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">Comprar
-                            agora
+                        <a class="text-decoration-none">
+                            Nendoroid
+                        </a>
+                    </li>
+                    <li class="d-flex justify-content-between">
+                        <a class="text-decoration-none">
+                            Pelúcia
                         </a>
 
                     </li>
                     <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">Comprar
-                            agora
+                        <a class="text-decoration-none">
+                            Figure
                         </a>
-
                     </li>
                     <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">Comprar
-                            agora
+                        <a class="text-decoration-none">
+                            Chaveiro
                         </a>
-
                     </li>
-                    <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">Comprar
-                            agora
-                        </a>
-
-                    </li>
-
-
                 </ul>
                 <ul class="list-group mt-4">
 
@@ -266,8 +258,8 @@
                         <div class="card produto">
                             <img class="p-3" src="\LootCommerce\assets\img\pelucias\miku_pelucia.jpg" alt="...">
                             <div class="card-body pt-0">
-                                <h6>Nendoroid</h6>
-                                <h5 class="fw-bolder">Fancy Product</h5>
+                                <h6>Pelúcia</h6>
+                                <a class="fw-bolder h5 text-decoration-none" href="/LootCommerce/produto.jsp">Hatsune</a>
                                 <div class="row">
                                     <div class="col-8">R$40.00</div>
                                     <div class="col-4">
@@ -305,9 +297,11 @@
         </div>
     </main>
 
-    <c:import url="/includes/footer.jsp" charEncoding="UTF-8" />
-
 </body>
+
+<c:import url="/includes/footer.jsp" charEncoding="UTF-8"/>
 
 <script src='<c:url value="/webjars/jquery-mask-plugin/1.14.16/dist/jquery.mask.min.js"/>'></script>
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
+
+</html>
