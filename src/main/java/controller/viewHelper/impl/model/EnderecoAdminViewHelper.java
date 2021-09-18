@@ -3,6 +3,7 @@ package controller.viewHelper.impl.model;
 import controller.viewHelper.IViewHelper;
 import model.EntidadeDominio;
 import model.Result;
+import model.cliente.Cliente;
 import model.cliente.Endereco;
 import model.cliente.EnderecoType;
 
@@ -16,6 +17,7 @@ public class EnderecoAdminViewHelper implements IViewHelper {
         String operacao = request.getParameter("operacao");
 
         if(operacao.equals("salvar")) {
+            String id_Cliente = request.getParameter("idCliente");
             String tpResidencia = request.getParameter("tpResidencia");
             String tpLogradouro = request.getParameter("tpLogradouro");
             String logradouro = request.getParameter("logradouro");
@@ -26,13 +28,16 @@ public class EnderecoAdminViewHelper implements IViewHelper {
             String estado = request.getParameter("estado");
             String pais = request.getParameter("pais");
             String observacao = request.getParameter("observacao");
+            String apelido = request.getParameter("apelido");
 
             Endereco endereco = new Endereco();
 
-            endereco.setApelido("Teste");
+            endereco.setApelido(apelido);
             endereco.setTipoResidencia(tpResidencia);
             endereco.setTipoLogradouro(tpLogradouro);
             endereco.setLogradouro(logradouro);
+            endereco.setCliente(new Cliente());
+            endereco.getCliente().setId(Long.parseLong(id_Cliente));
 
             if(!numero.isEmpty()) {
                 endereco.setNumero(Integer.parseInt(numero));
@@ -44,6 +49,7 @@ public class EnderecoAdminViewHelper implements IViewHelper {
             endereco.setEstado(estado);
             endereco.setPais(pais);
             endereco.setObservacoes(observacao);
+
 
             if(!request.getParameterMap().containsKey("tpEndereco")) {
                 endereco.setTipoEndereco(EnderecoType.COBRANCA_ENTREGA);

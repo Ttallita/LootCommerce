@@ -4,6 +4,7 @@ import model.EntidadeDominio;
 import model.Usuario;
 import model.UsuarioType;
 import utils.Conexao;
+import utils.Criptografia;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,7 +31,7 @@ public class UsuarioDAO implements IDAO{
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstm.setString(1, usuario.getEmail());
-            pstm.setString(2, usuario.getSenha());
+            pstm.setString(2, Criptografia.getSha512(usuario.getSenha()));
             pstm.setString(3, usuario.getTipoUsuario().toString());
             pstm.setBoolean(4, usuario.isAtivo());
 
@@ -69,7 +70,7 @@ public class UsuarioDAO implements IDAO{
 
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, usuario.getEmail());
-            pstm.setString(2, usuario.getSenha());
+            pstm.setString(2, Criptografia.getSha512(usuario.getSenha()));
             pstm.setString(3, usuario.getTipoUsuario().toString());
             pstm.setBoolean(4, usuario.isAtivo());
             pstm.setLong(5, usuario.getId());

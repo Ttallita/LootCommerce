@@ -197,6 +197,7 @@
                     <div class="modal-body">
                       <form class="needs-validation" action="/LootCommerce/admin/enderecos" method="POST" novalidate="">
                         <input type="hidden" name="operacao" value="salvar">
+                        <input type="hidden" value="${cliente.id}" name="idCliente" />
                         <div class="row g-3 mb-3">
                           <div class="col-md-6">
                             <div class="form-floating">
@@ -275,6 +276,12 @@
                               <label>País</label>
                               <div class="invalid-feedback">Selecione um país.</div>
                             </div>
+                          </div>
+                          <div class="col-md-8">
+                           <div class="form-floating">
+                              <input type="text" class="form-control" id="apelido" name="apelido">
+                              <label for="apelido" class="form-label">Apelido</label>
+                           </div>
                           </div>
                           <div class="col-md-8">
                             <div class="form-floating">
@@ -386,6 +393,7 @@
                     </div>
                     <form class="needs-validation" action="/LootCommerce/admin/cartoes" method="POST" novalidate="">
                       <input type="hidden" name="operacao" value="salvar">
+                      <input type="hidden" value="${cliente.id}" name="idCliente" />
                       <div class="modal-body">
                         <div class="row g-3 mb-3">
                           <div class="col-md-6">
