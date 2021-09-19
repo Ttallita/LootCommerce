@@ -66,9 +66,63 @@ public class EnderecoAdminViewHelper implements IViewHelper {
             }
 
             return endereco;
-        }
+        } else if(operacao.equals("atualizar")) {
+            String id_endereco = request.getParameter("idEndereco");
+            String tpResidencia = request.getParameter("tpResidencia");
+            String tpLogradouro = request.getParameter("tpLogradouro");
+            String logradouro = request.getParameter("logradouro");
+            String numero = request.getParameter("numero");
+            String bairro = request.getParameter("bairro");
+            String cep = request.getParameter("cep");
+            String cidade = request.getParameter("cidade");
+            String estado = request.getParameter("estado");
+            String pais = request.getParameter("pais");
+            String observacao = request.getParameter("observacao");
+            String apelido = request.getParameter("apelido");
 
-        return null;
+            Endereco endereco = new Endereco();
+
+            endereco.setId(Long.parseLong(id_endereco));
+            endereco.setApelido(apelido);
+            endereco.setTipoResidencia(tpResidencia);
+            endereco.setTipoLogradouro(tpLogradouro);
+            endereco.setLogradouro(logradouro);
+
+            if(!numero.isEmpty()) {
+                endereco.setNumero(Integer.parseInt(numero));
+            }
+
+            endereco.setBairro(bairro);
+            endereco.setCep(cep);
+            endereco.setCidade(cidade);
+            endereco.setEstado(estado);
+            endereco.setPais(pais);
+            endereco.setObservacoes(observacao);
+
+
+            if(!request.getParameterMap().containsKey("tpEndereco")) {
+                endereco.setTipoEndereco(EnderecoType.COBRANCA_ENTREGA);
+            } else {
+                String tpEndereco = request.getParameter("tpEndereco");
+
+                if(tpEndereco.contains("Cobrança")) {
+                    endereco.setTipoEndereco(EnderecoType.COBRANCA);
+                } else if(tpEndereco.contains("Entrega")) {
+                    endereco.setTipoEndereco(EnderecoType.ENTREGA);
+                } else {
+                    endereco.setTipoEndereco(EnderecoType.COBRANCA_ENTREGA);
+                }
+            }
+
+            return endereco;
+        } else {
+            Long id = Long.parseLong(request.getParameter("idEndereco"));
+
+            Endereco endereco = new Endereco();
+            endereco.setId(id);
+
+            return endereco;
+        }
     }
 
     @Override

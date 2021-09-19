@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.logging.Logger;
 
 public class CartaoDeCreditoAdminViewHelper implements IViewHelper {
 
@@ -39,8 +40,32 @@ public class CartaoDeCreditoAdminViewHelper implements IViewHelper {
             cartao.getCliente().getUsuario().setId(Long.parseLong(id_cliente));
 
             return cartao;
+        } else if (operacao.equals("atualizar")) {
+            String id_cartao = request.getParameter("idCartao");
+            String numCartao = request.getParameter("numCartao");
+            String bandeira = request.getParameter("bandeira");
+            int codigoCartao = Integer.parseInt(request.getParameter("codigoCartao"));
+            String nomeCartao = request.getParameter("nomeCartao");
+            LocalDate dtValidade = LocalDate.parse(request.getParameter("dtValidade"));
+
+            CartaoDeCredito cartao = new CartaoDeCredito();
+
+            cartao.setId(Long.parseLong(id_cartao));
+            cartao.setNumCartao(numCartao);
+            cartao.setBandeira(bandeira);
+            cartao.setCodigo(codigoCartao);
+            cartao.setNomeImpressoCartao(nomeCartao);
+            cartao.setDataValidade(dtValidade);
+
+            return cartao;
+        } else {
+            Long id = Long.parseLong(request.getParameter("idCliente"));
+
+            CartaoDeCredito cartaoDeCredito = new CartaoDeCredito();
+            cartaoDeCredito.setId(id);
+
+            return cartaoDeCredito;
         }
-        return null;
     }
 
     @Override
