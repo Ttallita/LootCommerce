@@ -554,7 +554,7 @@
                   </table>
                 </div>
 
-                <!-- Modal Cadastro/Edição Cartão -->
+                <!-- Modal Cadastro Cartão -->
                 <div class="modal fade" id="cadastrarCartao" data-bs-backdrop="static" data-bs-keyboard="false"
                   tabindex="-1" aria-labelledby="cadastrarCartaoLabel" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -621,26 +621,117 @@
                   </div>
                 </div>
 
-                <!-- Modal Excluir Cartão -->
-                <div class="modal fade" id="excluirCartao" data-bs-backdrop="static" data-bs-keyboard="false"
-                  tabindex="-1" aria-labelledby="excluirCartaoLabel" style="display: none;" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered modal-sm">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="excluirCartaoLabel">Excluir</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                <c:forEach var="cartao" items="${cliente.cartoesDeCredito}">
+                  <!-- Modal Edição Cartão -->
+                  <div class="modal fade" id="editarCartao${cartao.id}" data-bs-backdrop="static"
+                      data-bs-keyboard="false" tabindex="-1" aria-labelledby="editarCartaoLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered modal-xl">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="cadastrarCartaoLabel">
+                                      Editar</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                      aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                  <form class="needs-validation" action="/LootCommerce/admin/cartoes" method="POST">
+                                      <input type="hidden" name="operacao" value="atualizar">
+                                      <div class="row g-3 mb-3">
+                                          <div class="col-md-6">
+                                              <div class="form-floating">
+                                                  <input type="text" class="form-control" id="numCartao"
+                                                      name="numCartao" value="${cartao.numCartao}">
+                                                  <label for="numCartao" class="form-label">Número
+                                                      do
+                                                      cartão</label>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                              <div class="form-floating">
+                                                  <input type="text" class="form-control" id="nomeCartao"
+                                                      name="nomeCartao"
+                                                      value="${cartao.nomeImpressoCartao}">
+                                                  <label for="nomeCartao" required>Nome do
+                                                      cartão</label>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-3">
+                                              <div class="form-floating">
+                                                  <select class="form-select" id="bandeira"
+                                                      name="bandeira" required>
+                                                      <option value="">Selecione</option>
+                                                      <option>Visa</option>
+                                                      <option>Mastercard</option>
+                                                  </select>
+                                                  <label>Bandeira</label>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-2">
+                                              <div class="form-floating">
+                                                  <input type="text" class="form-control"
+                                                      id="codigoCartao" name="codigoCartao"
+                                                      value="${cartao.codigo}">
+                                                  <label for="nomeCartao"
+                                                      class="form-label">Código</label>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-3">
+                                              <div class="form-floating">
+                                                  <input type="date" class="form-control" id="dtValidade"
+                                                      name="dtValidade" value="${cartao.dataValidade}">
+                                                  <label for="nomeCartao" class="form-label">Data
+                                                      de
+                                                      Validade</label>
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                      <div class="modal-footer">
+                                          <button type="button" id="btnCancelarCartaoNovo"
+                                              class="btn btn-secondary"
+                                              data-bs-dismiss="modal">Cancelar</button>
+                                          <input type="hidden" value="${cartao.id}" name="idCartao" />
+                                          <input type="submit" class="btn btn-primary" value="Editar"
+                                              name="atualizar" />
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
                       </div>
-                      <div class="modal-body">
-                        Tem certeza que deseja excluir esse cartão?
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" id="btnCancelar" data-bs-dismiss="modal"
-                          class="btn btn-secondary">Cancelar</button>
-                        <button type="button" id="btnInativar" class="btn btn-danger">Excluir</button>
-                      </div>
-                    </div>
                   </div>
+              </c:forEach>
+              
+              <c:forEach var="cartao" items="${cliente.cartoesDeCredito}">
+                <div class="modal fade" id="excluirCartao${cartao.id}" data-bs-backdrop="static"
+                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="excluirCartaoLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="excluirCartaoLabel">Excluir
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Tem certeza que deseja excluir esse cartão?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" data-bs-dismiss="modal"
+                                    class="btn btn-secondary">Cancelar</button>
+                                <form action="../admin/cartoes" method="POST">
+                                    <input type="hidden" value="remover" name="operacao" />
+                                    <input type="hidden" value="${cartao.id}" name="idCartao" />
+                                    <input type="submit" class="btn btn-danger" value="Excluir"
+                                        name="excluir" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+              </c:forEach>              
 
                 <!--Cartões-->
                 <div class="tab-pane fade" id="nav-cartoes" role="tabpanel" aria-labelledby="nav-cartoes-tab">
@@ -662,26 +753,27 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <c:forEach var="cartao" items="${cliente.cartoesDeCredito}">
-                      <tr>
-                        <td>${cartao.nomeImpressoCartao}</td>
-                        <td>${cartao.numCartao}</td>
-                        <td>${cartao.bandeira}</td>
-                        <td>${cartao.codigo}</td>
-                        <td>${cartao.dataValidade}</td>
-                        <td>
-                          <span class="material-icons"> mode_edit</span>
-                        </td>
-                        <td>
-                          <span class="material-icons text-danger">
-                            <span data-bs-toggle="modal" data-bs-target="#excluirCartao"
-                              id="deletarCartao">delete</span>
-                          </span>
-                        </td>
-                      </tr>
+                      <c:forEach var="cartao" items="${cliente.cartoesDeCredito}">
+                        <tr>
+                          <td>${cartao.nomeImpressoCartao}</td>
+                          <td>${cartao.numCartao}</td>
+                          <td>${cartao.bandeira}</td>
+                          <td>${cartao.codigo}</td>
+                          <td>${cartao.dataValidade}</td>
+                          <td>
+                            <span class="material-icons" data-bs-toggle="modal" data-bs-target="#editarCartao${cartao.id}"> 
+                              mode_edit
+                            </span>
+                          </td>
+                          <td>
+                            <span class="material-icons text-danger">
+                              <span data-bs-toggle="modal" data-bs-target="#excluirCartao${cartao.id}" id="deletarCartao${cartao.id}">
+                                delete
+                              </span>
+                            </span>
+                          </td>
+                        </tr>
                       </c:forEach>
-                      </tr>
                     </tbody>
                   </table>
                 </div>

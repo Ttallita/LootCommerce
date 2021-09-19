@@ -3,6 +3,7 @@ package controller.viewHelper.impl.model;
 import controller.viewHelper.IViewHelper;
 import model.EntidadeDominio;
 import model.Result;
+import model.Usuario;
 import model.cliente.Cliente;
 import model.cliente.Endereco;
 import model.cliente.EnderecoType;
@@ -67,6 +68,7 @@ public class EnderecoAdminViewHelper implements IViewHelper {
 
             return endereco;
         } else if(operacao.equals("atualizar")) {
+            String idCliente = request.getParameter("id_cliente");
             String id_endereco = request.getParameter("idEndereco");
             String tpResidencia = request.getParameter("tpResidencia");
             String tpLogradouro = request.getParameter("tpLogradouro");
@@ -114,12 +116,24 @@ public class EnderecoAdminViewHelper implements IViewHelper {
                 }
             }
 
+            Cliente cliente = new Cliente();
+            cliente.setId(Long.parseLong(idCliente));
+
             return endereco;
         } else {
             Long id = Long.parseLong(request.getParameter("idEndereco"));
+            Long id_cliente = Long.parseLong(request.getParameter("idCliente"));
 
             Endereco endereco = new Endereco();
             endereco.setId(id);
+
+            Cliente cliente = new Cliente();
+            cliente.setId(id_cliente);
+
+            Usuario usuario = new Usuario();
+            usuario.setId(id_cliente);
+
+            cliente.setUsuario(usuario);
 
             return endereco;
         }
