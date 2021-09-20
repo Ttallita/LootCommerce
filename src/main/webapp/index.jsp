@@ -86,7 +86,7 @@
             <h4>Baseado nas suas últimas compras</h4>
             <button data-bs-target="#recomendados" data-bs-slide="prev" type="button"
                 class="carousel-control-prev justify-content-start ">
-                <span class="material-icons bg-dark">keyboard_arrow_left</span>
+                <span class="material-icons bg-dark btn-circle">keyboard_arrow_left</span>
 
             </button>
             <div class="carousel-inner">
@@ -272,7 +272,7 @@
             <div>
                 <button type="button" data-bs-target="#recomendados" data-bs-slide="next"
                     class="carousel-control-next justify-content-end">
-                    <span class="material-icons bg-dark">keyboard_arrow_right</span>
+                    <span class="material-icons bg-dark btn-circle">keyboard_arrow_right</span>
                 </button>
             </div>
         </div>

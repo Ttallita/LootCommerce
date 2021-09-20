@@ -51,17 +51,20 @@
                         aria-controls="v-pills-conta" aria-selected="true">
                         <span class="material-icons inline-icon">home</span>Conta</button>
 
-                    <button class="${not empty aba && aba == 'senha' ? 'active' : ''} btn btn-outline-primary text-start border-0"
+                    <button
+                        class="${not empty aba && aba == 'senha' ? 'active' : ''} btn btn-outline-primary text-start border-0"
                         id="v-pills-alterar-senha-tab" data-bs-toggle="pill" data-bs-target="#v-pills-alterar-senha"
                         type="button" aria-controls="v-pills-alterar-senha" aria-selected="false">
                         <span class="material-icons inline-icon">lock</span>Alterar Senha</button>
 
-                    <button class="${not empty aba && aba == 'endereco' ? 'active' : ''} btn btn-outline-primary text-start border-0"
+                    <button
+                        class="${not empty aba && aba == 'endereco' ? 'active' : ''} btn btn-outline-primary text-start border-0"
                         id="v-pills-enderecos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-enderecos"
                         type="button" aria-controls="v-pills-enderecos" aria-selected="false">
                         <span class="material-icons inline-icon">local_shipping</span>Endereços</button>
 
-                    <button class="${not empty aba && aba == 'cartoes' ? 'active' : ''} btn btn-outline-primary text-start border-0"
+                    <button
+                        class="${not empty aba && aba == 'cartoes' ? 'active' : ''} btn btn-outline-primary text-start border-0"
                         id="v-pills-cartoes-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cartoes" type="button"
                         aria-controls="v-pills-cartoes" aria-selected="false">
                         <span class="material-icons inline-icon">credit_card</span>Cartões</button>
@@ -292,7 +295,8 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-floating">
-                                                            <input type="text" class="form-control" id="tpLogradouro" name="tpLogradouro" required>
+                                                            <input type="text" class="form-control" id="tpLogradouro"
+                                                                name="tpLogradouro" required>
                                                             <label for="tpLogradouro" class="form-label">
                                                                 Tipo de logradouro
                                                             </label>
@@ -548,38 +552,37 @@
                             </c:forEach>
 
 
-                                <!-- Modal Exclusão Endereço -->
-                                <c:forEach var="endereco" items="${clienteLogado.enderecos}">
-                                    <div class="modal fade" id="excluirEndereco${endereco.id}" data-bs-backdrop="static"
-                                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="excluirEnderecoLabel"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered modal-sm">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="excluirEnderecoLabel">
-                                                        Excluir</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Tem certeza que deseja excluir esse endereço?
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Cancelar</button>
-                                                    <form action="../clientes/enderecos" method="POST">
-                                                        <input type="hidden" value="remover" name="operacao" />
-                                                        <input type="hidden" value="${endereco.id}" name="idEndereco" />
-                                                        <input type="submit" class="btn btn-danger" value="Excluir"
-                                                            name="excluir" />
-                                                    </form>
-                                                </div>
+                            <!-- Modal Exclusão Endereço -->
+                            <c:forEach var="endereco" items="${clienteLogado.enderecos}">
+                                <div class="modal fade" id="excluirEndereco${endereco.id}" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="excluirEnderecoLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="excluirEnderecoLabel">
+                                                    Excluir</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Tem certeza que deseja excluir esse endereço?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Cancelar</button>
+                                                <form action="../clientes/enderecos" method="POST">
+                                                    <input type="hidden" value="remover" name="operacao" />
+                                                    <input type="hidden" value="${endereco.id}" name="idEndereco" />
+                                                    <input type="submit" class="btn btn-danger" value="Excluir"
+                                                        name="excluir" />
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
-                                </c:forEach>
+                                </div>
+                            </c:forEach>
 
-                            </div>
                         </div>
                     </div>
 
@@ -739,7 +742,8 @@
                                                             <div class="form-floating">
                                                                 <input type="text" class="form-control" id="numCartao"
                                                                     name="numCartao" value="${cartao.numCartao}">
-                                                                <label for="numCartao" class="form-label">Número do cartão</label>
+                                                                <label for="numCartao" class="form-label">Número do
+                                                                    cartão</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -837,7 +841,6 @@
                         <div class="border p-4">
                             <div class="col-md-12 h6 fw-bold">00/00/0000</div>
                             <div class="col-12 justify-content-between">
-
                                 <div class="dropdown float-end ">
                                     <a href="#" aria-expanded="false" data-bs-toggle="dropdown"
                                         class="text-decoration-none"><span class="material-icons">more_vert</span></a>
@@ -881,7 +884,7 @@
                                             <h6>Nome cupom</h6>
                                             <h6>R$ 00,00</h6>
                                         </div>
-                                            <h6>Descrição</h6>
+                                        <h6>Descrição</h6>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -890,7 +893,7 @@
                                             <h6>Nome cupom</h6>
                                             <h6>R$ 00,00</h6>
                                         </div>
-                                            <h6>Descrição</h6>
+                                        <h6>Descrição</h6>
                                     </div>
                                 </div>
                                 <div class="col">
@@ -899,7 +902,7 @@
                                             <h6>Nome cupom</h6>
                                             <h6>R$ 00,00</h6>
                                         </div>
-                                            <h6>Descrição</h6>
+                                        <h6>Descrição</h6>
                                     </div>
                                 </div>
                             </div>
@@ -911,7 +914,7 @@
                                             <h6>Nome cupom</h6>
                                             <h6>R$ 00,00</h6>
                                         </div>
-                                            <h6>Descrição</h6>
+                                        <h6>Descrição</h6>
                                     </div>
                                 </div>
                             </div>

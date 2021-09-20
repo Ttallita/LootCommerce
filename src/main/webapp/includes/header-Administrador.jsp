@@ -21,7 +21,7 @@
             </form>
             <div class="dropdown text-end">
                 <a href="#" class="d-block text-decoration-none dropdown-toggle link-light" id="dropdownAdm" data-bs-toggle="dropdown" aria-expanded="false">
-                    Adminstração
+                    Administração
                 </a>
                 <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item link-light" id="gerenciamento" href="/LootCommerce/admin/controle?operacao=listarTodos">Gerenciamento</a></li>
