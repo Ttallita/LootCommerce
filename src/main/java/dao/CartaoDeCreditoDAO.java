@@ -11,6 +11,7 @@ import java.util.List;
 
 import model.EntidadeDominio;
 import model.cliente.CartaoDeCredito;
+import model.cliente.Cliente;
 import utils.Conexao;
 
 public class CartaoDeCreditoDAO implements IDAO {
@@ -18,7 +19,7 @@ public class CartaoDeCreditoDAO implements IDAO {
     private Connection conn;
 
     @Override
-    public Long salvar(EntidadeDominio entidade) {
+    public EntidadeDominio salvar(EntidadeDominio entidade) {
         CartaoDeCredito cartao = (CartaoDeCredito) entidade;
         Conexao conexao = new Conexao();
 
@@ -38,7 +39,17 @@ public class CartaoDeCreditoDAO implements IDAO {
 
             pstm.execute();
 
-            return 1l;
+            ResultSet rs = pstm.getGeneratedKeys();
+
+            Long idCartao = 0L;
+
+            while (rs.next()) {
+                idCartao = rs.getLong(1);
+            }
+
+            cartao.setId(idCartao);
+
+            return cartao;
         } catch (Exception e) {
             System.err.println(e.getMessage());
             return null;
@@ -48,7 +59,7 @@ public class CartaoDeCreditoDAO implements IDAO {
     }
 
     @Override
-    public boolean atualizar(EntidadeDominio entidade) {
+    public EntidadeDominio atualizar(EntidadeDominio entidade) {
         CartaoDeCredito cartao = (CartaoDeCredito) entidade;
         Conexao conexao = new Conexao();
 
@@ -67,19 +78,24 @@ public class CartaoDeCreditoDAO implements IDAO {
             pstm.setString(5, String.valueOf(cartao.getCodigo()));
             pstm.setLong(6, cartao.getId());
 
+
+            List<EntidadeDominio> cliente = new ClienteDAO().listar(cartao.getCliente(), "listar");
+
+            cartao.setCliente((Cliente) cliente);
+
             pstm.execute();
 
-            return true;
+            return cartao;
         } catch (Exception e) {
             System.err.println(e.getMessage());
-            return false;
+            return null;
         } finally {
             conexao.fecharConexao(conn);
         }
     }
 
     @Override
-    public boolean deletar(EntidadeDominio entidade) {
+    public EntidadeDominio deletar(EntidadeDominio entidade) {
         CartaoDeCredito cartaoDeCredito = (CartaoDeCredito) entidade;
         Conexao conexao = new Conexao();
         try {
@@ -90,12 +106,15 @@ public class CartaoDeCreditoDAO implements IDAO {
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setLong(1, cartaoDeCredito.getId());
 
+            List<EntidadeDominio> cliente = new ClienteDAO().listar(cartaoDeCredito.getCliente(), "listar");
+            cartaoDeCredito.setCliente((Cliente) cliente);
+
             pstm.execute();
 
-            return true;
+            return cartaoDeCredito;
         }catch (Exception e) {
             System.err.println(e.getMessage());
-            return false;
+            return null;
         }finally {
             conexao.fecharConexao(conn);
         }

@@ -1,4 +1,4 @@
-package controller.viewHelper.impl.model;
+package controller.viewHelper.impl.model.adm;
 
 import controller.viewHelper.IViewHelper;
 import model.EntidadeDominio;

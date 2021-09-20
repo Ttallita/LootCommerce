@@ -14,7 +14,7 @@ public class EnderecoDAO implements IDAO{
     private Connection conn;
 
     @Override
-    public Long salvar(EntidadeDominio entidade) {
+    public EntidadeDominio salvar(EntidadeDominio entidade) {
         Endereco endereco = (Endereco) entidade;
 
         Conexao conexao = new Conexao();
@@ -48,7 +48,7 @@ public class EnderecoDAO implements IDAO{
                 enderecoId = rs.getLong(1);
             }
 
-            return enderecoId;
+            return endereco;
         }catch (Exception e) {
             System.err.println(e.getMessage());
             return null;
@@ -59,7 +59,7 @@ public class EnderecoDAO implements IDAO{
     }
 
     @Override
-    public boolean atualizar(EntidadeDominio entidade) {
+    public EntidadeDominio atualizar(EntidadeDominio entidade) {
         Endereco endereco = (Endereco) entidade;
         Conexao conexao = new Conexao();
 
@@ -87,10 +87,10 @@ public class EnderecoDAO implements IDAO{
 
             pstm.execute();
 
-            return true;
+            return endereco;
         }catch (Exception e) {
             System.err.println(e.getMessage());
-            return false;
+            return null;
         }finally {
             conexao.fecharConexao(conn);
         }
@@ -98,7 +98,7 @@ public class EnderecoDAO implements IDAO{
     }
 
     @Override
-    public boolean deletar(EntidadeDominio entidade) {
+    public EntidadeDominio deletar(EntidadeDominio entidade) {
         Endereco endereco = (Endereco) entidade;
         Conexao conexao = new Conexao();
         try {
@@ -111,10 +111,10 @@ public class EnderecoDAO implements IDAO{
 
             pstm.execute();
 
-            return true;
+            return endereco;
         }catch (Exception e) {
             System.err.println(e.getMessage());
-            return false;
+            return endereco;
         }finally {
             conexao.fecharConexao(conn);
         }

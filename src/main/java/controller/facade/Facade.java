@@ -137,15 +137,22 @@ public class Facade implements IFacade {
 
         String msgValidacao = validarRegrasDeNegocio(entidade, "atualizar");
 
-        List<EntidadeDominio> entidades = new ArrayList<>();
-        entidades.add(entidade);
-
-        result.setEntidades(entidades);
-
         if(msgValidacao == null) {
             IDAO dao = daosMap.get(classe);
 
-            dao.atualizar(entidade);
+
+            EntidadeDominio entidadeDominio = dao.atualizar(entidade);
+
+            if(entidadeDominio != null) {
+                List<EntidadeDominio> entidades = new ArrayList<>();
+                entidades.add(entidadeDominio);
+
+                result.setEntidades(entidades);
+
+            } else {
+                String msgErro = "Erro ao atualizar registro";
+                result.setMsg(msgErro);
+            }
         } else {
             result.setMsg(msgValidacao);
         }
@@ -165,13 +172,19 @@ public class Facade implements IFacade {
         if(msgValidacao == null) {
             IDAO idao = daosMap.get(nomeClasse);
 
-            List<EntidadeDominio> entidadeDominios = new ArrayList<>();
-            entidadeDominios.add(entidade);
 
+            EntidadeDominio entidadeDominio = idao.deletar(entidade);
 
-            result.setEntidades(entidadeDominios);
+            if(entidadeDominio != null) {
+                List<EntidadeDominio> entidades = new ArrayList<>();
+                entidades.add(entidadeDominio);
 
-            idao.deletar(entidade);
+                result.setEntidades(entidades);
+
+            } else {
+                String msgErro = "Erro ao remover registro";
+                result.setMsg(msgErro);
+            }
 
             return result;
         } else {

@@ -10,4 +10,4 @@ values (4,'COBRANCA_ENTREGA', 'Minha Casa', 'Rua', 'Onze', '5115', 'São Francis
 
 --Administrador Teste
 insert into usuarios (usr_email, usr_senha, usr_tipo, usr_ativo)
-values ('useradmexample@gmail.com', 'Teste123!', 'ADMINSTRADOR', true);
+values ('admexample@gmail.com', 'Teste123!', 'ADMINSTRADOR', true);

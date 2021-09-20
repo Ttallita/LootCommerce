@@ -4,6 +4,12 @@ import controller.command.*;
 import controller.viewHelper.IViewHelper;
 import controller.viewHelper.impl.LoginViewHelper;
 import controller.viewHelper.impl.model.*;
+import controller.viewHelper.impl.model.adm.CartaoDeCreditoAdminViewHelper;
+import controller.viewHelper.impl.model.adm.ClienteAdminViewHelper;
+import controller.viewHelper.impl.model.adm.EnderecoAdminViewHelper;
+import controller.viewHelper.impl.model.cliente.CartaoDeCreditoViewHelper;
+import controller.viewHelper.impl.model.cliente.ClienteViewHelper;
+import controller.viewHelper.impl.model.cliente.EnderecoViewHelper;
 import model.EntidadeDominio;
 import model.Result;
 

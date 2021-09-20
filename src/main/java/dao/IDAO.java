@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface IDAO {
 
-    public Long salvar(EntidadeDominio entidade);
-    public abstract boolean atualizar(EntidadeDominio entidade);
-    public abstract boolean deletar(EntidadeDominio entidade);
+    public EntidadeDominio salvar(EntidadeDominio entidade);
+    public abstract EntidadeDominio atualizar(EntidadeDominio entidade);
+    public abstract EntidadeDominio deletar(EntidadeDominio entidade);
     public abstract List<EntidadeDominio> listar(EntidadeDominio entidade, String operacao);
 
 }

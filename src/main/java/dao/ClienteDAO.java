@@ -20,7 +20,7 @@ public class ClienteDAO implements IDAO{
     private Connection conn;
 
     @Override
-    public Long salvar(EntidadeDominio entidade) {
+    public EntidadeDominio salvar(EntidadeDominio entidade) {
         Cliente cliente = (Cliente) entidade;
         Conexao conexao = new Conexao();
 
@@ -32,10 +32,10 @@ public class ClienteDAO implements IDAO{
 
             Usuario usuario = cliente.getUsuario();
 
-            Long idUser = new UsuarioDAO().salvar(usuario);
+            usuario = (Usuario) new UsuarioDAO().salvar(usuario);
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            pstm.setLong(1, idUser);
+            pstm.setLong(1, usuario.getId());
             pstm.setString(2, cliente.getNome());
             pstm.setString(3, cliente.getSobrenome());
             pstm.setString(4, cliente.getCpf());
@@ -61,7 +61,7 @@ public class ClienteDAO implements IDAO{
 
             new EnderecoDAO().salvar(endereco);
 
-            return idCliente;
+            return cliente;
         }catch (Exception e) {
             System.err.println(e.getMessage());
             return null;
@@ -72,7 +72,7 @@ public class ClienteDAO implements IDAO{
     }
 
     @Override
-    public boolean atualizar(EntidadeDominio entidade) {
+    public EntidadeDominio atualizar(EntidadeDominio entidade) {
 
         Cliente cliente = (Cliente) entidade;
         Conexao conexao = new Conexao();
@@ -98,11 +98,11 @@ public class ClienteDAO implements IDAO{
 
             pstm.execute();
 
-            return true;
+            return cliente;
 
         }catch (Exception e) {
             System.err.println(e.getMessage());
-            return false;
+            return null;
 
         }finally {
             conexao.fecharConexao(conn);
@@ -111,8 +111,8 @@ public class ClienteDAO implements IDAO{
     }
 
     @Override
-    public boolean deletar(EntidadeDominio entidade) {
-        return false;
+    public EntidadeDominio deletar(EntidadeDominio entidade) {
+        return null;
     }
 
     @Override
@@ -185,7 +185,7 @@ public class ClienteDAO implements IDAO{
                 if(operacao.equals("listar")) {
                     clienteLogado.setUsuario(cliente.getUsuario());
                 } else if(operacao.equals("listarAdm")){
-                        clienteLogado.setUsuario((Usuario) new UsuarioDAO().listar(cliente.getUsuario(), "listarAdm").get(0));
+                    clienteLogado.setUsuario((Usuario) new UsuarioDAO().listar(cliente.getUsuario(), "listarAdm").get(0));
                 } else{
                     Usuario usuario = new Usuario();
                     usuario.setId(rs.getLong("usr_id"));

@@ -1,4 +1,4 @@
-package controller.viewHelper.impl.model;
+package controller.viewHelper.impl.model.cliente;
 
 import controller.viewHelper.IViewHelper;
 import dao.ClienteDAO;

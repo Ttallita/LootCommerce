@@ -1,7 +1,7 @@
 CREATE TABLE usuarios (
     usr_id serial NOT NULL,
     usr_email varchar(255) NOT NULL,
-    usr_senha varchar(20) NOT NULL,
+    usr_senha varchar(255) NOT NULL,
     usr_tipo varchar(255) NOT NULL,
     usr_ativo boolean NOT NULL,
 

@@ -3,6 +3,7 @@ package dao;
 import model.EntidadeDominio;
 import model.Usuario;
 import model.UsuarioType;
+import model.cliente.Endereco;
 import utils.Conexao;
 import utils.Criptografia;
 
@@ -19,7 +20,7 @@ public class UsuarioDAO implements IDAO{
     private Connection conn;
 
     @Override
-    public Long salvar(EntidadeDominio entidade) {
+    public EntidadeDominio salvar(EntidadeDominio entidade) {
         Usuario usuario = (Usuario) entidade;
         Conexao conexao = new Conexao();
 
@@ -45,7 +46,9 @@ public class UsuarioDAO implements IDAO{
                 idUser = rs.getLong(1);
             }
 
-            return idUser;
+            usuario.setId(idUser);
+
+            return usuario;
 
         }catch (Exception e) {
             System.err.println(e.getMessage());
@@ -58,7 +61,7 @@ public class UsuarioDAO implements IDAO{
     }
 
     @Override
-    public boolean atualizar(EntidadeDominio entidade) {
+    public EntidadeDominio atualizar(EntidadeDominio entidade) {
         Usuario usuario = (Usuario) entidade;
         Conexao conexao = new Conexao();
 
@@ -77,11 +80,11 @@ public class UsuarioDAO implements IDAO{
 
             pstm.execute();
 
-            return true;
+            return usuario;
 
         }catch (Exception e) {
             System.err.println(e.getMessage());
-            return false;
+            return null;
 
         }finally {
             conexao.fecharConexao(conn);
@@ -89,8 +92,8 @@ public class UsuarioDAO implements IDAO{
     }
 
     @Override
-    public boolean deletar(EntidadeDominio entidade) {
-        return false;
+    public Endereco deletar(EntidadeDominio entidade) {
+        return null;
     }
 
     @Override
@@ -117,7 +120,7 @@ public class UsuarioDAO implements IDAO{
 
             if(operacao.equals("login")) {
                 pstm.setString(1, usuario.getEmail());
-                pstm.setString(2, usuario.getSenha());
+                pstm.setString(2, Criptografia.getSha512(usuario.getSenha()));
             } else if(operacao.equals("listarAdm")) {
                 pstm.setLong(1, usuario.getId());
             }

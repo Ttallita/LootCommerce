@@ -1,10 +1,11 @@
-package controller.viewHelper.impl.model;
+package controller.viewHelper.impl.model.adm;
 
 import controller.viewHelper.IViewHelper;
+import controller.viewHelper.impl.model.cliente.EnderecoViewHelper;
+import controller.viewHelper.impl.model.UsuarioViewHelper;
 import model.EntidadeDominio;
 import model.Result;
 import model.Usuario;
-import model.UsuarioType;
 import model.cliente.Cliente;
 import model.cliente.Endereco;
 import model.cliente.Telefone;
@@ -18,9 +19,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClienteViewHelper implements IViewHelper {
-
-
+public class ClienteAdminViewHelper implements IViewHelper{
     @Override
     public EntidadeDominio getEntidade(HttpServletRequest request) {
         String operacao = request.getParameter("operacao");
@@ -70,18 +69,11 @@ public class ClienteViewHelper implements IViewHelper {
             cliente.setEnderecos(enderecos);
 
             return cliente;
-        } else if(operacao.equals("listar")) {
-            Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
 
-            Cliente cliente = new Cliente();
-            cliente.setUsuario(usuario);
-
-            return cliente;
         } else if(operacao.equals("atualizar")) {
-            Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");
-
             Cliente cliente = new Cliente();
 
+            String idCliente = request.getParameter("idCliente");
             String nome = request.getParameter("nome");
             String sobrenome = request.getParameter("sobrenome");
             String genero = request.getParameter("genero");
@@ -104,6 +96,10 @@ public class ClienteViewHelper implements IViewHelper {
             telefone.setDdd(ddd);
             telefone.setNumero(phone);
 
+            Usuario usuario = new Usuario();
+            usuario.setId(Long.parseLong(idCliente));
+
+            cliente.setId(Long.parseLong(idCliente));
             cliente.setNome(nome);
             cliente.setSobrenome(sobrenome);
             cliente.setGenero(genero);
@@ -113,8 +109,22 @@ public class ClienteViewHelper implements IViewHelper {
             cliente.setUsuario(usuario);
 
             return cliente;
-        }
+        } else if(operacao.equals("listarTodos")) {
+            Cliente cliente = new Cliente();
 
+            return cliente;
+        } else if(operacao.equals("listarAdm")) {
+            String id = request.getParameter("id");
+
+            Usuario usuario = new Usuario();
+            usuario.setId(Long.parseLong(id));
+
+            Cliente cliente = new Cliente();
+            cliente.setId(Long.parseLong(id));
+            cliente.setUsuario(usuario);
+
+            return cliente;
+        }
         return null;
     }
 
@@ -123,29 +133,22 @@ public class ClienteViewHelper implements IViewHelper {
         String operacao = request.getParameter("operacao");
 
         if(operacao.equals("salvar")) {
+
+        }else if(operacao.equals("atualizar")) {
             Cliente cliente = (Cliente) result.getEntidades().get(0);
 
-            if(result.getMsg() == null) {
-                response.sendRedirect("login.jsp");
-            } else {
-                String[] mensagensDeErro = result.getMsg().split("\n");
-
-                request.setAttribute("mensagem", mensagensDeErro);
-                request.setAttribute("cliente", cliente);
-                request.getRequestDispatcher("cadastro.jsp").forward(request, response);
-            }
-        } else if(operacao.equals("listar")) {
+            request.setAttribute("cliente", cliente);
+            request.getRequestDispatcher("/adm/gerenciarCliente.jsp").forward(request, response);
+        }else if(operacao.equals("listarAdm")) {
             Cliente cliente = (Cliente) result.getEntidades().get(0);
 
-            request.setAttribute("clienteLogado", cliente);
+            request.setAttribute("cliente", cliente);
+            request.getRequestDispatcher("/adm/gerenciarCliente.jsp").forward(request, response);
+        } else if(operacao.equals("listarTodos")) {
+           List<EntidadeDominio> clientes = result.getEntidades();
 
-            request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, response);
-        } else if(operacao.equals("atualizar")) {
-            Cliente cliente = (Cliente) result.getEntidades().get(0);
-
-            request.setAttribute("clienteLogado", cliente);
-
-            response.sendRedirect("/LootCommerce/clientes/perfil?operacao=listar");
+           request.setAttribute("clientes", clientes);
+           request.getRequestDispatcher("/adm/gerenciamento.jsp").forward(request, response);
         }
     }
 }
