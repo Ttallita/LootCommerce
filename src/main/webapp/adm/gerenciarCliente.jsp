@@ -1,41 +1,56 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <html>
 
 <head>
   <meta charset="UTF-8" />
   <title>Gerenciar clientes</title>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>' />
-  <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
+  <link rel="stylesheet" type="text/css"
+    href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
   <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/main.css' />
 </head>
 
 <body class="bg-default">
 
-    <c:import url="/includes/header-Administrador.jsp" charEncoding="UTF-8" />
+  <header class="header bg-dark shadow">
+    <div class="d-flex flex-wrap align-items-center">
+      <a type="button" id="voltarGerencia" href="/LootCommerce/admin/controle?operacao=listarTodos" class="p-4">
+        <span class="material-icons">keyboard_backspace</span>
+      </a>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb m-0 h5">
+          <li class="breadcrumb-item"><a href="/LootCommerce/admin/controle?operacao=listarTodos">Gerenciamento</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Gerenciar Cliente
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </header>
 
-    <c:if test="${not empty requestScope.mensagem}">
-      <div class="modal fade" id="erro" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header bg-danger text-white">
-              <h5 class="modal-title">Erro ao cadastrar</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <ul>
-                <c:forEach var="mensagem" items="${mensagem}">
-                  <li>${mensagem}</li>
-                </c:forEach>
-              </ul>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
-            </div>
+  <c:if test="${not empty requestScope.mensagem}">
+    <div class="modal fade" id="erro" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title">Erro ao cadastrar</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <c:forEach var="mensagem" items="${mensagem}">
+                <li>${mensagem}</li>
+              </c:forEach>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Continuar</button>
           </div>
         </div>
       </div>
-    </c:if>
+    </div>
+  </c:if>
 
   <main class="wrapper container mt-3">
     <div class="row mt-3 mb-3 bg-white rounded p-4">
@@ -285,7 +300,7 @@
                         <div class="form-floating">
                           <input type="text" class="form-control" id="observacao" name="observacao">
                           <label for="observacao" class="form-label">Observação
-                          <span class="text-muted">(Opcional)</span></label>
+                            <span class="text-muted">(Opcional)</span></label>
                         </div>
                       </div>
                       <div class="col-md-4">
@@ -311,36 +326,32 @@
             </div>
           </div>
 
-                 <!-- Modal Exclusão Endereço -->
-                 <c:forEach var="endereco" items="${cliente.enderecos}">
-                  <div class="modal fade" id="excluirEndereco${endereco.id}" data-bs-backdrop="static"
-                      data-bs-keyboard="false" tabindex="-1" aria-labelledby="excluirEnderecoLabel"
-                      aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered modal-sm">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <h5 class="modal-title" id="excluirEnderecoLabel">
-                                      Excluir</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                      aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body">
-                                  Tem certeza que deseja excluir esse endereço?
-                              </div>
-                              <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary"
-                                      data-bs-dismiss="modal">Cancelar</button>
-                                  <form action="../admin/enderecos" method="POST">
-                                      <input type="hidden" value="remover" name="operacao" />
-                                      <input type="hidden" value="${endereco.id}" name="idEndereco" />
-                                      <input type="submit" class="btn btn-danger" value="Excluir"
-                                          name="excluir" />
-                                  </form>
-                              </div>
-                          </div>
-                      </div>
+          <!-- Modal Exclusão Endereço -->
+          <c:forEach var="endereco" items="${cliente.enderecos}">
+            <div class="modal fade" id="excluirEndereco${endereco.id}" data-bs-backdrop="static"
+              data-bs-keyboard="false" tabindex="-1" aria-labelledby="excluirEnderecoLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="excluirEnderecoLabel">
+                      Excluir</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                </c:forEach>
+                  <div class="modal-body">
+                    Tem certeza que deseja excluir esse endereço?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <form action="../admin/enderecos" method="POST">
+                      <input type="hidden" value="remover" name="operacao" />
+                      <input type="hidden" value="${endereco.id}" name="idEndereco" />
+                      <input type="submit" class="btn btn-danger" value="Excluir" name="excluir" />
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </c:forEach>
 
           <div class="tab-pane fade" id="nav-endereco" role="tabpanel" aria-labelledby="nav-endereco-tab">
             <button type="button" id="novoEndereco" class="btn btn-primary mb-3 float-end" data-bs-toggle="modal"
@@ -373,14 +384,16 @@
                     <td>${endereco.pais}</td>
                     <td>${endereco.tipoEndereco}</td>
                     <td>
-                        <span class="material-icons" data-bs-toggle="modal" data-bs-target="#editarEndereco${endereco.id}" id="deletarEndereco${endereco.id}">
-                            mode_edit
+                      <span class="material-icons" data-bs-toggle="modal" data-bs-target="#editarEndereco${endereco.id}"
+                        id="deletarEndereco${endereco.id}">
+                        mode_edit
+                      </span>
+                      <span class="material-icons text-danger">
+                        <span data-bs-toggle="modal" data-bs-target="#excluirEndereco${endereco.id}"
+                          id="deletarEndereco${cliente.id}">
+                          delete
                         </span>
-                        <span class="material-icons text-danger">
-                            <span data-bs-toggle="modal" data-bs-target="#excluirEndereco${endereco.id}" id="deletarEndereco${cliente.id}">
-                                delete
-                            </span>
-                        </span>
+                      </span>
                     </td>
                   </tr>
                 </c:forEach>
@@ -388,184 +401,170 @@
             </table>
           </div>
 
-                <!-- Modal Cadastro Cartão -->
-                <div class="modal fade" id="cadastrarCartao" data-bs-backdrop="static" data-bs-keyboard="false"
-                  tabindex="-1" aria-labelledby="cadastrarCartaoLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered modal-xl">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="cadastrarCartaoLabel">Cadastrar</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <!-- Modal Cadastro Cartão -->
+          <div class="modal fade" id="cadastrarCartao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="cadastrarCartaoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="cadastrarCartaoLabel">Cadastrar</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form class="needs-validation" action="/LootCommerce/admin/cartoes" method="POST" novalidate="">
+                  <input type="hidden" name="operacao" value="salvar">
+                  <input type="hidden" value="${cliente.id}" name="idCliente" />
+                  <div class="modal-body">
+                    <div class="row g-3 mb-3">
+                      <div class="col-md-6">
+                        <div class="form-floating">
+                          <input type="text" class="form-control" id="numCartao" name="numCartao" required>
+                          <label for="numCartao" class="form-label">Número do cartão</label>
+                          <div class="invalid-feedback">Insira um número para o cartão.</div>
+                        </div>
                       </div>
-                      <form class="needs-validation" action="/LootCommerce/admin/cartoes" method="POST"
-                        novalidate="">
-                        <input type="hidden" name="operacao" value="salvar">
-                        <input type="hidden" value="${cliente.id}" name="idCliente" />
-                        <div class="modal-body">
-                          <div class="row g-3 mb-3">
-                            <div class="col-md-6">
-                              <div class="form-floating">
-                                <input type="text" class="form-control" id="numCartao" name="numCartao" required>
-                                <label for="numCartao" class="form-label">Número do cartão</label>
-                                <div class="invalid-feedback">Insira um número para o cartão.</div>
-                              </div>
-                            </div>
-                            <div class="col-md-6">
-                              <div class="form-floating">
-                                <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" required>
-                                <label for="nomeCartao" required>Nome do cartão</label>
-                                <div class="invalid-feedback">Insira um nome para o cartão.</div>
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-floating">
-                                <select class="form-select" id="bandeira" name="bandeira" required>
-                                  <option value="">Selecione</option>
-                                  <option>Visa</option>
-                                  <option>Mastercard</option>
-                                </select>
-                                <label>Bandeira</label>
-                                <div class="invalid-feedback">Selecione a bandeira do cartão.</div>
-                              </div>
-                            </div>
-                            <div class="col-md-2">
-                              <div class="form-floating">
-                                <input type="text" class="form-control" id="codigoCartao" name="codigoCartao"
-                                  required>
-                                <label for="nomeCartao" class="form-label">Código</label>
-                                <div class="invalid-feedback">Insira o código.</div>
-                              </div>
-                            </div>
-                            <div class="col-md-3">
-                              <div class="form-floating">
-                                <input type="date" class="form-control" id="dtValidade" name="dtValidade" required>
-                                <label for="nomeCartao" class="form-label">Data de Validade</label>
-                                <div class="invalid-feedback">Insira data de validade.</div>
-                              </div>
-                            </div>
-                          </div>
+                      <div class="col-md-6">
+                        <div class="form-floating">
+                          <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" required>
+                          <label for="nomeCartao" required>Nome do cartão</label>
+                          <div class="invalid-feedback">Insira um nome para o cartão.</div>
                         </div>
-                        <div class="modal-footer">
-                          <button type="button" id="btnCancelarCartao" data-bs-dismiss="modal"
-                            class="btn btn-secondary">Cancelar</button>
-                          <input type="submit" id="btnCadastrarCartao" value="Cadastrar" class="btn btn-success">
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-floating">
+                          <select class="form-select" id="bandeira" name="bandeira" required>
+                            <option value="">Selecione</option>
+                            <option>Visa</option>
+                            <option>Mastercard</option>
+                          </select>
+                          <label>Bandeira</label>
+                          <div class="invalid-feedback">Selecione a bandeira do cartão.</div>
                         </div>
-                      </form>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form-floating">
+                          <input type="text" class="form-control" id="codigoCartao" name="codigoCartao" required>
+                          <label for="nomeCartao" class="form-label">Código</label>
+                          <div class="invalid-feedback">Insira o código.</div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form-floating">
+                          <input type="date" class="form-control" id="dtValidade" name="dtValidade" required>
+                          <label for="nomeCartao" class="form-label">Data de Validade</label>
+                          <div class="invalid-feedback">Insira data de validade.</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-
-
-                <c:forEach var="cartao" items="${cliente.cartoesDeCredito}">
-                  <!-- Modal Edição Cartão -->
-                  <div class="modal fade" id="editarCartao${cartao.id}" data-bs-backdrop="static"
-                      data-bs-keyboard="false" tabindex="-1" aria-labelledby="editarCartaoLabel"
-                      aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered modal-xl">
-                          <div class="modal-content">
-                              <div class="modal-header">
-                                  <h5 class="modal-title" id="cadastrarCartaoLabel">
-                                      Editar</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                      aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body">
-                                  <form class="needs-validation" action="/LootCommerce/admin/cartoes" method="POST">
-                                      <input type="hidden" name="operacao" value="atualizar">
-                                      <div class="row g-3 mb-3">
-                                          <div class="col-md-6">
-                                              <div class="form-floating">
-                                                  <input type="text" class="form-control" id="numCartao"
-                                                      name="numCartao" value="${cartao.numCartao}">
-                                                  <label for="numCartao" class="form-label">Número
-                                                      do
-                                                      cartão</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <div class="form-floating">
-                                                  <input type="text" class="form-control" id="nomeCartao"
-                                                      name="nomeCartao"
-                                                      value="${cartao.nomeImpressoCartao}">
-                                                  <label for="nomeCartao" required>Nome do
-                                                      cartão</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-3">
-                                              <div class="form-floating">
-                                                  <select class="form-select" id="bandeira"
-                                                      name="bandeira" required>
-                                                      <option value="">Selecione</option>
-                                                      <option>Visa</option>
-                                                      <option>Mastercard</option>
-                                                  </select>
-                                                  <label>Bandeira</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-2">
-                                              <div class="form-floating">
-                                                  <input type="text" class="form-control"
-                                                      id="codigoCartao" name="codigoCartao"
-                                                      value="${cartao.codigo}">
-                                                  <label for="nomeCartao"
-                                                      class="form-label">Código</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-3">
-                                              <div class="form-floating">
-                                                  <input type="date" class="form-control" id="dtValidade"
-                                                      name="dtValidade" value="${cartao.dataValidade}">
-                                                  <label for="nomeCartao" class="form-label">Data
-                                                      de
-                                                      Validade</label>
-                                              </div>
-                                          </div>
-                                      </div>
-
-                                      <div class="modal-footer">
-                                          <button type="button" id="btnCancelarCartaoNovo"
-                                              class="btn btn-secondary"
-                                              data-bs-dismiss="modal">Cancelar</button>
-                                          <input type="hidden" value="${cartao.id}" name="idCartao" />
-                                          <input type="submit" class="btn btn-primary" value="Editar"
-                                              name="atualizar" />
-                                      </div>
-                                  </form>
-                              </div>
-                          </div>
-                      </div>
+                  <div class="modal-footer">
+                    <button type="button" id="btnCancelarCartao" data-bs-dismiss="modal"
+                      class="btn btn-secondary">Cancelar</button>
+                    <input type="submit" id="btnCadastrarCartao" value="Cadastrar" class="btn btn-success">
                   </div>
-              </c:forEach>
+                </form>
+              </div>
+            </div>
+          </div>
 
-              <c:forEach var="cartao" items="${cliente.cartoesDeCredito}">
-                <div class="modal fade" id="excluirCartao${cartao.id}" data-bs-backdrop="static"
-                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="excluirCartaoLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-sm">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="excluirCartaoLabel">Excluir
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                Tem certeza que deseja excluir esse cartão?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-bs-dismiss="modal"
-                                    class="btn btn-secondary">Cancelar</button>
-                                <form action="../admin/cartoes" method="POST">
-                                    <input type="hidden" value="remover" name="operacao" />
-                                    <input type="hidden" value="${cartao.id}" name="idCartao" />
-                                    <input type="submit" class="btn btn-danger" value="Excluir"
-                                        name="excluir" />
-                                </form>
-                            </div>
+
+          <c:forEach var="cartao" items="${cliente.cartoesDeCredito}">
+            <!-- Modal Edição Cartão -->
+            <div class="modal fade" id="editarCartao${cartao.id}" data-bs-backdrop="static" data-bs-keyboard="false"
+              tabindex="-1" aria-labelledby="editarCartaoLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="cadastrarCartaoLabel">
+                      Editar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="needs-validation" action="/LootCommerce/admin/cartoes" method="POST">
+                      <input type="hidden" name="operacao" value="atualizar">
+                      <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                          <div class="form-floating">
+                            <input type="text" class="form-control" id="numCartao" name="numCartao"
+                              value="${cartao.numCartao}">
+                            <label for="numCartao" class="form-label">Número
+                              do
+                              cartão</label>
+                          </div>
                         </div>
-                    </div>
+                        <div class="col-md-6">
+                          <div class="form-floating">
+                            <input type="text" class="form-control" id="nomeCartao" name="nomeCartao"
+                              value="${cartao.nomeImpressoCartao}">
+                            <label for="nomeCartao" required>Nome do
+                              cartão</label>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-floating">
+                            <select class="form-select" id="bandeira" name="bandeira" required>
+                              <option value="">Selecione</option>
+                              <option>Visa</option>
+                              <option>Mastercard</option>
+                            </select>
+                            <label>Bandeira</label>
+                          </div>
+                        </div>
+                        <div class="col-md-2">
+                          <div class="form-floating">
+                            <input type="text" class="form-control" id="codigoCartao" name="codigoCartao"
+                              value="${cartao.codigo}">
+                            <label for="nomeCartao" class="form-label">Código</label>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-floating">
+                            <input type="date" class="form-control" id="dtValidade" name="dtValidade"
+                              value="${cartao.dataValidade}">
+                            <label for="nomeCartao" class="form-label">Data
+                              de
+                              Validade</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="modal-footer">
+                        <button type="button" id="btnCancelarCartaoNovo" class="btn btn-secondary"
+                          data-bs-dismiss="modal">Cancelar</button>
+                        <input type="hidden" value="${cartao.id}" name="idCartao" />
+                        <input type="submit" class="btn btn-primary" value="Editar" name="atualizar" />
+                      </div>
+                    </form>
+                  </div>
                 </div>
-              </c:forEach>
+              </div>
+            </div>
+          </c:forEach>
+
+          <c:forEach var="cartao" items="${cliente.cartoesDeCredito}">
+            <div class="modal fade" id="excluirCartao${cartao.id}" data-bs-backdrop="static" data-bs-keyboard="false"
+              tabindex="-1" aria-labelledby="excluirCartaoLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="excluirCartaoLabel">Excluir
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Tem certeza que deseja excluir esse cartão?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</button>
+                    <form action="../admin/cartoes" method="POST">
+                      <input type="hidden" value="remover" name="operacao" />
+                      <input type="hidden" value="${cartao.id}" name="idCartao" />
+                      <input type="submit" class="btn btn-danger" value="Excluir" name="excluir" />
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </c:forEach>
 
           <!--Cartões-->
           <div class="tab-pane fade" id="nav-cartoes" role="tabpanel" aria-labelledby="nav-cartoes-tab">
@@ -595,12 +594,13 @@
                   <td>${cartao.dataValidade}</td>
                   <td>
                     <span class="material-icons" data-bs-toggle="modal" data-bs-target="#editarCartao${cartao.id}">
-                        mode_edit
+                      mode_edit
                     </span>
                     <span class="material-icons text-danger">
-                        <span data-bs-toggle="modal" data-bs-target="#excluirCartao${cartao.id}" id="deletarCartao${cartao.id}">
-                            delete
-                        </span>
+                      <span data-bs-toggle="modal" data-bs-target="#excluirCartao${cartao.id}"
+                        id="deletarCartao${cartao.id}">
+                        delete
+                      </span>
                     </span>
                   </td>
                 </tr>
@@ -663,12 +663,13 @@
   </main>
 </body>
 
-  <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
-  <c:if test="${not empty requestScope.mensagem}">
-    <script>
-      $(window).on('load', function () {
-        $('#erro').modal('show');
-      });
-    </script>
-  </c:if>
+<script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
+<c:if test="${not empty requestScope.mensagem}">
+  <script>
+    $(window).on('load', function () {
+      $('#erro').modal('show');
+    });
+  </script>
+</c:if>
+
 </html>
