@@ -16,7 +16,8 @@
 
     <c:import url="/includes/header.jsp" charEncoding="UTF-8" />
 
-    <main class="wrapper container  ">
+    <main class="wrapper container">
+
         <div class="row mt-4 bg-white rounded p-4 mb-3">
             <div class="col-md-12 p-3 border rounded m-3">1-10 de 50 resultados para
                 <strong class="text-muted">"palavra pesquisada"</strong>
@@ -25,45 +26,31 @@
                 <ul class="list-group mt-4">
                     <h5 class="fw-bolder">Categoria</h5>
                     <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">
-                            Nendoroid
-                        </a>
+                        <a class="text-decoration-none">Nendoroid</a>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">
-                            Pelúcia
-                        </a>
-
+                        <a class="text-decoration-none">Pelúcia</a>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">
-                            Figure
-                        </a>
+                        <a class="text-decoration-none">Figure</a>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">
-                            Chaveiro
-                        </a>
+                        <a class="text-decoration-none">Chaveiro</a>
                     </li>
                 </ul>
                 <ul class="list-group mt-4">
-
                     <h5 class="fw-bolder">Preço</h5>
-
                     <li class="d-flex  justify-content-between">
                         <a class="text-decoration-none">Até $50,00</a>
-
                         <h6 class="text-muted align-middle">(5)</h6>
                     </li>
                     <li class="d-flex justify-content-between">
                         <a class="text-decoration-none">R$ 50,00 a R$ 150,00 </a>
                         <h6 class="text-muted">(5)</h6>
-
                     </li>
                     <li class="d-flex justify-content-between">
                         <a class="text-decoration-none">Mais de R$ 150,00</a>
                         <h6 class="text-muted">(5)</h6>
-
                     </li>
                     <li class="d-flex justify-content-between ">
                         <div class="input-group">
@@ -72,8 +59,6 @@
                             <input type="text" class="form-control" placeholder="R$ max">
                         </div>
                     </li>
-
-
                 </ul>
             </div>
 
@@ -92,9 +77,6 @@
                     </div>
                 </div>
                 <hr>
-                <div>
-
-                </div>
                 <div class="row row-cols-xl-4">
                     <div class="col mb-3 ">
                         <div class="card produto">
@@ -263,7 +245,7 @@
                                 <div class="row">
                                     <div class="col-8">R$40.00</div>
                                     <div class="col-4">
-                                        <button type="button" class="btn btn-outline-primary btn-circle">
+                                        <button type="button" class="btn btn-outline-primary btn-circle" id="adicionarCarrinhoBtn">
                                             <span class="material-icons md-18">add_shopping_cart</span>
                                         </button>
                                     </div>
@@ -295,6 +277,18 @@
                 </div>
             </div>
         </div>
+
+        <div style="z-index: 11" class="position-fixed bottom-0 end-0 p-2">
+            <div id="liveToast" role="alert" aria-live="assertive" aria-atomic="true" class="toast fade hide">
+                <div class="toast-body">
+                <img src="\LootCommerce\assets\img\pelucias\miku_pelucia.jpg" alt="..." class="rounded me-2 w-25">
+                </div>
+                <div class="toast-header">
+                <strong class="me-auto">Hatsune</strong><small>adicionado ao carrinho</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
     </main>
 
 </body>
@@ -303,5 +297,6 @@
 
 <script src='<c:url value="/webjars/jquery-mask-plugin/1.14.16/dist/jquery.mask.min.js"/>'></script>
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
+<script src='<c:url value="/assets/js/carrinho.js"/>'></script>
 
 </html>
