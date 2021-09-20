@@ -82,17 +82,31 @@
                             <div class="col-md-12 h4 fw-bold">Vendas</div>
                             <div class="row">
                                 <div class="col-12 justify-content-between">
-                                    <ul class="list-group list-group-horizontal">
-                                        <div style="padding: .5rem 1rem" class="col-1">Exibir</div>
-                                        <li class="list-group-item border-0"><a href="#">Todas</a></li>
-                                        <li class="list-group-item border-0"><a href="#">Pagamento realizado</a></li>
-                                        <li class="list-group-item border-0"><a href="#">Em transporte</a></li>
-                                    </ul>
+                                    <div class="col-12 row">
+                                        <div class="col-1 p-2">Exibir</div>
+                                        <div class="col-10">
+                                            <ul class="list-group list-group-horizontal">
+
+                                                <li class="list-group-item border-0"><a href="#">Todas</a></li>
+                                                <li class="list-group-item border-0"><a href="#">Pagamento em
+                                                        processamento</a></li>
+                                                <li class="list-group-item border-0"><a href="#">Pagamento realizado</a>
+                                                </li>
+                                            </ul>
+                                            <ul class="list-group list-group-horizontal">
+
+                                                <li class="list-group-item border-0"><a href="#">Trocas</a></li>
+                                                <li class="list-group-item border-0"><a href="#">Cancelamentos</a></li>
+                                                <li class="list-group-item border-0"><a href="#">Em transporte</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
                                     <div class="btn-group float-end">
                                         <button type="button" data-bs-toggle="dropdown" aria-expanded="false"
-                                            class="btn btn-primary dropdown-toggle" id="filtroSolicitacoes">Ordenar
-                                            por</button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            class="btn btn-primary dropdown-toggle" id="filtroSolicitacoes">
+                                            Ordenar por</button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="">
                                             <li><a class="dropdown-item" href="#">Mais recentes</a></li>
                                             <li><a class="dropdown-item" href="#">Mais antigos</a></li>
                                         </ul>
@@ -100,45 +114,58 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="">
-
-                                    <div class="border row mt-3 p-3 rounded">
-                                        <div class="col-md-12 h6 fw-bold">Pagamento realizado</div>
-                                        <div class="col-md-12 d-flex justify-content-between">
-                                            <div><span class="fw-bold d-block">ID</span><span>00000</span></div>
-                                            <div><span class="fw-bold d-block">Cliente</span><span>Nome cliente</span>
-                                            </div>
-                                            <div><span class="fw-bold d-block">Endereço</span><span>Endereço</span>
-                                            </div>
-                                            <div><span class="fw-bold d-block">Data pedido</span><span>00/00/0000</span>
-                                            </div>
-                                            <div><span class="d-block fw-bold text-center">Confirmar envio</span>
-                                                <button type="button" class="btn btn-outline-success btn-circle m-2">
-                                                    <span class="material-icons">done</span>
-                                                </button>
-                                            </div>
+                                <div class="border row mt-3 p-3 rounded">
+                                    <div class="col-md-12 h6 fw-bold">Pagamento realizado
+                                        <div class="dropdown float-end ">
+                                            <a href="#" aria-expanded="false" data-bs-toggle="dropdown"
+                                                class="text-decoration-none">
+                                                <span class="material-icons">more_vert</span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a type="button" id="visualizarVendaBtn" class="dropdown-item"
+                                                        data-bs-toggle="modal" data-bs-target="#visualizarVendaModal">Visualizar</a>
+                                                </li>
+                                                <li><a type="button" id="vendasAvancadoBtn" class="dropdown-item"
+                                                        data-bs-toggle="modal" data-bs-target="#vendasAvancadoModal">Avançado</a>
+                                                </li>
+                                            </ul>
                                         </div>
-
                                     </div>
-                                    <div class="border row mt-3 p-3 rounded">
-                                        <div class="col-md-12 h6 fw-bold">Em transporte</div>
-                                        <div class="col-md-12 d-flex justify-content-between">
-                                            <div><span class="fw-bold d-block">ID</span><span>00000</span></div>
-                                            <div><span class="fw-bold d-block">Cliente</span><span>Nome cliente</span>
-                                            </div>
-                                            <div><span class="fw-bold d-block">Endereço</span><span>Endereço</span>
-                                            </div>
-                                            <div><span class="fw-bold d-block">Data pedido</span><span>00/00/0000</span>
-                                            </div>
-                                            <div><span class="d-block fw-bold text-center">Confirmar entrega</span>
-                                                <button type="button" class="btn btn-outline-success btn-circle m-2">
-                                                    <span class="material-icons">done</span>
-                                                </button>
-                                            </div>
+                                    <div class="col-md-12 d-flex justify-content-between">
+                                        <div><span class="fw-bold d-block">ID</span><span>00000</span></div>
+                                        <div><span class="fw-bold d-block">Cliente</span><span>Nome cliente</span>
+                                        </div>
+                                        <div><span class="fw-bold d-block">Endereço</span><span>Endereço</span>
+                                        </div>
+                                        <div><span class="fw-bold d-block">Data pedido</span><span>00/00/0000</span>
+                                        </div>
+                                        <div><span class="d-block fw-bold text-center">Ações</span>
 
+                                            <button type="button" class="btn btn-outline-success btn-circle m-2">
+                                                <span class="material-icons">done</span>
+                                            </button>
                                         </div>
                                     </div>
 
+                                </div>
+                                <div class="border row mt-3 p-3 rounded">
+                                    <div class="col-md-12 h6 fw-bold">Em transporte</div>
+                                    <div class="col-md-12 d-flex justify-content-between">
+                                        <div><span class="fw-bold d-block">ID</span><span>00000</span></div>
+                                        <div><span class="fw-bold d-block">Cliente</span><span>Nome cliente</span>
+                                        </div>
+                                        <div><span class="fw-bold d-block">Endereço</span><span>Endereço</span>
+                                        </div>
+                                        <div><span class="fw-bold d-block">Data pedido</span><span>00/00/0000</span>
+                                        </div>
+                                        <div><span class="d-block fw-bold text-center">Ações</span>
+                                            <button type="button" class="btn btn-outline-danger btn-circle m-2">
+                                                <span class="material-icons">clear</span>
+                                            </button>
+                                            <button type="button" class="btn btn-outline-success btn-circle m-2">
+                                                <span class="material-icons">done</span>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
@@ -163,6 +190,173 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!--Modal visualizar pedido-->
+                        <div class="modal fade" id="visualizarVendaModal" data-bs-backdrop="static"
+                            data-bs-keyboard="false" tabindex="-1" aria-labelledby="visualizarVendaLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" style="max-width:600px">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="vendasAvancadoLabel">Dados do pedido</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row rounded m-2">
+                                            <div class="col-md-12 h6 fw-bold">Status</div>
+                                            <div class="col-md-12">
+                                                <ul class="list-group">
+                                                    <li class="d-flex">
+                                                        <strong>ID:</strong><span class="ms-2">0000</span>
+                                                    </li>
+                                                    <li class="d-flex">
+                                                        <strong>Cliente:</strong><span class="ms-2">Nome do
+                                                            cliente</span>
+                                                    </li>
+                                                    <li class="d-flex">
+                                                        <strong>Valor do frete</strong><span class="ms-2">R$
+                                                            00,00</span>
+                                                    </li>
+                                                    <li class="d-flex">
+                                                        <strong>Valor total do pedido:</strong><span class="ms-2">R$
+                                                            00,00</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-6 p-3">
+                                                <strong>Endereço de entrega</strong>
+                                                <h6>Nome endereço</h6>
+                                                <h6>Logradouro, número</h6>
+                                                <h6>Estado - País</h6>
+                                                <h6>CEP</h6>
+                                                <h6>Observação</h6>
+                                            </div>
+                                            <div class="col-6 p-3">
+                                                <strong>Endereço de cobrança</strong>
+                                                <h6>Nome endereço</h6>
+                                                <h6>Logradouro, número</h6>
+                                                <h6>Estado - País</h6>
+                                                <h6>CEP</h6>
+                                                <h6>Observação</h6>
+                                            </div>
+                                            <div class="col-md-12 d-flex justify-content-between">
+                                                <div>
+                                                    <span class="fw-bold d-block">Data da compra</span>
+                                                    <span>00/00/0000</span>
+                                                </div>
+                                                <div>
+                                                    <span class="fw-bold d-block">Data de envio</span>
+                                                    <span>00/00/0000</span>
+                                                </div>
+                                                <div>
+                                                    <span class="fw-bold d-block">Data de entrega</span>
+                                                    <span>00/00/0000</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Modal modo avançado-->
+                        <div class="modal fade" id="vendasAvancadoModal" data-bs-backdrop="static"
+                            data-bs-keyboard="false" tabindex="-1" aria-labelledby="vendasAvancadoLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" style="max-width:600px">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="visualizarVendaLabel">Avançado</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-md-12 h5 fw-bold">Alterar status</div>
+                                        <div class="row rounded m-2">
+
+                                            <div class="col-md-12">
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        value="option1">
+                                                    <label class="form-check-label">EM PROCESSAMENTO</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        value="option1">
+                                                    <label class="form-check-label">PAGAMENTO REALIZADO</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        value="option1">
+                                                    <label class="form-check-label">EM TRANSPORTE</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        value="option1">
+                                                    <label class="form-check-label">ENTREGA REALIZADA</label>
+                                                </div>
+                                                <hr>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        value="option1">
+                                                    <label class="form-check-label">TROCA AUTORIZADA</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        value="option1">
+                                                    <label class="form-check-label">TROCA REJEITADA</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        value="option1">
+                                                    <label class="form-check-label">TROCA ACEITA</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        value="option1">
+                                                    <label class="form-check-label">TROCA SOLICITADA</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        value="option1">
+                                                    <label class="form-check-label">TROCA EFETUADA</label>
+                                                </div>
+                                                <hr>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        value="option1">
+                                                    <label class="form-check-label">CANCELAMENTO REJEITADO</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        value="option1">
+                                                    <label class="form-check-label">CANCELAMENTO ACEITO</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        value="option1">
+                                                    <label class="form-check-label">CANCELAMENTO SOLICITADO</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        value="option1">
+                                                    <label class="form-check-label">CANCELAMENTO EFETUADO</label>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer border-0">
+                                        <input type="submit" id="btnAlterarEndereco" class="btn btn-success"
+                                            value="Atualizar">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <!--clientes-->
@@ -170,12 +364,6 @@
                         aria-labelledby="v-pills-clientes-tab">
                         <div class="card-body">
                             <div class="col-md-12 h4 fw-bold">Clientes</div>
-                            <!-- Button trigger modal -->
-                            <button type="button" id="novoCliente" class="btn btn-primary mb-3 float-end"
-                                data-bs-toggle="modal" data-bs-target="#cadastrar">
-                                <span class="material-icons inline-icon">group_add</span>
-                                Cadastrar cliente
-                            </button>
                             <div class="input-group mb-3">
                                 <input id="pesquisarCliente" type="text" placeholder="Pesquise por palavras-chave..."
                                     aria-label="Username" aria-describedby="basic-addon1"
@@ -184,48 +372,50 @@
                                     <span class="material-icons">search</span>
                                 </span>
                             </div>
-
-                            <div class="card">
-                                <h2>
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                        aria-controls="flush-collapseOne">Filtros</button>
-                                </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="hstack gap-3 border rounded mt-2 mb-2">
+                                <div class="col-6 p-3">
                                     <ul class="list-group list-group-horizontal">
-                                        <div class="col-2" style="padding: .5rem 1rem">Gênero:</div>
-                                        <li class="list-group-item border-0"><a href="#">M</a></li>
-                                        <li class="list-group-item border-0"><a href="#">F</a></li>
-                                        <li class="list-group-item border-0"><a href="#">Outro</a></li>
-                                        <li class="list-group-item border-0"><a href="#">N/A</a></li>
+                                        <div class="col-3">Gênero:</div>
+                                        <li class="list-group-item border-0 p-0 me-3"><a href="#">M</a></li>
+                                        <li class="list-group-item border-0 p-0 me-3"><a href="#">F</a></li>
+                                        <li class="list-group-item border-0 p-0 me-3"><a href="#">Outro</a></li>
+                                        <li class="list-group-item border-0 p-0 me-3"><a href="#">N/A</a></li>
                                     </ul>
                                     <ul class="list-group list-group-horizontal">
-                                        <div class="col-2" style="padding: .5rem 1rem">Rank:</div>
-                                        <li class="list-group-item border-0">
-                                            <form>
-                                                <input id="minRank" class="col-2" placeholder="min">-
-                                                <input id="maxRank" class="col-2" placeholder="max">
-                                            </form>
-                                        </li>
+                                        <div class="col-3">Rank:</div>
+                                        <form>
+                                            <input id="minRank" class="col-2" placeholder="min">-
+                                            <input id="maxRank" class="col-2" placeholder="max">
+                                        </form>
                                     </ul>
                                     <ul class="list-group list-group-horizontal">
-                                        <div class="col-2" style="padding: .5rem 1rem">Nascimento:</div>
-                                        <li class="list-group-item border-0">
-                                            <form>
-                                                <input id="minNasc" class="col-2" placeholder="min">-
-                                                <input id="maxNasc" class="col-2" placeholder="max">
-                                            </form>
-                                        </li>
+                                        <div class="col-3">Nascimento:</div>
+                                        <form>
+                                            <div class="d-flex justify-content-between">
+                                                <input id="minRank" type="date" class="col-6">-
+                                                <input id="minRank" type="date" class="col-6">
+                                            </div>
+                                        </form>
                                     </ul>
-
                                 </div>
+
+                                <div class="vr"></div><button type="button" id="novoCliente" data-bs-toggle="modal"
+                                    data-bs-target="#cadastrar" class="btn btn-primary">
+                                    <span class="material-icons inline-icon">group_add</span>Cadastrar cliente
+                                </button><button type="button" data-bs-toggle="modal" data-bs-target="#criarCupom"
+                                    class="btn btn-primary">
+                                    <span class="material-icons inline-icon">local_play</span>Criar cupom
+                                </button>
+                                <button type="button" id="darCupom" class="btn btn-primary">
+                                    <span class="material-icons inline-icon">local_play</span>Dar cupom
+                                </button>
                             </div>
 
-                            <div class="table-responsive">
-                                <table class="table table-hover table-sm" cellspacing="0" width="100%">
+                            <div class="table-responsive border p-3 rounded mb-4">
+                                <table class="table table-hover" width="100%">
                                     <thead>
                                         <tr>
+                                            <th></th>
                                             <th>ID</th>
                                             <th>Nome</th>
                                             <th>CPF</th>
@@ -239,6 +429,12 @@
                                     <tbody>
                                         <c:forEach var="cliente" items="${clientes}">
                                             <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckDefault">
+                                                    </div>
+                                                </td>
                                                 <td>${cliente.id}</td>
                                                 <td>${cliente.nome} ${cliente.sobrenome}</td>
                                                 <td>${cliente.cpf}</td>
@@ -248,7 +444,7 @@
                                                 <td>${cliente.telefone.numero}</td>
                                                 <td>
                                                     <div>
-                                                        <button class="btn btn-outline-dark" type="button"
+                                                        <button class="btn btn-dark" type="button"
                                                             id="dropdownMenuButton1" data-bs-toggle="dropdown"
                                                             aria-expanded="false">
                                                             <span class="material-icons"> list</span>
@@ -275,7 +471,7 @@
                                 </table>
                             </div>
 
-                            <!-- Modal -->
+                            <!-- Modal cadastrar cliente-->
                             <div class="modal fade" id="cadastrar" data-bs-backdrop="static" data-bs-keyboard="false"
                                 tabindex="-1" aria-labelledby="cadastrarLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable modal-xl">
@@ -542,7 +738,7 @@
                                 </div>
                             </div>
 
-                            <!-- Modal -->
+                            <!-- Modal inativar cliente-->
                             <div class="modal fade" id="inativar" data-bs-backdrop="static" data-bs-keyboard="false"
                                 tabindex="-1" aria-labelledby="inativarLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered modal-sm">
@@ -560,6 +756,46 @@
                                             <button type="button" id="btnInativar" data-bs-dismiss="modal"
                                                 class="btn btn-danger">Inativar</button>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Modal criar cupom promocional-->
+                            <div class="modal fade" id="criarCupom" data-bs-backdrop="static" data-bs-keyboard="false"
+                                tabindex="-1" aria-labelledby="criarCupomLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0">
+                                            <h5 class="modal-title" id="criarCupomLabel">Criar cupom</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <form class="needs-validation" action="..." method="POST" novalidate="">
+                                            <input type="hidden" name="operacao" value="salvar">
+                                            <div class="modal-body">
+                                                <div class="row g-2">
+                                                    <div class="col-md-12 h6 fw-bold">Novo cupom</div>
+                                                    <div class="col-md-9">
+                                                        <div class="form-floating">
+                                                            <input type="text" class="form-control" id="nomeCartao"
+                                                                name="nomeCartao" required="">
+                                                            <label for="nomeCartao" required="">Descrição</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <div class="form-floating">
+                                                            <input class="form-control" id="dtValidade"
+                                                                name="dtValidade" required="">
+                                                            <label for="nomeCartao" class="form-label">Valor</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer border-0">
+                                                <input type="submit" class="btn btn-success" id="btnCriarCupom"
+                                                    value="Criar cupom">
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
