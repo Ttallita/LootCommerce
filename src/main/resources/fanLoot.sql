@@ -114,7 +114,7 @@ CREATE TABLE produtos_status(
 
 DROP TABLE IF EXISTS "carrinhos" CASCADE;
 CREATE TABLE carrinhos(
-    car_cli_usr_id int NOT NULL,
+	car_id serial not null,
     car_prazo_finalizacao timestamp
 );
 
@@ -213,7 +213,7 @@ ALTER TABLE produtos_status
     ADD CONSTRAINT pk_pst PRIMARY KEY (pst_id);
 
 ALTER TABLE carrinhos
-    ADD CONSTRAINT pk_car PRIMARY KEY (car_cli_usr_id);
+    ADD CONSTRAINT pk_car PRIMARY KEY (car_id);
 
 ALTER TABLE produtos_em_carrinho
     ADD CONSTRAINT pk_prc PRIMARY KEY (prc_pro_id, prc_car_cli_usr_id);
@@ -243,7 +243,7 @@ ALTER TABLE clientes
 
 ALTER TABLE clientes
     ADD CONSTRAINT fk_cli_car FOREIGN KEY (cli_car_id)
-        REFERENCES carrinhos (car_cli_usr_id);
+        REFERENCES carrinhos (car_id);
 
 ALTER TABLE cartoes
     ADD CONSTRAINT fk_crt_cli_usr FOREIGN KEY (crt_cli_usr_id)
@@ -287,7 +287,7 @@ ALTER TABLE produtos_em_carrinho
 
 ALTER TABLE produtos_em_carrinho
     ADD CONSTRAINT fk_prc_car FOREIGN KEY (prc_car_cli_usr_id)
-        REFERENCES carrinhos (car_cli_usr_id);
+        REFERENCES carrinhos (car_id);
 
 ALTER TABLE vendas
     ADD CONSTRAINT fk_vnd_cli_usr FOREIGN KEY (vnd_cli_usr_id)
