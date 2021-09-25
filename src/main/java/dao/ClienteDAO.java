@@ -27,7 +27,7 @@ public class ClienteDAO implements IDAO{
         try {
             conn = conexao.getConexao();
 
-            String sql = "INSERT INTO clientes (cli_usr_id, cli_prim_nome, cli_ult_nome, cli_cpf, cli_dt_nasc, cli_genero, cli_telefone_num, cli_telefone_ddd, cli_telefone_tp)" +
+            String sql = "INSERT INTO clientes (cli_usr_id, cli_nome, cli_sobrenome, cli_cpf, cli_dt_nasc, cli_genero, cli_telefone_num, cli_telefone_ddd, cli_telefone_tp)" +
                     " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             Usuario usuario = cliente.getUsuario();
@@ -80,7 +80,7 @@ public class ClienteDAO implements IDAO{
         try {
             conn = conexao.getConexao();
 
-            String sql = "UPDATE clientes SET cli_prim_nome = ?, cli_ult_nome = ?, cli_cpf = ?, cli_dt_nasc = ?, cli_genero = ?, cli_telefone_num = ?, cli_telefone_ddd = ?, cli_telefone_tp = ?" +
+            String sql = "UPDATE clientes SET cli_nome = ?, cli_sobrenome = ?, cli_cpf = ?, cli_dt_nasc = ?, cli_genero = ?, cli_telefone_num = ?, cli_telefone_ddd = ?, cli_telefone_tp = ?" +
                     "WHERE cli_usr_id = ?";
 
             PreparedStatement pstm = conn.prepareStatement(sql);
@@ -151,8 +151,8 @@ public class ClienteDAO implements IDAO{
 
                 clienteLogado.setId(rs.getLong("cli_usr_id"));
 
-                clienteLogado.setNome(rs.getString("cli_prim_nome"));
-                clienteLogado.setSobrenome(rs.getString("cli_ult_nome"));
+                clienteLogado.setNome(rs.getString("cli_nome"));
+                clienteLogado.setSobrenome(rs.getString("cli_sobrenome"));
                 clienteLogado.setGenero(rs.getString("cli_genero"));
                 clienteLogado.setDataNascimento(rs.getDate("cli_dt_nasc").toLocalDate());
                 clienteLogado.setCpf(rs.getString("cli_cpf"));
