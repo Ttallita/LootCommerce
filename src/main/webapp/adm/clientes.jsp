@@ -6,10 +6,9 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Gerenciamento</title>
+    <title>Clientes</title>
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>' />
-    <link rel="stylesheet" type="text/css"
-        href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
+    <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
     <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/main.css' />
     <link rel="stylesheet" type="text/css" href="/LootCommerce/assets/css/adm.css">
 </head>
@@ -28,21 +27,30 @@
     </header>
 
     <div class="l-navbar" id="nav-bar">
-        <nav class="nav">
+        <nav class="l-nav">
             <div class="nav_list">
                 <div class="col-md-3 col-xl-2">
                     <div class="list-group btn-group-vertical">
-                        <a class="nav_link" id="v-pills-principal-tab" type="button" href="/LootCommerce/adm/principal.jsp">
-                            <span class="material-icons inline-icon">home</span>Principal</a>
+                        <a class="nav_link" id="v-pills-principal-tab" type="button"
+                            href="/LootCommerce/adm/principal.jsp">
+                            <span class="material-icons inline-icon">home</span>
+                            Principal
+                        </a>
 
                         <a class="nav_link active-navbar" id="v-pills-clientes-tab" type="button">
-                            <span class="material-icons inline-icon">people</span>Clientes</a>
+                            <span class="material-icons inline-icon">people</span>
+                            Clientes
+                        </a>
 
                         <a class="nav_link" id="v-pills-vendas-tab" type="button" href="/LootCommerce/adm/vendas.jsp">
-                            <span class="material-icons inline-icon">show_chart</span>Vendas</a>
+                            <span class="material-icons inline-icon">show_chart</span>
+                            Vendas
+                        </a>
 
                         <a class="nav_link" id="v-pills-estoque-tab" type="button" href="/LootCommerce/adm/estoque.jsp">
-                            <span class="material-icons inline-icon">all_inbox</span>Estoque</a>
+                            <span class="material-icons inline-icon">all_inbox</span>
+                            Estoque
+                        </a>
                     </div>
                 </div>
             </div>
@@ -63,8 +71,10 @@
                             <span class="material-icons">search</span>
                         </span>
                     </div>
+
                     <div class="hstack gap-3 border rounded mt-2 mb-2">
-                        <div class="col-6 p-3">
+                        <div class="p-3">
+                            <h6 class="fw-bold">Filtros de pesquisa</h6>
                             <ul class="list-group list-group-horizontal">
                                 <div class="col-3">Gênero:</div>
                                 <li class="list-group-item border-0 p-0 me-3"><a href="#">M</a></li>
@@ -89,18 +99,31 @@
                                 </form>
                             </ul>
                         </div>
-
-                        <div class="vr"></div><button type="button" id="novoCliente" data-bs-toggle="modal"
-                            data-bs-target="#cadastrar" class="btn btn-primary">
-                            <span class="material-icons inline-icon">group_add</span>Cadastrar cliente
-                        </button><button type="button" data-bs-toggle="modal" data-bs-target="#criarCupom"
-                            class="btn btn-primary">
-                            <span class="material-icons inline-icon">local_play</span>Criar cupom
-                        </button>
-                        <button type="button" id="darCupom" class="btn btn-primary">
-                            <span class="material-icons inline-icon">local_play</span>Dar cupom
-                        </button>
                     </div>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item ">
+                            <a type="button" id="novoCliente" data-bs-toggle="modal" data-bs-target="#cadastrarModal" class="nav-link">
+                                <span class="material-icons inline-icon">group_add </span>
+                                Cadastrar cliente
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                <span class="material-icons inline-icon">local_play</span>
+                                Cupons
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#criarCupomModal">
+                                        Gerar cupom
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" type="button">Dar cupom</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
 
                     <div class="table-responsive border p-3 rounded mb-4">
                         <table class="table table-hover" width="100%">
@@ -122,8 +145,7 @@
                                     <tr>
                                         <td>
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" value=""
-                                                    id="flexCheckDefault">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                             </div>
                                         </td>
                                         <td>${cliente.id}</td>
@@ -141,16 +163,17 @@
                                                 </button>
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                     <li>
-                                                        <a class="dropdown-item" id="gerenciarLink"
-                                                            href="/LootCommerce/admin/cliente?operacao=listarAdm&id=${cliente.id}">Gerenciar</a>
+                                                        <a class="dropdown-item" id="gerenciarLink" href="/LootCommerce/admin/cliente?operacao=listarAdm&id=${cliente.id}">
+                                                            Gerenciar
+                                                        </a>
                                                     </li>
                                                     <li>
                                                         <hr class="dropdown-divider link-light">
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                            id="inativarLink" data-bs-target="#inativar">
-                                                            Inativar</a>
+                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" id="inativarLink" data-bs-target="#inativarModal">
+                                                            Inativar
+                                                        </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -162,14 +185,13 @@
                     </div>
 
                     <!-- Modal cadastrar cliente-->
-                    <div class="modal fade" id="cadastrar" data-bs-backdrop="static" data-bs-keyboard="false"
+                    <div class="modal fade" id="cadastrarModal" data-bs-backdrop="static" data-bs-keyboard="false"
                         tabindex="-1" aria-labelledby="cadastrarLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-scrollable modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="cadastrarLabel">Cadastro</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <form class="needs-validation w-75" id="form-cadastro"
@@ -179,53 +201,35 @@
                                         <div class="row g-3 mb-3">
                                             <div class="col-12">
                                                 <div class="form-floating">
-                                                    <input type="email" class="form-control" id="email" name="email"
-                                                        required>
+                                                    <input type="email" class="form-control" id="email" name="email" required>
                                                     <label for="email" class="form-label">Email</label>
-                                                    <div class="invalid-feedback">Insira um email válido.</div>
                                                 </div>
                                             </div>
                                             <div class="col-6">
                                                 <div class="form-floating">
-                                                    <input type="password" class="form-control" id="senha" name="senha"
-                                                        required>
+                                                    <input type="password" class="form-control" id="senha" name="senha" required>
                                                     <label for="senha" class="form-label">Senha</label>
-                                                    <div class="invalid-feedback">
-                                                        A senha deve possuir pelo menos 8 caracteres,
-                                                        ter letras
-                                                        maiúsculas e minúsculas e conter caracteais.
-                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-6">
                                                 <div class="form-floating">
-                                                    <input type="password" class="form-control" id="senhaConfirmacao"
-                                                        name="senhaConfirmacao" required>
-                                                    <label for="senha-confirmacao" class="form-label">Insira
-                                                        novamente</label>
-                                                    <div class="invalid-feedback">As senhas não são as
-                                                        mesmas.</div>
+                                                    <input type="password" class="form-control" id="senhaConfirmacao" name="senhaConfirmacao" required>
+                                                    <label for="senha-confirmacao" class="form-label">Insira novamente</label>
                                                 </div>
                                             </div>
 
                                             <!-- Dados pessoais -->
                                             <div class="col-sm-5 form-outline">
                                                 <div class="form-floating">
-                                                    <input type="text" class="form-control" id="nome" name="nome"
-                                                        required>
+                                                    <input type="text" class="form-control" id="nome" name="nome" required>
                                                     <label for="floatingPassword" class="form-label">Nome</label>
-                                                    <div class="invalid-feedback">Insira seu primeiro
-                                                        nome.</div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-7">
                                                 <div class="form-floating">
-                                                    <input type="text" class="form-control" id="sobrenome"
-                                                        name="sobrenome" required>
+                                                    <input type="text" class="form-control" id="sobrenome" name="sobrenome" required>
                                                     <label for="sobrenome" class="form-label">Sobrenome</label>
-                                                    <div class="invalid-feedback">Insira seu sobrenome.
-                                                    </div>
                                                 </div>
                                             </div>
 
@@ -239,55 +243,39 @@
                                                         <option>Prefiro não informar</option>
                                                     </select>
                                                     <label>Gênero</label>
-                                                    <div class="invalid-feedback">Selecione um gênero.
-                                                    </div>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6">
                                                 <div class="form-floating">
-                                                    <input type="date" class="form-control" id="date" name="date"
-                                                        required>
-                                                    <label for="pais" class="form-label">Data de
-                                                        nascimento</label>
-                                                    <div class="invalid-feedback">Selecione sua data de
-                                                        nascimento.</div>
+                                                    <input type="date" class="form-control" id="date" name="date" required>
+                                                    <label for="pais" class="form-label">Data de nascimento</label>
                                                 </div>
                                             </div>
 
                                             <div class="col-4">
                                                 <div class="form-floating">
-                                                    <input type="text" class="form-control" id="cpf" name="cpf"
-                                                        required>
+                                                    <input type="text" class="form-control" id="cpf" name="cpf" required>
                                                     <label for="cpf" class="form-label">CPF</label>
-                                                    <div class="invalid-feedback">Insira seu número de
-                                                        CPF.</div>
                                                 </div>
                                             </div>
 
                                             <!-- Telefone -->
                                             <div class="col-3 form-outline">
                                                 <div class="form-floating">
-                                                    <select class="form-select" id="tipoTelefone" name="tipoTelefone"
-                                                        required>
+                                                    <select class="form-select" id="tipoTelefone" name="tipoTelefone" required>
                                                         <option value="">Selecione</option>
                                                         <option>Residêncial</option>
                                                         <option>Celular</option>>
                                                     </select>
-                                                    <label for="phone" class="form-label">Tipo de
-                                                        Telefone</label>
-                                                    <div class="invalid-feedback">Insira um tipo de
-                                                        telefone.</div>
+                                                    <label for="phone" class="form-label">Tipo de Telefone</label>
                                                 </div>
                                             </div>
 
                                             <div class="col-5">
                                                 <div class="form-floating">
-                                                    <input type="phone" class="form-control" id="phone" name="phone"
-                                                        required>
+                                                    <input type="phone" class="form-control" id="phone" name="phone" required>
                                                     <label for="phone" class="form-label">Telefone</label>
-                                                    <div class="invalid-feedback">Insira um Telefone
-                                                        válido.</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -299,62 +287,43 @@
                                         <div class="row g-3 mb-3">
                                             <div class="col-md-6">
                                                 <div class="form-floating">
-                                                    <select class="form-select" id="tpResidencia" name="tpResidencia"
-                                                        required>
+                                                    <select class="form-select" id="tpResidencia" name="tpResidencia" required>
                                                         <option value="">Selecione</option>
                                                         <option>Casa</option>
                                                         <option>Apartamento</option>
                                                         <option>Outro</option>
                                                     </select>
                                                     <label>Tipo de residência</label>
-                                                    <div class="invalid-feedback">Selecione um tipo de
-                                                        residência válido.</div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-floating">
-                                                    <input type="text" class="form-control" id="tpLogradouro"
-                                                        name="tpLogradouro" required>
-                                                    <label for="tpLogradouro" class="form-label">Tipo de
-                                                        logradouro</label>
-                                                    <div class="invalid-feedback">Insira um tipo de
-                                                        logradouro.</div>
+                                                    <input type="text" class="form-control" id="tpLogradouro" name="tpLogradouro" required>
+                                                    <label for="tpLogradouro" class="form-label">Tipo de logradouro</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
                                                 <div class="form-floating">
-                                                    <input type="text" class="form-control" id="logradouro"
-                                                        name="logradouro" required>
+                                                    <input type="text" class="form-control" id="logradouro"  name="logradouro" required>
                                                     <label for="logradouro" class="form-label">Logradouro</label>
-                                                    <div class="invalid-feedback">Insira o logradouro.
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-floating">
-                                                    <input type="text" class="form-control" id="numero" name="numero"
-                                                        required>
+                                                    <input type="text" class="form-control" id="numero" name="numero" required>
                                                     <label for="numero" class="form-label">Número</label>
-                                                    <div class="invalid-feedback">Insira o número.
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-floating">
-                                                    <input type="text" class="form-control" id="bairro" name="bairro"
-                                                        required>
+                                                    <input type="text" class="form-control" id="bairro" name="bairro" required>
                                                     <label for="bairro" class="form-label">Bairro</label>
-                                                    <div class="invalid-feedback">Insira um bairro.
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-floating">
-                                                    <input type="text" class="form-control" id="cep" name="cep"
-                                                        required>
+                                                    <input type="text" class="form-control" id="cep" name="cep" required>
                                                     <label for="cep" class="form-label">CEP</label>
-                                                    <div class="invalid-feedback">Insira um cep
-                                                        válido.</div>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -364,8 +333,6 @@
                                                         <option>São Paulo</option>
                                                     </select>
                                                     <label>Cidade</label>
-                                                    <div class="invalid-feedback">Selecione uma cidade.
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -375,8 +342,6 @@
                                                         <option>São Paulo</option>
                                                     </select>
                                                     <label>Estado</label>
-                                                    <div class="invalid-feedback">Selecione um estado.
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -387,22 +352,18 @@
                                                         <option>Brasil</option>
                                                     </select>
                                                     <label>País</label>
-                                                    <div class="invalid-feedback">Selecione um país.
-                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-floating">
                                                     <input type="text" class="form-control" id="apelido" name="apelido"
                                                         required>
-                                                    <label for="apelido" class="form-label">Nome do
-                                                        endereço</label>
+                                                    <label for="apelido" class="form-label">Nome do endereço</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-floating">
-                                                    <input type="text" class="form-control" id="observacao"
-                                                        name="observacao" placeholder="">
+                                                    <input type="text" class="form-control" id="observacao" name="observacao">
                                                     <label for="observacao" class="form-label">
                                                         Observação <span class="text-muted">(Opcional)</span>
                                                     </label>
@@ -413,8 +374,9 @@
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                                                 Cancelar
                                             </button>
-                                            <button type="submit" id="btnCadastrar"
-                                                class="btn btn-primary">Cadastrar</button>
+                                            <button type="submit" id="cadastrarBtn" class="btn btn-primary">
+                                                Cadastrar
+                                            </button>
                                         </div>
                                     </form>
                                 </div>
@@ -423,12 +385,12 @@
                     </div>
 
                     <!-- Modal inativar cliente-->
-                    <div class="modal fade" id="inativar" data-bs-backdrop="static" data-bs-keyboard="false"
+                    <div class="modal fade" id="inativarModal" data-bs-backdrop="static" data-bs-keyboard="false"
                         tabindex="-1" aria-labelledby="inativarLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-sm">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="cadastrarLabel">Inativar</h5>
+                                    <h5 class="modal-title" id="inativarLabel">Inativar</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
@@ -437,7 +399,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary">Cancelar</button>
-                                    <button type="button" id="btnInativar" data-bs-dismiss="modal"
+                                    <button type="button" id="inativarBtn" data-bs-dismiss="modal"
                                         class="btn btn-danger">Inativar</button>
                                 </div>
                             </div>
@@ -445,7 +407,7 @@
                     </div>
 
                     <!-- Modal criar cupom promocional-->
-                    <div class="modal fade" id="criarCupom" data-bs-backdrop="static" data-bs-keyboard="false"
+                    <div class="modal fade" id="criarCupomModal" data-bs-backdrop="static" data-bs-keyboard="false"
                         tabindex="-1" aria-labelledby="criarCupomLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
@@ -461,23 +423,20 @@
                                             <div class="col-md-12 h6 fw-bold">Novo cupom</div>
                                             <div class="col-md-9">
                                                 <div class="form-floating">
-                                                    <input type="text" class="form-control" id="nomeCartao"
-                                                        name="nomeCartao" required="">
-                                                    <label for="nomeCartao" required="">Descrição</label>
+                                                    <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" required>
+                                                    <label for="nomeCartao" required>Descrição</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-floating">
-                                                    <input class="form-control" id="dtValidade" name="dtValidade"
-                                                        required="">
+                                                    <input class="form-control" id="vlrCupom" name="vlrCupom" required>
                                                     <label for="nomeCartao" class="form-label">Valor</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer border-0">
-                                        <input type="submit" class="btn btn-success" id="btnCriarCupom"
-                                            value="Criar cupom">
+                                        <input type="submit" class="btn btn-success" id="criarCupomBtn" value="Criar cupom">
                                     </div>
                                 </form>
                             </div>
@@ -500,7 +459,8 @@
         $('#cpf').mask('000.000.000-00', { reverse: true });
         $('#cep').mask('00000-000');
         $('#phone').mask('00 00000-0000');
-    });
+        $('#vlrCupom').mask("#.##0,00", {reverse: true});
+        });
 </script>
 
 </html>

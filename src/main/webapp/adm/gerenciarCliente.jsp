@@ -7,8 +7,7 @@
   <meta charset="UTF-8" />
   <title>Gerenciar clientes</title>
   <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>' />
-  <link rel="stylesheet" type="text/css"
-    href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
+  <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
   <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/main.css' />
 </head>
 
@@ -57,22 +56,28 @@
       <div class="col-lg-10">
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <button class="nav-link active" id="nav-dados-pessoais-tab" data-bs-toggle="tab"
-              data-bs-target="#nav-dados-pessoais" type="button" role="tab" aria-controls="nav-dados-pessoais"
-              aria-selected="true">Dados pessoais</button>
+            <button class="nav-link active" id="nav-dados-pessoais-tab" data-bs-toggle="tab" data-bs-target="#nav-dados-pessoais"
+              type="button" role="tab" aria-controls="nav-dados-pessoais" aria-selected="true">
+              Dados pessoais
+            </button>
             <button class="nav-link" id="nav-transacoes-tab" data-bs-toggle="tab" data-bs-target="#nav-transacoes"
-              type="button" role="tab" aria-controls="nav-transacoes" aria-selected="false">Transações</button>
+              type="button" role="tab" aria-controls="nav-transacoes" aria-selected="false">
+              Transações
+            </button>
             <button class="nav-link" id="nav-endereco-tab" data-bs-toggle="tab" data-bs-target="#nav-endereco"
-              type="button" role="tab" aria-controls="nav-endereco" aria-selected="false">Endereços</button>
+              type="button" role="tab" aria-controls="nav-endereco" aria-selected="false">
+              Endereços
+            </button>
             <button class="nav-link" id="nav-cartoes-tab" data-bs-toggle="tab" data-bs-target="#nav-cartoes"
-              type="button" role="tab" aria-controls="nav-cartoes" aria-selected="false">Cartões</button>
+              type="button" role="tab" aria-controls="nav-cartoes" aria-selected="false">
+              Cartões
+            </button>
           </div>
         </nav>
 
         <div class="tab-content border border-top-0 p-4" id="nav-tabContent">
           <!--Dados Pessoais-->
-          <div class="tab-pane fade active show" id="nav-dados-pessoais" role="tabpanel"
-            aria-labelledby="nav-dados-pessoais-tab">
+          <div class="tab-pane fade active show" id="nav-dados-pessoais" role="tabpanel" aria-labelledby="nav-dados-pessoais-tab">
             <div class="card-body">
               <form class="needs-validation text-center" action="/LootCommerce/admin/cliente" method="POST">
                 <input type="hidden" value="${cliente.id}" name="idCliente" />
@@ -212,7 +217,7 @@
           </div>
 
           <!-- Modal Cadastro/Edição Endereços-->
-          <div class="modal fade" id="cadastrarEndereco" data-bs-backdrop="static" data-bs-keyboard="false"
+          <div class="modal fade" id="cadastrarEnderecoModal" data-bs-backdrop="static" data-bs-keyboard="false"
             tabindex="-1" aria-labelledby="cadastrarEnderecoLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-xl">
               <div class="modal-content">
@@ -221,56 +226,50 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+
                   <form class="needs-validation" action="/LootCommerce/admin/enderecos" method="POST" novalidate="">
                     <input type="hidden" name="operacao" value="salvar">
                     <input type="hidden" value="${cliente.id}" name="idCliente" />
                     <div class="row g-3 mb-3">
                       <div class="col-md-6">
                         <div class="form-floating">
-                          <select class="form-select" id="tpResidencia" name="tpResidencia" required>
-                            <option value="">Selecione</option>
-                            <option>Casa</option>
-                            <option>Apartamento</option>
-                            <option>Outro</option>
-                          </select>
-                          <label>Tipo de residência</label>
+                          <input type="text" class="form-control" value="" id="tpResidencia" name="tpResidencia" placeholder="" required>
+                          <label for="tpResidencia" class="form-label">Tipo de residência</label>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-floating">
-                          <input type="text" class="form-control" id="tpLogradouro" name="tpLogradouro" required>
+                          <input type="text" class="form-control" id="tpLogradouro" name="tpLogradouro" placeholder="" required>
                           <label for="tpLogradouro" class="form-label">Tipo de logradouro</label>
-                          <div class="invalid-feedback">Insira um tipo de logradouro.</div>
                         </div>
                       </div>
                       <div class="col-md-5">
                         <div class="form-floating">
-                          <input type="text" class="form-control" id="logradouro" name="logradouro" required>
+                          <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="" required>
                           <label for="logradouro" class="form-label">Logradouro</label>
-                          <div class="invalid-feedback">Insira o logradouro.</div>
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-floating">
-                          <input type="text" class="form-control" id="numero" name="numero" required>
+                          <input type="text" class="form-control" id="numero" name="numero" placeholder="" required>
                           <label for="numero" class="form-label">Número</label>
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-floating">
-                          <input type="text" class="form-control" id="bairro" name="bairro" required>
+                          <input type="text" class="form-control" id="bairro" name="bairro" placeholder="" required>
                           <label for="bairro" class="form-label">Bairro</label>
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-floating">
-                          <input type="text" class="form-control" id="cep" name="cep" required>
+                          <input type="text" class="form-control" id="cep" name="cep" placeholder="" required>
                           <label for="cep" class="form-label">CEP</label>
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-floating">
-                          <select class="form-select" id="cidade" name="cidade" required>
+                          <select class="form-select" id="cidade" name="cidade" placeholder="" required>
                             <option value="">Selecione</option>
                             <option>São Paulo</option>
                           </select>
@@ -279,7 +278,7 @@
                       </div>
                       <div class="col-md-4">
                         <div class="form-floating">
-                          <select class="form-select" id="estado" name="estado" required>
+                          <select class="form-select" id="estado" name="estado" placeholder="" required>
                             <option value="">Selecione</option>
                             <option>São Paulo</option>
                           </select>
@@ -289,7 +288,7 @@
                       <div class="col-md-4">
                         <div class="form-floating">
                           <label for="pais" class="form-label"></label>
-                          <select class="form-select" id="pais" name="pais" required>
+                          <select class="form-select" id="pais" name="pais" placeholder="" required>
                             <option value="">Selecione</option>
                             <option>Brasil</option>
                           </select>
@@ -299,8 +298,7 @@
                       <div class="col-md-8">
                         <div class="form-floating">
                           <input type="text" class="form-control" id="observacao" name="observacao">
-                          <label for="observacao" class="form-label">Observação
-                            <span class="text-muted">(Opcional)</span></label>
+                          <label for="observacao" class="form-label">Observação<span class="text-muted">(Opcional)</span></label>
                         </div>
                       </div>
                       <div class="col-md-4">
@@ -316,11 +314,11 @@
                       </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" id="btnCancelarEnderco"
-                        data-bs-dismiss="modal">Cancelar</button>
-                      <button type="submit" class="btn btn-success" id="btnCadastrarEndereco">Cadastrar</button>
+                      <button type="button" class="btn btn-secondary" id="cancelarEnderecoBtn" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-success" id="cadastrarEnderecoBtn">Cadastrar</button>
                     </div>
                   </form>
+
                 </div>
               </div>
             </div>
@@ -328,7 +326,7 @@
 
           <!-- Modal Exclusão Endereço -->
           <c:forEach var="endereco" items="${cliente.enderecos}">
-            <div class="modal fade" id="excluirEndereco${endereco.id}" data-bs-backdrop="static"
+            <div class="modal fade" id="excluirEnderecoModal${endereco.id}" data-bs-backdrop="static"
               data-bs-keyboard="false" tabindex="-1" aria-labelledby="excluirEnderecoLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-sm">
                 <div class="modal-content">
@@ -355,7 +353,7 @@
 
           <div class="tab-pane fade" id="nav-endereco" role="tabpanel" aria-labelledby="nav-endereco-tab">
             <button type="button" id="novoEndereco" class="btn btn-primary mb-3 float-end" data-bs-toggle="modal"
-              data-bs-target="#cadastrarEndereco">
+              data-bs-target="#cadastrarEnderecoModal">
               <span class="material-icons inline-icon">add_circle_outline</span>Novo Endereço
             </button>
             <table class="table table-hover table-sm table-responsive" id="table-enderecos">
@@ -389,7 +387,7 @@
                         mode_edit
                       </span>
                       <span class="material-icons text-danger">
-                        <span data-bs-toggle="modal" data-bs-target="#excluirEndereco${endereco.id}"
+                        <span data-bs-toggle="modal" data-bs-target="#excluirEnderecoModal${endereco.id}"
                           id="deletarEndereco${cliente.id}">
                           delete
                         </span>
@@ -419,14 +417,12 @@
                         <div class="form-floating">
                           <input type="text" class="form-control" id="numCartao" name="numCartao" required>
                           <label for="numCartao" class="form-label">Número do cartão</label>
-                          <div class="invalid-feedback">Insira um número para o cartão.</div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-floating">
                           <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" required>
                           <label for="nomeCartao" required>Nome do cartão</label>
-                          <div class="invalid-feedback">Insira um nome para o cartão.</div>
                         </div>
                       </div>
                       <div class="col-md-3">
@@ -437,44 +433,41 @@
                             <option>Mastercard</option>
                           </select>
                           <label>Bandeira</label>
-                          <div class="invalid-feedback">Selecione a bandeira do cartão.</div>
                         </div>
                       </div>
                       <div class="col-md-2">
                         <div class="form-floating">
                           <input type="text" class="form-control" id="codigoCartao" name="codigoCartao" required>
                           <label for="nomeCartao" class="form-label">Código</label>
-                          <div class="invalid-feedback">Insira o código.</div>
                         </div>
                       </div>
                       <div class="col-md-3">
                         <div class="form-floating">
                           <input type="date" class="form-control" id="dtValidade" name="dtValidade" required>
                           <label for="nomeCartao" class="form-label">Data de Validade</label>
-                          <div class="invalid-feedback">Insira data de validade.</div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" id="btnCancelarCartao" data-bs-dismiss="modal"
-                      class="btn btn-secondary">Cancelar</button>
-                    <input type="submit" id="btnCadastrarCartao" value="Cadastrar" class="btn btn-success">
+                    <button type="button" id="cancelarCartaoBtn" data-bs-dismiss="modal" class="btn btn-secondary">
+                      Cancelar
+                    </button>
+                    <input type="submit" id="cadastrarCartaoBtn" value="Cadastrar" class="btn btn-success">
                   </div>
                 </form>
               </div>
             </div>
           </div>
 
-
           <c:forEach var="cartao" items="${cliente.cartoesDeCredito}">
             <!-- Modal Edição Cartão -->
-            <div class="modal fade" id="editarCartao${cartao.id}" data-bs-backdrop="static" data-bs-keyboard="false"
+            <div class="modal fade" id="editarCartaoModal${cartao.id}" data-bs-backdrop="static" data-bs-keyboard="false"
               tabindex="-1" aria-labelledby="editarCartaoLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-xl">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="cadastrarCartaoLabel">
+                    <h5 class="modal-title" id="editarCartaoLabel">
                       Editar</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
@@ -486,17 +479,18 @@
                           <div class="form-floating">
                             <input type="text" class="form-control" id="numCartao" name="numCartao"
                               value="${cartao.numCartao}">
-                            <label for="numCartao" class="form-label">Número
-                              do
-                              cartão</label>
+                            <label for="numCartao" class="form-label">
+                                Número do cartão
+                            </label>
                           </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-floating">
                             <input type="text" class="form-control" id="nomeCartao" name="nomeCartao"
                               value="${cartao.nomeImpressoCartao}">
-                            <label for="nomeCartao" required>Nome do
-                              cartão</label>
+                            <label for="nomeCartao" required>
+                                Nome do cartão
+                            </label>
                           </div>
                         </div>
                         <div class="col-md-3">
@@ -520,9 +514,9 @@
                           <div class="form-floating">
                             <input type="date" class="form-control" id="dtValidade" name="dtValidade"
                               value="${cartao.dataValidade}">
-                            <label for="nomeCartao" class="form-label">Data
-                              de
-                              Validade</label>
+                            <label for="nomeCartao" class="form-label">
+                                Data de Validade
+                            </label>
                           </div>
                         </div>
                       </div>
@@ -541,7 +535,7 @@
           </c:forEach>
 
           <c:forEach var="cartao" items="${cliente.cartoesDeCredito}">
-            <div class="modal fade" id="excluirCartao${cartao.id}" data-bs-backdrop="static" data-bs-keyboard="false"
+            <div class="modal fade" id="excluirCartaoModal${cartao.id}" data-bs-backdrop="static" data-bs-keyboard="false"
               tabindex="-1" aria-labelledby="excluirCartaoLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-sm">
                 <div class="modal-content">
@@ -550,9 +544,7 @@
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <div class="modal-body">
-                    Tem certeza que deseja excluir esse cartão?
-                  </div>
+                  <div class="modal-body"> Tem certeza que deseja excluir esse cartão? </div>
                   <div class="modal-footer">
                     <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cancelar</button>
                     <form action="../admin/cartoes" method="POST">
@@ -613,7 +605,6 @@
       </div>
       <div class="col-lg-2">
         <div class="row vstack mt-5">
-
           <div class="container border rounded p-3">
             <div class="d-flex justify-content-between">
               <div class="text-primary text-uppercase">Rank:</div>
@@ -621,11 +612,14 @@
             </div>
           </div>
           <div class="container border rounded mt-3 p-2">
-            <div class="text-primary text-uppercase"> Cupons</div>
+            <div class="text-primary text-uppercase">Cupons</div>
             <div class="row row-cols-xl-1">
               <div>Promocional</div>
               <div class="col">
                 <div class="border row p-2 rounded m-1">
+                  <a id="excluirCupomBtn" type="button">
+                    <span class="material-icons text-danger">close</span>
+                  </a>
                   <h6>Nome cupom</h6>
                   <h6>R$ 00,00</h6>
                   <h6>Descrição</h6>

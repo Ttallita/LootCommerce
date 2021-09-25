@@ -28,12 +28,11 @@
         </div>
     </c:if>
     <div class="container-fluid position-absolute top-50 start-50 translate-middle">
-        <!-- Outer Row -->
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
+
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                             <div class="col-lg-6">
@@ -41,17 +40,15 @@
                                     <main>
                                       <form class="text-center" action="/LootCommerce/login" method="POST">
                                         <input type="hidden" name="operacao" value="login"/>
-                                        <img class="mb-4" src="/LootCommerce/assets/img/logo_fanloot.png" alt="" max-height="100" width="100">
+                                        <img class="mb-4" src="/LootCommerce/assets/img/logo_fanloot.png" alt="Logo fanLoot" max-height="100" width="100">
                                         <h1 class="h3 mb-3 fw-normal">Login</h1>
                                         <div class="form-floating mb-2">
                                           <input type="email" class="form-control" id="email" name="email" placeholder="">
                                           <label for="floatingInput">Email</label>
-                                          <div class="invalid-feedback">Insira um email válido.</div>
                                         </div>
                                         <div class="form-floating">
                                           <input type="password" class="form-control" id="senha" name="senha" placeholder="">
                                           <label for="floatingPassword">Senha</label>
-                                          <div class="invalid-feedback">Senha incorreta.</div>
                                         </div>
                                         <div class="checkbox mb-3">
                                           <label><input type="checkbox" value="remember-me">Lembrar de mim</label>

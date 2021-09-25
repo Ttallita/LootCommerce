@@ -8,8 +8,7 @@
     <meta charset="UTF-8" />
     <title>Perfil</title>
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>' />
-    <link rel="stylesheet" type="text/css"
-        href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
+    <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
     <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/main.css' />
 </head>
 
@@ -43,7 +42,7 @@
 
     <main class="wrapper container mt-3">
         <div class="row bg-white rounded">
-            <div class="col-lg-2 border p-0">
+            <aside class="col-lg-2 border p-0">
                 <div class="h4 p-3 text-center">${clienteLogado.nome} ${clienteLogado.sobrenome}</div>
                 <div class="list-group">
                     <button class="${empty aba ? 'active' : ''} btn btn-outline-primary text-start border-0"
@@ -79,16 +78,15 @@
                         aria-controls="v-pills-cupons" aria-selected="false">
                         <span class="material-icons inline-icon">local_play</span>Cupons</button>
                 </div>
-            </div>
+            </aside>
 
             <div class="col-lg-10 p-0">
                 <div class="tab-content border">
                     <!--conta-->
-                    <div class="tab-pane fade ${empty aba ? 'active show' : ''}" id="v-pills-conta" role="tabpanel"
+                    <section class="tab-pane fade ${empty aba ? 'active show' : ''}" id="v-pills-conta" role="tabpanel"
                         aria-labelledby="v-pills-conta-tab">
-                        <div class="col-md-12 h4 fw-bold p-3 m-0 border text-center">Conta</div>
-                        <div class="border p-4">
-                            <form class="needs-validation text-center" action="/LootCommerce/clientes/perfil"
+                        <h4 class="fw-bold p-3 m-0 border text-center">Conta</h4>
+                            <form class="needs-validation text-center p-4" action="/LootCommerce/clientes/perfil"
                                 method="POST" novalidate="">
                                 <input type="hidden" name="operacao" value="atualizar">
                                 <div class="row g-3">
@@ -96,8 +94,7 @@
                                     <div class="col-sm-6">
                                         <div class="input-group form-floating">
                                             <input type="text" class="form-control" id="nome" name="nome"
-                                                value="${clienteLogado.nome}" required="">
-
+                                                value="${clienteLogado.nome}" required>
                                             <label class="form-label">Nome</label>
                                         </div>
                                     </div>
@@ -105,15 +102,14 @@
                                     <div class="col-sm-6">
                                         <div class="input-group form-floating">
                                             <input type="text" class="form-control" id="sobrenome" name="sobrenome"
-                                                value="${clienteLogado.sobrenome}" required="">
-
+                                                value="${clienteLogado.sobrenome}" required>
                                             <label class="form-label">Sobrenome</label>
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="input-group form-floating">
-                                            <select class="form-select" id="genero" name="genero" required="">
+                                            <select class="form-select" id="genero" name="genero" required>
                                                 <option name="genero" value="${clienteLogado.genero}">
                                                     Selecione
                                                 </option>
@@ -129,7 +125,7 @@
                                     <div class="col-md-4">
                                         <div class="input-group form-floating">
                                             <input type="date" class="form-control" id="dataNasc" name="date"
-                                                value="${clienteLogado.dataNascimento}" required="">
+                                                value="${clienteLogado.dataNascimento}" required>
                                             <label class="form-label">Data de nascimento</label>
                                         </div>
                                     </div>
@@ -137,15 +133,14 @@
                                     <div class="col-4">
                                         <div class="input-group form-floating">
                                             <input type="text" class="form-control" id="cpf" name="cpf"
-                                                value="${clienteLogado.cpf}" required="">
+                                                value="${clienteLogado.cpf}" required>
                                             <label class="form-label">CPF</label>
                                         </div>
                                     </div>
 
                                     <div class="col-3">
                                         <div class="input-group form-floating">
-                                            <select class="form-select" id="tipoTelefone" name="tipoTelefone"
-                                                required="">
+                                            <select class="form-select" id="tipoTelefone" name="tipoTelefone" required>
                                                 <option name="tipoTelefone" value="${clienteLogado.telefone.tipo}">
                                                     ${clienteLogado.telefone.tipo}</option>
                                                 <option value="">Selecione</option>
@@ -160,7 +155,7 @@
                                         <div class="input-group form-floating">
                                             <input type="phone" class="form-control" id="phone" name="phone"
                                                 value="${clienteLogado.telefone.ddd},${clienteLogado.telefone.numero}"
-                                                required="">
+                                                required>
                                             <label class="form-label">Telefone</label>
                                         </div>
                                     </div>
@@ -171,35 +166,28 @@
                                     Atualizar
                                 </button>
                             </form>
-                        </div>
-                    </div>
+                    </section>
 
                     <!--alterar senha-->
-                    <div class="tab-pane fade ${not empty aba && aba == 'senha' ? 'active show' : ''}"
+                    <section class="tab-pane fade ${not empty aba && aba == 'senha' ? 'active show' : ''}"
                         id="v-pills-alterar-senha" role="tabpanel" aria-labelledby="v-pills-alterar-senha-tab">
-                        <div class="col-md-12 h4 fw-bold p-3 m-0 border text-center">Alterar senha</div>
-                        <div class="border p-4">
-                            <form action="/LootCommerce/clientes/perfil/editarSenha" method="POST">
+                        <h4 class="fw-bold p-3 m-0 border text-center">Alterar senha</h4>
+                            <form class="text-center p-4" action="/LootCommerce/clientes/perfil/editarSenha" method="POST">
                                 <input type="hidden" name="operacao" value="atualizar">
-                                <div class="col-6 ">
-                                    <div class="input-group form-floating">
+                                <div class="vstack gap-3 text-center">
+                                    <div class="col-6 mx-auto form-floating">
                                         <input type="email" class="form-control" name="email" id="emailAtual"
-                                            placeholder="" value="${clienteLogado.usuario.email}">
+                                            value="${clienteLogado.usuario.email}">
                                         <label class="form-label">Email</label>
                                     </div>
-                                </div>
-
-                                <div class="vstack gap-3 text-center">
-
-                                    <div class="col-6 form-floating">
-                                        <input type="password" class="form-control" id="senha" placeholder=""
-                                            name="senha">
+                                    <div class="col-6 mx-auto form-floating">
+                                        <input type="password" class="form-control" id="senha" name="senha"
+                                            placeholder="">
                                         <label class="form-label">Senha Nova</label>
                                     </div>
-
-                                    <div class="col-6 form-floating">
-                                        <input type="password" class="form-control" id="senhaConfirmacao" placeholder=""
-                                            name="senhaConfirmacao">
+                                    <div class="col-6 mx-auto form-floating">
+                                        <input type="password" class="form-control" id="senhaConfirmacao"
+                                            name="senhaConfirmacao" placeholder="">
                                         <label class="form-label">Confirme a nova senha</label>
                                     </div>
                                 </div>
@@ -208,18 +196,17 @@
                                     Atualizar Dados
                                 </button>
                             </form>
-                        </div>
-                    </div>
+                    </section>
 
                     <!--endereços-->
-                    <div class="tab-pane fade ${not empty aba && aba == 'enderecos' ? 'active show' : ''}"
+                    <section class="tab-pane fade ${not empty aba && aba == 'enderecos' ? 'active show' : ''}"
                         id="v-pills-enderecos" role="tabpanel" aria-labelledby="v-pills-enderecos-tab">
-                        <div class="col-md-12 h4 fw-bold p-3 m-0 border text-center">Endereços cadastrados</div>
+                        <h4 class="fw-bold p-3 m-0 border text-center">Endereços cadastrados</h4>
                         <div class="border p-4">
                             <button type="button" id="novoEndereco" class="btn btn-primary mb-3 float-end"
-                                data-bs-toggle="modal" data-bs-target="#cadastrarEndereco">
-                                <span class="material-icons inline-icon">add_circle_outline</span>Novo
-                                Endereço
+                                data-bs-toggle="modal" data-bs-target="#cadastrarEnderecoModal">
+                                <span class="material-icons inline-icon">add_circle_outline</span>
+                                Novo endereço
                             </button>
                             <table id="table-enderecos" class="table table-hover table-sm table-responsive">
                                 <thead>
@@ -249,13 +236,13 @@
                                             <td>${endereco.tipoEndereco}</td>
                                             <td>
                                                 <span class="material-icons" data-bs-toggle="modal"
-                                                    data-bs-target="#editarEndereco${endereco.id}">
+                                                    data-bs-target="#editarEnderecoModal${endereco.id}">
                                                     mode_edit
                                                 </span>
                                             </td>
                                             <td>
                                                 <span class="material-icons text-danger" data-bs-toggle="modal"
-                                                    data-bs-target="#excluirEndereco${endereco.id}">
+                                                    data-bs-target="#excluirEnderecoModal${endereco.id}">
                                                     delete
                                                 </span>
                                             </td>
@@ -264,8 +251,8 @@
                                 </tbody>
                             </table>
 
-                            <!-- Modal Cadastro -->
-                            <div class="modal fade" id="cadastrarEndereco" data-bs-backdrop="static"
+                            <!-- Modal Cadastro endereço -->
+                            <div class="modal fade" id="cadastrarEnderecoModal" data-bs-backdrop="static"
                                 data-bs-keyboard="false" tabindex="-1" aria-labelledby="cadastrarEnderecoLabel"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered modal-xl">
@@ -283,20 +270,18 @@
                                                 <div class="row g-3 mb-3">
                                                     <div class="col-md-6">
                                                         <div class="form-floating">
-                                                            <select class="form-select" id="tpResidencia"
-                                                                name="tpResidencia" required>
-                                                                <option value="">Selecione</option>
-                                                                <option>Casa</option>
-                                                                <option>Apartamento</option>
-                                                                <option>Outro</option>
-                                                            </select>
-                                                            <label>Tipo de residência</label>
+                                                            <input type="text" class="form-control" id="tpResidencia"
+                                                                name="tpResidencia" placeholder="" placeholder=""
+                                                                required>
+                                                            <label for="tpResidencia" class="form-label">
+                                                                Tipo de residência
+                                                            </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-floating">
                                                             <input type="text" class="form-control" id="tpLogradouro"
-                                                                name="tpLogradouro" required>
+                                                                name="tpLogradouro" placeholder="" required>
                                                             <label for="tpLogradouro" class="form-label">
                                                                 Tipo de logradouro
                                                             </label>
@@ -305,7 +290,7 @@
                                                     <div class="col-md-5">
                                                         <div class="form-floating">
                                                             <input type="text" class="form-control" id="logradouro"
-                                                                name="logradouro" required>
+                                                                name="logradouro" placeholder="" required>
                                                             <label for="logradouro"
                                                                 class="form-label">Logradouro</label>
                                                         </div>
@@ -313,28 +298,28 @@
                                                     <div class="col-md-3">
                                                         <div class="form-floating">
                                                             <input type="text" class="form-control" id="numero"
-                                                                name="numero" required>
+                                                                name="numero" placeholder="" required>
                                                             <label for="numero" class="form-label">Número</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-floating">
                                                             <input type="text" class="form-control" id="bairro"
-                                                                name="bairro" required>
+                                                                name="bairro" placeholder="" required>
                                                             <label for="bairro" class="form-label">Bairro</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-floating">
                                                             <input type="text" class="form-control" id="cep" name="cep"
-                                                                required>
+                                                                placeholder="" required>
                                                             <label for="cep" class="form-label">CEP</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-floating">
                                                             <select class="form-select" id="cidade" name="cidade"
-                                                                required>
+                                                                placeholder="" required>
                                                                 <option value="">Selecione</option>
                                                                 <option>São Paulo</option>
                                                             </select>
@@ -343,8 +328,7 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-floating">
-                                                            <select class="form-select" id="estado" name="estado"
-                                                                required>
+                                                            <select class="form-select" id="estado" name="estado" placeholder="" required>
                                                                 <option value="">Selecione</option>
                                                                 <option>São Paulo</option>
                                                             </select>
@@ -354,7 +338,7 @@
                                                     <div class="col-md-4">
                                                         <div class="form-floating">
                                                             <label for="pais" class="form-label"></label>
-                                                            <select class="form-select" id="pais" name="pais" required>
+                                                            <select class="form-select" id="pais" name="pais" placeholder="" required>
                                                                 <option value="">Selecione</option>
                                                                 <option>Brasil</option>
                                                             </select>
@@ -363,16 +347,15 @@
                                                     </div>
                                                     <div class="col-md-8">
                                                         <div class="form-floating">
-                                                            <input type="text" class="form-control" id="apelido"
-                                                                name="apelido">
-                                                            <label for="apelido" class="form-label">Apelido do
-                                                                endereço</label>
+                                                            <input type="text" class="form-control" id="apelido" name="apelido" placeholder="" required>
+                                                            <label for="apelido" class="form-label">
+                                                                Apelido do endereço
+                                                             </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8">
                                                         <div class="form-floating">
-                                                            <input type="text" class="form-control" id="observacao"
-                                                                name="observacao">
+                                                            <input type="text" class="form-control" id="observacao" name="observacao" placeholder="">
                                                             <label for="observacao" class="form-label">Observação
                                                                 <span class="text-muted">(Opcional)</span>
                                                             </label>
@@ -407,14 +390,13 @@
 
                             <!-- Modal Editar Endereço-->
                             <c:forEach var="endereco" items="${clienteLogado.enderecos}">
-                                <div class="modal fade" id="editarEndereco${endereco.id}" data-bs-backdrop="static"
+                                <div class="modal fade" id="editarEnderecoModal${endereco.id}" data-bs-backdrop="static"
                                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="editarEnderecoLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-xl">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="cadastrarEnderecoLabel">
-                                                    Editar</h5>
+                                                <h5 class="modal-title" id="cadastrarEnderecoLabel">Editar</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
@@ -425,24 +407,20 @@
                                                     <div class="row g-3 mb-3">
                                                         <div class="col-md-6">
                                                             <div class="form-floating">
-                                                                <select class="form-select" id="tpResidencia"
-                                                                    name="tpResidencia">
-                                                                    <option value="">Selecione</option>
-                                                                    <option>Casa</option>
-                                                                    <option>Apartamento</option>
-                                                                    <option>Outro</option>
-                                                                </select>
-                                                                <label>Tipo de residência</label>
+                                                                <input type="text" class="form-control"
+                                                                    id="tpResidencia" name="tpResidencia" placeholder=""
+                                                                    required>
+                                                                <label for="tpResidencia" class="form-label">Tipo de
+                                                                    residência</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-floating">
                                                                 <input type="text" class="form-control"
-                                                                    id="tpLogradouro" name="tpLogradouro"
-                                                                    value="${endereco.tipoLogradouro}">
-                                                                <label for="tpLogradouro" class="form-label">
-                                                                    Tipo de logradouro
-                                                                </label>
+                                                                    id="tpLogradouro" value="${endereco.tipoLogradouro}"
+                                                                    name="tpLogradouro" placeholder="" required>
+                                                                <label for="tpLogradouro" class="form-label">Tipo de
+                                                                    logradouro</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-5">
@@ -508,9 +486,9 @@
                                                         <div class="col-md-8">
                                                             <div class="form-floating">
                                                                 <input type="text" class="form-control" id="apelido"
-                                                                    name="apelido" value="${endereco.apelido}">
-                                                                <label for="apelido" class="form-label">Apelido
-                                                                    do
+                                                                    name="apelido" value="${endereco.apelido}"
+                                                                    placeholder="" required>
+                                                                <label for="apelido" class="form-label">Apelido do
                                                                     endereço</label>
                                                             </div>
                                                         </div>
@@ -518,8 +496,9 @@
                                                             <div class="form-floating">
                                                                 <input type="text" class="form-control" id="observacao"
                                                                     name="observacao" value="${endereco.observacoes}">
-                                                                <label for="observacao" class="form-label">Observação
-                                                                    <span class="text-muted">(Opcional)</span></label>
+                                                                <label for="observacao" class="form-label">
+                                                                    Observação<span
+                                                                        class="text-muted">(Opcional)</span></label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
@@ -551,17 +530,15 @@
                                 </div>
                             </c:forEach>
 
-
                             <!-- Modal Exclusão Endereço -->
                             <c:forEach var="endereco" items="${clienteLogado.enderecos}">
-                                <div class="modal fade" id="excluirEndereco${endereco.id}" data-bs-backdrop="static"
+                                <div class="modal fade" id="excluirEnderecoModal${endereco.id}" data-bs-backdrop="static"
                                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="excluirEnderecoLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-sm">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="excluirEnderecoLabel">
-                                                    Excluir</h5>
+                                                <h5 class="modal-title" id="excluirEnderecoLabel"> Excluir</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
@@ -584,17 +561,16 @@
                             </c:forEach>
 
                         </div>
-                    </div>
+                    </section>
 
                     <!--cartões-->
-                    <div class="tab-pane fade  ${not empty aba && aba == 'cartoes' ? 'active show' : ''}"
+                    <section class="tab-pane fade  ${not empty aba && aba == 'cartoes' ? 'active show' : ''}"
                         id="v-pills-cartoes" role="tabpanel" aria-labelledby="v-pills-cartoes-tab">
-                        <div class="col-md-12 h4 fw-bold p-3 m-0 border text-center">Meus cartões</div>
+                        <h4 class="fw-bold p-3 m-0 border text-center">Meus cartões</h4>
                         <div class="border p-4">
                             <button type="button" id="novoCartao" class="btn btn-primary mb-3 float-end"
-                                data-bs-toggle="modal" data-bs-target="#cadastrarCartao">
-                                <span class="material-icons inline-icon">add_circle_outline</span>Novo
-                                Cartão
+                                data-bs-toggle="modal" data-bs-target="#cadastrarCartaoModal">
+                                <span class="material-icons inline-icon">add_circle_outline</span>Novo Cartão
                             </button>
 
                             <table id="table-cartoes" class="table table-hover table-sm table-responsive">
@@ -619,7 +595,7 @@
                                             <td>${cartao.dataValidade}</td>
                                             <td>
                                                 <span class="material-icons" data-bs-toggle="modal"
-                                                    data-bs-target="#editarCartao${cartao.id}">
+                                                    data-bs-target="#editarCartaoModal${cartao.id}">
                                                     mode_edit</span>
                                             </td>
                                             <td>
@@ -633,16 +609,14 @@
                                 </tbody>
                             </table>
 
-
                             <!-- Modal Cadastro/Edição Cartão -->
-                            <div class="modal fade" id="cadastrarCartao" data-bs-backdrop="static"
+                            <div class="modal fade" id="cadastrarCartaoModal" data-bs-backdrop="static"
                                 data-bs-keyboard="false" tabindex="-1" aria-labelledby="cadastrarCartaoLabel"
                                 aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-xl">
+                                <div class="modal-dialog modal-dialog-centered modal-xl" style="max-width:600px">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="cadastrarCartaoLabel">
-                                                Cadastrar</h5>
+                                            <h5 class="modal-title" id="cadastrarCartaoLabel">Cadastrar cartão</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
@@ -650,29 +624,14 @@
                                             <form class="needs-validation" action="/LootCommerce/clientes/cartoes"
                                                 method="POST" novalidate>
                                                 <input type="hidden" name="operacao" value="salvar">
-                                                <div class="row g-3 mb-3">
-                                                    <div class="col-md-6">
+                                                <div class="row g-2">
+                                                    <div class="col-md-8">
                                                         <div class="form-floating">
-                                                            <input type="number" class="form-control" id="numCartao"
-                                                                name="numCartao" required>
-                                                            <label for="numCartao" class="form-label">Número
-                                                                do
-                                                                cartão</label>
-                                                            <div class="invalid-feedback">Insira um
-                                                                número para o cartão.</div>
+                                                            <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" placeholder="" required="">
+                                                            <label for="nomeCartao">Nome impresso</label>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-floating">
-                                                            <input type="text" class="form-control" id="nomeCartao"
-                                                                name="nomeCartao" required>
-                                                            <label for="nomeCartao" required>Nome do
-                                                                cartão</label>
-                                                            <div class="invalid-feedback">Insira um
-                                                                nome para o cartão.</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
+                                                    <div class="col-md-4">
                                                         <div class="form-floating">
                                                             <select class="form-select" id="bandeira" name="bandeira"
                                                                 required>
@@ -681,38 +640,34 @@
                                                                 <option>Mastercard</option>
                                                             </select>
                                                             <label>Bandeira</label>
-                                                            <div class="invalid-feedback">Selecione
-                                                                a bandeira do cartão.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-8">
+                                                        <div class="form-floating">
+                                                            <input type="text" class="form-control" id="numCartao" name="numCartao" placeholder="" required="">
+                                                            <label for="numCartao" class="form-label">Número do cartão</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="form-floating">
+                                                            <input type="date" class="form-control" id="dtValidade"
+                                                                name="dtValidade" placeholder="" required>
+                                                            <label for="nomeCartao" class="form-label">Validade</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-floating">
                                                             <input type="text" class="form-control" id="codigoCartao"
-                                                                name="codigoCartao" required>
-                                                            <label for="nomeCartao" class="form-label">Código</label>
-                                                            <div class="invalid-feedback">Insira o
-                                                                código. </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <div class="form-floating">
-                                                            <input type="date" class="form-control" id="dtValidade"
-                                                                name="dtValidade" required>
-                                                            <label for="nomeCartao" class="form-label">Data
-                                                                de
-                                                                Validade</label>
-                                                            <div class="invalid-feedback">Insira
-                                                                data de validade.</div>
+                                                                name="codigoCartao" placeholder="" required>
+                                                            <label for="nomeCartao" class="form-label">CVV</label>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="modal-footer">
                                                     <button type="button" id="btnCancelarCartaoNovo"
-                                                        class="btn btn-secondary"
-                                                        data-bs-dismiss="modal">Cancelar</button>
-                                                    <input type="submit" id="btnCadastrarCartao" value="Cadastrar"
-                                                        class="btn btn-success">
+                                                        class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                    <input type="submit" id="btnCadastrarCartao" value="Cadastrar" class="btn btn-success">
                                                 </div>
                                             </form>
                                         </div>
@@ -722,14 +677,13 @@
 
                             <c:forEach var="cartao" items="${clienteLogado.cartoesDeCredito}">
                                 <!-- Modal Cadastro/Edição Cartão -->
-                                <div class="modal fade" id="editarCartao${cartao.id}" data-bs-backdrop="static"
+                                <div class="modal fade" id="editarCartaoModal${cartao.id}" data-bs-backdrop="static"
                                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="editarCartaoLabel"
                                     aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-xl">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="cadastrarCartaoLabel">
-                                                    Editar</h5>
+                                                <h5 class="modal-title" id="editarCartaoLabel">Editar</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
@@ -741,18 +695,17 @@
                                                         <div class="col-md-6">
                                                             <div class="form-floating">
                                                                 <input type="text" class="form-control" id="numCartao"
-                                                                    name="numCartao" value="${cartao.numCartao}">
-                                                                <label for="numCartao" class="form-label">Número do
-                                                                    cartão</label>
+                                                                    name="numCartao" value="${cartao.numCartao}"
+                                                                    placeholder="" required>
+                                                                <label for="numCartao" class="form-label">Número do cartão</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-floating">
                                                                 <input type="text" class="form-control" id="nomeCartao"
-                                                                    name="nomeCartao"
-                                                                    value="${cartao.nomeImpressoCartao}">
-                                                                <label for="nomeCartao" required>Nome do
-                                                                    cartão</label>
+                                                                    name="nomeCartao" value="${cartao.nomeImpressoCartao}" placeholder=""
+                                                                    required>
+                                                                <label for="nomeCartao" required>Nome impresso no cartão</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
@@ -768,19 +721,16 @@
                                                         </div>
                                                         <div class="col-md-2">
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control"
-                                                                    id="codigoCartao" name="codigoCartao"
+                                                                <input type="text" class="form-control" id="codigoCartao" name="codigoCartao"
                                                                     value="${cartao.codigo}">
-                                                                <label for="nomeCartao"
-                                                                    class="form-label">Código</label>
+                                                                <label for="nomeCartao" class="form-label">Código</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-floating">
-                                                                <input type="date" class="form-control" id="dtValidade"
+                                                                <input type="text" class="form-control" id="dtValidade"
                                                                     name="dtValidade" value="${cartao.dataValidade}">
-                                                                <label for="nomeCartao" class="form-label">Data
-                                                                    de
+                                                                <label for="nomeCartao" class="form-label">Data de
                                                                     Validade</label>
                                                             </div>
                                                         </div>
@@ -788,11 +738,10 @@
 
                                                     <div class="modal-footer">
                                                         <button type="button" id="btnCancelarCartaoNovo"
-                                                            class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Cancelar</button>
+                                                            class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                                                         <input type="hidden" value="${cartao.id}" name="idCartao" />
                                                         <input type="submit" class="btn btn-primary" value="Editar"
-                                                            name="atualizar" />
+                                                            name="atualizar"/>
                                                     </div>
                                                 </form>
                                             </div>
@@ -809,14 +758,11 @@
                                     <div class="modal-dialog modal-dialog-centered modal-sm">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="excluirCartaoLabel">Excluir
-                                                </h5>
+                                                <h5 class="modal-title" id="excluirCartaoLabel">Excluir</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body">
-                                                Tem certeza que deseja excluir esse cartão?
-                                            </div>
+                                            <div class="modal-body">Tem certeza que deseja excluir esse cartão?</div>
                                             <div class="modal-footer">
                                                 <button type="button" data-bs-dismiss="modal"
                                                     class="btn btn-secondary">Cancelar</button>
@@ -832,26 +778,25 @@
                                 </div>
                             </c:forEach>
                         </div>
-                    </div>
+                    </section>
 
                     <!--compras-->
-                    <div class="tab-pane fade" id="v-pills-compras" role="tabpanel"
+                    <section class="tab-pane fade" id="v-pills-compras" role="tabpanel"
                         aria-labelledby="v-pills-compras-tab">
-                        <div class="col-md-12 h4 fw-bold p-3 m-0 border text-center">Compras</div>
+                        <h4 class="fw-bold p-3 m-0 border text-center">Compras</h4>
                         <div class="border p-4">
-                            <div class="col-md-12 h6 fw-bold">00/00/0000</div>
-                            <div class="col-12 justify-content-between">
+                            <h6 class="fw-bold">00/00/0000</h6>
                                 <div class="dropdown float-end ">
-                                    <a href="#" aria-expanded="false" data-bs-toggle="dropdown"
-                                        class="text-decoration-none"><span class="material-icons">more_vert</span></a>
+                                    <a aria-expanded="false" data-bs-toggle="dropdown" class="text-decoration-none">
+                                        <span class="material-icons">more_vert</span>
+                                    </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">Solicitar cancelamento</a></li>
                                         <li><a href="#" class="dropdown-item">Solicitar Troca</a></li>
                                     </ul>
                                 </div>
-                            </div>
-                            <div class="col-md-12 h6 text-success">Entregue</div>
-                            <div class="col-md-12 h6">Chegou no dia 00/00/0000</div>
+                            <h6 class="text-success">Entregue</h6>
+                            <h6>Chegou no dia 00/00/0000</h6>
                             <div class="row border-top p-3">
                                 <div class="col-2">
                                     <div class="card produto mb-3">
@@ -859,24 +804,21 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                    <h4 class="mb-3">
-                                        <div class="text-muted h6">Categoria</div>
-                                        <div class="h5">Nome
-                                        </div>
-                                        <div class="h6">Quantidade: 00</div>
-                                        <div class="h6">Valor: R$ 00,00</div>
-                                    </h4>
-
+                                        <h6 class="text-muted">Categoria</h6>
+                                        <h5>Nome</h5>
+                                        <h6>Quantidade: 00</h6>
+                                        <h6>Valor: R$ 00,00</h6>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
                     <!--cupons-->
-                    <div class="tab-pane fade" id="v-pills-cupons" role="tabpanel" aria-labelledby="v-pills-cupons-tab">
-                        <div class="col-md-12 h4 fw-bold p-3 m-0 border text-center">Cupons</div>
+                    <section class="tab-pane fade" id="v-pills-cupons" role="tabpanel"
+                        aria-labelledby="v-pills-cupons-tab">
+                        <h4 class="fw-bold p-3 m-0 border text-center">Cupons</h4>
                         <div class="border p-4">
-                            <div class="col-md-12 h5 fw-bold">Promocionais</div>
+                            <h5 class="fw-bold">Promocionais</h5>
                             <div class="row row-cols-xl-3">
                                 <div class="col">
                                     <div class="border row p-2 rounded m-1">
@@ -906,7 +848,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12 h5 fw-bold mt-3">Troca</div>
+                            <h5 class="fw-bold mt-3">Troca</h5>
                             <div class="row row-cols-xl-3">
                                 <div class="col">
                                     <div class="border row p-2 rounded m-1">
@@ -919,7 +861,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
 
             </div>

@@ -26,30 +26,30 @@
                 <ul class="list-group mt-4">
                     <h5 class="fw-bolder">Categoria</h5>
                     <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">Nendoroid</a>
+                        <a class="text-decoration-none" href="#">Nendoroid</a>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">Pelúcia</a>
+                        <a class="text-decoration-none" href="#">Pelúcia</a>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">Figure</a>
+                        <a class="text-decoration-none" href="#">Figure</a>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">Chaveiro</a>
+                        <a class="text-decoration-none" href="#">Chaveiro</a>
                     </li>
                 </ul>
                 <ul class="list-group mt-4">
                     <h5 class="fw-bolder">Preço</h5>
                     <li class="d-flex  justify-content-between">
-                        <a class="text-decoration-none">Até $50,00</a>
+                        <a class="text-decoration-none" href="#">Até $50,00</a>
                         <h6 class="text-muted align-middle">(5)</h6>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">R$ 50,00 a R$ 150,00 </a>
+                        <a class="text-decoration-none" href="#">R$ 50,00 a R$ 150,00 </a>
                         <h6 class="text-muted">(5)</h6>
                     </li>
                     <li class="d-flex justify-content-between">
-                        <a class="text-decoration-none">Mais de R$ 150,00</a>
+                        <a class="text-decoration-none" href="#">Mais de R$ 150,00</a>
                         <h6 class="text-muted">(5)</h6>
                     </li>
                     <li class="d-flex justify-content-between ">

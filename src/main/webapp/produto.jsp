@@ -8,14 +8,14 @@
     <meta charset="UTF-8" />
     <title>Produto</title>
     <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>' />
-    <link rel="stylesheet" type="text/css"
-        href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
+    <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
     <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/main.css' />
 </head>
 
 <body class="bg-default">
 
-    <c:import url="/includes/header.jsp" charEncoding="UTF-8" />
+    <c:import url="/includes/header.jsp" charEncoding="UTF-8"/>
+
     <main class="wrapper container mt-3">
         <div class="row mt-4 bg-white rounded p-4 mb-3">
             <div class="col-md-4">
@@ -50,13 +50,19 @@
                     <hr>
                     <div class="row">
                         <div class="dropdown mb-3">
-                            <a href="#" data-bs-toggle="dropdown" aria-expanded="false"
-                                class="text-decoration-none dropdown-toggle">Envio para casa de Samuel Silva</a>
+                            <a type="button" id="alterarEndereco" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#alterarEnderecoModal">
+                                Envio para casa de Samuel Silva
+                                <span class="material-icons inline-icon">keyboard_arrow_down</span>
+                            </a>
                             <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
-                                <li><a href="/LootCommerce/clientes/perfil?operacao=listar" class="dropdown-item">
-                                        Envio para casa de Samuel Silva</a></li>
-                                <li><a href="#" class="dropdown-item">Adicionar endereço</a></li>
-
+                                <li>
+                                    <a href="/LootCommerce/clientes/perfil?operacao=listar" class="dropdown-item">
+                                        Envio para casa de Samuel Silva
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="dropdown-item">Adicionar endereço</a>
+                                </li>
                             </ul>
                         </div>
                         <p>Frete: R$ 00,00</p>
@@ -79,6 +85,10 @@
                 </div>
             </div>
         </div>
+
+        <!--Modal alterar endereço-->
+        <c:import url="/includes/alterarEnderecoModal.jsp" charEncoding="UTF-8"/>
+
     </main>
 
 </body>

@@ -18,17 +18,17 @@
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Vender</a></li>
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">Trabalhe conosco</a></li>
                     <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light"></a></li>
-                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-light">ajuda.fanloot@fanloot.com</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link p-0 text-light">ajuda.fanloot@fanloot.com</a></li>
                 </ul>
             </div>
         </div>
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <p class="col-md-4 mb-0 text-light">Copyright © 2021 fanLoot</p>
             <ul class="nav col-md-6 justify-content-end">
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Termos e condições</a></li>
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Trabalhe conosco</a></li>
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-light">Privacidade</a></li>
             </ul>
-        </footer>
+        </div>
     </div>
 </footer>

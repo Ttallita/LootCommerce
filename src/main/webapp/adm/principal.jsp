@@ -5,12 +5,11 @@
 <html>
 
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <title>Principal</title>
-    <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>'/>
-    <link rel="stylesheet" type="text/css"
-        href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>'/>
-    <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/main.css'/>
+    <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/bootstrap/5.1.0/css/bootstrap.min.css"/>' />
+    <link rel="stylesheet" type="text/css" href='<c:url value="/webjars/material-design-icons/4.0.0/material-icons.css"/>' />
+    <link rel="stylesheet" type="text/css" href='/LootCommerce/assets/css/main.css' />
     <link rel="stylesheet" type="text/css" href="/LootCommerce/assets/css/adm.css">
 </head>
 
@@ -21,28 +20,33 @@
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/LootCommerce/">
-                    <img src="/LootCommerce/assets/img/logo_header.png" alt="" max-height="100" width="130">
+                    <img src="/LootCommerce/assets/img/logo_header.png" alt="fanLoot" max-height="100" width="130">
                 </a>
             </div>
         </div>
     </header>
 
     <div class="l-navbar" id="nav-bar">
-        <nav class="nav">
+        <nav class="l-nav">
             <div class="nav_list">
                 <div class="col-md-3 col-xl-2">
                     <div class="list-group btn-group-vertical">
-                        <a class="nav_link" id="v-pills-principal-tab" type="button">
-                            <span class="material-icons inline-icon">home</span>Principal</a>
-
-                            <a class="nav_link" id="v-pills-clientes-tab" type="button" href="/LootCommerce/adm/clientes.jsp">
-                                <span class="material-icons inline-icon">people</span>Clientes</a>
-
-                                <a class="nav_link" id="v-pills-vendas-tab" type="button" href="/LootCommerce/adm/vendas.jsp">
-                                    <span class="material-icons inline-icon">show_chart</span>Vendas</a>
-
-                            <a class="nav_link" id="v-pills-estoque-tab" type="button" href="/LootCommerce/adm/estoque.jsp">
-                                <span class="material-icons inline-icon">all_inbox</span>Estoque</a>
+                        <a class="nav_link  active-navbar" id="v-pills-principal-tab" type="button">
+                            <span class="material-icons inline-icon">home</span>
+                            Principal
+                        </a>
+                        <a class="nav_link" id="v-pills-clientes-tab" type="button" href="/LootCommerce/adm/clientes.jsp">
+                            <span class="material-icons inline-icon">people</span>
+                            Clientes
+                        </a>
+                        <a class="nav_link" id="v-pills-vendas-tab" type="button" href="/LootCommerce/adm/vendas.jsp">
+                            <span class="material-icons inline-icon">show_chart</span>
+                            Vendas
+                        </a>
+                        <a class="nav_link" id="v-pills-estoque-tab" type="button" href="/LootCommerce/adm/estoque.jsp">
+                            <span class="material-icons inline-icon">all_inbox</span>
+                            Estoque
+                        </a>
                     </div>
                 </div>
             </div>
@@ -58,6 +62,36 @@
                     aria-labelledby="v-pills-principal-tab">
                     <div class="card-body">
                         <div class="col-md-12 h4 fw-bold">Principal</div>
+                        <div class="row row-cols-xl-4">
+                            <div class="col mb-3 ">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="fw-bolder">Vendas</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-3 ">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="fw-bolder">Vendas</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-3 ">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="fw-bolder">Vendas</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col mb-3 ">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h6 class="fw-bolder">Vendas</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

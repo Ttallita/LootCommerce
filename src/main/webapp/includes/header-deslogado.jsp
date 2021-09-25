@@ -12,12 +12,13 @@
 
         <div class="col-lg-6">
           <div class="input-group">
-            <input id="pesquisar"type="text" placeholder="Pesquisar..." aria-label="Username" aria-describedby="basic-addon1" class="form-control border-end-0">
+            <input id="pesquisar" type="text" placeholder="Pesquisar..." class="form-control border-end-0">
             <a class="btn input-group-text border border-start-0 bg-white" href="/LootCommerce/pesquisa.jsp">
                 <span class="material-icons">search</span>
             </a>
           </div>
         </div>
+
         <div class="d-flex align-items-center">
           <div>
               <a href="login.jsp" id="entrar" class="btn btn-outline-light ms-3">Entrar</a>

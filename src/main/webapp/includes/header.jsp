@@ -6,18 +6,20 @@
 
     <div class="navbar">
       <div class="container">
+
         <a href="/LootCommerce/index.jsp">
           <img src="/LootCommerce/assets/img/logo_header.png" max-height="100" alt="fanLoot" width="130">
         </a>
 
         <div class="col-lg-6">
           <div class="input-group">
-            <input id="pesquisar" type="text" placeholder="Pesquisar..." aria-label="Username" aria-describedby="basic-addon1" class="form-control border-end-0">
+            <input id="pesquisar" type="text" placeholder="Pesquisar..." class="form-control border-end-0">
             <a class="btn input-group-text border border-start-0 bg-white" href="/LootCommerce/pesquisa.jsp">
                 <span class="material-icons">search</span>
             </a>
           </div>
         </div>
+
         <div class="d-flex align-items-center">
           <div class="dropdown">
             <a href="#" id="iconUsuario" data-bs-toggle="dropdown" aria-expanded="false" class="text-decoration-none dropdown-toggle link-light">
@@ -27,9 +29,7 @@
               <li><a id="perfil" class="dropdown-item link-light" href="/LootCommerce/clientes/perfil?operacao=listar">Perfil</a></li>
               <li><a class="dropdown-item link-light" href="#">Endereços</a></li>
               <li><a class="dropdown-item link-light" href="#">Cartões</a></li>
-              <li>
-                <hr class="dropdown-divider link-light">
-              </li>
+              <li><hr class="dropdown-divider link-light"></li>
               <li>
                 <form action="/LootCommerce/logout">
                     <input type="submit" class="dropdown-item link-light" id="sair" value="Sair"/>
@@ -39,10 +39,12 @@
           </div>
 
             <a type="button" class="btn btn-outline-light ms-3" href="/LootCommerce/cliente/carrinho.jsp">
-              <span class="material-icons inline-icon">shopping_cart</span>Carrinho
+              <span class="material-icons inline-icon">shopping_cart</span>
+              Carrinho
             </a>
 
         </div>
+
       </div>
     </div>
 
