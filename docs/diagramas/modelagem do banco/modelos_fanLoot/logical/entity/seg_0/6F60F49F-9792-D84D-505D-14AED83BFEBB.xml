@@ -4,7 +4,7 @@
 <createdTime>2021-09-02 13:31:46 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -14,13 +14,14 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<synonym>end</synonym>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
 <Attribute name="end_id" id="401D1536-0BC3-FBB8-6C55-366C5133C05C">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 16:30:16 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,7 +34,7 @@
 <createdTime>2021-09-02 16:30:22 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -46,7 +47,7 @@
 <createdTime>2021-09-02 16:30:27 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -59,7 +60,7 @@
 <createdTime>2021-09-02 16:31:09 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -72,7 +73,7 @@
 <createdTime>2021-09-02 16:31:32 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -85,7 +86,7 @@
 <createdTime>2021-09-02 16:33:32 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -99,7 +100,7 @@
 <createdTime>2021-09-02 16:33:56 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -112,7 +113,7 @@
 <createdTime>2021-09-02 16:34:11 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -125,7 +126,7 @@
 <createdTime>2021-09-02 16:34:47 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -138,7 +139,7 @@
 <createdTime>2021-09-02 16:35:06 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -151,7 +152,7 @@
 <createdTime>2021-09-02 16:35:19 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -164,7 +165,7 @@
 <createdTime>2021-09-02 16:35:37 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -173,13 +174,13 @@
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="usr_id" id="08B5F310-A772-1D48-1960-2B1518DBB4C8">
+<Attribute name="car_cli_usr_id" id="7ACFC235-5C95-A5E8-3E82-1E8DB13A517F">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-07 16:43:45 UTC</createdTime>
+<createdTime>2021-09-25 16:30:41 UTC</createdTime>
 <generatorID>27214D21-DB76-3BBF-8282-A4F576261A29</generatorID>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <referedAttribute>2535B7CF-D528-BBD0-1B1D-DB7AED61B9AA</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -196,12 +197,11 @@
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="false"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>401D1536-0BC3-FBB8-6C55-366C5133C05C</attributeRef>
-<attributeRef>08B5F310-A772-1D48-1960-2B1518DBB4C8</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

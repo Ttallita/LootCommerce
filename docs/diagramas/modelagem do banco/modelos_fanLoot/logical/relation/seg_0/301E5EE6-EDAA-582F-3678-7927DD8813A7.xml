@@ -4,12 +4,12 @@
 <createdTime>2021-09-02 16:38:51 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <sourcePk>C035C167-64FC-82D5-B4A0-BF0BFCFD0255</sourcePk>
-<identifying>true</identifying>
+<identifying>false</identifying>
 <optionalSource>false</optionalSource>
-<optionalTarget>false</optionalTarget>
+<optionalTarget>true</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
 <sourceEntity>FEEBE5BD-AA6C-5161-4348-C9B7F8962C12</sourceEntity>
 <targetCardinalityString>*</targetCardinalityString>

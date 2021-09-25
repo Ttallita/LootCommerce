@@ -4,7 +4,7 @@
 <createdTime>2021-09-02 13:59:00 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -20,7 +20,7 @@
 <createdTime>2021-09-02 16:03:50 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -33,7 +33,7 @@
 <createdTime>2021-09-02 16:03:50 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -47,9 +47,8 @@
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 16:04:23 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="false"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

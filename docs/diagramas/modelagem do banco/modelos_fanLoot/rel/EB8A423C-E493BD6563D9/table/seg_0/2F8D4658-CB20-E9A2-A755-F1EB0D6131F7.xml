@@ -1,0 +1,254 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2F8D4658-CB20-E9A2-A755-F1EB0D6131F7" name="PRODUTOS">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>88D6902D-1928-6AA4-BEB8-FFEE7C1192D7</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="pro_id" id="20D083A0-BA4E-B839-C195-51C988A958FF">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>9311FCD0-D045-9E2D-529E-C2DE2CDB7CA5</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FABRICANTES_fab_id" id="2C91AC2C-4FEB-1ADC-295B-C19CFF73A861">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>B47413D0-FBAB-1E65-FA62-E07078E1EA8F</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E03E7C83-9E4E-680C-FBBF-4A2ADAB7A63B" referredColumn="0FEC93AD-D008-974A-10AC-44709DB4F11A"/>
+</associations>
+</Column>
+<Column name="GRUPOS_PRECIFICACAO_grp_id" id="1029E5EF-4724-2811-05B8-DE5C2F6F6098">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>15DB0ADA-AFD8-C3AD-E96F-BE9E3BCE2B68</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="563E4D28-4535-FBF2-FAB3-0E7DC84A2569" referredColumn="F19B6DB9-A2BF-37D4-38C1-55D8666378FE"/>
+</associations>
+</Column>
+<Column name="PRODUTOS_STATUS_pst_id" id="89EC0E33-CD4F-40E5-A23B-9106F23B0DFC">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>A15EB3D2-B322-68EF-CA56-0C0EEFEB0CEA</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E115BA1D-F13F-E8AA-7E19-48B10E25F918" referredColumn="254C8EE8-8C79-6305-1D27-FE044AE85DFE"/>
+</associations>
+</Column>
+<Column name="pro_nome" id="B6803229-1F1E-0469-5405-575698B6EC98">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>EE7ECC3B-21D6-CDE0-E7F6-5624EFDAD1DD</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pro_valor_compra" id="62341BCB-A1DE-1116-01BB-A8CE16BB864B">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>E233F0A0-A588-254A-805B-FDB5EFFCAE5D</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pro_valor_venda" id="5EED67A1-5AC6-682D-8C13-F9A277361105">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>539EC265-5B34-EEAF-60C7-0BBD0A55A3DF</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pro_quant_estoque" id="31890DC2-A0AB-1A9E-27DE-7AFFF85E9635">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>820159A4-3EBE-12AB-E475-42BB384D42B5</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pro_limite_venda" id="D39DBAF4-97DF-23C8-157B-6086996FA00D">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>8990EA5B-C9B4-C7EC-9AF8-EA033D810A9A</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pro_descricao" id="EFFC287E-5684-5431-63D4-2A1D3A65DFFC">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>903A0416-802F-CE5D-BF8A-8E4A5CD06CD3</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pro_material" id="55D28D2A-5E33-6E6F-8AA5-64FDC74DCC7D">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>F13C2413-5C34-8714-46F5-BED84C22490D</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pro_cod_barras" id="E30BF264-18A3-2CC1-CE28-675A8AA4EFCD">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>3FF13553-0E91-624D-97DC-F3F14AD1FE93</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pro_link" id="34A53D74-C659-DB0F-BEE9-F94F641CE166">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>87BB367C-3D41-CB1C-7DD7-F15D88A99B1D</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pro_dt_entrada_estoque" id="AC4911AB-7A99-7E26-DBF0-017CD01D392B">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>140687B7-980C-2413-3F51-CC883E0A981B</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pro_limitado" id="70E1A522-FB97-7AE3-58A0-3D261C605DD6">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>4EF106FA-8D6D-E535-683E-F81C3FE27474</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1952CFCC-E6BE-2EF7-02F0-2994D1083D9C" name="PRODUTOS_PK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>92B0538D-C347-6944-4084-35971034CA0C</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="20D083A0-BA4E-B839-C195-51C988A958FF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="89D51E04-8E2B-30AA-C19F-3E114CCF11C1" name="PRODUTOS_GRUPOS_PRECIFICACAO_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>7A170680-A97D-F186-4AEC-A428174D8C46</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1029E5EF-4724-2811-05B8-DE5C2F6F6098"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8F5B096C-BBE5-2639-AB9B-50E113AC40A5" name="PRODUTOS_PRODUTOS_STATUS_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>CF2A6CE3-76BA-8FA2-8C03-4CA7C5605A9B</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="89EC0E33-CD4F-40E5-A23B-9106F23B0DFC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="195A40AB-FDF1-E23A-7EFA-713AB8A366DA" name="PRODUTOS_FABRICANTES_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>10B65698-3EB0-7DB0-3CC9-D43C42C743EC</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2C91AC2C-4FEB-1ADC-295B-C19CFF73A861"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

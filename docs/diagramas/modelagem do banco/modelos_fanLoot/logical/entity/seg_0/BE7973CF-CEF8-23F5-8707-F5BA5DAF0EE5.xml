@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BE7973CF-CEF8-23F5-8707-F5BA5DAF0EE5" name="PRODUTO_ESTADO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BE7973CF-CEF8-23F5-8707-F5BA5DAF0EE5" name="PRODUTOS_STATUS">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-07 15:52:04 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -15,12 +15,12 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="pre_id" id="00E2FDD7-D82C-7108-AB7F-5178F86092CD">
+<Attribute name="pst_id" id="00E2FDD7-D82C-7108-AB7F-5178F86092CD">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-07 15:52:13 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -28,25 +28,12 @@
 <dataTypePrecision>6</dataTypePrecision>
 <ownDataTypeParameters>,6,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="pre_justificativa" id="0E8AB506-5146-2880-2794-B92454DCA828">
-<createdBy>Souza</createdBy>
-<createdTime>2021-09-07 15:52:27 UTC</createdTime>
-<ownerDesignName>modelos_fanLoot</ownerDesignName>
-<engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>255</dataTypeSize>
-<ownDataTypeParameters>255,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="pre_tipo" id="EA3AF5B1-FE7E-7DAB-D6C2-625D8570E44A">
+<Attribute name="pst_tipo" id="EA3AF5B1-FE7E-7DAB-D6C2-625D8570E44A">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-07 15:56:40 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -54,15 +41,41 @@
 <dataTypeSize>7</dataTypeSize>
 <ownDataTypeParameters>7,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="pst_categoria" id="FF8906FD-B280-06E7-756E-62C0B96FE251">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 14:52:45 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pst_justificativa" id="0E8AB506-5146-2880-2794-B92454DCA828">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 15:52:27 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="BDA0D64D-5727-C387-F136-E3336EA37691" name="CATEGORIAS_INATIVACAO PK">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-07 15:52:41 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="false"/>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

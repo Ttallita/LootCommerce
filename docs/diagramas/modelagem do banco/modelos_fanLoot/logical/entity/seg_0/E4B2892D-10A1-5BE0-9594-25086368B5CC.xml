@@ -41,23 +41,9 @@
 <dataTypeSize>255</dataTypeSize>
 <ownDataTypeParameters>255,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="grp_porcentagem" id="5A1747A8-3B83-8C18-7E0A-31FE313B7273">
+<Attribute name="grp_margem_lucro" id="5A1747A8-3B83-8C18-7E0A-31FE313B7273">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-06 05:04:40 UTC</createdTime>
-<ownerDesignName>modelos_fanLoot</ownerDesignName>
-<engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>1</dataTypePrecision>
-<dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,1,2</ownDataTypeParameters>
-</Attribute>
-<Attribute name="grp_margem_lucro" id="F7138F9F-6910-44AC-0CEB-1FBCC13F123C">
-<createdBy>Souza</createdBy>
-<createdTime>2021-09-07 16:35:53 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
 <item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>

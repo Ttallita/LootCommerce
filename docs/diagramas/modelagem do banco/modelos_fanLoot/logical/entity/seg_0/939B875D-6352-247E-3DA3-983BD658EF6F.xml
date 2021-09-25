@@ -4,7 +4,7 @@
 <createdTime>2021-09-02 13:31:15 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -14,27 +14,28 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<source>crt</source>
+<synonym>crt</synonym>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
 <Attribute name="crt_id" id="2507AF66-A896-B6E3-FC9E-56523B30B614">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-07 16:41:34 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>8</dataTypePrecision>
-<dataTypeScale>2</dataTypeScale>
-<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="crt_numero" id="6973E9F1-12BE-6FE4-13BE-398ED39A670F">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 16:23:48 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -47,7 +48,7 @@
 <createdTime>2021-09-02 16:24:19 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -60,7 +61,7 @@
 <createdTime>2021-09-02 16:24:57 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -73,7 +74,7 @@
 <createdTime>2021-09-02 16:25:19 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -85,7 +86,7 @@
 <createdTime>2021-09-02 16:25:46 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -93,20 +94,21 @@
 <dataTypeSize>3</dataTypeSize>
 <ownDataTypeParameters>3,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="usr_id" id="872B7B81-4FBA-0EEE-C2CE-85D0F15862A9">
+<Attribute name="usr_id" id="564E313C-4C89-C45F-C354-3A7AE6241B52">
 <createdBy>Souza</createdBy>
-<createdTime>2021-09-02 16:38:51 UTC</createdTime>
+<createdTime>2021-09-25 16:29:23 UTC</createdTime>
 <generatorID>301E5EE6-EDAA-582F-3678-7927DD8813A7</generatorID>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <referedAttribute>56C1ACC0-18FC-9853-8542-D18581E277A1</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>6</dataTypePrecision>
-<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -116,11 +118,10 @@
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="false"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>872B7B81-4FBA-0EEE-C2CE-85D0F15862A9</attributeRef>
 <attributeRef>2507AF66-A896-B6E3-FC9E-56523B30B614</attributeRef>
 </usedAttributes>
 </identifier>

@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CARTOES_EM_VENDA" directorySegmentName="seg_0" id="C9D5C998-13A5-8629-8B84-8F64144A6C1D">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-20 16:11:33 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+</engineerTo>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>C0AD4E76-F5C8-0F0C-19D5-56023008B247</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>939B875D-6352-247E-3DA3-983BD658EF6F</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

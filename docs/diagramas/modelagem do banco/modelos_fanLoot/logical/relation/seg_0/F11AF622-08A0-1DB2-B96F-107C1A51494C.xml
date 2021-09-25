@@ -1,12 +1,13 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="categorias_produtos" directorySegmentName="seg_0" id="F11AF622-08A0-1DB2-B96F-107C1A51494C">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CATEGORIAS_PRODUTOS" directorySegmentName="seg_0" id="F11AF622-08A0-1DB2-B96F-107C1A51494C">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 16:43:24 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <identifying>false</identifying>
+<nameOnSource>ctp</nameOnSource>
 <optionalSource>true</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>*</sourceCardinality>

@@ -1,10 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="produtos_em_venda" directorySegmentName="seg_0" id="39F734FE-75B7-B7C5-0703-1310153D955B">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PRODUTOS_EM_VENDA" directorySegmentName="seg_0" id="39F734FE-75B7-B7C5-0703-1310153D955B">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 17:20:46 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="F46361A7-8796-D661-9B22-81D324139435" value="true"/>
 </engineerTo>
 <sourcePk>92B0538D-C347-6944-4084-35971034CA0C</sourcePk>
 <identifying>false</identifying>
@@ -22,9 +22,11 @@
 <createdTime>2021-09-02 19:33:30 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="044719DD-8B05-125C-013E-07FD76CC489E" value="true"/>
+<item key="F46361A7-8796-D661-9B22-81D324139435" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </attribute>
 </attributes>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ENDERECOS_DE_ENTREGA" directorySegmentName="seg_0" id="64DDF6C9-D59F-B587-9D6F-901D9B13E418">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-20 16:46:26 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+</engineerTo>
+<sourcePk>406D5D40-E805-8C23-1CF9-EE6D426AEEA9</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>6F60F49F-9792-D84D-505D-14AED83BFEBB</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C0AD4E76-F5C8-0F0C-19D5-56023008B247</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

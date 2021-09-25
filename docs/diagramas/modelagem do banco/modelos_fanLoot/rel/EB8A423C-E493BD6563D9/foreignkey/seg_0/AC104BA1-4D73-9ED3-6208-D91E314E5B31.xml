@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AC104BA1-4D73-9ED3-6208-D91E314E5B31" containerWithKeyObject="661952B3-D78B-B58D-71CA-D22DAC8BE755" localFKIndex="65053BF2-8A0C-6355-7242-99A04C3FA0BD" name="CARTOES_EM_VENDA_CARTOES_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 16:37:11 UTC</createdTime>
+<generatorID>C9D5C998-13A5-8629-8B84-8F64144A6C1D</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<referredTableLongName>CARTOES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E3260FC6-EDDE-F564-A2D2-2FACDC782CA8</referredTableID>
+<keyObject>C941CC63-C8BC-548A-76F3-CCE5F9685AA6</keyObject>
+<referredKeyID>C941CC63-C8BC-548A-76F3-CCE5F9685AA6</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>crt_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

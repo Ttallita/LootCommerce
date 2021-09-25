@@ -4,7 +4,7 @@
 <createdTime>2021-09-02 13:38:15 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -14,13 +14,14 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<synonym>pro</synonym>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
 <Attribute name="pro_id" id="9311FCD0-D045-9E2D-529E-C2DE2CDB7CA5">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 15:59:04 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -28,12 +29,59 @@
 <dataTypePrecision>6</dataTypePrecision>
 <ownDataTypeParameters>,6,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="pro_fab_id" id="B47413D0-FBAB-1E65-FA62-E07078E1EA8F">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 17:13:15 UTC</createdTime>
+<generatorID>10B65698-3EB0-7DB0-3CC9-D43C42C743EC</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>3F124E3D-41C3-93AB-0DC5-BC4F3AAECC5A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pro_grp_id" id="15DB0ADA-AFD8-C3AD-E96F-BE9E3BCE2B68">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-06 05:07:07 UTC</createdTime>
+<generatorID>7A170680-A97D-F186-4AEC-A428174D8C46</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>4F298436-4A65-3A24-29BB-B0A9174F9869</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pst_id" id="A15EB3D2-B322-68EF-CA56-0C0EEFEB0CEA">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-07 15:54:13 UTC</createdTime>
+<generatorID>CF2A6CE3-76BA-8FA2-8C03-4CA7C5605A9B</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
+</engineerTo>
+<referedAttribute>00E2FDD7-D82C-7108-AB7F-5178F86092CD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="pro_nome" id="EE7ECC3B-21D6-CDE0-E7F6-5624EFDAD1DD">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 15:59:47 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -46,7 +94,7 @@
 <createdTime>2021-09-06 05:19:52 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -60,7 +108,7 @@
 <createdTime>2021-09-06 05:20:02 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -69,12 +117,37 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,8,2</ownDataTypeParameters>
 </Attribute>
+<Attribute name="pro_quant_estoque" id="820159A4-3EBE-12AB-E475-42BB384D42B5">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-21 15:19:38 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pro_limite_venda" id="8990EA5B-C9B4-C7EC-9AF8-EA033D810A9A">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-25 14:48:33 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="pro_descricao" id="903A0416-802F-CE5D-BF8A-8E4A5CD06CD3">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 16:00:43 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -87,7 +160,7 @@
 <createdTime>2021-09-02 16:01:10 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -100,7 +173,20 @@
 <createdTime>2021-09-02 17:11:45 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pro_link" id="87BB367C-3D41-CB1C-7DD7-F15D88A99B1D">
+<createdBy>Souza</createdBy>
+<createdTime>2021-09-02 16:01:30 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<engineerTo>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -113,112 +199,26 @@
 <createdTime>2021-09-07 16:07:11 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="pro_link" id="87BB367C-3D41-CB1C-7DD7-F15D88A99B1D">
-<createdBy>Souza</createdBy>
-<createdTime>2021-09-02 16:01:30 UTC</createdTime>
-<ownerDesignName>modelos_fanLoot</ownerDesignName>
-<engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>255</dataTypeSize>
-<ownDataTypeParameters>255,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="fab_id" id="B47413D0-FBAB-1E65-FA62-E07078E1EA8F">
-<createdBy>Souza</createdBy>
-<createdTime>2021-09-02 17:13:15 UTC</createdTime>
-<generatorID>10B65698-3EB0-7DB0-3CC9-D43C42C743EC</generatorID>
-<ownerDesignName>modelos_fanLoot</ownerDesignName>
-<engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>3F124E3D-41C3-93AB-0DC5-BC4F3AAECC5A</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>8</dataTypePrecision>
-<ownDataTypeParameters>,8,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="pro_limitado" id="4EF106FA-8D6D-E535-683E-F81C3FE27474">
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 21:05:32 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="grp_id" id="15DB0ADA-AFD8-C3AD-E96F-BE9E3BCE2B68">
-<createdBy>Souza</createdBy>
-<createdTime>2021-09-06 05:07:07 UTC</createdTime>
-<generatorID>7A170680-A97D-F186-4AEC-A428174D8C46</generatorID>
-<ownerDesignName>modelos_fanLoot</ownerDesignName>
-<engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>4F298436-4A65-3A24-29BB-B0A9174F9869</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>6</dataTypePrecision>
-<ownDataTypeParameters>,6,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="pro_is_ativo" id="266AAD0B-45E3-3CF4-4051-0C574FB28972">
-<createdBy>Souza</createdBy>
-<createdTime>2021-09-07 15:44:46 UTC</createdTime>
-<ownerDesignName>modelos_fanLoot</ownerDesignName>
-<engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
-</engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT006</logicalDatatype>
 <dataTypeSize>1</dataTypeSize>
 <ownDataTypeParameters>1,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="pre_id" id="A15EB3D2-B322-68EF-CA56-0C0EEFEB0CEA">
-<createdBy>Souza</createdBy>
-<createdTime>2021-09-07 15:54:13 UTC</createdTime>
-<generatorID>CF2A6CE3-76BA-8FA2-8C03-4CA7C5605A9B</generatorID>
-<ownerDesignName>modelos_fanLoot</ownerDesignName>
-<engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
-</engineerTo>
-<referedAttribute>00E2FDD7-D82C-7108-AB7F-5178F86092CD</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>6</dataTypePrecision>
-<ownDataTypeParameters>,6,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="est_id" id="0593C436-F67A-CE58-4A27-9442A461C97D">
-<createdBy>Souza</createdBy>
-<createdTime>2021-09-07 15:58:36 UTC</createdTime>
-<generatorID>98C5705A-1D75-CFD2-7259-CACD1A2734F6</generatorID>
-<ownerDesignName>modelos_fanLoot</ownerDesignName>
-<engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<referedAttribute>EF9CA778-AF66-5FDA-C4E9-6064628BF6FD</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>6</dataTypePrecision>
-<ownDataTypeParameters>,6,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -226,8 +226,9 @@
 <createdBy>Souza</createdBy>
 <createdTime>2021-09-02 16:02:31 UTC</createdTime>
 <ownerDesignName>modelos_fanLoot</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="D274084A-A7E1-81FB-7FE5-6D0C0CAF7342" value="true"/>
+<item key="EB8A423C-CDB6-8425-BB4A-E493BD6563D9" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
