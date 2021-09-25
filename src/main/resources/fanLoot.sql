@@ -9,7 +9,7 @@ CREATE TABLE usuarios (
 
 DROP TABLE IF EXISTS "clientes" CASCADE;
 CREATE TABLE clientes (
-    cli_usr_id serial NOT NULL,
+    cli_usr_id integer NOT NULL,
     cli_car_id integer NOT NULL,
     cli_nome varchar(15) NOT NULL,
     cli_sobrenome varchar(45) NOT NULL,
@@ -107,7 +107,7 @@ CREATE TABLE categorias_produtos(
 DROP TABLE IF EXISTS "produtos_status" CASCADE;
 CREATE TABLE produtos_status(
     pst_id serial NOT NULL,
-    pst_tipo varchar(7) NOT NULL,
+    pst_tipo varchar(9) NOT NULL,
     pst_categoria varchar(255) NOT NULL,
     pst_justificativa varchar(255)
 );
@@ -115,9 +115,6 @@ CREATE TABLE produtos_status(
 DROP TABLE IF EXISTS "carrinhos" CASCADE;
 CREATE TABLE carrinhos(
     car_cli_usr_id int NOT NULL,
-    --car_end_entrega_id int NOT NULL,
-    --car_preco_total numeric(8, 2) NOT NULL,
-    --car_frete numeric(8, 2) NOT NULL,
     car_prazo_finalizacao timestamp
 );
 
@@ -154,8 +151,6 @@ CREATE TABLE produtos_em_venda(
     prv_vnd_id int NOT NULL,
     prv_quant int NOT NULL
 );
-
----
 
 DROP TABLE IF EXISTS "paises" CASCADE;
 CREATE TABLE paises (
@@ -241,7 +236,6 @@ ALTER TABLE estados
 ALTER TABLE municipios
     ADD CONSTRAINT pk_mnc PRIMARY KEY (mnc_id);
 
-
 -- Constraints de foreign key
 ALTER TABLE clientes
     ADD CONSTRAINT fk_cli_usr FOREIGN KEY (cli_usr_id)
@@ -286,10 +280,6 @@ ALTER TABLE categorias_produtos
 ALTER TABLE categorias_produtos
     ADD CONSTRAINT fk_ctp_ctg FOREIGN KEY (ctp_ctg_id)
         REFERENCES categorias (ctg_id);
-
-ALTER TABLE carrinhos
-    ADD CONSTRAINT fk_car_cli_usr FOREIGN KEY (car_cli_usr_id)
-        REFERENCES clientes (cli_usr_id);
 
 ALTER TABLE produtos_em_carrinho
     ADD CONSTRAINT fk_prc_pro FOREIGN KEY (prc_pro_id)
