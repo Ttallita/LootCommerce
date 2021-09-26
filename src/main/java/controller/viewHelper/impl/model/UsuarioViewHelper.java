@@ -21,8 +21,6 @@ public class UsuarioViewHelper implements IViewHelper {
         String operacao = request.getParameter("operacao");
 
         if(operacao.equals("salvar")) {
-            String nome = request.getParameter("nome");
-            String sobrenome = request.getParameter("sobrenome");
             String email = request.getParameter("email");
             String senha = request.getParameter("senha");
             String confirmarSenha = request.getParameter("senhaConfirmacao");
@@ -64,18 +62,19 @@ public class UsuarioViewHelper implements IViewHelper {
         String operacao = request.getParameter("operacao");
 
         if(operacao.equals("atualizar")) {
-            Usuario usuario = (Usuario) result.getEntidades().get(0);
-
-            Cliente cliente = new Cliente();
-            cliente.setUsuario(usuario);
-
-            List<EntidadeDominio> entidade  = new ClienteDAO().listar(cliente, "listar");
-            cliente = (Cliente) entidade.get(0);
-
-            request.setAttribute("clienteLogado", cliente);
-            request.setAttribute("aba", "senha");
 
             if(result.getMsg() == null) {
+                Usuario usuario = (Usuario) result.getEntidades().get(0);
+
+                Cliente cliente = new Cliente();
+                cliente.setUsuario(usuario);
+
+                List<EntidadeDominio> entidade  = new ClienteDAO().listar(cliente, "listar");
+                cliente = (Cliente) entidade.get(0);
+
+                request.setAttribute("clienteLogado", cliente);
+                request.setAttribute("aba", "senha");
+
                 request.getSession().setAttribute("usuarioLogado", usuario);
                 request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, httpResponse);
             } else {
@@ -85,5 +84,7 @@ public class UsuarioViewHelper implements IViewHelper {
                 request.getRequestDispatcher("/cliente/perfil.jsp").forward(request, httpResponse);
             }
         }
+
+
     }
 }
