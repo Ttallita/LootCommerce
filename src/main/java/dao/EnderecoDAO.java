@@ -21,7 +21,7 @@ public class EnderecoDAO implements IDAO{
         try {
             conn = conexao.getConexao();
 
-            String sql = "INSERT INTO enderecos (end_cli_usr_id, end_tp, end_nome, end_tp_logradouro, end_logradouro, end_num, end_bairro, end_cep, end_cidade, end_estado, end_pais, end_observacao)" +
+            String sql = "INSERT INTO enderecos (end_cli_usr_id, end_tp, end_apelido, end_tp_logradouro, end_logradouro, end_num, end_bairro, end_cep, end_cidade, end_estado, end_pais, end_observacao)" +
                     " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -67,7 +67,7 @@ public class EnderecoDAO implements IDAO{
             conn = conexao.getConexao();
 
             String sql = "UPDATE enderecos " +
-                    "SET end_tp = ?, end_nome = ?, end_tp_logradouro = ?, end_logradouro = ?, end_num = ?, end_bairro = ?, end_cep = ?, end_cidade = ?, end_estado = ?, end_pais = ?, end_observacao = ? " +
+                    "SET end_tp = ?, end_apelido = ?, end_tp_logradouro = ?, end_logradouro = ?, end_num = ?, end_bairro = ?, end_cep = ?, end_cidade = ?, end_estado = ?, end_pais = ?, end_observacao = ? " +
                     "WHERE end_id = ?";
 
             PreparedStatement pstm = conn.prepareStatement(sql);
@@ -145,7 +145,7 @@ public class EnderecoDAO implements IDAO{
             while (rs.next()) {
                 Endereco enderecoCliente = new Endereco();
                 enderecoCliente.setId(rs.getLong("end_id"));
-                enderecoCliente.setApelido(rs.getString("end_nome"));
+                enderecoCliente.setApelido(rs.getString("end_apelido"));
                 enderecoCliente.setTipoLogradouro(rs.getString("end_tp_logradouro"));
                 enderecoCliente.setLogradouro(rs.getString("end_logradouro"));
                 enderecoCliente.setNumero(Integer.parseInt(rs.getString("end_num")));

@@ -148,7 +148,7 @@ public class ClienteAdminViewHelper implements IViewHelper{
            List<EntidadeDominio> clientes = result.getEntidades();
 
            request.setAttribute("clientes", clientes);
-           request.getRequestDispatcher("/adm/gerenciamento.jsp").forward(request, response);
+           request.getRequestDispatcher("/adm/clientes.jsp").forward(request, response);
         }
     }
 }

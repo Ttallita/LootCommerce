@@ -23,7 +23,7 @@ public class LoginFilter implements Filter {
             if(usuarioLogado.getTipoUsuario().equals(UsuarioType.CLIENTE)) {
                 res.sendRedirect("/LootCommerce/index.jsp");
             } else {
-                res.sendRedirect("/LootCommerce/adm/gerenciamento.jsp");
+                res.sendRedirect("/LootCommerce/adm/principal.jsp");
             }
             return;
         }

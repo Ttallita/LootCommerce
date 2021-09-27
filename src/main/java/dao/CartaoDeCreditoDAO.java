@@ -67,16 +67,17 @@ public class CartaoDeCreditoDAO implements IDAO {
             conn = conexao.getConexao();
 
             String sql = "UPDATE cartoes " +
-                    "SET crt_numero = ?, crt_bandeira = ?, crt_dt_validade = ?, crt_nome_impresso = ?, crt_cod_seg = ? " +
+                    "SET crt_numero = ?, crt_bandeira = ?, crt_mes_validade = ?, crt_ano_validade = ?, crt_nome_impresso = ?, crt_cod_seg = ? " +
                     "WHERE crt_id = ?";
 
             PreparedStatement pstm = conn.prepareStatement(sql);
             pstm.setString(1, cartao.getNumCartao());
             pstm.setString(2, cartao.getBandeira());
-            pstm.setDate(3, Date.valueOf(cartao.getDataValidade()));
-            pstm.setString(4, cartao.getNomeImpressoCartao());
-            pstm.setString(5, String.valueOf(cartao.getCodigo()));
-            pstm.setLong(6, cartao.getId());
+            pstm.setInt(3, cartao.getMesValidade());
+            pstm.setInt(4, cartao.getAnoValidade());
+            pstm.setString(5, cartao.getNomeImpressoCartao());
+            pstm.setString(6, String.valueOf(cartao.getCodigo()));
+            pstm.setLong(7, cartao.getId());
 
 
             List<EntidadeDominio> cliente = new ClienteDAO().listar(cartao.getCliente(), "listar");
