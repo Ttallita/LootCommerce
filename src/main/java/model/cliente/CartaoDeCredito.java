@@ -2,14 +2,14 @@ package model.cliente;
 
 import model.EntidadeDominio;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 public class CartaoDeCredito extends EntidadeDominio {
     private String numCartao;
     private String nomeImpressoCartao;
     private String bandeira;
-    private LocalDate dataValidade;
+    private int mesValidade;
+    private int anoValidade;
     private int codigo;
     private Cliente cliente;
 
@@ -37,12 +37,20 @@ public class CartaoDeCredito extends EntidadeDominio {
         this.bandeira = bandeira;
     }
 
-    public LocalDate getDataValidade() {
-        return dataValidade;
+    public int getMesValidade() {
+        return mesValidade;
     }
 
-    public void setDataValidade(LocalDate dataValidade) {
-        this.dataValidade = dataValidade;
+    public void setMesValidade(int mesValidade) {
+        this.mesValidade = mesValidade;
+    }
+
+    public int getAnoValidade() {
+        return anoValidade;
+    }
+    
+    public void setAnoValidade(int anoValidade) {
+        this.anoValidade = anoValidade;
     }
 
     public int getCodigo() {
