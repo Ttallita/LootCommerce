@@ -133,7 +133,7 @@
         <!--Modal alterar forma de pagamento-->
         <div class="modal fade" id="alterarFormaPagamentoModal" data-bs-backdrop="static" data-bs-keyboard="false"
             tabindex="-1" aria-labelledby="alterarFormaPagamentoLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header border-0">
                         <h5 class="modal-title" id="alterarFormaPagamentoLabel">Forma de pagamento</h5>
@@ -161,30 +161,51 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row g-2">
-                                <div class="col-md-12 h6 fw-bold">Adicionar cartão</div>
-                                <div class="col-md-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" placeholder="" required>
-                                        <label for="nomeCartao">Nome impresso</label>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button data-bs-toggle="tab" data-bs-target="#alterarFormaPagamento" type="button" role="tab" aria-selected="false" class="nav-link fw-bold" id="alterarFormaPagamentoBtn">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="">
+                                        <label class="form-check-label fw-bold">Adicionar cartão</label>
                                     </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="numCartao" name="numCartao" placeholder="" required>
-                                        <label for="numCartao" class="form-label">Número do cartão</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-floating">
-                                        <input class="form-control" id="dtValidade" name="dtValidade" placeholder="" required>
-                                        <label for="nomeCartao" class="form-label">Validade</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="codigoCartao" name="codigoCartao" placeholder="" required>
-                                        <label for="nomeCartao" class="form-label">CVV</label>
+                                </button>
+                            </div>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div role="tabpanel" class="tab-pane fade" id="alterarFormaPagamento">
+                                    <div class="row g-2">
+                                        <div class="col-md-9">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" placeholder="" required>
+                                                <label for="nomeCartao">Nome impresso</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-floating">
+                                              <select class="form-select" id="bandeira" name="bandeira" required>
+                                                <option value="">Selecione</option>
+                                                <option>Visa</option>
+                                                <option>Mastercard</option>
+                                              </select>
+                                              <label>Bandeira</label>
+                                            </div>
+                                          </div>
+                                        <div class="col-md-8">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="numCartao" name="numCartao" placeholder="" required>
+                                                <label for="numCartao" class="form-label">Número do cartão</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="dtValidade" name="dtValidade" placeholder="" required>
+                                                <label for="dtValidade" class="form-label">Validade</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="codigoCartao" name="codigoCartao" placeholder="" required>
+                                                <label for="codigoCartao" class="form-label">CVV</label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -201,7 +222,16 @@
 
 <c:import url="/includes/footer.jsp" charEncoding="UTF-8" />
 
+<script src='<c:url value="/webjars/jquery/3.6.0/jquery.min.js"/>'></script>
 <script src="/LootCommerce/webjars/jquery-mask-plugin/1.14.16/dist/jquery.mask.min.js"></script>
 <script src="/LootCommerce/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#cep').mask('00000-000');
+        $('#numCartao').mask('0000 0000 0000 0000');
+        $('#dtValidade').mask('00/0000');
+        $('#codigoCartao').mask('000');
+    });
+</script>
 
 </html>

@@ -79,7 +79,7 @@
                         </div>
                     </div>
                     <div class="d-grid gap-1 col-10 mx-auto mt-3">
-                        <a type="button" href="/LootCommerce/cliente/confirmarCompra.jsp" class="btn btn-primary rounded-pill">Comprar</a>
+                        <a type="button" href="/LootCommerce/cliente/confirmarPedido.jsp" class="btn btn-primary rounded-pill">Comprar</a>
                         <button type="button" class="btn  btn-outline-primary rounded-pill">Adicionar ao carrinho</button>
                     </div>
                 </div>

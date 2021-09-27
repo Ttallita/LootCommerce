@@ -194,10 +194,9 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="needs-validation w-75" id="form-cadastro"
-                                        action="/LootCommerce/admin/controle" method="POST" novalidate>
+                                    <form class="needs-validation w-75" id="form-cadastro" action="/LootCommerce/admin/controle" method="POST" novalidate>
                                         <input type="hidden" name="operacao" value="salvar">
-                                        <h1 class="h3 mb-3 fw-normal text-center">Novo Cliente</h1>
+                                        <h3 class="mb-3 fw-normal text-center">Novo Cliente</h3>
                                         <div class="row g-3 mb-3">
                                             <div class="col-12">
                                                 <div class="form-floating">
@@ -413,8 +412,7 @@
                             <div class="modal-content">
                                 <div class="modal-header border-0">
                                     <h5 class="modal-title" id="criarCupomLabel">Criar cupom</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <form class="needs-validation" action="..." method="POST" novalidate="">
                                     <input type="hidden" name="operacao" value="salvar">
@@ -423,14 +421,14 @@
                                             <div class="col-md-12 h6 fw-bold">Novo cupom</div>
                                             <div class="col-md-9">
                                                 <div class="form-floating">
-                                                    <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" required>
-                                                    <label for="nomeCartao" required>Descrição</label>
+                                                    <input type="text" class="form-control" id="descricaoCupom" name="descricaoCupom" required>
+                                                    <label for="descricaoCupom" required>Descrição</label>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-floating">
                                                     <input class="form-control" id="vlrCupom" name="vlrCupom" required>
-                                                    <label for="nomeCartao" class="form-label">Valor</label>
+                                                    <label for="vlrCupom" class="form-label">Valor</label>
                                                 </div>
                                             </div>
                                         </div>

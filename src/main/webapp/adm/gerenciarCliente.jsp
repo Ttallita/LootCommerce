@@ -20,9 +20,8 @@
       </a>
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb m-0 h5">
-          <li class="breadcrumb-item"><a href="/LootCommerce/admin/controle?operacao=listarTodos">Gerenciamento</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Gerenciar Cliente
-          </li>
+          <li class="breadcrumb-item"><a href="/LootCommerce/admin/controle?operacao=listarTodos">Clientes</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Gerenciar Cliente</li>
         </ol>
       </nav>
     </div>
@@ -402,7 +401,7 @@
           <!-- Modal Cadastro Cartão -->
           <div class="modal fade" id="cadastrarCartao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="cadastrarCartaoLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="cadastrarCartaoLabel">Cadastrar</h5>
@@ -412,40 +411,40 @@
                   <input type="hidden" name="operacao" value="salvar">
                   <input type="hidden" value="${cliente.id}" name="idCliente" />
                   <div class="modal-body">
-                    <div class="row g-3 mb-3">
-                      <div class="col-md-6">
-                        <div class="form-floating">
-                          <input type="text" class="form-control" id="numCartao" name="numCartao" required>
-                          <label for="numCartao" class="form-label">Número do cartão</label>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-floating">
-                          <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" required>
-                          <label for="nomeCartao" required>Nome do cartão</label>
-                        </div>
+                    <div class="row g-2">
+                      <div class="col-md-9">
+                          <div class="form-floating">
+                              <input type="text" class="form-control" id="nomeCartao" name="nomeCartao" placeholder="" required>
+                              <label for="nomeCartao">Nome impresso</label>
+                          </div>
                       </div>
                       <div class="col-md-3">
-                        <div class="form-floating">
-                          <select class="form-select" id="bandeira" name="bandeira" required>
-                            <option value="">Selecione</option>
-                            <option>Visa</option>
-                            <option>Mastercard</option>
-                          </select>
-                          <label>Bandeira</label>
+                          <div class="form-floating">
+                            <select class="form-select" id="bandeira" name="bandeira" required>
+                              <option value="">Selecione</option>
+                              <option>Visa</option>
+                              <option>Mastercard</option>
+                            </select>
+                            <label>Bandeira</label>
+                          </div>
                         </div>
+                      <div class="col-md-8">
+                          <div class="form-floating">
+                              <input type="text" class="form-control" id="numCartao" name="numCartao" placeholder="" required>
+                              <label for="numCartao" class="form-label">Número do cartão</label>
+                          </div>
                       </div>
                       <div class="col-md-2">
-                        <div class="form-floating">
-                          <input type="text" class="form-control" id="codigoCartao" name="codigoCartao" required>
-                          <label for="nomeCartao" class="form-label">Código</label>
-                        </div>
+                          <div class="form-floating">
+                              <input class="form-control" id="dtValidade" name="dtValidade" placeholder="" required>
+                              <label for="nomeCartao" class="form-label">Validade</label>
+                          </div>
                       </div>
-                      <div class="col-md-3">
-                        <div class="form-floating">
-                          <input type="date" class="form-control" id="dtValidade" name="dtValidade" required>
-                          <label for="nomeCartao" class="form-label">Data de Validade</label>
-                        </div>
+                      <div class="col-md-2">
+                          <div class="form-floating">
+                              <input type="text" class="form-control" id="codigoCartao" name="codigoCartao" placeholder="" required>
+                              <label for="nomeCartao" class="form-label">CVV</label>
+                          </div>
                       </div>
                     </div>
                   </div>
@@ -658,6 +657,7 @@
 </body>
 
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
+<script src='<c:url value="/webjars/jquery-mask-plugin/1.14.16/dist/jquery.mask.min.js"/>'></script>
 <c:if test="${not empty requestScope.mensagem}">
   <script>
     $(window).on('load', function () {
@@ -665,5 +665,14 @@
     });
   </script>
 </c:if>
+
+<script>
+  $(document).ready(function () {
+    $('#cpf').mask('000.000.000-00', { reverse: true });
+    $('#cep').mask('00000-000');
+    $('#phone').mask('00 00000-0000');
+    $('#dtValidade').mask('00/0000');
+  });
+</script>
 
 </html>
