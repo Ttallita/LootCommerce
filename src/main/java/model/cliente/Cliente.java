@@ -2,6 +2,7 @@ package model.cliente;
 
 import model.EntidadeDominio;
 import model.Usuario;
+import model.cliente.endereco.Endereco;
 
 import java.time.LocalDate;
 import java.util.List;

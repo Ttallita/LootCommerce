@@ -3,7 +3,7 @@ package controller.strategy.impl.endereco;
 import controller.strategy.IStrategy;
 import model.EntidadeDominio;
 import model.cliente.Cliente;
-import model.cliente.Endereco;
+import model.cliente.endereco.Endereco;
 
 public class VerificarEnderecoStrategy implements IStrategy {
 

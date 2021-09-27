@@ -6,7 +6,7 @@ import model.UsuarioType;
 import model.cliente.CartaoDeCredito;
 import model.cliente.Cliente;
 import model.EntidadeDominio;
-import model.cliente.Endereco;
+import model.cliente.endereco.Endereco;
 
 import model.cliente.Telefone;
 import utils.Conexao;

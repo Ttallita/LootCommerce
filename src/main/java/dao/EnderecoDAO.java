@@ -1,8 +1,8 @@
 package dao;
 
 import model.EntidadeDominio;
-import model.cliente.Endereco;
-import model.cliente.EnderecoType;
+import model.cliente.endereco.Endereco;
+import model.cliente.endereco.EnderecoType;
 import utils.Conexao;
 
 import java.sql.*;

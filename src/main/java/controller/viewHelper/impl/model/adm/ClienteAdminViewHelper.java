@@ -7,7 +7,7 @@ import model.EntidadeDominio;
 import model.Result;
 import model.Usuario;
 import model.cliente.Cliente;
-import model.cliente.Endereco;
+import model.cliente.endereco.Endereco;
 import model.cliente.Telefone;
 
 import javax.servlet.ServletException;

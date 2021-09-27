@@ -1,4 +1,4 @@
-package model.cliente;
+package model.cliente.endereco;
 
 public enum EnderecoType {
     COBRANCA,
