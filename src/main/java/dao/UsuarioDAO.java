@@ -3,7 +3,7 @@ package dao;
 import model.EntidadeDominio;
 import model.Usuario;
 import model.UsuarioType;
-import model.cliente.Endereco;
+import model.cliente.endereco.Endereco;
 import utils.Conexao;
 import utils.Criptografia;
 
@@ -13,7 +13,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class UsuarioDAO implements IDAO{
 

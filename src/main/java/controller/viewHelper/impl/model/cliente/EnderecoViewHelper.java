@@ -6,8 +6,8 @@ import model.EntidadeDominio;
 import model.Result;
 import model.Usuario;
 import model.cliente.Cliente;
-import model.cliente.Endereco;
-import model.cliente.EnderecoType;
+import model.cliente.endereco.Endereco;
+import model.cliente.endereco.EnderecoType;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

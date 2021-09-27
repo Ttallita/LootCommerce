@@ -10,7 +10,7 @@ import model.EntidadeDominio;
 import model.Usuario;
 import model.cliente.CartaoDeCredito;
 import model.cliente.Cliente;
-import model.cliente.Endereco;
+import model.cliente.endereco.Endereco;
 
 import java.util.ArrayList;
 import java.util.HashMap;

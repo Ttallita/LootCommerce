@@ -1,6 +1,7 @@
-package model.cliente;
+package model.cliente.endereco;
 
 import model.EntidadeDominio;
+import model.cliente.Cliente;
 
 public class Endereco extends EntidadeDominio {
 
