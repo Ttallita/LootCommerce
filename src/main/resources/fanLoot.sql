@@ -28,7 +28,8 @@ CREATE TABLE cartoes(
 	crt_numero varchar(19) NOT NULL,
 	crt_bandeira varchar(255) NOT NULL,
 	crt_nome_impresso varchar(255) NOT NULL,
-	crt_dt_validade date NOT NULL,
+    crt_mes_validade numeric(2) NOT NULL,
+    crt_ano_validade numeric(4) NOT NULL,
 	crt_cod_seg varchar(3) NOT NULL
 );
 
@@ -39,6 +40,7 @@ CREATE TABLE cupons (
     cpm_vnd_id integer,
     cpm_tp varchar(11) NOT NULL,
     cpm_valor numeric(8, 2) NOT NULL,
+    cpm_dt_validade date,
     cpm_descricao varchar(255)
 );
 
@@ -47,7 +49,7 @@ CREATE TABLE enderecos (
     end_id serial NOT NULL,
     end_cli_usr_id int NOT NULL,
     end_tp varchar(20) NOT NULL,
-    end_nome varchar(255) NOT NULL,
+    end_apelido varchar(255) NOT NULL,
     end_tp_logradouro varchar(255) NOT NULL,
     end_logradouro varchar(255) NOT NULL,
     end_num varchar(10) NOT NULL,
@@ -129,7 +131,7 @@ CREATE TABLE vendas (
     vnd_dt_envio timestamp,
     vnd_dt_entrega timestamp,
 	vnd_pagamento_aprovado boolean NOT NULL,
-	vnd_status_compra varchar(16) NOT NULL
+	vnd_status varchar(16) NOT NULL
 );
 
 DROP TABLE IF EXISTS "cartoes_em_venda" CASCADE;

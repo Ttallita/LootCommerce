@@ -5,7 +5,7 @@ values ('userexample@gmail.com', 'eb99f5951ac9d0bab4c6806198e6a696c63321e3de4ab1
 insert into clientes (cli_usr_id, cli_nome, cli_sobrenome, cli_cpf, cli_dt_nasc, cli_genero, cli_telefone_num, cli_telefone_ddd, cli_telefone_tp)
 values (1,'Ruan', 'Campos', '876.160.110-12', '2000-06-14','Masculino','98909-1345','11','Celular');
 
-insert into enderecos (end_cli_usr_id, end_tp, end_nome, end_tp_logradouro, end_logradouro, end_num, end_bairro, end_cep, end_cidade, end_estado, end_pais)
+insert into enderecos (end_cli_usr_id, end_tp, end_apelido, end_tp_logradouro, end_logradouro, end_num, end_bairro, end_cep, end_cidade, end_estado, end_pais)
 values (1,'COBRANCA_ENTREGA', 'Minha Casa', 'Rua', 'Onze', '5115', 'São Francisco', '29273-746', 'Vitória', 'Espírito Santo', 'Brasil');
 
 --Administrador Teste
