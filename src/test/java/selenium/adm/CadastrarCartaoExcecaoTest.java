@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
-/*
+/**
  * @author André Gomes
  */
 
@@ -17,12 +17,9 @@ public class CadastrarCartaoExcecaoTest {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
-        driver.get("http://localhost:8080/LootCommerce/adm/gerenciamento.jsp");
+        driver.get("http://localhost:8080/LootCommerce/adm/clientes.jsp");
         driver.manage().window().maximize();
 
-        Thread.sleep(1000);
-        WebElement tabClientes = driver.findElement(By.id("v-pills-clientes-tab"));
-        tabClientes.click();
         Thread.sleep(1000);
 
         WebElement tableClientes = driver.findElement(By.className("table"));

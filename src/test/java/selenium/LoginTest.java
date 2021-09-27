@@ -26,19 +26,18 @@ public class LoginTest {
         WebElement campoSenha = driver.findElement(By.id("senha"));
         WebElement botarLogar = driver.findElement(By.id("logar"));
 
-
         String email = "userexample@gmail.com";
         String senha = "Teste123!";
 
         campoEmail.sendKeys(email);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         campoSenha.sendKeys(senha);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         botarLogar.click();
 
-        Thread.sleep(3000);
+        Thread.sleep(2000);
 
         driver.close();
 

@@ -36,9 +36,6 @@ public class CadastroTest {
         campoSenha.sendKeys(senha);
         campoConfirmacao.sendKeys(senha);
 
-        WebElement nextButton = driver.findElement(By.id("nextBtn"));
-        nextButton.click();
-
         WebElement campoNome = driver.findElement(By.id("nome"));
         WebElement campoSobrenome = driver.findElement(By.id("sobrenome"));
         WebElement campoGenero = driver.findElement(By.id("genero"));
@@ -57,7 +54,6 @@ public class CadastroTest {
         selectGenero.selectByIndex(1);
         campoDataNascimento.sendKeys(dataNascimento);
         campoCpf.sendKeys(cpf);
-        nextButton.click();
 
         WebElement campoTipoTelefone = driver.findElement(By.id("tipoTelefone"));
         WebElement campoTelefone = driver.findElement(By.id("phone"));
@@ -69,8 +65,7 @@ public class CadastroTest {
         selectTelefone.selectByIndex(1);
         campoTelefone.sendKeys(telefone);
 
-        nextButton.click();
-
+        WebElement campoApelido = driver.findElement(By.id("apelido"));
         WebElement campoTipoResidencia = driver.findElement(By.id("tpResidencia"));
         WebElement campoTipoLogradouro = driver.findElement(By.id("tpLogradouro"));
         WebElement campoLogradouro = driver.findElement(By.id("logradouro"));
@@ -80,14 +75,13 @@ public class CadastroTest {
         WebElement campoCidade = driver.findElement(By.id("cidade"));
         WebElement campoEstado = driver.findElement(By.id("estado"));
         WebElement campoPais = driver.findElement(By.id("pais"));
-        WebElement campoApelido = driver.findElement(By.id("apelido"));
         WebElement campoObservacao = driver.findElement(By.id("observacao"));
 
-        Select selectTipoResidencia = new Select(campoTipoResidencia);
         Select selectCidade = new Select(campoCidade);
         Select selectEstado = new Select(campoEstado);
         Select selectPais = new Select(campoPais);
 
+        String tipoResidencia = "Casa";
         String tipoLogradouro = "Residencia";
         String logradouro = "Rua 25 de março";
         String numero = "312";
@@ -96,7 +90,7 @@ public class CadastroTest {
         String observacao = "Sem observações";
         String apelido = "Minha casa";
 
-        selectTipoResidencia.selectByIndex(1);
+        campoTipoResidencia.sendKeys(tipoResidencia);
         campoTipoLogradouro.sendKeys(tipoLogradouro);
         campoLogradouro.sendKeys(logradouro);
         campoNumero.sendKeys(numero);
