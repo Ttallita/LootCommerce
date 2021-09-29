@@ -1,14 +1,13 @@
-package dao;
+package dao.cliente;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import dao.IDAO;
 import model.EntidadeDominio;
 import model.cliente.CartaoDeCredito;
 import model.cliente.Cliente;
@@ -26,16 +25,17 @@ public class CartaoDeCreditoDAO implements IDAO {
         try {
             conn = conexao.getConexao();
 
-            String sql = "INSERT INTO cartoes ( crt_cli_usr_id, crt_numero, crt_bandeira, crt_dt_validade, crt_nome_impresso, crt_cod_seg)"
+            String sql = "INSERT INTO cartoes ( crt_cli_usr_id, crt_numero, crt_bandeira, crt_mes_validade, crt_ano_validade, crt_nome_impresso, crt_cod_seg)"
                     + " VALUES (?, ?, ?, ?, ?, ?)";
 
             PreparedStatement pstm = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             pstm.setLong(1, cartao.getCliente().getUsuario().getId());
             pstm.setString(2, cartao.getNumCartao());
-            pstm.setString(3, cartao.getBandeira());
-            pstm.setDate(4, Date.valueOf(cartao.getDataValidade()));
-            pstm.setString(5, cartao.getNomeImpressoCartao());
-            pstm.setString(6, String.valueOf(cartao.getCodigo()));
+            pstm.setString(4, cartao.getBandeira());
+            pstm.setInt(5, cartao.getMesValidade());
+            pstm.setInt(6, cartao.getAnoValidade());
+            pstm.setString(7, cartao.getNomeImpressoCartao());
+            pstm.setString(8, String.valueOf(cartao.getCodigo()));
 
             pstm.execute();
 
@@ -148,7 +148,8 @@ public class CartaoDeCreditoDAO implements IDAO {
                 cartaoCliente.setId(rs.getLong("crt_id"));
                 cartaoCliente.setBandeira(rs.getString("crt_bandeira"));
                 cartaoCliente.setCodigo(Integer.parseInt(rs.getString("crt_cod_seg")));
-                cartaoCliente.setDataValidade(LocalDate.parse(rs.getString("crt_dt_validade")));
+                cartaoCliente.setMesValidade(Integer.parseInt(rs.getString("crt_cod_seg")));
+                cartaoCliente.setAnoValidade(Integer.parseInt(rs.getString("crt_cod_seg")));
                 cartaoCliente.setNomeImpressoCartao(rs.getString("crt_nome_impresso"));
                 cartaoCliente.setNumCartao(rs.getString("crt_numero"));
 

@@ -198,7 +198,7 @@
                         </div>
                         <div class="modal-body">
                             <form>
-                                <div class="col-md-12 h6 fw-bold">Status</div>
+                                <h6 class="fw-bold">Status</h6>
                                 <div class="mb-3">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">

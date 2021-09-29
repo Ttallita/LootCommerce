@@ -11,8 +11,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.util.logging.Logger;
 
 public class CartaoDeCreditoAdminViewHelper implements IViewHelper {
 
@@ -26,7 +24,8 @@ public class CartaoDeCreditoAdminViewHelper implements IViewHelper {
             String bandeira = request.getParameter("bandeira");
             int codigoCartao = Integer.parseInt(request.getParameter("codigoCartao"));
             String nomeCartao = request.getParameter("nomeCartao");
-            LocalDate dtValidade = LocalDate.parse(request.getParameter("dtValidade"));
+            int mesValidade = Integer.parseInt(request.getParameter("mesValidade"));
+            int anoValidade = Integer.parseInt(request.getParameter("anoValidade"));
 
             CartaoDeCredito cartao = new CartaoDeCredito();
 
@@ -34,7 +33,8 @@ public class CartaoDeCreditoAdminViewHelper implements IViewHelper {
             cartao.setBandeira(bandeira);
             cartao.setCodigo(codigoCartao);
             cartao.setNomeImpressoCartao(nomeCartao);
-            cartao.setDataValidade(dtValidade);
+            cartao.setMesValidade(mesValidade);
+            cartao.setAnoValidade(anoValidade);
             cartao.setCliente(new Cliente());
             cartao.getCliente().setUsuario(new Usuario());
             cartao.getCliente().getUsuario().setId(Long.parseLong(id_cliente));
@@ -46,7 +46,8 @@ public class CartaoDeCreditoAdminViewHelper implements IViewHelper {
             String bandeira = request.getParameter("bandeira");
             int codigoCartao = Integer.parseInt(request.getParameter("codigoCartao"));
             String nomeCartao = request.getParameter("nomeCartao");
-            LocalDate dtValidade = LocalDate.parse(request.getParameter("dtValidade"));
+            int mesValidade = Integer.parseInt(request.getParameter("mesValidade"));
+            int anoValidade = Integer.parseInt(request.getParameter("anoValidade"));
 
             CartaoDeCredito cartao = new CartaoDeCredito();
 
@@ -55,7 +56,8 @@ public class CartaoDeCreditoAdminViewHelper implements IViewHelper {
             cartao.setBandeira(bandeira);
             cartao.setCodigo(codigoCartao);
             cartao.setNomeImpressoCartao(nomeCartao);
-            cartao.setDataValidade(dtValidade);
+            cartao.setMesValidade(mesValidade);
+            cartao.setAnoValidade(anoValidade);
 
             return cartao;
         } else {

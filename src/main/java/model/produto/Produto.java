@@ -14,7 +14,7 @@ public class Produto extends EntidadeDominio {
     private GrupoPrecificacao grupoPrecificacao;
     private int limiteVenda;
     private int quantEstoque;
-    private String fabricante;
+    private Fabricante fabricante;
     private String codBarras;
     private LocalDate dtEntradaEstoque;
     private List<Categoria> categorias;
@@ -110,11 +110,11 @@ public class Produto extends EntidadeDominio {
         this.status = status;
     }
     
-    public String getFabricante() {
+    public Fabricante getFabricante() {
         return fabricante;
     }
 
-    public void setFabricante(String fabricante) {
+    public void setFabricante(Fabricante fabricante) {
         this.fabricante = fabricante;
     }
 

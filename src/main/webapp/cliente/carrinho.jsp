@@ -33,14 +33,14 @@
                             </div>
                             <div class="col">
                                 <h4 class="mb-3">
-                                    <div class="text-muted h6">Categoria</div>
+                                    <h6 class="text-muted">Categoria</h6>
                                     Nome
                                 </h4>
                                 <div class="float-end col-2">
                                     <div class="d-flex justify-content-between">
                                         <input type="number" class="form-control">
                                     </div>
-                                    <div class="text-muted h6 small">10 disponíveis</div>
+                                    <h6 class="text-muted small">10 disponíveis</h6>
                                 </div>
                                 <h4>R$ 100,00</h4>
                                 <div class="d-flex col-12 justify-content-between">

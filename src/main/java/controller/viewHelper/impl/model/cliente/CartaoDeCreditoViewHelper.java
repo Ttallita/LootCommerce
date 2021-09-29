@@ -1,7 +1,7 @@
 package controller.viewHelper.impl.model.cliente;
 
 import controller.viewHelper.IViewHelper;
-import dao.ClienteDAO;
+import dao.cliente.ClienteDAO;
 import model.EntidadeDominio;
 import model.Result;
 import model.Usuario;
@@ -12,7 +12,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.List;
 
 public class CartaoDeCreditoViewHelper implements IViewHelper {
@@ -40,8 +39,10 @@ public class CartaoDeCreditoViewHelper implements IViewHelper {
             cartao.setNomeImpressoCartao(nomeCartao);
 
             if(!request.getParameter("dtValidade").trim().isEmpty()) {
-                LocalDate dtValidade = LocalDate.parse(request.getParameter("dtValidade"));
-                cartao.setDataValidade(dtValidade);
+                int mesValidade = Integer.parseInt(request.getParameter("mesValidade"));
+                int anoValidade = Integer.parseInt(request.getParameter("anoValidade"));
+                cartao.setMesValidade(mesValidade);
+                cartao.setAnoValidade(anoValidade);
             }
 
             Cliente cliente = new Cliente();
@@ -56,7 +57,8 @@ public class CartaoDeCreditoViewHelper implements IViewHelper {
             String bandeira = request.getParameter("bandeira");
             int codigoCartao = Integer.parseInt(request.getParameter("codigoCartao"));
             String nomeCartao = request.getParameter("nomeCartao");
-            LocalDate dtValidade = LocalDate.parse(request.getParameter("dtValidade"));
+            int mesValidade = Integer.parseInt(request.getParameter("mesValidade"));
+            int anoValidade = Integer.parseInt(request.getParameter("anoValidade"));
             String idCartao = request.getParameter("idCartao");
 
             CartaoDeCredito cartao = new CartaoDeCredito();
@@ -66,7 +68,8 @@ public class CartaoDeCreditoViewHelper implements IViewHelper {
             cartao.setBandeira(bandeira);
             cartao.setCodigo(codigoCartao);
             cartao.setNomeImpressoCartao(nomeCartao);
-            cartao.setDataValidade(dtValidade);
+            cartao.setMesValidade(mesValidade);
+            cartao.setAnoValidade(anoValidade);
 
             Cliente cliente = new Cliente();
             Usuario usuario = (Usuario) request.getSession().getAttribute("usuarioLogado");

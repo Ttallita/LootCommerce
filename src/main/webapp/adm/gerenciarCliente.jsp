@@ -539,8 +539,7 @@
               <div class="modal-dialog modal-dialog-centered modal-sm">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="excluirCartaoLabel">Excluir
-                    </h5>
+                    <h5 class="modal-title" id="excluirCartaoLabel">Excluir</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body"> Tem certeza que deseja excluir esse cartão? </div>
@@ -588,8 +587,7 @@
                       mode_edit
                     </span>
                     <span class="material-icons text-danger">
-                      <span data-bs-toggle="modal" data-bs-target="#excluirCartao${cartao.id}"
-                        id="deletarCartao${cartao.id}">
+                      <span data-bs-toggle="modal" data-bs-target="#excluirCartao${cartao.id}" id="deletarCartao${cartao.id}">
                         delete
                       </span>
                     </span>

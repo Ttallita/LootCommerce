@@ -1,7 +1,7 @@
 package controller.viewHelper.impl.model.cliente;
 
 import controller.viewHelper.IViewHelper;
-import dao.ClienteDAO;
+import dao.cliente.ClienteDAO;
 import model.EntidadeDominio;
 import model.Result;
 import model.Usuario;

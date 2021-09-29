@@ -1,4 +1,4 @@
-package dao;
+package dao.localidades;
 
 import model.cliente.endereco.Pais;
 import utils.Conexao;

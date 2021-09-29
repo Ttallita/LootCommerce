@@ -1,5 +1,8 @@
-package dao;
+package dao.cliente;
 
+import dao.CupomDAO;
+import dao.IDAO;
+import dao.UsuarioDAO;
 import model.Usuario;
 
 import model.UsuarioType;
@@ -7,7 +10,7 @@ import model.cliente.CartaoDeCredito;
 import model.cliente.Cliente;
 import model.EntidadeDominio;
 import model.cliente.endereco.Endereco;
-
+import model.cupom.Cupom;
 import model.cliente.Telefone;
 import utils.Conexao;
 
@@ -16,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ClienteDAO implements IDAO{
+public class ClienteDAO implements IDAO {
     private Connection conn;
 
     @Override
@@ -179,10 +182,16 @@ public class ClienteDAO implements IDAO{
 
                 List<EntidadeDominio> cartoes = new CartaoDeCreditoDAO().listar(cartaoDeCredito, "listarPorCliente");
                 List<CartaoDeCredito> cartaoDeCreditosConvertidos = cartoes.stream()
-                        .map(cartaoMap -> (CartaoDeCredito) cartaoMap)
-                        .collect(Collectors.toList());
+                        .map(cartaoMap -> (CartaoDeCredito) cartaoMap).collect(Collectors.toList());
 
-                if(operacao.equals("listar")) {
+                Cupom cupom = new Cupom();
+                cupom.setCliente(clienteLogado);
+
+                List<EntidadeDominio> cupons = new CupomDAO().listar(cupom, "listarPorCliente");
+                List<Cupom> cuponsConvertidos = cupons.stream()
+                        .map(cartaoMap -> (Cupom) cartaoMap).collect(Collectors.toList());
+
+                if (operacao.equals("listar")) {
                     clienteLogado.setUsuario(cliente.getUsuario());
                 } else if(operacao.equals("listarAdm")){
                     clienteLogado.setUsuario((Usuario) new UsuarioDAO().listar(cliente.getUsuario(), "listarAdm").get(0));
@@ -199,6 +208,7 @@ public class ClienteDAO implements IDAO{
                 clienteLogado.setTelefone(telefone);
                 clienteLogado.setEnderecos(enderecosConvertidos);
                 clienteLogado.setCartoesDeCredito(cartaoDeCreditosConvertidos);
+                clienteLogado.setCupons(cuponsConvertidos);
 
                 entidadeDominios.add(clienteLogado);
             }

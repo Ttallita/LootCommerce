@@ -74,7 +74,7 @@
                         </div>
                         <div class="col">
                             <h4 class="mb-3">
-                                <div class="text-muted h6">Categoria</div>Nome
+                                <h6 class="text-muted">Categoria</h6>Nome
                             </h4>
                             <h4>R$ 100,00</h4>Quantidade: 1
                             <a class="text-decoration-none">Alterar</a>
@@ -89,7 +89,7 @@
                         </div>
                         <div class="col">
                             <h4 class="mb-3">
-                                <div class="text-muted h6">Categoria</div>Nome
+                                <h6 class="text-muted">Categoria</h6>Nome
                             </h4>
                             <h4>R$ 100,00</h4>Quantidade: 1
                             <a class="text-decoration-none">Alterar</a>
@@ -143,7 +143,7 @@
                         <input type="hidden" name="operacao" value="salvar">
                         <div class="modal-body">
                             <div class="row g-2 mb-4">
-                                <div class="col-md-12 h6 fw-bold">Cartões salvos</div>
+                                <h6 class="col-md-12 fw-bold">Cartões salvos</h6>
                                 <div class="border p-2 rounded">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="">

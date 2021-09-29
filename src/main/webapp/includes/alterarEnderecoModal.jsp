@@ -12,7 +12,7 @@
                 <input type="hidden" name="operacao" value="salvar">
                 <div class="modal-body">
                     <div class="row g-2 mb-4">
-                        <div class="col-md-12 h6 fw-bold">Endereços salvos</div>
+                        <h6 class="col-md-12 fw-bold">Endereços salvos</h6>
                         <div class="border p-2 rounded">
                             <div class="col-md-12 d-flex justify-content-between">
                                 <div class="form-check">

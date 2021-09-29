@@ -9,8 +9,9 @@ import java.time.LocalDate;
 public class Cupom extends EntidadeDominio {
 
     private Cliente cliente;
+    private String nome;
     private Venda venda;
-    private CupomType tipoCupom;
+    private CupomType tipo;
     private Double valor;
     private LocalDate dataValidade;
     private String descricao;
@@ -23,6 +24,14 @@ public class Cupom extends EntidadeDominio {
         this.cliente = cliente;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
     public Venda getVenda() {
         return venda;
     }
@@ -31,12 +40,12 @@ public class Cupom extends EntidadeDominio {
         this.venda = venda;
     }
 
-    public CupomType getTipoCupom() {
-        return tipoCupom;
+    public CupomType getTipo() {
+        return tipo;
     }
 
-    public void setTipoCupom(CupomType tipoCupom) {
-        this.tipoCupom = tipoCupom;
+    public void setTipo(CupomType tipo) {
+        this.tipo = tipo;
     }
 
     public Double getValor() {

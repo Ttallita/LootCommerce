@@ -3,6 +3,7 @@ package model.cliente;
 import model.EntidadeDominio;
 import model.Usuario;
 import model.cliente.endereco.Endereco;
+import model.cupom.Cupom;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,6 +18,7 @@ public class Cliente extends EntidadeDominio {
     private Telefone telefone;
     private List<Endereco> enderecos;
     private List<CartaoDeCredito> cartoesDeCredito;
+    private List<Cupom> cupons;
     private int ranking;
     private Usuario usuario;
 
@@ -82,6 +84,14 @@ public class Cliente extends EntidadeDominio {
 
     public void setCartoesDeCredito(List<CartaoDeCredito> cartoesDeCredito) {
         this.cartoesDeCredito = cartoesDeCredito;
+    }
+
+    public List<Cupom> getCupons() {
+        return cupons;
+    }
+
+    public void setCupons(List<Cupom> cupons) {
+        this.cupons = cupons;
     }
 
     public int getRanking() {

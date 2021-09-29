@@ -6,6 +6,7 @@ import controller.viewHelper.impl.LoginViewHelper;
 import controller.viewHelper.impl.model.*;
 import controller.viewHelper.impl.model.adm.CartaoDeCreditoAdminViewHelper;
 import controller.viewHelper.impl.model.adm.ClienteAdminViewHelper;
+import controller.viewHelper.impl.model.adm.CupomAdminViewHelper;
 import controller.viewHelper.impl.model.adm.EnderecoAdminViewHelper;
 import controller.viewHelper.impl.model.cliente.CartaoDeCreditoViewHelper;
 import controller.viewHelper.impl.model.cliente.ClienteViewHelper;
@@ -54,11 +55,13 @@ public class Controller extends HttpServlet{
         viewHelpers.put("/LootCommerce/clientes/perfil/editarSenha", new UsuarioViewHelper());
         viewHelpers.put("/LootCommerce/clientes/cartoes", new CartaoDeCreditoViewHelper());
         viewHelpers.put("/LootCommerce/clientes/enderecos", new EnderecoViewHelper());
+        viewHelpers.put("/LootCommerce/clientes/cupons", new CupomAdminViewHelper());
 
         viewHelpers.put("/LootCommerce/admin/controle", new ClienteAdminViewHelper());
         viewHelpers.put("/LootCommerce/admin/cliente", new ClienteAdminViewHelper());
         viewHelpers.put("/LootCommerce/admin/cartoes", new CartaoDeCreditoAdminViewHelper());
         viewHelpers.put("/LootCommerce/admin/enderecos", new EnderecoAdminViewHelper());
+        viewHelpers.put("/LootCommerce/admin/cupons", new CupomAdminViewHelper());
     }
 
     @Override

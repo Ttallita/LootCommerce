@@ -44,7 +44,7 @@
                     <div class="tab-pane fade active show" id="nav-dados-pedido" role="tabpanel"
                         aria-labelledby="nav-dados-pedido-tab">
                         <div class="row rounded m-2">
-                            <div class="col-md-12 h6 fw-bold">Status</div>
+                            <h6 class="col-md-12 fw-bold">Status</h6>
                             <div class="col-md-12">
                                 <ul class="list-group">
                                     <li class="d-flex">
@@ -112,7 +112,7 @@
                         </div>
                         <div class="modal-body">
                             <form>
-                                <div class="col-md-12 h6 fw-bold">Status</div>
+                                <h6 class=" fw-bold">Status</h6>
                                 <div class="row rounded m-2">
                                     <div class="col-md-12">
                                         <div class="form-check">

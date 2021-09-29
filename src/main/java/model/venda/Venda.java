@@ -4,9 +4,9 @@ import java.time.LocalDate;
 import java.util.List;
 
 import model.cliente.CartaoDeCredito;
+import model.cliente.endereco.Endereco;
 import model.cupom.Cupom;
 import model.cliente.Cliente;
-import model.cliente.Endereco;
 import model.produto.Produto;
 
 public class Venda {

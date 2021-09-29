@@ -5,6 +5,9 @@ values ('userexample@gmail.com', 'eb99f5951ac9d0bab4c6806198e6a696c63321e3de4ab1
 insert into clientes (cli_usr_id, cli_nome, cli_sobrenome, cli_cpf, cli_dt_nasc, cli_genero, cli_telefone_num, cli_telefone_ddd, cli_telefone_tp)
 values (1,'Ruan', 'Campos', '876.160.110-12', '2000-06-14','Masculino','98909-1345','11','Celular');
 
+insert into cupons (cpm_id, cpm_cli_usr_id, cpm_nome, cpm_tp, cpm_valor, cpm_dt_validade, cpm_descricao) VALUES
+    (1, 1, 'Cupom teste', 'PROMOCIONAL', 10., '2022-01-01', 'Descrição teste cupom');
+
 insert into enderecos (end_cli_usr_id, end_tp, end_apelido, end_tp_logradouro, end_logradouro, end_num, end_bairro, end_cep, end_cidade, end_estado, end_pais)
 values (1,'COBRANCA_ENTREGA', 'Minha Casa', 'Rua', 'Onze', '5115', 'São Francisco', '29273-746', 'Vitória', 'Espírito Santo', 'Brasil');
 
@@ -74,13 +77,13 @@ INSERT INTO fabricantes (fab_nome) VALUES
     ('Volutpat Nulla LLC');
 
 -- Produtos
-INSERT INTO produtos (pro_fab_id, pro_grp_id, pro_pst_id, pro_nome, pro_valor_compra, pro_valor_venda, pro_quant_estoque, pro_limite_venda, pro_descricao, pro_material, pro_cod_barras, pro_link, pro_dt_entrada_estoque, pro_limitado) VALUES
-    (30, 2, 1, 'Hatsune Miku Vocaloid', 90.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0010-Z', '/link', CURRENT_DATE, false),
-    (5, 4, 1, 'Rei Neon Genesis Evangelion', 100.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0020-Z', '/link', CURRENT_DATE, false),
-    (16, 5, 1, 'Levi Ackerman Shingeki no Kyojin', 180.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0030-Z', '/link', CURRENT_DATE, false),
-    (16, 1, 1, 'Katsuki Bakugou Tiger My Hero Academia', 0.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0040-Z', '/link', CURRENT_DATE, false),
-    (7, 4, 1, 'pro_nome', 0.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0050-Z', '/link', CURRENT_DATE, false),
-    (25, 5, 1, 'pro_nome', 0.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0060-Z', '/link', CURRENT_DATE, false),
-    (19, 3, 1, 'pro_nome', 0.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0070-Z', '/link', CURRENT_DATE, false),
-    (19, 3, 1, 'pro_nome', 0.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0080-Z', '/link', CURRENT_DATE, false),
-    (19, 3, 1, 'pro_nome', 0.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0090-Z', '/link', CURRENT_DATE, false);
+INSERT INTO produtos (pro_fab_id, pro_grp_id, pro_pst_id, pro_nome, pro_valor_compra, pro_valor_venda, pro_quant_estoque, pro_limite_venda, pro_descricao, pro_material, pro_cod_barras, pro_dt_entrada_estoque, pro_limitado) VALUES
+    (30, 2, 1, 'Hatsune Miku Vocaloid', 90.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0010-Z', CURRENT_DATE, false),
+    (5, 4, 1, 'Rei Neon Genesis Evangelion', 100.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0020-Z', CURRENT_DATE, false),
+    (16, 5, 1, 'Levi Ackerman Shingeki no Kyojin', 180.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0030-Z', CURRENT_DATE, false),
+    (16, 1, 1, 'Katsuki Bakugou Tiger My Hero Academia', 0.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0040-Z', CURRENT_DATE, false),
+    (7, 4, 1, 'pro_nome', 0.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0050-Z', CURRENT_DATE, false),
+    (25, 5, 1, 'pro_nome', 0.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0060-Z', CURRENT_DATE, false),
+    (19, 3, 1, 'pro_nome', 0.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0070-Z', CURRENT_DATE, false),
+    (19, 3, 1, 'pro_nome', 0.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0080-Z', CURRENT_DATE, false),
+    (19, 3, 1, 'pro_nome', 0.0, 300., 100, 90, 'pro_descricao', 'pro_material', 'A-0090-Z', CURRENT_DATE, false);

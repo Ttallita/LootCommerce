@@ -33,9 +33,9 @@ public class ValidarCartaoStrategy implements IStrategy {
             return "Código de cartão inválido";
         }
 
-        if(cartao.getDataValidade().isBefore(LocalDate.now())) {
+        /*if(cartao.getDataValidade().isBefore(LocalDate.now())) {
             return "Data de válidade do cartão inválida";
-        }
+        }*/
 
 
         return null;

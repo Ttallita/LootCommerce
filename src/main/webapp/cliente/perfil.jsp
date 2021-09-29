@@ -48,46 +48,57 @@
                     <button class="${empty aba ? 'active' : ''} btn btn-outline-primary text-start border-0"
                         id="v-pills-conta-tab" data-bs-toggle="pill" data-bs-target="#v-pills-conta" type="button"
                         aria-controls="v-pills-conta" aria-selected="true">
-                        <span class="material-icons inline-icon">home</span>Conta</button>
+                        <span class="material-icons inline-icon">home</span>
+                        Conta
+                    </button>
 
                     <button
                         class="${not empty aba && aba == 'senha' ? 'active' : ''} btn btn-outline-primary text-start border-0"
                         id="v-pills-alterar-senha-tab" data-bs-toggle="pill" data-bs-target="#v-pills-alterar-senha"
                         type="button" aria-controls="v-pills-alterar-senha" aria-selected="false">
-                        <span class="material-icons inline-icon">lock</span>Alterar Senha</button>
+                        <span class="material-icons inline-icon">lock</span>
+                        Alterar Senha
+                    </button>
 
                     <button
                         class="${not empty aba && aba == 'endereco' ? 'active' : ''} btn btn-outline-primary text-start border-0"
                         id="v-pills-enderecos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-enderecos"
                         type="button" aria-controls="v-pills-enderecos" aria-selected="false">
-                        <span class="material-icons inline-icon">local_shipping</span>Endereços</button>
+                        <span class="material-icons inline-icon">local_shipping</span>
+                        Endereços
+                    </button>
 
                     <button
                         class="${not empty aba && aba == 'cartoes' ? 'active' : ''} btn btn-outline-primary text-start border-0"
                         id="v-pills-cartoes-tab" data-bs-toggle="pill" data-bs-target="#v-pills-cartoes" type="button"
                         aria-controls="v-pills-cartoes" aria-selected="false">
-                        <span class="material-icons inline-icon">credit_card</span>Cartões</button>
+                        <span class="material-icons inline-icon">credit_card</span>
+                        Cartões
+                    </button>
 
                     <button class="btn btn-outline-primary text-start border-0" id="v-pills-compras-tab"
                         data-bs-toggle="pill" data-bs-target="#v-pills-compras" type="button"
                         aria-controls="v-pills-compras" aria-selected="false">
-                        <span class="material-icons inline-icon">shopping_bag</span>Compras</button>
+                        <span class="material-icons inline-icon">shopping_bag</span>
+                        Compras
+                    </button>
 
                     <button class="btn btn-outline-primary text-start border-0" id="v-pills-cupons-tab"
                         data-bs-toggle="pill" data-bs-target="#v-pills-cupons" type="button"
                         aria-controls="v-pills-cupons" aria-selected="false">
-                        <span class="material-icons inline-icon">local_play</span>Cupons</button>
+                        <span class="material-icons inline-icon">local_play</span>
+                        Cupons
+                    </button>
                 </div>
             </aside>
 
-            <div class="col-lg-10 p-0">
-                <div class="tab-content border">
+            <div class="col-lg-10 p-0 border">
+                <div class="tab-content">
                     <!--conta-->
                     <section class="tab-pane fade ${empty aba ? 'active show' : ''}" id="v-pills-conta" role="tabpanel"
                         aria-labelledby="v-pills-conta-tab">
                         <h4 class="fw-bold p-3 m-0 border text-center">Conta</h4>
-                            <form class="needs-validation text-center p-4" action="/LootCommerce/clientes/perfil"
-                                method="POST" novalidate="">
+                            <form class="needs-validation text-center p-4" action="/LootCommerce/clientes/perfil" method="POST" novalidate="">
                                 <input type="hidden" name="operacao" value="atualizar">
                                 <div class="row g-3">
 
@@ -142,7 +153,8 @@
                                         <div class="input-group form-floating">
                                             <select class="form-select" id="tipoTelefone" name="tipoTelefone" required>
                                                 <option name="tipoTelefone" value="${clienteLogado.telefone.tipo}">
-                                                    ${clienteLogado.telefone.tipo}</option>
+                                                    ${clienteLogado.telefone.tipo}
+                                                </option>
                                                 <option value="">Selecione</option>
                                                 <option>Celular</option>
                                                 <option>Residêncial</option>
@@ -176,19 +188,16 @@
                                 <input type="hidden" name="operacao" value="atualizar">
                                 <div class="vstack gap-3 text-center">
                                     <div class="col-6 mx-auto form-floating">
-                                        <input type="email" class="form-control" name="email" id="emailAtual"
-                                            value="${clienteLogado.usuario.email}">
-                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control" name="email" id="emailAtual" value="${clienteLogado.usuario.email}">
+                                        <label for="email" class="form-label">Email</label>
                                     </div>
                                     <div class="col-6 mx-auto form-floating">
-                                        <input type="password" class="form-control" id="senha" name="senha"
-                                            placeholder="">
-                                        <label class="form-label">Senha Nova</label>
+                                        <input type="password" class="form-control" id="senha" name="senha" placeholder="">
+                                        <label for="senha" class="form-label">Senha Nova</label>
                                     </div>
                                     <div class="col-6 mx-auto form-floating">
-                                        <input type="password" class="form-control" id="senhaConfirmacao"
-                                            name="senhaConfirmacao" placeholder="">
-                                        <label class="form-label">Confirme a nova senha</label>
+                                        <input type="password" class="form-control" id="senhaConfirmacao" name="senhaConfirmacao" placeholder="">
+                                        <label for="senhaConfirmacao" class="form-label">Confirme a nova senha</label>
                                     </div>
                                 </div>
                                 <hr class="my-4">
@@ -235,14 +244,12 @@
                                             <td>${endereco.pais}</td>
                                             <td>${endereco.tipoEndereco}</td>
                                             <td>
-                                                <span class="material-icons" data-bs-toggle="modal"
-                                                    data-bs-target="#editarEnderecoModal${endereco.id}">
+                                                <span class="material-icons" data-bs-toggle="modal" data-bs-target="#editarEnderecoModal${endereco.id}">
                                                     mode_edit
                                                 </span>
                                             </td>
                                             <td>
-                                                <span class="material-icons text-danger" data-bs-toggle="modal"
-                                                    data-bs-target="#excluirEnderecoModal${endereco.id}">
+                                                <span class="material-icons text-danger" data-bs-toggle="modal" data-bs-target="#excluirEnderecoModal${endereco.id}">
                                                     delete
                                                 </span>
                                             </td>
@@ -253,26 +260,22 @@
 
                             <!-- Modal Cadastro endereço -->
                             <div class="modal fade" id="cadastrarEnderecoModal" data-bs-backdrop="static"
-                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="cadastrarEnderecoLabel"
-                                aria-hidden="true">
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="cadastrarEnderecoLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered modal-xl">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="cadastrarEnderecoLabel">
-                                                Cadastrar</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
+                                                Cadastrar
+                                            </h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form class="needs-validation" action="../clientes/enderecos" method="POST"
-                                                novalidate>
+                                            <form class="needs-validation" action="../clientes/enderecos" method="POST" novalidate>
                                                 <input type="hidden" name="operacao" value="salvar">
                                                 <div class="row g-3 mb-3">
                                                     <div class="col-md-6">
                                                         <div class="form-floating">
-                                                            <input type="text" class="form-control" id="tpResidencia"
-                                                                name="tpResidencia" placeholder="" placeholder=""
-                                                                required>
+                                                            <input type="text" class="form-control" id="tpResidencia" name="tpResidencia" placeholder="" required>
                                                             <label for="tpResidencia" class="form-label">
                                                                 Tipo de residência
                                                             </label>
@@ -280,8 +283,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="form-floating">
-                                                            <input type="text" class="form-control" id="tpLogradouro"
-                                                                name="tpLogradouro" placeholder="" required>
+                                                            <input type="text" class="form-control" id="tpLogradouro" name="tpLogradouro" placeholder="" required>
                                                             <label for="tpLogradouro" class="form-label">
                                                                 Tipo de logradouro
                                                             </label>
@@ -289,37 +291,31 @@
                                                     </div>
                                                     <div class="col-md-5">
                                                         <div class="form-floating">
-                                                            <input type="text" class="form-control" id="logradouro"
-                                                                name="logradouro" placeholder="" required>
-                                                            <label for="logradouro"
-                                                                class="form-label">Logradouro</label>
+                                                            <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="" required>
+                                                            <label for="logradouro" class="form-label">Logradouro</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <div class="form-floating">
-                                                            <input type="text" class="form-control" id="numero"
-                                                                name="numero" placeholder="" required>
+                                                            <input type="text" class="form-control" id="numero" name="numero" placeholder="" required>
                                                             <label for="numero" class="form-label">Número</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-floating">
-                                                            <input type="text" class="form-control" id="bairro"
-                                                                name="bairro" placeholder="" required>
+                                                            <input type="text" class="form-control" id="bairro" name="bairro" placeholder="" required>
                                                             <label for="bairro" class="form-label">Bairro</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-floating">
-                                                            <input type="text" class="form-control" id="cep" name="cep"
-                                                                placeholder="" required>
+                                                            <input type="text" class="form-control" id="cep" name="cep" placeholder="" required>
                                                             <label for="cep" class="form-label">CEP</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-floating">
-                                                            <select class="form-select" id="cidade" name="cidade"
-                                                                placeholder="" required>
+                                                            <select class="form-select" id="cidade" name="cidade" placeholder="" required>
                                                                 <option value="">Selecione</option>
                                                                 <option>São Paulo</option>
                                                             </select>
@@ -350,7 +346,7 @@
                                                             <input type="text" class="form-control" id="apelido" name="apelido" placeholder="" required>
                                                             <label for="apelido" class="form-label">
                                                                 Apelido do endereço
-                                                             </label>
+                                                            </label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8">
@@ -375,12 +371,12 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" id="btnCancelarEnderecoNovo"
-                                                        class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    <button type="button" id="btnCancelarEnderecoNovo" class="btn btn-secondary" data-bs-dismiss="modal">
                                                         Cancelar
                                                     </button>
-                                                    <button type="submit" id="btnCadastrar"
-                                                        class="btn btn-success">Cadastrar</button>
+                                                    <button type="submit" id="btnCadastrar" class="btn btn-success">
+                                                        Cadastrar
+                                                    </button>
                                                 </div>
                                             </form>
                                         </div>
@@ -391,71 +387,61 @@
                             <!-- Modal Editar Endereço-->
                             <c:forEach var="endereco" items="${clienteLogado.enderecos}">
                                 <div class="modal fade" id="editarEnderecoModal${endereco.id}" data-bs-backdrop="static"
-                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="editarEnderecoLabel"
-                                    aria-hidden="true">
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="editarEnderecoLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-xl">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="cadastrarEnderecoLabel">Editar</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form class="needs-validation" action="../clientes/enderecos"
-                                                    method="POST" novalidate>
+                                                <form class="needs-validation" action="../clientes/enderecos" method="POST" novalidate>
                                                     <input type="hidden" name="operacao" value="atualizar">
                                                     <div class="row g-3 mb-3">
                                                         <div class="col-md-6">
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control"
-                                                                    id="tpResidencia" name="tpResidencia" placeholder=""
-                                                                    required>
-                                                                <label for="tpResidencia" class="form-label">Tipo de
-                                                                    residência</label>
+                                                                <input type="text" class="form-control" id="tpResidencia" name="tpResidencia" placeholder="" required>
+                                                                <label for="tpResidencia" class="form-label">
+                                                                    Tipo de residência
+                                                                </label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control"
-                                                                    id="tpLogradouro" value="${endereco.tipoLogradouro}"
+                                                                <input type="text" class="form-control"  id="tpLogradouro" value="${endereco.tipoLogradouro}"
                                                                     name="tpLogradouro" placeholder="" required>
-                                                                <label for="tpLogradouro" class="form-label">Tipo de
-                                                                    logradouro</label>
+                                                                <label for="tpLogradouro" class="form-label">
+                                                                    Tipo de logradouro
+                                                                </label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-5">
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="logradouro"
-                                                                    name="logradouro" value="${endereco.logradouro}">
-                                                                <label for="logradouro"
-                                                                    class="form-label">Logradouro</label>
+                                                                <input type="text" class="form-control" id="logradouro" name="logradouro" value="${endereco.logradouro}">
+                                                                <label for="logradouro" class="form-label">Logradouro</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="numero"
-                                                                    name="numero" value="${endereco.numero}">
+                                                                <input type="text" class="form-control" id="numero" name="numero" value="${endereco.numero}">
                                                                 <label for="numero" class="form-label">Número</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="bairro"
-                                                                    name="bairro" value="${endereco.bairro}">
+                                                                <input type="text" class="form-control" id="bairro" name="bairro" value="${endereco.bairro}">
                                                                 <label for="bairro" class="form-label">Bairro</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="cep"
-                                                                    name="cep" value="${endereco.cep}">
+                                                                <input type="text" class="form-control" id="cep" name="cep" value="${endereco.cep}">
                                                                 <label for="cep" class="form-label">CEP</label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-floating">
-                                                                <select class="form-select" id="cidade" name="cidade"
-                                                                    required>
+                                                                <select class="form-select" id="cidade" name="cidade" required>
                                                                     <option value="">Selecione</option>
                                                                     <option>São Paulo</option>
                                                                 </select>
@@ -464,8 +450,7 @@
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-floating">
-                                                                <select class="form-select" id="estado" name="estado"
-                                                                    required>
+                                                                <select class="form-select" id="estado" name="estado" required>
                                                                     <option value="">Selecione</option>
                                                                     <option>São Paulo</option>
                                                                 </select>
@@ -474,9 +459,7 @@
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-floating">
-                                                                <label for="pais" class="form-label"></label>
-                                                                <select class="form-select" id="pais" name="pais"
-                                                                    required>
+                                                                <select class="form-select" id="pais" name="pais" required>
                                                                     <option value="">Selecione</option>
                                                                     <option>Brasil</option>
                                                                 </select>
@@ -488,23 +471,23 @@
                                                                 <input type="text" class="form-control" id="apelido"
                                                                     name="apelido" value="${endereco.apelido}"
                                                                     placeholder="" required>
-                                                                <label for="apelido" class="form-label">Apelido do
-                                                                    endereço</label>
+                                                                <label for="apelido" class="form-label">
+                                                                    Apelido do endereço
+                                                                </label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-8">
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="observacao"
-                                                                    name="observacao" value="${endereco.observacoes}">
+                                                                <input type="text" class="form-control" id="observacao" name="observacao" value="${endereco.observacoes}">
                                                                 <label for="observacao" class="form-label">
-                                                                    Observação<span
-                                                                        class="text-muted">(Opcional)</span></label>
+                                                                    Observação
+                                                                    <span class="text-muted">(Opcional)</span>
+                                                                </label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-floating">
-                                                                <select class="form-select" id="tpEndereco"
-                                                                    name="tpEndereco" required>
+                                                                <select class="form-select" id="tpEndereco" name="tpEndereco" required>
                                                                     <option value="">Selecione</option>
                                                                     <option>Cobrança</option>
                                                                     <option>Entrega</option>
@@ -515,13 +498,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" id="btnCancelarEnderecoNovo"
-                                                            class="btn btn-secondary" data-bs-dismiss="modal">
+                                                        <button type="button" id="btnCancelarEnderecoNovo" class="btn btn-secondary" data-bs-dismiss="modal">
                                                             Cancelar
                                                         </button>
                                                         <input type="hidden" value="${endereco.id}" name="idEndereco" />
-                                                        <input type="submit" class="btn btn-primary" value="Editar"
-                                                            name="atualizar" />
+                                                        <input type="submit" class="btn btn-primary" value="Editar" name="atualizar" />
                                                     </div>
                                                 </form>
                                             </div>
@@ -533,26 +514,24 @@
                             <!-- Modal Exclusão Endereço -->
                             <c:forEach var="endereco" items="${clienteLogado.enderecos}">
                                 <div class="modal fade" id="excluirEnderecoModal${endereco.id}" data-bs-backdrop="static"
-                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="excluirEnderecoLabel"
-                                    aria-hidden="true">
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="excluirEnderecoLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered modal-sm">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="excluirEnderecoLabel"> Excluir</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                                                <h5 class="modal-title" id="excluirEnderecoLabel">Excluir</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                                 Tem certeza que deseja excluir esse endereço?
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Cancelar</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Cancelar
+                                                </button>
                                                 <form action="../clientes/enderecos" method="POST">
-                                                    <input type="hidden" value="remover" name="operacao" />
-                                                    <input type="hidden" value="${endereco.id}" name="idEndereco" />
-                                                    <input type="submit" class="btn btn-danger" value="Excluir"
-                                                        name="excluir" />
+                                                    <input type="hidden" value="remover" name="operacao"/>
+                                                    <input type="hidden" value="${endereco.id}" name="idEndereco"/>
+                                                    <input type="submit" class="btn btn-danger" value="Excluir" name="excluir"/>
                                                 </form>
                                             </div>
                                         </div>
@@ -594,13 +573,12 @@
                                             <td>${cartao.codigo}</td>
                                             <td>${cartao.dataValidade}</td>
                                             <td>
-                                                <span class="material-icons" data-bs-toggle="modal"
-                                                    data-bs-target="#editarCartaoModal${cartao.id}">
-                                                    mode_edit</span>
+                                                <span class="material-icons" data-bs-toggle="modal" data-bs-target="#editarCartaoModal${cartao.id}">
+                                                    mode_edit
+                                                </span>
                                             </td>
                                             <td>
-                                                <span class="material-icons text-danger" data-bs-toggle="modal"
-                                                    data-bs-target="#excluirCartao${cartao.id}">
+                                                <span class="material-icons text-danger" data-bs-toggle="modal" data-bs-target="#excluirCartao${cartao.id}">
                                                     delete
                                                 </span>
                                             </td>
@@ -650,23 +628,22 @@
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-floating">
-                                                            <input type="date" class="form-control" id="dtValidade"
-                                                                name="dtValidade" placeholder="" required>
-                                                            <label for="nomeCartao" class="form-label">Validade</label>
+                                                            <input type="text" class="form-control" id="dtValidade" name="dtValidade" placeholder="" required>
+                                                            <label for="dtValidade" class="form-label">Validade</label>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-floating">
-                                                            <input type="text" class="form-control" id="codigoCartao"
-                                                                name="codigoCartao" placeholder="" required>
-                                                            <label for="nomeCartao" class="form-label">CVV</label>
+                                                            <input type="text" class="form-control" id="codigoCartao" name="codigoCartao" placeholder="" required>
+                                                            <label for="codigoCartao" class="form-label">CVV</label>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="modal-footer">
-                                                    <button type="button" id="btnCancelarCartaoNovo"
-                                                        class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                    <button type="button" id="btnCancelarCartaoNovo" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                        Cancelar
+                                                    </button>
                                                     <input type="submit" id="btnCadastrarCartao" value="Cadastrar" class="btn btn-success">
                                                 </div>
                                             </form>
@@ -684,12 +661,10 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="editarCartaoLabel">Editar</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form class="needs-validation" action="/LootCommerce/clientes/cartoes"
-                                                    method="POST" novalidate>
+                                                <form class="needs-validation" action="/LootCommerce/clientes/cartoes" method="POST" novalidate>
                                                     <input type="hidden" name="operacao" value="atualizar">
                                                     <div class="row g-3 mb-3">
                                                         <div class="col-md-6">
@@ -728,10 +703,8 @@
                                                         </div>
                                                         <div class="col-md-3">
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="dtValidade"
-                                                                    name="dtValidade" value="${cartao.dataValidade}">
-                                                                <label for="nomeCartao" class="form-label">Data de
-                                                                    Validade</label>
+                                                                <input type="text" class="form-control" id="dtValidade" name="dtValidade" value="${cartao.dataValidade}">
+                                                                <label for="nomeCartao" class="form-label">Data de Validade</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -759,8 +732,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="excluirCartaoLabel">Excluir</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">Tem certeza que deseja excluir esse cartão?</div>
                                             <div class="modal-footer">
@@ -769,8 +741,7 @@
                                                 <form action="../clientes/cartoes" method="POST">
                                                     <input type="hidden" value="remover" name="operacao" />
                                                     <input type="hidden" value="${cartao.id}" name="idCartao" />
-                                                    <input type="submit" class="btn btn-danger" value="Excluir"
-                                                        name="excluir" />
+                                                    <input type="submit" class="btn btn-danger" value="Excluir" name="excluir" />
                                                 </form>
                                             </div>
                                         </div>
@@ -804,62 +775,34 @@
                                     </div>
                                 </div>
                                 <div class="col">
-                                        <h6 class="text-muted">Categoria</h6>
-                                        <h5>Nome</h5>
-                                        <h6>Quantidade: 00</h6>
-                                        <h6>Valor: R$ 00,00</h6>
+                                    <h6 class="text-muted">Categoria</h6>
+                                    <h5>Nome</h5>
+                                    <h6>Quantidade: 00</h6>
+                                    <h6>Valor: R$ 00,00</h6>
                                 </div>
                             </div>
                         </div>
                     </section>
 
                     <!--cupons-->
-                    <section class="tab-pane fade" id="v-pills-cupons" role="tabpanel"
-                        aria-labelledby="v-pills-cupons-tab">
+                    <section class="tab-pane fade" id="v-pills-cupons" role="tabpanel" aria-labelledby="v-pills-cupons-tab">
                         <h4 class="fw-bold p-3 m-0 border text-center">Cupons</h4>
-                        <div class="border p-4">
-                            <h5 class="fw-bold">Promocionais</h5>
-                            <div class="row row-cols-xl-3">
+                        <div class="row row-cols-xl-2 p-4">
+                            <c:forEach var="cupom" items="${clienteLogado.cupons}">
                                 <div class="col">
                                     <div class="border row p-2 rounded m-1">
                                         <div class="d-flex justify-content-between">
-                                            <h6>Nome cupom</h6>
-                                            <h6>R$ 00,00</h6>
+                                            <h6 class="fw-bold">${cupom.tipo}</h6>
+                                            <h6>Validade: ${cupom.dataValidade}</h6>
                                         </div>
-                                        <h6>Descrição</h6>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="border row p-2 rounded m-1">
                                         <div class="d-flex justify-content-between">
-                                            <h6>Nome cupom</h6>
-                                            <h6>R$ 00,00</h6>
+                                            <h5>${cupom.nome}</h5>
+                                            <h5>R$ ${cupom.valor}</h5>
                                         </div>
-                                        <h6>Descrição</h6>
+                                        <h6>${cupom.descricao}</h6>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="border row p-2 rounded m-1">
-                                        <div class="d-flex justify-content-between">
-                                            <h6>Nome cupom</h6>
-                                            <h6>R$ 00,00</h6>
-                                        </div>
-                                        <h6>Descrição</h6>
-                                    </div>
-                                </div>
-                            </div>
-                            <h5 class="fw-bold mt-3">Troca</h5>
-                            <div class="row row-cols-xl-3">
-                                <div class="col">
-                                    <div class="border row p-2 rounded m-1">
-                                        <div class="d-flex justify-content-between">
-                                            <h6>Nome cupom</h6>
-                                            <h6>R$ 00,00</h6>
-                                        </div>
-                                        <h6>Descrição</h6>
-                                    </div>
-                                </div>
-                            </div>
+                            </c:forEach>
                         </div>
                     </section>
                 </div>
@@ -880,6 +823,8 @@
         $('#cpf').mask('000.000.000-00', { reverse: true });
         $('#cep').mask('00000-000');
         $('#phone').mask('00 00000-0000');
+        $('#dtValidade').mask('00/0000');
+        $('#numCartao').mask('0000 0000 0000 0000');
     });
 </script>
 

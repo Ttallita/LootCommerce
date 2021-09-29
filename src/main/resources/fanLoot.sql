@@ -38,6 +38,7 @@ CREATE TABLE cupons (
     cpm_id serial NOT NULL,
     cpm_cli_usr_id integer,
     cpm_vnd_id integer,
+    cpm_nome varchar(255),
     cpm_tp varchar(11) NOT NULL,
     cpm_valor numeric(8, 2) NOT NULL,
     cpm_dt_validade date,
@@ -94,7 +95,6 @@ CREATE TABLE produtos(
 	pro_descricao varchar(255) NOT NULL,
 	pro_material varchar(255) NOT NULL,
     pro_cod_barras varchar(255) NOT NULL,
-    pro_link varchar(255) NOT NULL,
     pro_dt_entrada_estoque date NOT NULL,
     pro_limitado boolean NOT NULL
 );

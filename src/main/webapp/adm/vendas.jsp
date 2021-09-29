@@ -64,15 +64,15 @@
                 <div class="input-group mb-3">
                     <input id="pesquisarCliente" type="text" placeholder="Pesquise por palavras-chave..."
                         aria-label="Username" aria-describedby="basic-addon1" class="form-control border-end-0">
-                    <span class="btn input-group-text border border-start-0">
-                        <span class="material-icons">search</span>
+                    <span class="btn input-group-text border border-start-0 material-icons">
+                        search
                     </span>
                 </div>
                 <div class="hstack gap-3 border rounded mt-2 mb-2">
-                    <div class="col-12 p-3">
-                        <div class="col-md-12 h6 fw-bold">Filtros de pesquisa</div>
-                        <div class="col-md-12 row h6">
-                            <div class="col-1">Exibir</div>
+                    <div class="p-3">
+                        <h6 class="fw-bold">Filtros de pesquisa</h6>
+                        <div class="row">
+                            <h6 class="col-1">Exibir</h6>
                             <div class="col">
                                 <ul class="list-group list-group-horizontal">
                                     <li class="list-group-item border-0 p-0 me-3"><a href="#">Todas</a></li>
@@ -109,12 +109,18 @@
                 </div>
                 <div class="col-md-12">
                     <div class="border row mt-3 p-3 rounded">
-                        <div class="h6 fw-bold">Troca<div class="dropdown float-end ">
+                        <div>
+                            <h6 class="fw-bold">Troca</h6>
+                            <div class="dropdown float-end ">
                                 <a href="#" aria-expanded="false" data-bs-toggle="dropdown" class="text-decoration-none">
-                                    <span class="material-icons">more_vert</span></a>
+                                    <span class="material-icons">more_vert</span>
+                                </a>
                                 <ul class="dropdown-menu">
-                                    <li><a type="button" id="gerenciarVendaBtn" class="dropdown-item"
-                                            href="/LootCommerce/adm/gerenciarVenda.jsp">Gerenciar</a></li>
+                                    <li>
+                                        <a type="button" id="gerenciarVendaBtn" class="dropdown-item" href="/LootCommerce/adm/gerenciarVenda.jsp">
+                                            Gerenciar
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -145,7 +151,7 @@
                         </div>
                     </div>
                     <div class="border row mt-3 p-3 rounded">
-                        <div class="col-md-12 h6 fw-bold">Em transporte</div>
+                        <h6 class="col-md-12 fw-bold">Em transporte</h6>
                         <div class="col-md-12 d-flex justify-content-between">
                             <div><span class="fw-bold d-block">ID</span><span>00000</span></div>
                             <div><span class="fw-bold d-block">Cliente</span><span>Nome cliente</span></div>

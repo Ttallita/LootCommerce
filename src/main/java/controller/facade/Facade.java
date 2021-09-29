@@ -5,12 +5,16 @@ import controller.strategy.impl.cartao.ValidarCartaoStrategy;
 import controller.strategy.impl.cliente.*;
 import controller.strategy.impl.endereco.VerificarEnderecoStrategy;
 import dao.*;
+import dao.cliente.CartaoDeCreditoDAO;
+import dao.cliente.ClienteDAO;
+import dao.cliente.EnderecoDAO;
 import model.Result;
 import model.EntidadeDominio;
 import model.Usuario;
 import model.cliente.CartaoDeCredito;
 import model.cliente.Cliente;
 import model.cliente.endereco.Endereco;
+import model.cupom.Cupom;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,6 +32,7 @@ public class Facade implements IFacade {
         daosMap = new HashMap<>();
         daosMap.put(Cliente.class.getName(), new ClienteDAO());
         daosMap.put(CartaoDeCredito.class.getName(), new CartaoDeCreditoDAO());
+        daosMap.put(Cupom.class.getName(), new CupomDAO());
         daosMap.put(Endereco.class.getName(), new EnderecoDAO());
         daosMap.put(Usuario.class.getName(), new UsuarioDAO());
 

@@ -1,7 +1,7 @@
 package endpoints;
 
 import com.google.gson.Gson;
-import dao.PaisDAO;
+import dao.localidades.PaisDAO;
 import model.cliente.endereco.Pais;
 
 import javax.servlet.ServletException;

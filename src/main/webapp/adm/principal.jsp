@@ -56,39 +56,37 @@
     </div>
 
     <main class="container-fluid">
-        <div class="row">
-            <div class="bg-white rounded mt-3 p-4">
-                <div class="tab-pane fade active show" id="v-pills-principal" role="tabpanel"
-                    aria-labelledby="v-pills-principal-tab">
-                    <div class="card-body">
-                        <div class="col-md-12 h4 fw-bold">Principal</div>
-                        <div class="row row-cols-xl-4">
-                            <div class="col mb-3 ">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h6 class="fw-bolder">Vendas</h6>
-                                    </div>
+        <div class="bg-white rounded mt-3 p-4">
+            <div class="tab-pane fade active show" id="v-pills-principal" role="tabpanel"
+                aria-labelledby="v-pills-principal-tab">
+                <div class="card-body">
+                    <h4 class="fw-bold">Principal</h4>
+                    <div class="row row-cols-xl-4">
+                        <div class="col mb-3 ">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="fw-bolder">Vendas</h6>
                                 </div>
                             </div>
-                            <div class="col mb-3 ">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h6 class="fw-bolder">Vendas</h6>
-                                    </div>
+                        </div>
+                        <div class="col mb-3 ">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="fw-bolder">Vendas</h6>
                                 </div>
                             </div>
-                            <div class="col mb-3 ">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h6 class="fw-bolder">Vendas</h6>
-                                    </div>
+                        </div>
+                        <div class="col mb-3 ">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="fw-bolder">Vendas</h6>
                                 </div>
                             </div>
-                            <div class="col mb-3 ">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h6 class="fw-bolder">Vendas</h6>
-                                    </div>
+                        </div>
+                        <div class="col mb-3 ">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="fw-bolder">Vendas</h6>
                                 </div>
                             </div>
                         </div>
