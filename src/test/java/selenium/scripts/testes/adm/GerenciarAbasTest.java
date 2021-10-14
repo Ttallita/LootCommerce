@@ -1,4 +1,4 @@
-package selenium.adm;
+package selenium.scripts.testes.adm;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;

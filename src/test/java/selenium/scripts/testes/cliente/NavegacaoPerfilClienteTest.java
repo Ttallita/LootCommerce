@@ -1,18 +1,17 @@
-package selenium.cliente;
+package selenium.scripts.testes.cliente;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * @author Tallita
  */
 
-public class CadastrarNovoCartaoTest {
+public class NavegacaoPerfilClienteTest {
 
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
@@ -21,7 +20,6 @@ public class CadastrarNovoCartaoTest {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         driver.get("http://localhost:8080/LootCommerce/");
         driver.manage().window().maximize();
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("entrar")));
         driver.findElement(By.id("entrar")).click();
 
@@ -32,23 +30,26 @@ public class CadastrarNovoCartaoTest {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("iconUsuario")));
         driver.findElement(By.id("iconUsuario")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("perfil")));
         driver.findElement(By.id("perfil")).click();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("v-pills-cartoes-tab")));
-        driver.findElement(By.id("v-pills-cartoes-tab")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("btn-group-vertical")));
 
+        driver.findElement(By.id("v-pills-alterar-senha-tab")).click();
+
+        driver.findElement(By.id("v-pills-enderecos-tab")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("novoEndereco")));
+        driver.findElement(By.id("novoEndereco")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cadastrarEndereco")));
+        driver.findElement(By.id("btnCancelarEnderecoNovo")).click();
+
+        driver.findElement(By.id("v-pills-cartoes-tab")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("novoCartao")));
         driver.findElement(By.id("novoCartao")).click();
-
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cadastrarCartao")));
-        driver.findElement(By.id("numCartao")).sendKeys("5555666677778884");
-        driver.findElement(By.id("nomeCartao")).sendKeys("Nutty agiota");
-        Select selectTpEndereco = new Select(driver.findElement(By.id("bandeira")));
-        selectTpEndereco.selectByVisibleText("Visa");
-        driver.findElement(By.id("dtValidade")).sendKeys("20/10/2050");
-        driver.findElement(By.id("codigoCartao")).sendKeys("123");
+        driver.findElement(By.id("btnCancelarCartaoNovo")).click();
 
-        driver.findElement(By.id("btnCadastrarCartao")).click();
+        driver.close();
 
     }
 

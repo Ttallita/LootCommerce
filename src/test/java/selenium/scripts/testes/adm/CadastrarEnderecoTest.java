@@ -1,4 +1,4 @@
-package selenium.adm;
+package selenium.scripts.testes.adm;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -13,7 +13,7 @@ import java.util.List;
  * @author André Gomes
  */
 
-public class GerenciarCadastrarEnderecoTest {
+public class CadastrarEnderecoTest {
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();

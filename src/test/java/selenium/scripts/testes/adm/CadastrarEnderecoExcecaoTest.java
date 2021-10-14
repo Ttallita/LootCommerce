@@ -1,4 +1,4 @@
-package selenium.adm;
+package selenium.scripts.testes.adm;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -8,11 +8,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
-/**
+/*
  * @author André Gomes
  */
 
-public class CadastrarCartaoExcecaoTest {
+public class CadastrarEnderecoExcecaoTest {
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -36,19 +36,19 @@ public class CadastrarCartaoExcecaoTest {
         gerenciarLink.click();
         Thread.sleep(2000);
 
-        WebElement tabCartoes = driver.findElement(By.id("nav-cartoes-tab"));
-        tabCartoes.click();
+        WebElement tabEnderecos = driver.findElement(By.id("nav-endereco-tab"));
+        tabEnderecos.click();
         Thread.sleep(2000);
 
-        WebElement btnNovoCartao = driver.findElement(By.id("novoCartao"));
-        btnNovoCartao.click();
+        WebElement btnNovoEndereco = driver.findElement(By.id("novoEndereco"));
+        btnNovoEndereco.click();
         Thread.sleep(2000);
 
-        WebElement btnCadastrarCartao = driver.findElement(By.id("btnCadastrarCartao"));
-        btnCadastrarCartao.click();
-        Thread.sleep(1500);
+        WebElement btnCadastrarEndereco = driver.findElement(By.id("btnCadastrarEndereco"));
+        btnCadastrarEndereco.click();
+        Thread.sleep(2000);
 
         driver.close();
 
-     }
+    }
 }

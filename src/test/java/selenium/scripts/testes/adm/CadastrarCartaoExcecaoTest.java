@@ -1,19 +1,18 @@
-package selenium.adm;
+package selenium.scripts.testes.adm;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-/*
+/**
  * @author André Gomes
  */
 
-public class GerenciarClienteDadosPessoaisTest {
+public class CadastrarCartaoExcecaoTest {
     public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -37,36 +36,19 @@ public class GerenciarClienteDadosPessoaisTest {
         gerenciarLink.click();
         Thread.sleep(2000);
 
-        WebElement campoNome = driver.findElement(By.id("nome"));
-        WebElement campoEmail = driver.findElement(By.id("email"));
-        WebElement campoTipoTelefone = driver.findElement(By.id("tipoTelefone"));
+        WebElement tabCartoes = driver.findElement(By.id("nav-cartoes-tab"));
+        tabCartoes.click();
+        Thread.sleep(2000);
 
-        WebElement btnEditarNome = driver.findElement(By.id("editarNome"));
-        WebElement btnEditarEmail = driver.findElement(By.id("editarEmail"));
-        WebElement btnEditarTipoTelefone = driver.findElement(By.id("editarTpTelefone"));
+        WebElement btnNovoCartao = driver.findElement(By.id("novoCartao"));
+        btnNovoCartao.click();
+        Thread.sleep(2000);
 
-        Select selectTipoTelefone =  new Select(campoTipoTelefone);
-
-        String novoNome = "Vinicius";
-        String novoEmail = "vinicius@fatec.sp.gov.com.br";
-
-        btnEditarNome.click();
-        Thread.sleep(2000);
-        campoNome.clear();
-        Thread.sleep(1000);
-        campoNome.sendKeys(novoNome);
-        Thread.sleep(2000);
-        btnEditarEmail.click();
-        Thread.sleep(2000);
-        campoEmail.clear();
-        Thread.sleep(1000);
-        campoEmail.sendKeys(novoEmail);
-        Thread.sleep(2000);
-        btnEditarTipoTelefone.click();
-        Thread.sleep(2000);
-        selectTipoTelefone.selectByIndex(1);
+        WebElement btnCadastrarCartao = driver.findElement(By.id("btnCadastrarCartao"));
+        btnCadastrarCartao.click();
+        Thread.sleep(1500);
 
         driver.close();
 
-    }
+     }
 }

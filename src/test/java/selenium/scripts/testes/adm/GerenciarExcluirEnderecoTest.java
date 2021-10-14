@@ -1,4 +1,4 @@
-package selenium.adm;
+package selenium.scripts.testes.adm;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -12,8 +12,9 @@ import java.util.List;
  * @author André Gomes
  */
 
-public class GerenciarClienteTransacoesTest {
+public class GerenciarExcluirEnderecoTest {
     public static void main(String[] args) throws InterruptedException{
+
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
@@ -36,8 +37,17 @@ public class GerenciarClienteTransacoesTest {
         gerenciarLink.click();
         Thread.sleep(2000);
 
-        WebElement tabTransacoes = driver.findElement(By.id("nav-transacoes-tab"));
-        tabTransacoes.click();
+        WebElement tabEnderecos = driver.findElement(By.id("nav-endereco-tab"));
+        tabEnderecos.click();
+        Thread.sleep(2000);
+
+        WebElement tableEnderecos = driver.findElement(By.id("table-enderecos"));
+        List<WebElement> rowsEnderecos = tableEnderecos.findElements(By.tagName("tr"));
+        List<WebElement> columnsEnderecos = rowsEnderecos.get(1).findElements(By.tagName("td"));
+
+        WebElement excluir = columnsEnderecos.get(9).findElement(By.id("deletarEndereco"));
+        excluir.click();
+        Thread.sleep(2000);
 
         driver.close();
 

@@ -1,35 +1,23 @@
-package selenium.adm;
+package selenium.scripts.testes.adm;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
+/*
  * @author André Gomes
  */
 
-public class CadastrarClienteTest{
-
-    public static void main(String[] args)  throws InterruptedException{
+public class CadastrarClienteExcecaoTest {
+    public static void main(String[] args) throws InterruptedException{
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 10);
 
-        driver.get("http://localhost:8080/LootCommerce/");
+        driver.get("http://localhost:8080/LootCommerce/adm/clientes.jsp");
         driver.manage().window().maximize();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("entrar")));
-        driver.findElement(By.id("entrar")).click();
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
-        driver.findElement(By.id("email")).sendKeys("useradmexample@gmail.com");
-        driver.findElement(By.id("senha")).sendKeys("Teste123!");
-        driver.findElement(By.id("logar")).click();
 
         WebElement tabCliente = driver.findElement(By.id("v-pills-clientes-tab"));
 
@@ -58,7 +46,6 @@ public class CadastrarClienteTest{
         WebElement campoCidade = driver.findElement(By.id("cidade"));
         WebElement campoEstado = driver.findElement(By.id("estado"));
         WebElement campoPais = driver.findElement(By.id("pais"));
-        WebElement campoApelido = driver.findElement(By.id("apelido"));
         WebElement campoObs = driver.findElement(By.id("observacao"));
 
         WebElement btnCadastrar = driver.findElement(By.id("btnCadastrar"));
@@ -70,67 +57,66 @@ public class CadastrarClienteTest{
         Select selectEstado = new Select(campoEstado);
         Select selectPais = new Select(campoPais);
 
-        String email =  "andre.soares9@fatec.sp.gov.com";
+        String email =  "andre.soares";
         String senha = "Admads123!";
         String nome = "André";
         String sobrenome = "Gomes";
-        String cpf = "692.160.900-65";
+        String cpf = "123.413.133-12";
         String dataNasc = "21/09/1999";
         String phone = "11 92324-2324";
         String tpLogradouro = "Bairro";
         String logradouro = "Rua 25 de março";
-        String numero = "123";
+        String numero = "";
         String bairro = "Moema";
         String cep = "12344-231";
-        String apelido = "Minha casa";
         String obs = "Sem observações";
 
         campoEmail.sendKeys(email);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         campoSenha.sendKeys(senha);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         campoConfirmacaoSenha.sendKeys(senha);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         campoNome.sendKeys(nome);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         campoSobrenome.sendKeys(sobrenome);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         selectGenero.selectByIndex(1);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         campoDataNasc.sendKeys(dataNasc);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         campoCpf.sendKeys(cpf);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         selectTipoTelefone.selectByIndex(1);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         campoTelefone.sendKeys(phone);
 
-        Thread.sleep(500);
+        Thread.sleep(1000);
         selectTipoResidencia.selectByIndex(1);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         campoTipoLogradouro.sendKeys(tpLogradouro);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         campoLogradouro.sendKeys(logradouro);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         campoNumero.sendKeys(numero);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         campoBairro.sendKeys(bairro);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         campoCep.sendKeys(cep);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         selectCidade.selectByIndex(1);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         selectEstado.selectByIndex(1);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         selectPais.selectByIndex(1);
-        Thread.sleep(500);
-        campoApelido.sendKeys(apelido);
-        Thread.sleep(500);
+        Thread.sleep(1000);
         campoObs.sendKeys(obs);
         Thread.sleep(2000);
 
         btnCadastrar.click();
-        Thread.sleep(2000);
+        Thread.sleep(1500);
+
+        driver.close();
 
     }
 }
