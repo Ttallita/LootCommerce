@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="8889B999-F9FB-4572-EACB-9F09879592E4" containerWithKeyObject="7097F435-D373-32EF-6783-35949844CAC1" localFKIndex="9E816C35-0019-D554-CF9F-D7783B014817" name="PRODUTOS_EM_VENDA_VENDAS_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:22 UTC</createdTime>
+<generatorID>39F734FE-75B7-B7C5-0703-1310153D955B</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<referredTableLongName>VENDAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>C4D54C44-78ED-DB12-7FC2-9C81B613411D</referredTableID>
+<keyObject>74A6DDE0-5F44-5BF7-AE5A-B1C2B41DF372</keyObject>
+<referredKeyID>74A6DDE0-5F44-5BF7-AE5A-B1C2B41DF372</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>vnd_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

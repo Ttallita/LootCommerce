@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="76AC432F-1E72-9F4E-03EF-4CCC188EDA50" name="PRODUTOS_EM_CARRINHO">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:31:41 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CLIENTES_usr_id" id="2CDEC7F4-69BD-4306-A188-117AB75CFA42">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:31:41 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="90A45E75-4919-4425-3208-B0C2ED490ECB" referredColumn="6AF886FB-4392-07BC-2276-8D4D1C40FEA3"/>
+</associations>
+</Column>
+<Column name="PRODUTOS_pro_id" id="15634A98-FCED-087B-F11E-492441AFDF36">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:31:41 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CF6B1CE9-814A-E5CD-83DA-F91FB4C45A41" referredColumn="220085CF-359F-3B54-F48A-C251200CCEFE"/>
+</associations>
+</Column>
+<Column name="prc_quant" id="E2AADF10-AC31-C9A2-D706-03A21FC1786F">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:31:41 UTC</createdTime>
+<generatorID>148A67EB-2AE4-53E7-C6C6-97B0B5257C77</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1058576E-2B9E-8583-A064-FD00544F3E36" name="PRODUTOS_EM_CARRINHO_PK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:31:41 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2CDEC7F4-69BD-4306-A188-117AB75CFA42"/>
+<colUsage columnID="15634A98-FCED-087B-F11E-492441AFDF36"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="82FD7CDA-6589-1D58-0895-83E44AF2A684" name="PRODUTOS_EM_CARRINHO_CLIENTES_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:31:41 UTC</createdTime>
+<generatorID>FA3D6D7D-AA1C-5229-45F7-096F023872BE</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2CDEC7F4-69BD-4306-A188-117AB75CFA42"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7B2D3FB3-CB6F-E1D1-9633-DA3BEFD60DA8" name="PRODUTOS_EM_CARRINHO_PRODUTOS_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:31:41 UTC</createdTime>
+<generatorID>FA3D6D7D-AA1C-5229-45F7-096F023872BE</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15634A98-FCED-087B-F11E-492441AFDF36"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

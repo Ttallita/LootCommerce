@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="34C3FEC9-41FA-BFA7-DDA7-A90D47915245" name="CARTOES_EM_VENDA">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="VENDAS_vnd_id" id="2F75A0BA-6E5B-5427-0EDC-378C6AF350DD">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="50E61330-6FB1-F2E3-BE92-9D28F97962B1" referredColumn="6FF2990B-99F7-2D09-A6A0-4A1F619C946A"/>
+</associations>
+</Column>
+<Column name="CARTOES_crt_id" id="6CE0595B-A537-56C4-2707-5CBDAEA4B288">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DCCFB417-6D49-E0AA-8902-05D3AADBC983" referredColumn="A504D7EC-3F7E-ACEE-B696-8155BA14AF22"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7D3959BC-559D-83DB-E63D-7AF90C02AE5A" name="CARTOES_EM_VENDA_PK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F75A0BA-6E5B-5427-0EDC-378C6AF350DD"/>
+<colUsage columnID="6CE0595B-A537-56C4-2707-5CBDAEA4B288"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="28BB1C20-BE2E-5830-D4A0-D71C00FD18BF" name="CARTOES_EM_VENDA_VENDAS_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>C9D5C998-13A5-8629-8B84-8F64144A6C1D</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F75A0BA-6E5B-5427-0EDC-378C6AF350DD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2DFEABBA-522F-DE76-DA13-3CFEB013D704" name="CARTOES_EM_VENDA_CARTOES_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>C9D5C998-13A5-8629-8B84-8F64144A6C1D</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6CE0595B-A537-56C4-2707-5CBDAEA4B288"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

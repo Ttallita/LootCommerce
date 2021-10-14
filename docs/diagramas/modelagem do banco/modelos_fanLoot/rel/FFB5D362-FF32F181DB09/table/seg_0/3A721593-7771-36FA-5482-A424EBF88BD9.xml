@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3A721593-7771-36FA-5482-A424EBF88BD9" name="USUARIOS">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>76819437-E0FD-6B75-1C2D-04341D71BEC3</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="usr_id" id="E831F862-2B8F-25E5-90E3-EA5EC20F43AA">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>56C1ACC0-18FC-9853-8542-D18581E277A1</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usr_email" id="3B51CC89-BE71-74E2-A19D-11012FBC7CDE">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>D881E4E3-1CD7-DDDA-48D8-E32BB8556DA4</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usr_senha" id="AD8FB965-BC53-1F08-F403-59E76A4B116D">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>13E747D9-E078-600C-9146-E2B3FB6AE35B</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usr_tipo" id="C305D349-B6E6-C780-3588-71ADA7F1E38C">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>B8F22C6C-6A90-36DF-CEEE-1A77194B7DDA</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13</dataTypeSize>
+<ownDataTypeParameters>13,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usr_ativo" id="429E7996-5A3E-6E45-E224-F922BACBA158">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>512CFE89-5863-B528-5353-897D816BC83B</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="89193D61-A9EA-7830-D471-62133EE2A243" name="USUARIOS_PK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>C035C167-64FC-82D5-B4A0-BF0BFCFD0255</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E831F862-2B8F-25E5-90E3-EA5EC20F43AA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,167 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="33E41C11-0B43-2A6D-43D0-43C97C37B945" name="CLIENTES">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>FEEBE5BD-AA6C-5161-4348-C9B7F8962C12</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="usr_id" id="6AF886FB-4392-07BC-2276-8D4D1C40FEA3">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>56C1ACC0-18FC-9853-8542-D18581E277A1</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5161E9D4-622E-6A9D-6FED-4E60A0A56B0F" referredColumn="E831F862-2B8F-25E5-90E3-EA5EC20F43AA"/>
+</associations>
+</Column>
+<Column name="cli_nome" id="E516F253-6819-A228-2ECC-4BCC40F5BE5C">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>8A98E5AB-4478-3124-3496-D59BDE07F50D</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cli_sobrenome" id="D8BC5C73-AEF9-3012-0E29-6610B1F6849A">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>AA297AEB-8E42-CB29-B50E-E0D7117BBFA4</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>45</dataTypeSize>
+<ownDataTypeParameters>45,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cli_cpf" id="96EDE500-A224-892B-3DA3-246FFFF12BDE">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>E830222C-45C5-6F67-53D5-08C70CC66324</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>14,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cli_dt_nasc" id="66367F2B-F403-16D1-51C9-16629696849B">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>F4F57C9C-38F3-639E-8D9C-9BD087FB948D</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cli_genero" id="4D932F0C-C8E9-2F2A-70ED-A226D28FCE8A">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>AF695128-B55C-08AD-9DCD-BF6A97562A8D</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cli_telefone_num" id="2EB25EA2-B76B-77AD-5B0B-433C93A0289F">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>A5891AF3-D82C-9E86-02B1-152C3609BE23</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cli_telefone_ddd" id="72DA5AE4-3B0E-4959-A818-AF363E9388E0">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>09BC0893-1747-3BF4-4185-20A7909E7CD2</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>2</dataTypeSize>
+<ownDataTypeParameters>2,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cli_telefone_tp" id="10032A10-806D-8D09-B507-BD309AD0EFFC">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>C564BD87-C18D-BB35-01A2-028FB5C1A55C</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>11</dataTypeSize>
+<ownDataTypeParameters>11,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cli_rank" id="5AAE5D45-AE40-704E-536E-C8A6BC7FB3F1">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>F4787B61-5AE6-CB63-CA9D-00DBD704B198</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4BB958EA-4072-89B0-D762-C5B44D3DCC71" name="CLIENTES_PK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>C035C167-64FC-82D5-B4A0-BF0BFCFD0255</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6AF886FB-4392-07BC-2276-8D4D1C40FEA3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4CC4E7DA-7204-5788-26AA-205C48028CE6" name="CLIENTES_PKv1">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>940938DD-61EF-F415-EB62-6CC47164EEDB</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="E781CB86-165E-52EE-7DB2-B7808195A061" name="CLIENTES_USUARIOS_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:21 UTC</createdTime>
+<generatorID>AA6C76CE-3B08-B285-CCE5-C4296F85F0D7</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6AF886FB-4392-07BC-2276-8D4D1C40FEA3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

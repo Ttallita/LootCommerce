@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F85C9373-34C2-3940-B3B7-DA558657CB71" name="PRODUTOS_TROCA_VENDA">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:22 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PRODUTOS_pro_id" id="C4954F2A-50B1-640E-458B-9D35E512514F">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:22 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="353A84B4-9502-13F9-969E-58D8FFCCAB60" referredColumn="220085CF-359F-3B54-F48A-C251200CCEFE"/>
+</associations>
+</Column>
+<Column name="VENDAS_vnd_id" id="32C82742-202C-8BC3-C92A-7630E345C4D5">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:22 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C04817AA-D054-1F4B-B8B3-CBAE49901B0E" referredColumn="6FF2990B-99F7-2D09-A6A0-4A1F619C946A"/>
+</associations>
+</Column>
+<Column name="ptv_tipo" id="08EBDA54-9823-8D30-7466-F905D1335169">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:22 UTC</createdTime>
+<generatorID>265C32F4-F216-329D-E4DA-CCEF10DA0382</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="78D4750E-24D4-9FCA-BBB1-8ADA38CF1291" name="PRODUTOS_TROCA_VENDA_PK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:22 UTC</createdTime>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C4954F2A-50B1-640E-458B-9D35E512514F"/>
+<colUsage columnID="32C82742-202C-8BC3-C92A-7630E345C4D5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3D6B5420-AAE5-D825-95FA-A58C9DA3469A" name="PRODUTOS_TROCA_VENDA_PRODUTOS_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:22 UTC</createdTime>
+<generatorID>400756E6-221E-B79D-759D-8210BDE1676F</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C4954F2A-50B1-640E-458B-9D35E512514F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B8358214-726D-763C-2BB7-A1AF2A1EEB80" name="PRODUTOS_TROCA_VENDA_VENDAS_FK">
+<createdBy>Souza</createdBy>
+<createdTime>2021-10-03 01:30:22 UTC</createdTime>
+<generatorID>400756E6-221E-B79D-759D-8210BDE1676F</generatorID>
+<ownerDesignName>modelos_fanLoot</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="32C82742-202C-8BC3-C92A-7630E345C4D5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
