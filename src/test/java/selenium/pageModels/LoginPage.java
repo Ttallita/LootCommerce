@@ -16,6 +16,8 @@ public class LoginPage {
     @FindBy(how = How.ID, using = "logar")
     @CacheLookup private WebElement loginBtn;
 
+    @FindBy(how = How.ID, using = "cadastro")
+    @CacheLookup private WebElement cadastroLink;
 
     public void setEmail(String email) {
         this.email.clear();

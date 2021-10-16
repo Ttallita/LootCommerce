@@ -39,9 +39,9 @@ public class CadastroClienteExcecaoTest {
         dadosPessoais.setTelefone("11 94002-8922");
 
         endereco.setApelido("Minha casa");
-        endereco.setCidade(1);
+        endereco.setPais(34);
         endereco.setEstado(1);
-        endereco.setPais(1);
+        endereco.setCidade(1);
         endereco.setTipoResidencia("Casa");
         endereco.setTipoLogradouro("Residencia");
         endereco.setLogradouro("Rua 25 de março");

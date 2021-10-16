@@ -11,25 +11,18 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginTest {
 
-    public void loginCliente(WebDriver driver) throws InterruptedException {
+    private LoginPage loginPage;
+    private WebDriver driver;
 
-        LoginPage login = PageFactory.initElements(driver, LoginPage.class);
-
-        login.setEmail("userexample@gmail.com");
-        login.setSenha("Teste123!");
-
-        login.realizarLogin();
-
+    public LoginTest(WebDriver driver) {
+        this.driver = driver;
+        this.loginPage = PageFactory.initElements(driver, LoginPage.class);
     }
 
-    public void loginAdministrador(WebDriver driver) throws InterruptedException {
+    public void login(String email, String senha) throws InterruptedException {
+        loginPage.setEmail(email);
+        loginPage.setSenha(senha);
 
-        LoginPage login = PageFactory.initElements(driver, LoginPage.class);
-
-        login.setEmail("admexample@gmail.com");
-        login.setSenha("Teste123!");
-
-        login.realizarLogin();
-
+        loginPage.realizarLogin();
     }
 }

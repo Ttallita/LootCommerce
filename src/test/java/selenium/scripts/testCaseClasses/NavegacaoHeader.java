@@ -12,21 +12,20 @@ import selenium.pageModels.HeaderDeslogado;
 public class NavegacaoHeader {
 
     WebDriver driver;
-
+    HeaderDeslogado  headerDeslogado;
 
     public NavegacaoHeader(WebDriver driver) {
         this.driver = driver;
+        headerDeslogado = PageFactory.initElements(driver, HeaderDeslogado.class);
     }
 
-    public void acessarPerfil(){
-        HeaderCliente header = new HeaderCliente();
-        header.getListarOpcoesBtn().click();
-        header.getPerfil().click();
-    }
 
     public void acessarPaginaCadastro() {
-        HeaderDeslogado  headerDeslogado = PageFactory.initElements(driver, HeaderDeslogado.class);
         headerDeslogado.getBtnCadastro().click();
+    }
+
+    public void acessarPaginaLogin() {
+        headerDeslogado.getBtnEntrar().click();
     }
 
 }
