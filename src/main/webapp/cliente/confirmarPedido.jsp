@@ -44,14 +44,19 @@
                             <h6>(Crédito) com final 0000</h6>
                         </div>
                     </div>
-                    <div class="col-6 p-3"><strong>Cupons aplicados:</strong>
-                        <div class="toast align-items-center text-white bg-primary border-0 fade show" role="alert"
-                            aria-live="assertive" aria-atomic="true">
-                            <div class="d-flex">
-                                <div class="toast-body">PROMOCAO</div>
-                                <div class="toast-body">R$ 10,00</div>
-                                <button type="button" class="btn-close btn-close-white me-2 m-auto"
-                                    data-bs-dismiss="toast" aria-label="Close"></button>
+                    <div class="col-6 p-3">
+                        <strong>Cupons aplicados:</strong>
+                        <div class="toast align-items-center text-white bg-primary border-0 fade show" aria-live="assertive" aria-atomic="true" role="alert">
+                            <div class="p-2">
+                                <button type="button" data-bs-dismiss="toast" aria-label="Close" class="btn-close btn-close-white me-2"></button>
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="fw-bold">${cupom.tipo}</h6>
+                                    <h7>Validade: ${cupom.dataValidade}</h7>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <h5>${cupom.nome}</h5>
+                                    <h5>R$ ${cupom.valor}</h5>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -136,7 +141,7 @@
             <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header border-0">
-                        <h5 class="modal-title" id="alterarFormaPagamentoLabel">Forma de pagamento</h5>
+                        <h5 class="modal-title" id="alterarFormaPagamentoLabel">Alterar forma de pagamento</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form class="needs-validation" action="..." method="POST" novalidate="">

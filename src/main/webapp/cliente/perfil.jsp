@@ -104,8 +104,7 @@
 
                                     <div class="col-sm-6">
                                         <div class="input-group form-floating">
-                                            <input type="text" class="form-control" id="nome" name="nome"
-                                                value="${clienteLogado.nome}" required>
+                                            <input type="text" class="form-control" id="nome" name="nome" value="${clienteLogado.nome}" required>
                                             <label class="form-label">Nome</label>
                                         </div>
                                     </div>
@@ -191,9 +190,14 @@
                                         <input type="email" class="form-control" name="email" id="emailAtual" value="${clienteLogado.usuario.email}">
                                         <label for="email" class="form-label">Email</label>
                                     </div>
+                                    <hr>
                                     <div class="col-6 mx-auto form-floating">
-                                        <input type="password" class="form-control" id="senha" name="senha" placeholder="">
-                                        <label for="senha" class="form-label">Senha Nova</label>
+                                        <input type="password" class="form-control" id="senhaAtual" name="senhaAtual" placeholder="">
+                                        <label for="senhaAtual" class="form-label">Senha atual</label>
+                                    </div>
+                                    <div class="col-6 mx-auto form-floating">
+                                        <input type="password" class="form-control" id="senhaNova" name="senhaNova" placeholder="">
+                                        <label for="senhaNova" class="form-label">Senha nova</label>
                                     </div>
                                     <div class="col-6 mx-auto form-floating">
                                         <input type="password" class="form-control" id="senhaConfirmacao" name="senhaConfirmacao" placeholder="">
@@ -202,7 +206,7 @@
                                 </div>
                                 <hr class="my-4">
                                 <button id="alterarDados" class="btn btn-primary mt-auto btn-lg" type="submit">
-                                    Atualizar Dados
+                                    Alterar dados
                                 </button>
                             </form>
                     </section>
@@ -696,8 +700,7 @@
                                                         </div>
                                                         <div class="col-md-2">
                                                             <div class="form-floating">
-                                                                <input type="text" class="form-control" id="codigoCartao" name="codigoCartao"
-                                                                    value="${cartao.codigo}">
+                                                                <input type="text" class="form-control" id="codigoCartao" name="codigoCartao" value="${cartao.codigo}">
                                                                 <label for="nomeCartao" class="form-label">Código</label>
                                                             </div>
                                                         </div>
@@ -752,20 +755,19 @@
                     </section>
 
                     <!--compras-->
-                    <section class="tab-pane fade" id="v-pills-compras" role="tabpanel"
-                        aria-labelledby="v-pills-compras-tab">
+                    <section class="tab-pane fade" id="v-pills-compras" role="tabpanel" aria-labelledby="v-pills-compras-tab">
                         <h4 class="fw-bold p-3 m-0 border text-center">Compras</h4>
-                        <div class="border p-4">
+                        <div class="border rounded m-4 p-3">
+                            <div class="dropdown float-end ">
+                                <a aria-expanded="false" data-bs-toggle="dropdown" class="text-decoration-none">
+                                    <span class="material-icons">more_vert</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Solicitar cancelamento</a></li>
+                                    <li><a class="dropdown-item" href="#">Solicitar Troca</a></li>
+                                </ul>
+                            </div>
                             <h6 class="fw-bold">00/00/0000</h6>
-                                <div class="dropdown float-end ">
-                                    <a aria-expanded="false" data-bs-toggle="dropdown" class="text-decoration-none">
-                                        <span class="material-icons">more_vert</span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#">Solicitar cancelamento</a></li>
-                                        <li><a href="#" class="dropdown-item">Solicitar Troca</a></li>
-                                    </ul>
-                                </div>
                             <h6 class="text-success">Entregue</h6>
                             <h6>Chegou no dia 00/00/0000</h6>
                             <div class="row border-top p-3">
@@ -775,6 +777,14 @@
                                     </div>
                                 </div>
                                 <div class="col">
+                                    <div class="dropdown float-end ">
+                                        <a aria-expanded="false" data-bs-toggle="dropdown" class="text-decoration-none">
+                                            <span class="material-icons">more_vert</span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Solicitar Troca</a></li>
+                                        </ul>
+                                    </div>
                                     <h6 class="text-muted">Categoria</h6>
                                     <h5>Nome</h5>
                                     <h6>Quantidade: 00</h6>

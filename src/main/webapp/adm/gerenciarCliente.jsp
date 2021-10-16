@@ -63,7 +63,7 @@
               type="button" role="tab" aria-controls="nav-transacoes" aria-selected="false">
               Transações
             </button>
-            <button class="nav-link" id="nav-endereco-tab" data-bs-toggle="tab" data-bs-target="#nav-endereco"
+            <button class="nav-link" id="nav-enderecos-tab" data-bs-toggle="tab" data-bs-target="#nav-endereco"
               type="button" role="tab" aria-controls="nav-endereco" aria-selected="false">
               Endereços
             </button>
@@ -350,7 +350,7 @@
             </div>
           </c:forEach>
 
-          <div class="tab-pane fade" id="nav-endereco" role="tabpanel" aria-labelledby="nav-endereco-tab">
+          <div class="tab-pane fade" id="nav-endereco" role="tabpanel" aria-labelledby="nav-enderecos-tab">
             <button type="button" id="novoEndereco" class="btn btn-primary mb-3 float-end" data-bs-toggle="modal"
               data-bs-target="#cadastrarEnderecoModal">
               <span class="material-icons inline-icon">add_circle_outline</span>Novo Endereço

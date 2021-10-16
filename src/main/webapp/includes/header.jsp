@@ -8,7 +8,7 @@
       <div class="container">
 
         <a href="/LootCommerce/index.jsp">
-          <img src="/LootCommerce/assets/img/logo_header.png" max-height="100" alt="fanLoot" width="130">
+          <img src="/LootCommerce/assets/img/logo_header.png" max-height="100" alt="fanLoot" name="fanLoot" width="130">
         </a>
 
         <div class="col-lg-6">
@@ -22,7 +22,7 @@
 
         <div class="d-flex align-items-center">
           <div class="dropdown">
-            <a href="#" id="iconUsuario" data-bs-toggle="dropdown" aria-expanded="false" class="text-decoration-none dropdown-toggle link-light">
+            <a id="listarOpcoesUsuario" type="button" class="text-decoration-none dropdown-toggle link-light" data-bs-toggle="dropdown" aria-expanded="false">
                 Meus dados
             </a>
             <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">

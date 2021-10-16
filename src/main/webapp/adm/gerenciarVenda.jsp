@@ -61,25 +61,14 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="border p-2 m-2 rounded">
+                            <div class="border p-4 m-2 rounded">
                                 <strong>Endereço de entrega</strong>
-                                <div class="col-md-12 d-flex justify-content-between">
+                                <div class="d-flex justify-content-between">
                                     <h6>Nome endereço</h6>
                                     <h6>Logradouro, número</h6><span class="d-block">CEP: 00000-000</span>
                                     <h6>Estado - País</h6>
                                 </div>
-                                <div class="col-md-12 d-flex justify-content-between">
-                                    <h6>Observação</h6>
-                                </div>
-                            </div>
-                            <div class="border p-2 m-2 rounded">
-                                <strong>Endereço de cobrança</strong>
-                                <div class="col-md-12 d-flex justify-content-between">
-                                    <h6>Nome endereço</h6>
-                                    <h6>Logradouro, número</h6><span class="d-block">CEP: 00000-000</span>
-                                    <h6>Estado - País</h6>
-                                </div>
-                                <div class="col-md-12 d-flex justify-content-between">
+                                <div class="d-flex justify-content-between">
                                     <h6>Observação</h6>
                                 </div>
                             </div>
@@ -112,7 +101,7 @@
                         </div>
                         <div class="modal-body">
                             <form>
-                                <h6 class=" fw-bold">Status</h6>
+                                <h6 class="fw-bold">Status</h6>
                                 <div class="row rounded m-2">
                                     <div class="col-md-12">
                                         <div class="form-check">

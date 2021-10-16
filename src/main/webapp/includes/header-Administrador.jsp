@@ -4,7 +4,7 @@
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/LootCommerce/">
-                <img src="/LootCommerce/assets/img/logo_header.png" alt="fanLoot" max-height="100" width="130">
+                <img src="/LootCommerce/assets/img/logo_header.png" alt="fanLoot" name="fanLoot" max-height="100" width="130">
             </a>
 
             <div class="col-lg-6">

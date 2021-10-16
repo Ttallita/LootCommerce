@@ -114,6 +114,19 @@
                             Dar cupom
                         </a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                            Status
+                        </a>
+                        <ul class="dropdown-menu"">
+                            <li>
+                                <a id="inativarBtn" class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#inativarModal">
+                                    Inativar
+                                </a>
+                            </li>
+                            <li><a id="ativarBtn" class="dropdown-item" type="button">Ativar</a></li>
+                        </ul>
+                    </li>
                 </ul>
     
                 <div class="table-responsive border p-3 rounded mb-4">
@@ -183,30 +196,30 @@
                     <div class="modal-dialog modal-dialog-scrollable modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="cadastrarLabel">Cadastro</h5>
+                                <h5 class="modal-title" id="cadastrarLabel">Cadastrar novo cliente</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <form class="needs-validation" id="form-cadastro" action="/LootCommerce/admin/controle" method="POST" novalidate>
                                     <input type="hidden" name="operacao" value="salvar">
-                                    <h3 class="mb-3 fw-normal text-center">Novo Cliente</h3>
+                                    <h6 class="fw-bold">Dados do novo cliente</h6>
                                     <div class="row g-3 mb-3">
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control" id="email" name="email" required>
+                                                <input type="email" class="form-control" id="email" name="email" placeholder="" required>
                                                 <label for="email" class="form-label">Email</label>
                                             </div>
                                         </div>
                                         <div class="col-6">
                                             <div class="form-floating">
-                                                <input type="password" class="form-control" id="senha" name="senha" required>
+                                                <input type="password" class="form-control" id="senha" name="senha" placeholder="" required>
                                                 <label for="senha" class="form-label">Senha</label>
                                             </div>
                                         </div>
     
                                         <div class="col-6">
                                             <div class="form-floating">
-                                                <input type="password" class="form-control" id="senhaConfirmacao" name="senhaConfirmacao" required>
+                                                <input type="password" class="form-control" id="senhaConfirmacao" name="senhaConfirmacao" placeholder="" required>
                                                 <label for="senhaConfirmacao" class="form-label">Insira novamente</label>
                                             </div>
                                         </div>
@@ -214,13 +227,13 @@
                                         <!-- Dados pessoais -->
                                         <div class="col-sm-5 form-outline">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="nome" name="nome" required>
+                                                <input type="text" class="form-control" id="nome" name="nome" placeholder="" required>
                                                 <label for="nome" class="form-label">Nome</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-7">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" required>
+                                                <input type="text" class="form-control" id="sobrenome" name="sobrenome" placeholder="" required>
                                                 <label for="sobrenome" class="form-label">Sobrenome</label>
                                             </div>
                                         </div>
@@ -240,14 +253,14 @@
     
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="date" class="form-control" id="date" name="date" required>
+                                                <input type="date" class="form-control" id="date" name="date" placeholder="" required>
                                                 <label for="date" class="form-label">Data de nascimento</label>
                                             </div>
                                         </div>
     
                                         <div class="col-4">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="cpf" name="cpf" required>
+                                                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="" required>
                                                 <label for="cpf" class="form-label">CPF</label>
                                             </div>
                                         </div>
@@ -255,7 +268,7 @@
                                         <!-- Telefone -->
                                         <div class="col-3 form-outline">
                                             <div class="form-floating">
-                                                <select class="form-select" id="tipoTelefone" name="tipoTelefone" required>
+                                                <select class="form-select" id="tipoTelefone" name="tipoTelefone" placeholder="" required>
                                                     <option value="">Selecione</option>
                                                     <option>Residêncial</option>
                                                     <option>Celular</option>>
@@ -266,64 +279,67 @@
     
                                         <div class="col-5">
                                             <div class="form-floating">
-                                                <input type="phone" class="form-control" id="phone" name="phone" required>
+                                                <input type="phone" class="form-control" id="phone" name="phone" placeholder="" required>
                                                 <label for="phone" class="form-label">Telefone</label>
                                             </div>
                                         </div>
                                     </div>
-    
                                     <hr>
-                                    <h5 class="mb-3 fw-normal text-center">Endereço Residêncial</h5>
+                                    <h6 class="col-md-12 fw-bold">Endereço Residêncial</h6>
                                     <!--Endereço-->
                                     <div class="row g-3 mb-3">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="form-floating">
-                                                <select class="form-select" id="tpResidencia" name="tpResidencia" required>
-                                                    <option value="">Selecione</option>
-                                                    <option>Casa</option>
-                                                    <option>Apartamento</option>
-                                                    <option>Outro</option>
-                                                </select>
-                                                <label>Tipo de residência</label>
+                                                <input type="text" class="form-control" id="apelido" name="apelido" placeholder="" required>
+                                                <label for="apelido" class="form-label">Apelido do endereço</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="tpLogradouro" name="tpLogradouro" required>
+                                                <input type="text" class="form-control" id="tpResidencia" name="tpResidencia" placeholder="" required>
+                                                <label for="tpResidencia" class="form-label">
+                                                    Tipo de residência
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="tpLogradouro" name="tpLogradouro" placeholder="" required>
                                                 <label for="tpLogradouro" class="form-label">Tipo de logradouro</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-5">
+                                        <div class="col-md-10">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="logradouro" name="logradouro" required>
+                                                <input type="text" class="form-control" id="logradouro" name="logradouro" placeholder="" required>
                                                 <label for="logradouro" class="form-label">Logradouro</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="numero" name="numero" placeholder="" required>
+                                                <label for="numero" class="form-label">Número</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="bairro" name="bairro" placeholder="" required>
+                                                <label for="bairro" class="form-label">Bairro</label>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="numero" name="numero" required>
-                                                <label for="numero" class="form-label">Número</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control" id="bairro" name="bairro" required>
-                                                <label for="bairro" class="form-label">Bairro</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control" id="cep" name="cep" required>
+                                                <input type="text" class="form-control" id="cep" name="cep" placeholder="" required>
                                                 <label for="cep" class="form-label">CEP</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-floating">
-                                                <select class="form-select" id="cidade" name="cidade" required>
+                                                <label for="pais" class="form-label"></label>
+                                                <select class="form-select" id="pais" name="pais" required>
                                                     <option value="">Selecione</option>
-                                                    <option>São Paulo</option>
+                                                    <option>Brasil</option>
                                                 </select>
-                                                <label>Cidade</label>
+                                                <label>País</label>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
@@ -337,23 +353,16 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-floating">
-                                                <label for="pais" class="form-label"></label>
-                                                <select class="form-select" id="pais" name="pais" required>
+                                                <select class="form-select" id="cidade" name="cidade" required>
                                                     <option value="">Selecione</option>
-                                                    <option>Brasil</option>
+                                                    <option>São Paulo</option>
                                                 </select>
-                                                <label>País</label>
+                                                <label>Cidade</label>
                                             </div>
                                         </div>
-                                        <div class="col-md-8">
+                                        <div class="col-md-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control" id="apelido" name="apelido" required>
-                                                <label for="apelido" class="form-label">Nome do endereço</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control" id="observacao" name="observacao">
+                                                <input type="text" class="form-control" id="observacao" name="observacao" placeholder="">
                                                 <label for="observacao" class="form-label">
                                                     Observação <span class="text-muted">(Opcional)</span>
                                                 </label>
@@ -361,12 +370,8 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                            Cancelar
-                                        </button>
-                                        <button type="submit" id="cadastrarBtn" class="btn btn-primary">
-                                            Cadastrar
-                                        </button>
+                                        <input type="button" class="btn btn-secondary" data-bs-dismiss="modal" value="Cancelar">
+                                        <input type="submit" id="cadastrarBtn" class="btn btn-primary" value="Cadastrar">
                                     </div>
                                 </form>
                             </div>
@@ -384,12 +389,11 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Tem certeza que deseja inativar esse cliente?
+                                Tem certeza de que deseja inativar esse(s) cliente(s)?
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary">Cancelar</button>
-                                <button type="button" id="inativarBtn" data-bs-dismiss="modal"
-                                    class="btn btn-danger">Inativar</button>
+                                <button type="button" id="inativarBtn" data-bs-dismiss="modal" class="btn btn-danger">Inativar</button>
                             </div>
                         </div>
                     </div>
