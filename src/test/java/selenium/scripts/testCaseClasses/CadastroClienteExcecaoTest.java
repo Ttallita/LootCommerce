@@ -1,9 +1,12 @@
 package selenium.scripts.testCaseClasses;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import selenium.pageObjects.CadastroClientePage;
+import selenium.pageObjects.ContaClientePage;
+import selenium.pageObjects.DadosPessoaisClientesPage;
+import selenium.pageObjects.EnderecoPage;
 
 /**
  * @author André Gomes
@@ -17,38 +20,37 @@ public class CadastroClienteExcecaoTest {
         this.driver = driver;
     }
 
-    public void novoCliente() throws InterruptedException {
+    public void cadastro() throws InterruptedException {
         
-        CadastroClientePage cadastro = PageFactory.initElements(driver, CadastroClientePage.class);
+        ContaClientePage dadosConta = PageFactory.initElements(driver, ContaClientePage.class);
+        DadosPessoaisClientesPage dadosPessoais = PageFactory.initElements(driver, DadosPessoaisClientesPage.class);
+        EnderecoPage endereco = PageFactory.initElements(driver, EnderecoPage.class);
+        
+        dadosConta.setEmail("andre.gomes7110@gmail.com");
+        dadosConta.setSenha("Hitagi710!");
+        dadosConta.setSenhaConfirmacao("Hitagi710");
 
-        cadastro.setEmail("andre.soares");
-        cadastro.setSenha("Admads123!");
-        cadastro.setConfirmacao("Admads123!");
+        dadosPessoais.setNome("André");
+        dadosPessoais.setSobrenome("Gomes");
+        dadosPessoais.setDataNascimento("22/04/1999");
+        dadosPessoais.setCpf("443.020.908.12");
+        dadosPessoais.setGenero(1);
+        dadosPessoais.setTipoTelefone(1);
+        dadosPessoais.setTelefone("11 94002-8922");
 
-        cadastro.setNome("André");
-        cadastro.setSobrenome("Gomes");
-        cadastro.setDataNascimento("21/09/1999");
-        cadastro.setCpf("123.413.133-12");
-        cadastro.setGenero(1);
+        endereco.setApelido("Minha casa");
+        endereco.setCidade(1);
+        endereco.setEstado(1);
+        endereco.setPais(1);
+        endereco.setTipoResidencia("Casa");
+        endereco.setTipoLogradouro("Residencia");
+        endereco.setLogradouro("Rua 25 de março");
+        endereco.setNumero("312");
+        endereco.setBairro("Moema");
+        endereco.setCep("12334-230");
+        endereco.setObservacao("Sem observações");
 
-        cadastro.setTipoTelefone(1);
-        cadastro.setTelefone("11 92324-2324");
-
-        cadastro.setApelido("Minha casa");
-
-        cadastro.setCidade(1);
-        cadastro.setEstado(1);
-        cadastro.setPais(1);
-
-        cadastro.setTipoResidencia("Casa");
-        cadastro.setTipoLogradouro("Bairro");
-        cadastro.setLogradouro("Rua 25 de março");
-        cadastro.setNumero("312");
-        cadastro.setBairro("Moema");
-        cadastro.setCep("12344-231");
-        cadastro.setObservacao("Sem observações");
-
-        cadastro.confirmarCadastro();
+        driver.findElement(By.tagName("form")).submit();;
 
     }
 
