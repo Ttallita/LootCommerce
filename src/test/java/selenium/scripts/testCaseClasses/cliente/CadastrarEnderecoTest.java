@@ -1,4 +1,4 @@
-package selenium.scripts.testes.cliente;
+package selenium.scripts.testCaseClasses.cliente;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

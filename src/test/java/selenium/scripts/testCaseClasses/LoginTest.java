@@ -1,4 +1,4 @@
-package selenium.scripts.testes;
+package selenium.scripts.testCaseClasses;
 
 import selenium.pageObjects.LoginPage;
 
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginTest {
 
-    public void LoginCliente(WebDriver driver) throws InterruptedException {
+    public void loginCliente(WebDriver driver) throws InterruptedException {
 
         LoginPage login = PageFactory.initElements(driver, LoginPage.class);
 
@@ -22,7 +22,7 @@ public class LoginTest {
 
     }
 
-    public void LoginAdministrador(WebDriver driver) throws InterruptedException {
+    public void loginAdministrador(WebDriver driver) throws InterruptedException {
 
         LoginPage login = PageFactory.initElements(driver, LoginPage.class);
 

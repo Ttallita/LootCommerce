@@ -1,4 +1,4 @@
-package selenium.scripts.testes.cliente;
+package selenium.scripts.testCaseClasses.cliente;
 
 import selenium.pageObjects.EnderecoPage;
 

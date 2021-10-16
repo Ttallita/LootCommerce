@@ -1,4 +1,4 @@
-package selenium.scripts.testes;
+package selenium.scripts.testCaseClasses;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -10,7 +10,13 @@ import selenium.pageObjects.CadastroClientePage;
 
 public class CadastroClienteTest {
 
-    public void Cadastro(WebDriver driver) throws InterruptedException {
+    WebDriver driver;
+
+    public CadastroClienteTest(WebDriver driver){
+        this.driver = driver;
+    }
+
+    public void Cadastro() throws InterruptedException {
         
         CadastroClientePage cadastro = PageFactory.initElements(driver, CadastroClientePage.class);
         
