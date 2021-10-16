@@ -173,7 +173,7 @@
 
                                 </div>
                                 <hr class="my-4">
-                                <button class="btn btn-primary mt-auto btn-lg" id="atualizarDados" type="submit">
+                                <button class="btn btn-primary mt-auto btn-lg" id="atualizarDadosContaBtn" type="submit">
                                     Atualizar
                                 </button>
                             </form>

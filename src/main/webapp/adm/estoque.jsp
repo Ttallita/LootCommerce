@@ -32,22 +32,22 @@
             <div class="nav_list">
                 <div class="col-md-3 col-xl-2">
                     <div class="list-group btn-group-vertical">
-                        <a class="nav_link" id="v-pills-principal-tab" type="button" href="/LootCommerce/adm/principal.jsp">
+                        <a class="nav_link" id="paginaPrincipal" type="button" href="/LootCommerce/adm/principal.jsp">
                             <span class="material-icons inline-icon">home</span>
                             Principal
                         </a>
 
-                        <a class="nav_link" id="v-pills-clientes-tab" type="button" href="/LootCommerce/adm/clientes.jsp">
+                        <a class="nav_link" id="paginaClientes" type="button" href="/LootCommerce/adm/clientes.jsp">
                             <span class="material-icons inline-icon">people</span>
                             Clientes
                         </a>
 
-                        <a class="nav_link" id="v-pills-vendas-tab" type="button" href="/LootCommerce/adm/vendas.jsp">
+                        <a class="nav_link" id="paginaVendas" type="button" href="/LootCommerce/adm/vendas.jsp">
                             <span class="material-icons inline-icon">show_chart</span>
                             Vendas
                         </a>
 
-                        <a class="nav_link  active-navbar" id="v-pills-estoque-tab" type="button">
+                        <a class="nav_link active-navbar" id="paginaEstoque" type="button">
                             <span class="material-icons inline-icon">all_inbox</span>
                             Estoque
                         </a>
