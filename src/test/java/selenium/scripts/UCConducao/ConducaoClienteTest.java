@@ -1,4 +1,4 @@
-package selenium.scripts.testes.cliente;
+package selenium.scripts.UCConducao;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

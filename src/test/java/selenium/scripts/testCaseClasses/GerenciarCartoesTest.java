@@ -1,4 +1,4 @@
-package selenium.scripts.testes.cliente;
+package selenium.scripts.testCaseClasses;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -13,7 +13,7 @@ import java.util.List;
  * @author Tallita
  */
 
-public class ConducaoCartaoTest {
+public class GerenciarCartoesTest {
 
     public void novoCartao(WebDriver driver) throws InterruptedException{
 

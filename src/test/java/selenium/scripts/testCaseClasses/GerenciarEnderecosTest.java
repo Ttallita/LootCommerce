@@ -1,4 +1,4 @@
-package selenium.scripts.testes.cliente;
+package selenium.scripts.testCaseClasses;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -15,7 +15,7 @@ import java.util.List;
  * @author Tallita
  */
 
-public class ConducaoEnderecoTest {
+public class GerenciarEnderecosTest {
 
     public void novoEndereco(WebDriver driver) throws InterruptedException{
 
