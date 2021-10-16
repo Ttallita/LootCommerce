@@ -54,10 +54,10 @@
 
                     <button
                         class="${not empty aba && aba == 'senha' ? 'active' : ''} btn btn-outline-primary text-start border-0"
-                        id="v-pills-alterar-senha-tab" data-bs-toggle="pill" data-bs-target="#v-pills-alterar-senha"
-                        type="button" aria-controls="v-pills-alterar-senha" aria-selected="false">
+                        id="v-pills-dados-pessoais-tab" data-bs-toggle="pill" data-bs-target="#v-pills-dados-pessoais"
+                        type="button" aria-controls="v-pills-dados-pessoais" aria-selected="false">
                         <span class="material-icons inline-icon">lock</span>
-                        Alterar Senha
+                        Dados Pessoais
                     </button>
 
                     <button
@@ -98,117 +98,123 @@
                     <section class="tab-pane fade ${empty aba ? 'active show' : ''}" id="v-pills-conta" role="tabpanel"
                         aria-labelledby="v-pills-conta-tab">
                         <h4 class="fw-bold p-3 m-0 border text-center">Conta</h4>
-                            <form class="needs-validation text-center p-4" action="/LootCommerce/clientes/perfil" method="POST" novalidate="">
-                                <input type="hidden" name="operacao" value="atualizar">
-                                <div class="row g-3">
-
-                                    <div class="col-sm-6">
-                                        <div class="input-group form-floating">
-                                            <input type="text" class="form-control" id="nome" name="nome" value="${clienteLogado.nome}" required>
-                                            <label class="form-label">Nome</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
-                                        <div class="input-group form-floating">
-                                            <input type="text" class="form-control" id="sobrenome" name="sobrenome"
-                                                value="${clienteLogado.sobrenome}" required>
-                                            <label class="form-label">Sobrenome</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="input-group form-floating">
-                                            <select class="form-select" id="genero" name="genero" required>
-                                                <option name="genero" value="${clienteLogado.genero}">
-                                                    Selecione
-                                                </option>
-                                                <option>Masculino</option>
-                                                <option>Feminino</option>
-                                                <option>Outro</option>
-                                                <option>Prefiro não informar</option>
-                                            </select>
-                                            <label class="form-label">Gênero</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class="input-group form-floating">
-                                            <input type="date" class="form-control" id="dataNasc" name="date"
-                                                value="${clienteLogado.dataNascimento}" required>
-                                            <label class="form-label">Data de nascimento</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-4">
-                                        <div class="input-group form-floating">
-                                            <input type="text" class="form-control" id="cpf" name="cpf"
-                                                value="${clienteLogado.cpf}" required>
-                                            <label class="form-label">CPF</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-3">
-                                        <div class="input-group form-floating">
-                                            <select class="form-select" id="tipoTelefone" name="tipoTelefone" required>
-                                                <option name="tipoTelefone" value="${clienteLogado.telefone.tipo}">
-                                                    ${clienteLogado.telefone.tipo}
-                                                </option>
-                                                <option value="">Selecione</option>
-                                                <option>Celular</option>
-                                                <option>Residêncial</option>
-                                            </select>
-                                            <label class="form-label">Tipo de Telefone</label>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-3">
-                                        <div class="input-group form-floating">
-                                            <input type="phone" class="form-control" id="phone" name="phone"
-                                                value="${clienteLogado.telefone.ddd},${clienteLogado.telefone.numero}"
-                                                required>
-                                            <label class="form-label">Telefone</label>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <hr class="my-4">
-                                <button class="btn btn-primary mt-auto btn-lg" id="atualizarDadosContaBtn" type="submit">
-                                    Atualizar
-                                </button>
-                            </form>
-                    </section>
-
-                    <!--alterar senha-->
-                    <section class="tab-pane fade ${not empty aba && aba == 'senha' ? 'active show' : ''}"
-                        id="v-pills-alterar-senha" role="tabpanel" aria-labelledby="v-pills-alterar-senha-tab">
-                        <h4 class="fw-bold p-3 m-0 border text-center">Alterar senha</h4>
-                            <form class="text-center p-4" action="/LootCommerce/clientes/perfil/editarSenha" method="POST">
-                                <input type="hidden" name="operacao" value="atualizar">
-                                <div class="vstack gap-3 text-center">
-                                    <div class="col-6 mx-auto form-floating">
+                        <form class="text-center p-4" action="/LootCommerce/clientes/perfil/editarSenha" method="POST">
+                            <input type="hidden" name="operacao" value="atualizar">
+                            <div class="vstack gap-3 text-center">
+                                <div class="col-6 mx-auto">
+                                    <div class="form-floating input-group">
                                         <input type="email" class="form-control" name="email" id="emailAtual" value="${clienteLogado.usuario.email}">
                                         <label for="email" class="form-label">Email</label>
-                                    </div>
-                                    <hr>
-                                    <div class="col-6 mx-auto form-floating">
-                                        <input type="password" class="form-control" id="senhaAtual" name="senhaAtual" placeholder="">
-                                        <label for="senhaAtual" class="form-label">Senha atual</label>
-                                    </div>
-                                    <div class="col-6 mx-auto form-floating">
-                                        <input type="password" class="form-control" id="senhaNova" name="senhaNova" placeholder="">
-                                        <label for="senhaNova" class="form-label">Senha nova</label>
-                                    </div>
-                                    <div class="col-6 mx-auto form-floating">
-                                        <input type="password" class="form-control" id="senhaConfirmacao" name="senhaConfirmacao" placeholder="">
-                                        <label for="senhaConfirmacao" class="form-label">Confirme a nova senha</label>
+                                        <input id="atualizarEmailBtn" type="submit" value="Atualizar email" class="btn btn-primary">
                                     </div>
                                 </div>
-                                <hr class="my-4">
-                                <button id="alterarDados" class="btn btn-primary mt-auto btn-lg" type="submit">
-                                    Alterar dados
-                                </button>
-                            </form>
+                            </div>
+                        </form>
+                        <hr class="my-4">
+                        <form class="text-center p-4" action="/LootCommerce/clientes/perfil/editarSenha" method="POST">
+                            <input type="hidden" name="operacao" value="atualizar">
+                            <div class="vstack gap-3 text-center">
+                                <div class="col-6 mx-auto form-floating">
+                                    <input type="password" class="form-control" id="senhaAtual" name="senhaAtual" placeholder="">
+                                    <label for="senhaAtual" class="form-label">Senha atual</label>
+                                </div>
+                                <div class="col-6 mx-auto form-floating">
+                                    <input type="password" class="form-control" id="senhaNova" name="senhaNova" placeholder="">
+                                    <label for="senhaNova" class="form-label">Senha nova</label>
+                                </div>
+                                <div class="col-6 mx-auto form-floating">
+                                    <input type="password" class="form-control" id="senhaConfirmacao" name="senhaConfirmacao" placeholder="">
+                                    <label for="senhaConfirmacao" class="form-label">Confirme a nova senha</label>
+                                </div>
+                                <input id="alterarDadosConta" type="submit" value="Alterar dados" class="btn btn-primary mx-auto btn-lg">
+                            </div>
+                        </form>
+
+                    </section>
+
+                    <!--dados pessoais-->
+                    <section class="tab-pane fade ${not empty aba && aba == 'senha' ? 'active show' : ''}"
+                        id="v-pills-dados-pessoais" role="tabpanel" aria-labelledby="v-pills-dados-pessoais-tab">
+                        <h4 class="fw-bold p-3 m-0 border ter">Alterar dados pessoais</h4>
+                        <form class="needs-validation text-center p-4" action="/LootCommerce/clientes/perfil" method="POST" novalidate="">
+                            <input type="hidden" name="operacao" value="atualizar">
+                            <div class="row g-3">
+
+                                <div class="col-sm-6">
+                                    <div class="input-group form-floating">
+                                        <input type="text" class="form-control" id="nome" name="nome" value="${clienteLogado.nome}" required>
+                                        <label class="form-label">Nome</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="input-group form-floating">
+                                        <input type="text" class="form-control" id="sobrenome" name="sobrenome"
+                                            value="${clienteLogado.sobrenome}" required>
+                                        <label class="form-label">Sobrenome</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="input-group form-floating">
+                                        <select class="form-select" id="genero" name="genero" required>
+                                            <option name="genero" value="${clienteLogado.genero}">
+                                                Selecione
+                                            </option>
+                                            <option>Masculino</option>
+                                            <option>Feminino</option>
+                                            <option>Outro</option>
+                                            <option>Prefiro não informar</option>
+                                        </select>
+                                        <label class="form-label">Gênero</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="input-group form-floating">
+                                        <input type="date" class="form-control" id="dataNasc" name="date"
+                                            value="${clienteLogado.dataNascimento}" required>
+                                        <label class="form-label">Data de nascimento</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-4">
+                                    <div class="input-group form-floating">
+                                        <input type="text" class="form-control" id="cpf" name="cpf"
+                                            value="${clienteLogado.cpf}" required>
+                                        <label class="form-label">CPF</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-3">
+                                    <div class="input-group form-floating">
+                                        <select class="form-select" id="tipoTelefone" name="tipoTelefone" required>
+                                            <option name="tipoTelefone" value="${clienteLogado.telefone.tipo}">
+                                                ${clienteLogado.telefone.tipo}
+                                            </option>
+                                            <option value="">Selecione</option>
+                                            <option>Celular</option>
+                                            <option>Residêncial</option>
+                                        </select>
+                                        <label class="form-label">Tipo de Telefone</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-3">
+                                    <div class="input-group form-floating">
+                                        <input type="phone" class="form-control" id="phone" name="phone"
+                                            value="${clienteLogado.telefone.ddd},${clienteLogado.telefone.numero}"
+                                            required>
+                                        <label class="form-label">Telefone</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <hr class="my-4">
+                            <button class="btn btn-primary mt-auto btn-lg" id="atualizarDadosPessoaisBtn" type="submit">
+                                Atualizar
+                            </button>
+                        </form>
                     </section>
 
                     <!--endereços-->

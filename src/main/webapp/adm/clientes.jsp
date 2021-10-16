@@ -129,64 +129,68 @@
                 </ul>
     
                 <div class="table-responsive border p-3 rounded mb-4">
-                    <table class="table table-hover" width="100%">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>ID</th>
-                                <th>Nome</th>
-                                <th>CPF</th>
-                                <th>Gênero</th>
-                                <th>Rank</th>
-                                <th>Nascimento</th>
-                                <th>Telefone</th>
-                                <th>Opções</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <c:forEach var="cliente" items="${clientes}">
-                                <tr>
-                                    <td>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                        </div>
-                                    </td>
-                                    <td>${cliente.id}</td>
-                                    <td>${cliente.nome} ${cliente.sobrenome}</td>
-                                    <td>${cliente.cpf}</td>
-                                    <td>${cliente.genero}</td>
-                                    <td>${cliente.ranking}</td>
-                                    <td>${cliente.dataNascimento}</td>
-                                    <td>${cliente.telefone.numero}</td>
-                                    <td>
-                                        <div>
-                                            <button class="btn btn-dark" type="button" id="dropdownMenuButton1"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                <span class="material-icons"> list</span>
-                                            </button>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li>
-                                                    <a class="dropdown-item" id="gerenciarLink"
-                                                        href="/LootCommerce/admin/cliente?operacao=listarAdm&id=${cliente.id}">
-                                                        Gerenciar
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <hr class="dropdown-divider link-light">
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                                        id="inativarLink" data-bs-target="#inativarModal">
-                                                        Inativar
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                        </tbody>
-                    </table>
+                    <form>
+                        <c:forEach var="cliente" items="${clientes}">
+                            <table class="table table-hover" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>ID</th>
+                                        <th>Nome</th>
+                                        <th>CPF</th>
+                                        <th>Gênero</th>
+                                        <th>Rank</th>
+                                        <th>Nascimento</th>
+                                        <th>Telefone</th>
+                                        <th>Opções</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                    
+                                    <tr>
+                                        <td>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="${cliente.id}" id="flexCheckDefault">
+                                            </div>
+                                        </td>
+                                        <td>${cliente.id}</td>
+                                        <td>${cliente.nome} ${cliente.sobrenome}</td>
+                                        <td>${cliente.cpf}</td>
+                                        <td>${cliente.genero}</td>
+                                        <td>${cliente.ranking}</td>
+                                        <td>${cliente.dataNascimento}</td>
+                                        <td>${cliente.telefone.numero}</td>
+                                        <td>
+                                            <div>
+                                                <button class="btn btn-dark" type="button" id="dropdownMenuButton1"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <span class="material-icons"> list</span>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li>
+                                                        <a class="dropdown-item" id="gerenciarLink"
+                                                            href="/LootCommerce/admin/cliente?operacao=listarAdm&id=${cliente.id}">
+                                                            Gerenciar
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <hr class="dropdown-divider link-light">
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" id="inativarLink"
+                                                            data-bs-target="#inativarModal">
+                                                            Inativar
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                    
+                                </tbody>
+                            </table>
+                        </c:forEach>
+                    </form>
                 </div>
     
                 <!-- Modal cadastrar cliente-->
