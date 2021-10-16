@@ -48,8 +48,8 @@ public class EnderecoViewHelper implements IViewHelper {
             endereco.setBairro(bairro);
             endereco.setCep(cep);
             endereco.setCidade(cidade);
-            endereco.setEstado(estado);
-            endereco.setPais(pais);
+            endereco.setEstado(estado.split("\\|")[0]);
+            endereco.setPais(pais.split("\\|")[0]);
             endereco.setApelido(apelido);
             endereco.setObservacoes(observacao);
 

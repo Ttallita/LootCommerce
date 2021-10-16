@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import selenium.pageObjects.ContaClientePage;
-import selenium.pageObjects.DadosPessoaisClientesPage;
-import selenium.pageObjects.EnderecoPage;
+import selenium.pageModels.ContaClientePage;
+import selenium.pageModels.DadosPessoaisClientesPage;
+import selenium.pageModels.EnderecoPage;
 
 /**
  * @author André Gomes
@@ -39,9 +39,9 @@ public class CadastroClienteTest {
         dadosPessoais.setTelefone("11 94002-8922");
 
         endereco.setApelido("Minha casa");
-        endereco.setCidade(1);
+        endereco.setPais(34);
         endereco.setEstado(1);
-        endereco.setPais(1);
+        endereco.setCidade(1);
         endereco.setTipoResidencia("Casa");
         endereco.setTipoLogradouro("Residencia");
         endereco.setLogradouro("Rua 25 de março");
@@ -51,6 +51,5 @@ public class CadastroClienteTest {
         endereco.setObservacao("Sem observações");
 
         driver.findElement(By.tagName("form")).submit();;
-
     }
 }

@@ -24,7 +24,7 @@
               <a href="login.jsp" id="entrar" class="btn btn-outline-light ms-3">Entrar</a>
           </div>
           <div>
-              <a href="cadastro.jsp" class="btn btn-outline-primary ms-3">Cadastre-se</a>
+              <a href="cadastro.jsp" id="cadastro" class="btn btn-outline-primary ms-3">Cadastre-se</a>
           </div>
         </div>
       </div>
@@ -36,43 +36,6 @@
           <ul class="navbar-nav">
             <li class="active"><a href="#" class="nav-link">Home</a>
             </li>
-          </ul>
-          <ul class="navbar-nav">
-            <!--
-            <li><a href="#" data-bs-toggle="dropdown" aria-expanded="false" class="nav-link dropdown-toggle pl-0"><i class=""></i>Categorias</a>
-              <div class="dropdown-menu pt-3 pb-3 px-2 bg-dark">
-                <div class="d-flex ">
-                  <div class="px-3">
-                    <div><a href="#" class="d-block mb-3 link-light text-decoration-none"><img src="img/shop/departments/01.jpg" alt="Categoria"></a>
-                      <ul>
-                        <li><a class="link-light nav-link" href="#">Subcategoria</a></li>
-                        <li><a class="link-light nav-link" href="#">Subcategoria</a></li>
-                        <li><a class="link-light nav-link" href="#">Subcategoria</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="px-3">
-                    <div><a href="#" class="d-block mb-3 link-light text-decoration-none"><img src="img/shop/departments/02.jpg" alt="Categoria"></a>
-                      <ul>
-                        <li><a class="link-light nav-link" href="#">Subcategoria</a></li>
-                        <li><a class="link-light nav-link" href="#">Subcategoria</a></li>
-                        <li><a class="link-light nav-link" href="#">Subcategoria</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="px-3">
-                    <div><a href="#" class="d-block mb-3 link-light text-decoration-none"><img src="img/shop/departments/03.jpg" alt="Categoria"></a>
-                      <ul>
-                        <li><a class="link-light nav-link" href="#">Subcategoria</a></li>
-                        <li><a class="link-light nav-link" href="#">Subcategoria</a></li>
-                        <li><a class="link-light nav-link" href="#">Subcategoria</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            -->
           </ul>
         </div>
       </div>

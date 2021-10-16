@@ -1,6 +1,6 @@
 package selenium.scripts.testCaseClasses.cliente;
 
-import selenium.pageObjects.CartaoPage;
+import selenium.pageModels.CartaoPage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

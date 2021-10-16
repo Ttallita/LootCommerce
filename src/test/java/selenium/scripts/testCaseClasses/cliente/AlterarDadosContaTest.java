@@ -1,6 +1,6 @@
 package selenium.scripts.testCaseClasses.cliente;
 
-import selenium.pageObjects.ContaClientePage;
+import selenium.pageModels.ContaClientePage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

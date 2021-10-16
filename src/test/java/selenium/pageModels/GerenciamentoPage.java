@@ -1,4 +1,4 @@
-package selenium.pageObjects;
+package selenium.pageModels;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;

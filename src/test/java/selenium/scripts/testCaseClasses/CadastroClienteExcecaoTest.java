@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import selenium.pageObjects.ContaClientePage;
-import selenium.pageObjects.DadosPessoaisClientesPage;
-import selenium.pageObjects.EnderecoPage;
+import selenium.pageModels.ContaClientePage;
+import selenium.pageModels.DadosPessoaisClientesPage;
+import selenium.pageModels.EnderecoPage;
 
 /**
  * @author André Gomes

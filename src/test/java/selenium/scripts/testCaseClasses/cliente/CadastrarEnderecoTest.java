@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import selenium.pageObjects.EnderecoPage;
+import selenium.pageModels.EnderecoPage;
 
 /**
  * @author Tallita

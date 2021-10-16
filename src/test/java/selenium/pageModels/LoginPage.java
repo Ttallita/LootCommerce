@@ -1,22 +1,21 @@
-package selenium.pageObjects;
+package selenium.pageModels;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class ContaClientePage {
+public class LoginPage {
+
     @FindBy (how = How.ID, using = "email")
     @CacheLookup private WebElement email;
 
     @FindBy(how = How.ID, using = "senha")
     @CacheLookup private WebElement senha;
 
-    @FindBy(how = How.ID, using = "senhaConfirmacao")
-    @CacheLookup private WebElement senhaConfirmacao;
+    @FindBy(how = How.ID, using = "logar")
+    @CacheLookup private WebElement loginBtn;
 
-    @FindBy(how = How.ID, using = "atualizarDados")
-    @CacheLookup private WebElement atualizarBtn;
 
     public void setEmail(String email) {
         this.email.clear();
@@ -36,16 +35,8 @@ public class ContaClientePage {
         return senha.getAttribute("senha");
     }
 
-    public void setSenhaConfirmacao(String senhaConfirmacao) {
-        this.senhaConfirmacao.clear();
-        this.senhaConfirmacao.sendKeys(senhaConfirmacao);
+    public void realizarLogin() {
+        loginBtn.click();
     }
 
-    public String getConfirmacao() {
-        return senhaConfirmacao.getAttribute("confirmacao");
-    }
-
-    public void atualizarDados(){
-        atualizarBtn.click();
-    }
 }

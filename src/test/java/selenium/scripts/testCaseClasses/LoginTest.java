@@ -1,6 +1,6 @@
 package selenium.scripts.testCaseClasses;
 
-import selenium.pageObjects.LoginPage;
+import selenium.pageModels.LoginPage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

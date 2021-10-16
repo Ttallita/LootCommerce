@@ -64,7 +64,7 @@ $('#estado').on('change', function () {
 
     estadoSelecionado.cidades.forEach(element => {
         let option = document.createElement("option")
-        option.value = element.nome + "|" + element.id
+        option.value = element.nome
         option.innerHTML = element.nome
 
         cidadeSelect.appendChild(option)

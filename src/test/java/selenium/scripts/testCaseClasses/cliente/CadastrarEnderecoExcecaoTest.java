@@ -1,6 +1,6 @@
 package selenium.scripts.testCaseClasses.cliente;
 
-import selenium.pageObjects.EnderecoPage;
+import selenium.pageModels.EnderecoPage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

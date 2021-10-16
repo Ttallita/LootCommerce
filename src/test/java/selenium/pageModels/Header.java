@@ -1,4 +1,4 @@
-package selenium.pageObjects;
+package selenium.pageModels;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -13,15 +13,7 @@ public class Header {
     @FindBy (how = How.ID, using = "pesquisar")
     @CacheLookup private WebElement barraPesquisa;
     
-    @FindBy (how = How.ID, using = "listarOpcoesUsuario")
-    @CacheLookup private WebElement listarOpcoesBtn;
 
-    @FindBy (how = How.ID, using = "perfil")
-    @CacheLookup private WebElement perfil;
-
-    @FindBy (how = How.LINK_TEXT, using = "/LootCommerce/pesquisa.jsp")
-    @CacheLookup private WebElement linkPesquisa;
-    
     public void setBarraPesquisa(String barraPesquisa) {
         this.barraPesquisa.clear();
         this.barraPesquisa.sendKeys(barraPesquisa);
@@ -34,5 +26,18 @@ public class Header {
     public void pesquisar(){
         
     }
+
+    public WebElement getLogoFanLoot() {
+        return logoFanLoot;
+    }
+
+    public void setLogoFanLoot(WebElement logoFanLoot) {
+        this.logoFanLoot = logoFanLoot;
+    }
+
+    public void setBarraPesquisa(WebElement barraPesquisa) {
+        this.barraPesquisa = barraPesquisa;
+    }
+
 
 }
