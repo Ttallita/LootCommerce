@@ -59,6 +59,10 @@
               type="button" role="tab" aria-controls="nav-dados-pessoais" aria-selected="true">
               Dados pessoais
             </button>
+            <button class="nav-link" id="nav-dados-conta-tab" data-bs-toggle="tab" data-bs-target="#nav-dados-conta"
+              type="button" role="tab" aria-controls="nav-dados-conta" aria-selected="true">
+              Alterar dados conta
+            </button>
             <button class="nav-link" id="nav-transacoes-tab" data-bs-toggle="tab" data-bs-target="#nav-transacoes"
               type="button" role="tab" aria-controls="nav-transacoes" aria-selected="false">
               Transações
@@ -153,6 +157,40 @@
             </div>
           </div>
 
+          <!--Alterar dados conta-->
+          <div class="tab-pane fade" id="nav-dados-conta" role="tabpanel" aria-labelledby="nav-dados-conta-tab">
+            <div class="card-body">
+              <form class="needs-validation text-center" action="/LootCommerce/admin/cliente" method="POST">
+                <input type="hidden" value="${cliente.id}" name="idCliente" />
+                <input type="hidden" value="atualizar" name="operacao" />
+                <div class="row g-3">
+                  <div class="col-sm-12">
+                    <div class="input-group form-floating">
+                      <input type="text" class="form-control" name="email" id="email" value="${cliente.usuario.email}">
+                      <label class="form-label">Email</label>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <div class="input-group form-floating">
+                      <input type="text" class="form-control" name="senha" id="senha" placeholder="">
+                      <label class="form-label">Senha</label>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-6">
+                    <div class="input-group form-floating">
+                      <input type="text" class="form-control" name="senhaConfirmacao" id="senhaConfirmacao" placeholder="">
+                      <label class="form-label">Confirme a senha</label>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-4">
+                <input type="submit" class="btn btn-primary mt-auto btn-lg" value="Atualizar" />
+              </form>
+            </div>
+          </div>
+
           <!--Transações-->
           <div class="tab-pane fade" id="nav-transacoes" role="tabpanel" aria-labelledby="nav-transacoes-tab">
             <table class="table table-hover table-sm table-responsive">
@@ -228,7 +266,7 @@
 
                   <form class="needs-validation" action="/LootCommerce/admin/enderecos" method="POST" novalidate="">
                     <input type="hidden" name="operacao" value="salvar">
-                    <input type="hidden" value="${cliente.id}" name="idCliente" />
+                    <input type="hidden" value="${cliente.id}" name="idCliente"/>
                     <div class="row g-3 mb-3">
                       <div class="col-md-6">
                         <div class="form-floating">
@@ -296,7 +334,7 @@
                       </div>
                       <div class="col-md-8">
                         <div class="form-floating">
-                          <input type="text" class="form-control" id="observacao" name="observacao">
+                          <input type="text" class="form-control" id="observacao" name="observacao" placeholder="">
                           <label for="observacao" class="form-label">Observação<span class="text-muted">(Opcional)</span></label>
                         </div>
                       </div>
