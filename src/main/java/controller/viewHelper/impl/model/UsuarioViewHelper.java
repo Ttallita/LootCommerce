@@ -36,22 +36,20 @@ public class UsuarioViewHelper implements IViewHelper {
         } else if (operacao.equals("atualizar")) {
             Usuario usuarioLogado = (Usuario) request.getSession().getAttribute("usuarioLogado");
 
+            String tipo = request.getParameter("tipo");
             String email = request.getParameter("email");
+
             String senha = request.getParameter("senha");
             String senhaConfirmar = request.getParameter("senhaConfirmacao");
 
-            Usuario usuario;
-            usuario = usuarioLogado;
-            usuario.setEmail(email);
-
-            if(senha.equals("") && senhaConfirmar.equals("")) {
-                usuario.setConfirmarSenha(usuario.getSenha());
-            } else {
-                usuario.setSenha(senha);
-                usuario.setConfirmarSenha(senhaConfirmar);
+            if(tipo.equals("email")) {
+                usuarioLogado.setEmail(email);
+            } else  {
+                usuarioLogado.setSenha(senha);
+                usuarioLogado.setConfirmarSenha(senhaConfirmar);
             }
 
-            return usuario;
+            return usuarioLogado;
         }
 
         return null;

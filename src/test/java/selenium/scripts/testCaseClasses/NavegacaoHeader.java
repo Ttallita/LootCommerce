@@ -13,10 +13,12 @@ public class NavegacaoHeader {
 
     WebDriver driver;
     HeaderDeslogado  headerDeslogado;
+    HeaderCliente headerCliente;
 
     public NavegacaoHeader(WebDriver driver) {
         this.driver = driver;
         headerDeslogado = PageFactory.initElements(driver, HeaderDeslogado.class);
+        headerCliente = PageFactory.initElements(driver, HeaderCliente.class);
     }
 
 
@@ -26,6 +28,11 @@ public class NavegacaoHeader {
 
     public void acessarPaginaLogin() {
         headerDeslogado.getBtnEntrar().click();
+    }
+
+    public void acessarPerfilCliente() {
+        headerCliente.getListarOpcoesBtn().click();
+        headerCliente.getPerfil().click();
     }
 
 }

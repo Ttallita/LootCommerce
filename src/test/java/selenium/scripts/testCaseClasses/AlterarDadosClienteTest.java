@@ -8,41 +8,33 @@ import selenium.pageModels.DadosPessoaisClientesPage;
 
 public class AlterarDadosClienteTest {
 
-    WebDriver driver;
+    private WebDriver driver;
+    private ContaClientePage contaClientePage;
+    private DadosPessoaisClientesPage dadosPessoaisClientesPage;
 
     public AlterarDadosClienteTest(WebDriver driver){
         this.driver = driver;
+        this.contaClientePage = PageFactory.initElements(driver, ContaClientePage.class);
+        this.dadosPessoaisClientesPage = PageFactory.initElements(driver, DadosPessoaisClientesPage.class);
+
     }
 
     public void alterarSenha() throws InterruptedException{
-
-        ContaClientePage conta = PageFactory.initElements(driver, ContaClientePage.class);
-
-        conta.setEmail("nome@email.com");
-
-        conta.atualizarDados();
-
+        contaClientePage.setEmail("nome@email.com");
+        contaClientePage.atualizarDados();
     }
 
     public void alterarEmail() throws InterruptedException{
-
-        ContaClientePage conta = PageFactory.initElements(driver, ContaClientePage.class);
-
-        conta.setSenha("123456bB@");
-        conta.setSenhaConfirmacao("123456bB@");
-
-        conta.atualizarDados();
-
+        contaClientePage.setSenha("123456bB@");
+        contaClientePage.setSenhaConfirmacao("123456bB@");
+        contaClientePage.atualizarDados();
     }
     
     public void alterarDadosPessoais() throws InterruptedException{
 
-        DadosPessoaisClientesPage dadosPessoais = PageFactory.initElements(driver, DadosPessoaisClientesPage.class);
 
-        dadosPessoais.setNome("Vinicius");
-        dadosPessoais.setSobrenome("Vinicius");
-
-        
+        dadosPessoaisClientesPage.setNome("Vinicius");
+        dadosPessoaisClientesPage.setSobrenome("Vinicius");
 
 
         // campoNome = driver.findElement(By.id("nome"));
