@@ -17,7 +17,7 @@ public class PaisDAO {
         try {
             conn = conexao.getConexao();
 
-            String sql = "SELECT * FROM paises";
+            String sql = "SELECT * FROM paises ORDER BY pai_nome";
 
             PreparedStatement pstm = conn.prepareStatement(sql);
 

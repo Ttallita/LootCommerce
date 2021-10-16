@@ -1,9 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page buffer="64kb" %>
 
 <html>
-
 <head>
   <meta charset="UTF-8" />
   <title>Cadastro</title>
@@ -193,36 +191,35 @@
                   <label for="cep" class="form-label">CEP</label>
                 </div>
               </div>
-
-              <div class="col-md-4">
-                <div class="form-floating">
-                  <select class="form-select" id="cidade" name="cidade">
-                    <option value="">Selecione</option>
-                    <option>São Paulo</option>
-                  </select>
-                  <label>Cidade</label>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-floating">
-                  <select class="form-select" id="estado" name="estado">
-                    <option value="">Selecione</option>
-                    <option>São Paulo</option>
-                  </select>
-                  <label>Estado</label>
-                </div>
-              </div>
               <div class="col-md-4">
                 <div class="form-floating">
                   <label for="pais" class="form-label"></label>
                   <select class="form-select" id="pais" name="pais">
                     <option value="">Selecione</option>
-                    <option>Brasil</option>
                   </select>
                   <label>País</label>
                 </div>
               </div>
 
+              <div class="col-md-4">
+                <div class="form-floating">
+                  <select class="form-select" id="estado" name="estado" disabled>
+                    <option value="">Selecione</option>
+                    <option value="">São Paulo</option>
+                  </select>
+                  <label>Estado</label>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-floating">
+                  <select class="form-select" id="cidade" name="cidade" disabled>
+                    <option value="">Selecione</option>
+                  </select>
+                  <label>Cidade</label>
+                </div>
+              </div>
+      
               <div class="col-md-12">
                 <div class="form-floating">
                   <input type="text" class="form-control" id="observacao" value="${cliente.enderecos[0].observacoes}" placeholder="">
@@ -245,7 +242,7 @@
 <script src='<c:url value="/webjars/jquery/3.6.0/jquery.min.js"/>'></script>
 <script src='<c:url value="/webjars/bootstrap/5.1.0/js/bootstrap.bundle.min.js"/>'></script>
 <script src='<c:url value="/webjars/jquery-mask-plugin/1.14.16/dist/jquery.mask.min.js"/>'></script>
-<script src='<c:url value="/assets/js/form-steps.js"/>'></script>
+<script src='assets/js/locaisUtils.js'></script>
 
 <c:if test="${not empty requestScope.mensagem}">
   <script>
