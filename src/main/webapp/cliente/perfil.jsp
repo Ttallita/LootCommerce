@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page buffer="64kb" %>
-
 <html>
-
 <head>
     <meta charset="UTF-8" />
     <title>Perfil</title>
@@ -105,6 +102,7 @@
                                     <div class="form-floating input-group">
                                         <input type="email" class="form-control" name="email" id="emailAtual" value="${clienteLogado.usuario.email}">
                                         <label for="email" class="form-label">Email</label>
+                                        <input type="hidden" name="tipo" value="email">
                                         <input id="atualizarEmailBtn" type="submit" value="Atualizar email" class="btn btn-primary">
                                     </div>
                                 </div>
@@ -126,6 +124,7 @@
                                     <input type="password" class="form-control" id="senhaConfirmacao" name="senhaConfirmacao" placeholder="">
                                     <label for="senhaConfirmacao" class="form-label">Confirme a nova senha</label>
                                 </div>
+                                <input type="hidden" name="tipo" value="senha">
                                 <input id="alterarDadosConta" type="submit" value="Alterar dados" class="btn btn-primary mx-auto btn-lg">
                             </div>
                         </form>

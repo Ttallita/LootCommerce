@@ -85,6 +85,5 @@ public class CadastroClienteTest {
         endereco.setObservacao("Sem observações");
 
         driver.findElement(By.tagName("form")).submit();;
-
     }
 }

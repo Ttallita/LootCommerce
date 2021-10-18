@@ -44,6 +44,7 @@ public class UsuarioViewHelper implements IViewHelper {
 
             if(tipo.equals("email")) {
                 usuarioLogado.setEmail(email);
+                usuarioLogado.setConfirmarSenha(usuarioLogado.getSenha());
             } else  {
                 usuarioLogado.setSenha(senha);
                 usuarioLogado.setConfirmarSenha(senhaConfirmar);
